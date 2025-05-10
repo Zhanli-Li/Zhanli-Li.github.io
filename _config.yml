@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Zhanli-Li(李展利)"
+title                    : "Zhanli-Li"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
