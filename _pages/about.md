@@ -9,7 +9,7 @@ redirect_from:
 
 Hi, I'm Zhanli Li, currently pursuing a bachelor's degree in Digital Economy (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law. My research interests mainly include Large Language Model and Fintech. From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang](www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on machine learning, microeconometrics, and corporate finance.
 
-Currently, I am an intern with [Prof. Yixuan Cao](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, where we are focused on Document Agent. I am eager to pursue a PhD in Data Science, Statistics, Computer Science, or Fintech. If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
+Currently, I am an intern working with [Prof. Yixuan Cao](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, where we are focused on Document Agent. I am eager to pursue a PhD in Data Science, Statistics, Computer Science, or Fintech. If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
 
 # News
 - `2025.5.6` [Language modeling under rotational positional](https://github.com/Zhanli-Li/ROPE_BERT) coding for my coursework open-sourced at GitHub.
