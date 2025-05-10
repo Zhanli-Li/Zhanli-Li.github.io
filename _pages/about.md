@@ -1,13 +1,15 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About Zhanli Li"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+Hi, I'm Zhanli Li, currently pursuing a bachelor's degree in Digital Economy (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law. My research interests mainly include Language Models, Graph Neural Networks, Empirical Corporate Finance, and Fintech. From 2024 to February 2025, I am honored to be mentored by Prof. Zichao Yang of Zhongnan University of Economics and Law. Our research focuses on machine learning, microeconometrics, and corporate finance.
+
+Currently, I am an intern with Yixuan Cao at the Institute of Computing Technology, Chinese Academy of Sciences, where we are focused on improving the training of LLMs using low-quality financial labeled datasets. I am eager to pursue a PhD in Data Science, Statistics, Computer Science, or Fintech. If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
 
 A data-driven personal website
 ======
