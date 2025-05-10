@@ -2,7 +2,7 @@
 title: "ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction"
 collection: publications
 category: Journal
-permalink: /publication/ESG_TFP.md
+permalink: /publication/ESG_TFP
 excerpt: 'This paper is about fixing template issue #693.'
 date: 2025
 venue: 'Finance Research Letters'
