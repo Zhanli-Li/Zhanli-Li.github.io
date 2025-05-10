@@ -18,7 +18,7 @@ Research experience
 * 2024.3 - 2025.2: Research intern
   * Place: Zhongnan University of Economics and Law
   * Duties includes: Machine Learning and Applied Micrometrics
-  * Supervisor: [Zichao Yang](www.yzc.me)
+  * Supervisor: [Zichao Yang](https://www.yzc.me)
  
 * 2025.2 - present: Research intern
   * Place: Institute of Computing Technology, Chinese Academy of Sciences
