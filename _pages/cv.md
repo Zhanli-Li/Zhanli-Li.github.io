@@ -11,35 +11,19 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
-
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* B.S. in Digital Economy, Zhongnan University of Economics and Law, 2023
   
-Skills
+Research experience
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* 2024.3 - 2025.2: Research intern
+  * Place: Zhongnan University of Economics and Law
+  * Duties includes: Machine Learning and Applied Micrometrics
+  * Supervisor: [Zichao Yang](www.yzc.me)
+ 
+* 2025.2 - present: research intern
+  * Place: Institute of Computing Technology, Chinese Academy of Sciences
+  * Duties includes: LLM and Agent
+  * Supervisor: [Yixuan Cao](https://yixuancao.github.io/)
 
 Publications
 ======
@@ -61,4 +45,14 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* **Reviewer**: *Finance Research Letters* 
+* **Leadership**: [ESGformer](https://github.com/Zhanli-Li/ESG-Topic-Model)
+
+Skills
+======
+* Pytorch
+* Transformers
+* Llamaindex
+* Latex
+* Ubuntu
+* Tmux
