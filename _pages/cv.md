@@ -20,7 +20,7 @@ Research experience
   * Duties includes: Machine Learning and Applied Micrometrics
   * Supervisor: [Zichao Yang](www.yzc.me)
  
-* 2025.2 - present: research intern
+* 2025.2 - present: Research intern
   * Place: Institute of Computing Technology, Chinese Academy of Sciences
   * Duties includes: LLM and Agent
   * Supervisor: [Yixuan Cao](https://yixuancao.github.io/)
