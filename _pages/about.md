@@ -13,6 +13,7 @@ Currently, I am an intern with [Prof. Yixuan Cao](https://yixuancao.github.io/) 
 
 
 # News
+- `2025.5.6` [Language modeling under rotational positional](https://github.com/Zhanli-Li/ROPE_BERT) coding for my coursework open-sourced at GitHub
 - `2025.4` Start exploring how to use Agents for multi-hop, multi-document quizzes!
 - `2025.3.11` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online
 - `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
