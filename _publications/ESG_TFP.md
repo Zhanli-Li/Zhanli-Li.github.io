@@ -3,7 +3,7 @@ title: "ESG rating disagreement and corporate Total Factor Productivity: Inferen
 collection: publications
 category: manuscripts
 permalink: /publication/ESG_TFP
-excerpt: 'This paper is about fixing template issue #693.'
+excerpt: 'This is the work I completed during the summer of my first year of undergraduate studies'
 date: 2025-5-01
 venue: 'Finance Research Letters'
 paperurl: 'https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903'
