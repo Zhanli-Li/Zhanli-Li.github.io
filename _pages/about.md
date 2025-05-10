@@ -11,7 +11,6 @@ Hi, I'm Zhanli Li, currently pursuing a bachelor's degree in Digital Economy (20
 
 Currently, I am an intern with [Prof. Yixuan Cao](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, where we are focused on Document Agent. I am eager to pursue a PhD in Data Science, Statistics, Computer Science, or Fintech. If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
 
-del
 # News
 - `2025.5.6` [Language modeling under rotational positional](https://github.com/Zhanli-Li/ROPE_BERT) coding for my coursework open-sourced at GitHub
 - `2025.4` Start exploring how to use Agents for multi-hop, multi-document quizzes!
