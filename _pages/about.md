@@ -10,3 +10,9 @@ redirect_from:
 Hi, I'm Zhanli Li, currently pursuing a bachelor's degree in Digital Economy (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law. My research interests mainly include Language Models, Graph Neural Networks, Empirical Corporate Finance, and Fintech. From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang](www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on machine learning, microeconometrics, and corporate finance.
 
 Currently, I am an intern with [Prof. Yixuan Cao](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, where we are focused on Document Agent. I am eager to pursue a PhD in Data Science, Statistics, Computer Science, or Fintech. If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
+
+
+# News
+- `2025.4` Start exploring how to use Agents for multi-hop, multi-document quizzes!
+- `2025.3.11` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online
+- `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
