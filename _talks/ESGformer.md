@@ -4,7 +4,7 @@ collection: talks
 type: "Talk"
 permalink: /talks/ESGformer
 venue: "Wenlan School of Business, ZUEL"
-date: 2024-12
+date: 2024-12-2
 location: "Wuhan, China"
 ---
 
