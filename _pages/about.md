@@ -14,7 +14,7 @@ Currently, I am an intern working with [Prof. Yixuan Cao](https://yixuancao.gith
 # Research Interests
 - LLM
 - Deep Learning
-- Applied Micrometrics
+- Applied Microeconometrics
 
 # News
 - `2025.5.6` [Language modeling under rotational positional](https://github.com/Zhanli-Li/ROPE_BERT) coding for my coursework open-sourced at GitHub.
