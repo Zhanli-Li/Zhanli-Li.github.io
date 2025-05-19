@@ -63,9 +63,9 @@ Awards and Honors
   * **First Prize (Team Leader)**: *Central China Mathematical Modeling Competition*, May 2025
 
 * **Research Competitions**
-  * **Third Prize (Project Leader)**: *38th Central South University Empirical Fund*, October 2024
-  * **Completion (Participant)**: *38th Central South University Empirical Fund*, October 2024
-  * **Provincial Level Project (Project Leader)**: *2025 China University Innovation Training Program*, December 2024
+  * **Third Prize (Project Leader)**: *38th ZUEL Emprical Research Fund*, October 2024
+  * **Completion (Participant)**: *38th ZUEL Empirical Research Fund*, October 2024
+  * **Provincial Level Project (Project Leader)**: *2025 China University Innovation Training Program (province level)*, December 2024
   * **Project Initiation (Technical Leader)**: *2025 University Student Entrepreneurship Competition*, March 2025
 
 * **Academic Awards**
