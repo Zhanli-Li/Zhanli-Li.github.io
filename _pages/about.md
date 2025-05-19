@@ -17,7 +17,7 @@ Currently, I am an intern working with [Prof. Yixuan Cao](https://yixuancao.gith
 - Applied Microeconometrics
 
 # News
-- `2025.5.6` I got first prize of [Central China Mathematical Modeling Competition](http://www.hzbmmc.com/views/award/award-item.html?navigate=inform&id=1923308824495611905)!
+- `2025.5.19` I got first prize of [Central China Mathematical Modeling Competition](http://www.hzbmmc.com/views/award/award-item.html?navigate=inform&id=1923308824495611905)!
 - `2025.5.6` [Language modeling under rotational positional](https://github.com/Zhanli-Li/ROPE_BERT) coding for my coursework open-sourced at GitHub.
 - `2025.4` Start exploring how to use Agents for multi-hop, multi-document quizzes with [Prof. Yixuan Cao](https://yixuancao.github.io/) and [Prof. Ping Luo](https://ping-luo.github.io/).
 - `2025.3.13` I was invited as a reviewer of *Finance Research Letters*.
