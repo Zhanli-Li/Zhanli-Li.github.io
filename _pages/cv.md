@@ -11,9 +11,17 @@ redirect_from:
 
 Education
 ======
-* B.S. in Digital Economy, Zhongnan University of Economics and Law, 2023
+* B.S. in Digital Economy, Zhongnan University of Economics and Law, 2023-2027
+  - **Academic Performance:** *Weighted Average: 92.41/100* | *Rank: 2/81*
+  - **Major Courses:** *Introduction to Python for Data Science (100)*, *Mathematical Modeling (95)*, *Mathematical Analysis (95.8)*, *Probability and Mathematical Statistics (99)*
+
+Research Interests
+======
+- LLM
+- Deep Learning
+- Applied Microeconometrics
   
-Research experience
+Research Experiences
 ======
 * 2024.3 - 2025.2: Research intern
   * Place: Zhongnan University of Economics and Law
@@ -64,7 +72,7 @@ Awards and Honors
   * **Hunan Province Outstanding Student**: April 2023
   * **Academic Scholarship**: *Central South University of Economics and Law*, November 2024
 
-Service and leadership
+Service and Leadership
 ======
 * **Reviewer**: *Finance Research Letters* 
 * **Leadership**: [ESGformer](https://github.com/Zhanli-Li/ESG-Topic-Model)
