@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* B.S. in Digital Economy, Zhongnan University of Economics and Law, 2023-2027
+* B.S. in Digital Economy, Zhongnan University of Economics and Law (ZUEL), 2023-2027
   - **Academic Performance:** *Weighted Average: 92.41/100*, *Rank: 2/81*
   - **Major Courses:** *Introduction to Python for Data Science (100)*, *Mathematical Modeling (95)*, *Mathematical Analysis (95.8)*, *Probability and Mathematical Statistics (99)*
 
@@ -63,14 +63,14 @@ Awards and Honors
   * **First Prize (Team Leader)**: *Central China Mathematical Modeling Competition*, May 2025
 
 * **Research Competitions**
-  * **Third Prize (Project Leader)**: *38th ZUEL Emprical Research Fund*, October 2024
-  * **Completion (Participant)**: *38th ZUEL Empirical Research Fund*, October 2024
-  * **Provincial Level Project (Project Leader)**: *2025 China University Innovation Training Program (province level)*, December 2024
-  * **Project Initiation (Technical Leader)**: *2025 University Student Entrepreneurship Competition*, March 2025
+  * **Third Prize (Project Leader)**: *38th ZUEL Emprical Research Fund for Applied Microeconometrics*, October 2024
+  * **Completion (Participant)**: *38th ZUEL Empirical Research Fund for Marketing*, October 2024
+  * **Provincial Level Project (Project Leader)**: *2025 China University Innovation Training Program (province level) for ESGformer*, December 2024
+  * **Project Initiation (Technical Leader)**: *2025 University Student Entrepreneurship Competition for Ecovantage and ESGformer*, March 2025
 
 * **Academic Awards**
   * **Hunan Province Outstanding Student**: April 2023
-  * **Academic Scholarship**: *Central South University of Economics and Law*, November 2024
+  * **Academic Scholarship**: *ZUEL*, November 2024
 
 Service and Leadership
 ======
