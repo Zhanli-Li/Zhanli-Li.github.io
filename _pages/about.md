@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Welcome to Homepage of Zhanli Li"
+title: "Welcome to My Homepage"
 author_profile: true
 redirect_from: 
   - /about/
