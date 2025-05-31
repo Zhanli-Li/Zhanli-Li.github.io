@@ -14,10 +14,10 @@ redirect_from:
 
 💻 Currently, I am an intern working with [Prof. Yixuan Cao](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, where we are building cutting-edge **Document Agent** framework.
 
-🎯 I am eager to pursue a PhD in:
--  Data Science 
--  Statistics 
--  Computer Science 
+🎯 I am eager to pursue a PhD in: 
+-  Computer Science
+-  Data Science
+-  Statistics  
 -  Fintech
 
 💬 If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn
