@@ -57,16 +57,17 @@ Awards and Honors
 ======
 * **Mathematical Competitions**
   * **Third Prize (Team Leader)**: *Asia-Pacific Mathematical Modeling Competition (Chinese Track)*, August 2024
-  * **Provincial Third Prize**: *Hubei Province University Student Mathematics Competition (Non-Mathematics A Category)*, December 2024
+  * **Third Prize**: *Hubei Province University Student Mathematics Competition (Non-Mathematics A Category)*, December 2024
   * **Second Prize (Team Leader)**: *Asia-Pacific Mathematical Modeling Competition*, January 2025
   * **First Prize (Team Leader)**: *Huashu Cup International University Mathematical Modeling Competition*, February 2025
   * **First Prize (Team Leader)**: *Central China Mathematical Modeling Competition*, May 2025
+  * **Second Prize (Team Leader)**: Statistical Modeling Competition (Hubei Province), June 2025
 
-* **Research Competitions**
-  * **Third Prize (Project Leader)**: *38th ZUEL Emprical Research Fund for Applied Microeconometrics*, October 2024
-  * **Completion (Participant)**: *38th ZUEL Empirical Research Fund for Marketing*, October 2024
-  * **Provincial Level Project (Project Leader)**: *2025 China University Innovation Training Program (province level) for ESGformer*, December 2024
-  * **Project Initiation (Technical Leader)**: *2025 University Student Entrepreneurship Competition for Ecovantage and ESGformer*, March 2025
+* **Research and Entrepreneurial Projects**
+  * **Research Project (Project Leader, Third Prize)**: *38th ZUEL Emprical Research Fund for Applied Microeconometrics*, October 2024
+  * **Research Project (Participant, Completion)**: *38th ZUEL Empirical Research Fund for Marketing*, October 2024
+  * **Research Project (Project Leader, In Progress)**: *2025 China University Innovation Training Program (province level) for ESGformer*, December 2024
+  * **Entrepreneurial Project (Technical Leader, Business Application)**: *2025 University Student Entrepreneurship Competition for Ecovantage and ESGformer*, March 2025
 
 * **Academic Awards**
   * **Hunan Province Outstanding Student**: April 2023
