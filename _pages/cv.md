@@ -12,8 +12,8 @@ redirect_from:
 Education
 ======
 * B.S. in Digital Economy, Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL), 2023-2027
-  - **Academic Performance:** *Weighted Average: 92.41/100*, *Rank: 2/81*
-  - **Major Courses:** *Introduction to Python for Data Science (100)*, *Probability and Mathematical Statistics (99)*, *Mathematical Analysis (95.8)*, *Mathematical Modeling (95)*, *Outdoor Sports (99)*
+  - **Academic Performance:** *Weighted Average: 93.04/100*
+  - **Major Courses:** *Introduction to Python for Data Science (100)*, *Data Science and Algorithm (97)*,*Probability and Mathematical Statistics (99)*, *Mathematical Analysis (95.8)*, *Mathematical Modeling (95)*, *Outdoor Sports (99)*
 
 Research Interests
 ======
@@ -83,6 +83,9 @@ Skills
 * Pytorch
 * Transformers
 * Llamaindex
+* Vllm
+* Sklearn
+* Statamodles
 * Latex
 * Ubuntu
 * Tmux
