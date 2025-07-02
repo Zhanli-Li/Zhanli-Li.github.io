@@ -12,7 +12,7 @@ redirect_from:
 
 🎓 From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang](https://www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on  **machine learning**  **microeconometrics**, and  **corporate finance**.
 
-💻 Currently, I am an intern working with [Prof. Yixuan Cao](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, where we are building cutting-edge **Document Agent** framework.
+💻 Currently, I am an intern working with [Prof. Yixuan Cao](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences and [PAI TECH](https://www.paodingai.com/), where we are building **Document Agent** framework.
 
 🎯 I am eager to pursue a PhD in: 
 -  Computer Science
