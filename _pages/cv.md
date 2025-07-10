@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * B.S. in Digital Economy, Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL), 2023-2027
-  - **Academic Performance:** *Weighted Average: 93.04/100*
+  - **Academic Performance:** *Weighted Average: 93.4/100*, *GPA: 3.91/4*
   - **Major Courses:** *Introduction to Python for Data Science (100)*, *Data Science and Algorithm (97)*,*Probability and Mathematical Statistics (99)*, *Mathematical Analysis (95.8)*, *Mathematical Modeling (95)*, *Outdoor Sports (99)*
 
 Research Interests
@@ -57,7 +57,7 @@ Awards and Honors
 ======
 * **Mathematical Competitions**
   * **Third Prize (Team Leader)**: *Asia-Pacific Mathematical Modeling Competition (Chinese Track)*, August 2024
-  * **Third Prize**: *Hubei Province University Student Mathematics Competition (Non-Mathematics A Category)*, December 2024
+  * **Third Prize (Personal Award)**: *Hubei Province University Student Mathematics Competition (Non-Mathematics A Category)*, December 2024
   * **Second Prize (Team Leader)**: *Asia-Pacific Mathematical Modeling Competition*, January 2025
   * **First Prize (Team Leader)**: *Huashu Cup International University Mathematical Modeling Competition*, February 2025
   * **First Prize (Team Leader)**: *Central China Mathematical Modeling Competition*, May 2025
