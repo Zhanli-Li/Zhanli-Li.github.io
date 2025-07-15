@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * B.S. in Digital Economy, Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL), 2023-2027
-  - **Academic Performance:** *Weighted Average: 93.4/100*, *GPA: 3.91/4*
+  - **Academic Performance:** *Weighted Average: 93.4/100*, *GPA: 3.91/4*, *Rank: 1/80*
   - **Major Courses:** *Introduction to Python for Data Science (100)*, *Data Science and Algorithm (97)*,*Probability and Mathematical Statistics (99)*, *Mathematical Analysis (95.8)*, *Mathematical Modeling (95)*, *Outdoor Sports (99)*
 
 Research Interests
