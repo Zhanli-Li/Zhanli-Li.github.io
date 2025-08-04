@@ -81,8 +81,10 @@ Skills
 ======
 * Pytorch
 * Transformers
+* Llamafactory
 * Llamaindex
 * Vllm
+* Verl
 * Sklearn
 * Statamodles
 * Latex
