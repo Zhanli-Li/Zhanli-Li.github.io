@@ -31,7 +31,7 @@ redirect_from:
 
 # News 📧
 - `2025.8.2` One paper about Document-QA was submitted to AAAI26, preprint version coming soon!
-- `2025.8.1` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* was awarded an **outstanding paper** by Tsinghua University (Top 3% in all participants)!
+- `2025.8.1` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* was awarded an **outstanding paper** by [Tsinghua University](https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA) (Top 3% in all participants)!
 - `2025.5.19` I led a team and got first prize of [Central China Mathematical Modeling Competition](http://www.hzbmmc.com/views/award/award-item.html?navigate=inform&id=1923308824495611905) (Top 3% in all teams)!
 - `2025.5.6` [Emotion Classification with Rotated Position Encoding](https://github.com/Zhanli-Li/ROPE-BERT) coding for my coursework open-sourced at GitHub.
 - `2025.4` Start exploring how to use Agents for multi-hop, multi-document quizzes with [Prof. Yixuan Cao](https://yixuancao.github.io/) and [Prof. Ping Luo](https://ping-luo.github.io/).
