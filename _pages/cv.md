@@ -71,6 +71,7 @@ Awards and Honors
   * **Research Project (Participant, Completion)**: *38th ZUEL Empirical Research Fund for Marketing*, October 2024
   * **Research Project (Project Leader, In Progress)**: *2025 China University Innovation Training Program (province level) for ESGformer*, December 2024
   * **Entrepreneurial Project (Technical Leader, Business Application)**: *2025 University Student Entrepreneurship Competition for Ecovantage and ESGformer*, March 2025
+  * **Outstanding Paper (First Author)**: *2025 Workshop of Big Data and Causal Inference in Tsinghua University*
   
 Service and Leadership
 ======
