@@ -14,7 +14,7 @@ redirect_from:
 
 💻 Currently, I am an intern working with [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences and [PAI TECH (庖丁科技)](https://www.paodingai.com/), with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are really committed to building a **multi-document Q&A Agent**.
 
-💡 With the great success of LLMs, there is potential to accomplish many useful downstream applications. However, numerous illusions and security issues exist within this landscape. I hope to realize more trustworthy and secure downstream applications. I hope these applications being training-free (or requiring minimal parameter tuning), with underlying theories that are both intuitive and rigorously sound.
+💡 With the great success of LLMs, there is potential to accomplish many useful downstream applications. However, numerous **hallucinations** and **security** issues exist within this landscape. I hope to realize more **trustworthy** and **secure** downstream applications. I hope these applications being training-free (or requiring minimal parameter tuning), with underlying theories that are both intuitive and rigorously sound.
 
 🎯 I am eager to pursue a PhD in: 
 -  Computer Science
@@ -32,7 +32,7 @@ redirect_from:
 - Applied Microeconometrics
 
 # News 📧
-- `2025.8.2` One paper about Document-QA was submitted to AAAI26, preprint version coming soon!
+- `2025.8.2` One paper about **Document-QA** was submitted to AAAI26, preprint version coming soon!
 - `2025.8.1` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* was awarded an **outstanding paper** by [Tsinghua University](https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA) (Top 3% in all participants)!
 - `2025.5.19` I led a team and got first prize of [Central China Mathematical Modeling Competition](http://www.hzbmmc.com/views/award/award-item.html?navigate=inform&id=1923308824495611905) (Top 3% in all teams)!
 - `2025.5.6` [Emotion Classification with Rotated Position Encoding](https://github.com/Zhanli-Li/ROPE-BERT) coding for my coursework open-sourced at GitHub.
