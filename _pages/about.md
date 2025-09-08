@@ -10,9 +10,11 @@ redirect_from:
 
 👋 Hi, I'm Zhanli Li (李展利), currently pursuing a bachelor's degree in **Digital Economy**  (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law. 
 
-🎓 From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on  **machine learning**  **microeconometrics**, and  **corporate finance**.
+🎓 From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on  **machine learning** and **Applied Microeconometrics**.
 
-💻 Currently, I am an intern working with [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences and [PAI TECH (庖丁科技)](https://www.paodingai.com/), with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are really committed to building a multi-document Q&A Agent.
+💻 Currently, I am an intern working with [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences and [PAI TECH (庖丁科技)](https://www.paodingai.com/), with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are really committed to building a **multi-document Q&A Agent**.
+
+💡 With the great success of LLMs, there is potential to accomplish many useful downstream applications. However, numerous illusions and security issues exist within this landscape. I hope to realize more trustworthy and secure downstream applications. I hope these applications being training-free (or requiring minimal parameter tuning), with underlying theories that are both intuitive and rigorously sound.
 
 🎯 I am eager to pursue a PhD in: 
 -  Computer Science
