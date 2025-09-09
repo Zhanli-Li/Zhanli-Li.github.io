@@ -10,7 +10,7 @@ redirect_from:
 
 👋 Hi, I'm Zhanli Li (李展利), currently pursuing a bachelor's degree in **Digital Economy**  (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law. 
 
-🎓 From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on  **machine learning** and **Applied Microeconometrics**.
+🎓 From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on  **machine learning**, **tabular data** and **applied microeconometrics**.
 
 💻 Currently, I am an intern working with [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences and [PAI TECH (庖丁科技)](https://www.paodingai.com/), with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are really committed to building a **multi-document Q&A Agent**.
 
