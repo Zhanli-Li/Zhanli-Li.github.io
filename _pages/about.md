@@ -22,8 +22,7 @@ redirect_from:
 -  Statistics  
 -  Fintech
 
-💬 If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn
-
+💬 If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
 *🌱 Building AI for a brighter future. Let's connect! 🤝*
 
 # Research Interests 🔍
