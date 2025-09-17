@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "🤗 Welcome to My Homepage!"
+title: "*🌱 Building AI for a brighter future!*"
 author_profile: true
 redirect_from: 
   - /about/
@@ -22,7 +22,7 @@ redirect_from:
 
 💬 If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
 
-*🌱 Building AI for a brighter future. Let's connect! 🤝*
+
 
 # Research Interests 🔍
 - LLM
