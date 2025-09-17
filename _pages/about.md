@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "*🌱 Building AI for a brighter future!*"
+title: "*🌱 Building AI for a brighter future! 🌱*"
 author_profile: true
 redirect_from: 
   - /about/
