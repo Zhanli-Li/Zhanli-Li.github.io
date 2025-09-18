@@ -14,7 +14,7 @@ redirect_from:
 
 💡 With the great success of LLMs, there is potential to accomplish many useful downstream applications. However, numerous **hallucinations** and **security** issues exist within this landscape. I hope to realize more **trustworthy** and **secure** downstream applications. I hope these applications being training-free (or requiring minimal parameter tuning), with underlying theories that are both intuitive and rigorously sound.
 
-🎯 I am eager to pursue a PhD in: 
+🎯 I am currently actively seeking PhD position opportunities in the following fields: 
 -  Computer Science
 -  Data Science
 -  Statistics  
