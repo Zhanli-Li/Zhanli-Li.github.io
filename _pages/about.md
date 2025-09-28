@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "*About Zhanli Li (李展利)*"
+title: "About Zhanli Li (李展利)"
 author_profile: true
 redirect_from: 
   - /about/
