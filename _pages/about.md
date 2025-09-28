@@ -12,7 +12,7 @@ redirect_from:
 
 🎓 From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on  **machine learning**, **tabular data** and **applied microeconometrics**. Currently, I am an intern working with [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences and [PAI TECH (庖丁科技)](https://www.paodingai.com/), with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are really committed to building a **multi-document Q&A Agent**.
 
-💡 With the great success of LLMs, there is potential to accomplish many useful downstream applications. However, numerous **hallucinations** and **security** issues exist within this landscape. I hope to realize more **trustworthy** and **secure** downstream applications. I hope these applications are as universal and interpretable as possible, with underlying theories that are both intuitive and rigorously sound.
+💡 With the great success of LLMs, there is potential to accomplish many useful downstream applications. However, numerous **hallucinations** and **security** issues exist within this landscape. I hope to realize more **trustworthy** and **secure** downstream applications. I hope these applications are as universal and interpretable as possible, with underlying theories that are both intuitive and rigorously sound. 
 
 🎯 I am currently actively seeking PhD position opportunities in the following fields: 
 -  Computer Science
@@ -20,7 +20,7 @@ redirect_from:
 -  Statistics  
 -  Fintech
 
-💬 If you have any ideas about my work or potential collaborations, feel free to reach out via email: lizhanli@stu.zuel.edu.cn.
+💬 Beyond academic research, I also enjoy playing ping pong, throwing a frisbee, taking walks, running, and cycling in my free time. Finally, I welcome all friends interested in my work or seeking potential collaborations to contact me via this email address: lizhanli@stu.zuel.edu.cn
 
 # Research Interests 🔍
 - LLM
