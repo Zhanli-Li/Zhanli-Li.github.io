@@ -27,6 +27,11 @@ redirect_from:
 - Deep Learning
 - Causal Inference
 
+# Selected Publications
+
+- **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/). [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io) *(Under Review in Phase 2) AAAI 26*
+- **[Zhanli Li](https://zhanli-li.github.io)**, & [Zichao Yang](https://yzc.me). [**ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction**](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903) *Finance Research Letters (JCR Q1, IF 6.9)*
+
 # News 📧
 - `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
 - `2025.9` I lead an open-source project for automated outreach, it's [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
