@@ -19,7 +19,7 @@ Research Interests
 ======
 - LLM
 - Deep Learning
-- Applied Microeconometrics
+- Calsual Inference
   
 Research Experiences
 ======
@@ -57,6 +57,7 @@ Awards and Honors
 * **Academic Awards**
   * **Hunan Province Outstanding Student**: April 2023
   * **Academic Scholarship**: *ZUEL*, November 2024
+  * **National Scholarship**：*ZUEL*, October 2025 
 
 * **Mathematical Competitions**
   * **Third Prize (Team Leader)**: *Asia-Pacific Mathematical Modeling Competition (Chinese Track)*, August 2024
@@ -76,7 +77,7 @@ Awards and Honors
 Service and Leadership
 ======
 * **Reviewer**: *Finance Research Letters* 
-* **Leadership**: [ESGformer](https://github.com/Zhanli-Li/ESG-Topic-Model)
+* **Leadership**: [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)  [ESGformer](https://github.com/Zhanli-Li/ESG-Topic-Model)
 
 Skills
 ======
