@@ -19,7 +19,7 @@ Research Interests
 ======
 - LLM
 - Deep Learning
-- Calsual Inference
+- Causual Inference
   
 Research Experiences
 ======
