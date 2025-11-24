@@ -29,6 +29,7 @@ redirect_from:
 
 ## Research Interests 🔍
 - LLM
+- Agentic RL
 - Deep Learning
 - Causal Inference
 
