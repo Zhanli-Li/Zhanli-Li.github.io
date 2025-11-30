@@ -1,12 +1,11 @@
-
 ---
 title: "Fixing Systematic Measurement Error in Two-Way FE and Continuous DID"
-collection: talks
-type: "Talk"
-permalink: /talks/System_error
-venue: "Wenlan School of Business, ZUEL"
 date: 2025-11-30
-location: "Wuhan, China"
+permalink: /posts/2025/11/System_error/
+tags:
+  - econometrics
+  - measurement error
+  - DID
 ---
 
 > **TL;DR:**  
@@ -26,9 +25,9 @@ But in panel data with fixed effects — especially in **two-way FE** or **conti
 
 This post walks through:
 
-1. A simple two-way FE model with a continuous “treatment” and a DID-style interaction.
+1. A simple two-way FE model with a continuous "treatment" and a DID-style interaction.
 2. Three types of **additive systematic measurement error** in the regressor.
-3. When two-way FE is enough, and when it isn’t.
+3. When two-way FE is enough, and when it isn't.
 4. Two equivalent, easy-to-implement fixes:
    - Add `unit × Post` fixed effects.
    - Or, do a **post-period centering** / FWL residualization trick.
@@ -42,7 +41,7 @@ The math is light but explicit, so you can copy-paste the logic into your own wo
 Consider a panel with units $i$ and time $t$. Think of
 
 - $y_{it}$: outcome (e.g., analyst forecast error),
-- $A^*_{it}$: **true** continuous treatment (e.g., “true AIGC rate” in a report),
+- $A^*_{it}$: **true** continuous treatment (e.g., "true AIGC rate" in a report),
 - $POST_t$: post-treatment dummy (e.g., 1 after ChatGPT appears, 0 before),
 - $X_{it}$: controls,
 - $\mu_i$: unit fixed effects,
@@ -63,9 +62,9 @@ $$
 
 Interpretation:
 
-- $\beta_1$ captures the “baseline” association of the treatment.
+- $\beta_1$ captures the "baseline" association of the treatment.
 - $\beta_2$ captures how the effect of $A^*_{it}$ **changes after** $POST_t = 1$.  
-  That’s the continuous-treatment DID piece.
+  That's the continuous-treatment DID piece.
 
 In practice we never see $A^*_{it}$. We see a noisy proxy:
 
@@ -74,13 +73,13 @@ $$
 $$
 
 The question is: **what happens to $\hat\beta_1, \hat\beta_2$ if the measurement error is structured in different ways?**  
-And if it’s bad, can we fix it without heroic assumptions?
+And if it's bad, can we fix it without heroic assumptions?
 
 ---
 
 ## 3. Three types of systematic additive measurement error
 
-We’ll look at three simple but surprisingly general cases:
+We'll look at three simple but surprisingly general cases:
 
 1. **Constant error**  
    $\widehat A_{it} = A^*_{it} + \theta$
@@ -281,7 +280,7 @@ $$
 G_{it} := \mathbb{I}\{i\} \times POST_t
 $$
 
-i.e. “**unit $i$ in the post period**”. The idea is very simple:
+i.e. "**unit $i$ in the post period**". The idea is very simple:
 
 > If the bias lives in the `unit × Post` subspace,  
 > **add that subspace explicitly to the model, or project it out.**
@@ -295,7 +294,7 @@ These give two algebraically equivalent strategies:
 
 ### 4.1 Strategy M1: add unit × Post FE
 
-Augment the model with one dummy for each unit’s post period:
+Augment the model with one dummy for each unit's post period:
 
 $$
 G_{it}^j := \mathbb{I}\{i=j\} \cdot POST_t,\quad j = 1,\dots,N.
@@ -319,7 +318,7 @@ Intuition:
 
 - The spurious term $-\beta_2\theta_i POST_t$ is a **deterministic linear combination** of the $G_{it}^j$.  
   So it gets absorbed into the $\phi_j$'s by OLS.
-- What’s left in $e_{it}$ is just the “good” noise $u_{it}$ (up to innocuous linear transformation).
+- What's left in $e_{it}$ is just the "good" noise $u_{it}$ (up to innocuous linear transformation).
 - As long as the original model (1) satisfied the usual FE assumptions,  
   $\hat\beta_1, \hat\beta_2$ from (4) are **consistent**.
 
@@ -356,7 +355,7 @@ The `id:post` fixed effect is exactly the unit × Post term.
 
 ### 4.2 Strategy M2: post-period centering / FWL residualization
 
-Sometimes you don’t want to literally add thousands of dummies.  
+Sometimes you don't want to literally add thousands of dummies.  
 The Frisch–Waugh–Lovell (FWL) theorem tells you there is an equivalent route:
 
 Residualize all variables with respect to the unit × Post dummies,  
@@ -397,11 +396,11 @@ y^\dagger_{it}
 \tag{5}
 $$
 
-FWL guarantees that $\hat\beta_1, \hat\beta_2$ from (5) are numerically identical to those from (4). You’ve just done the “dummies regression” implicitly.
+FWL guarantees that $\hat\beta_1, \hat\beta_2$ from (5) are numerically identical to those from (4). You've just done the "dummies regression" implicitly.
 
 **Implementation intuition**
 
-In code, you typically don’t implement (5) manually; you let the estimator handle it. But conceptually:
+In code, you typically don't implement (5) manually; you let the estimator handle it. But conceptually:
 
 - M1 = add id×post FE explicitly.
 - M2 = subtract id×post means from all variables and then do a standard FE.
@@ -410,9 +409,9 @@ They are the same for $\beta$.
 
 ---
 
-## 5. How does this relate to “continuous DID”?
+## 5. How does this relate to "continuous DID"?
 
-Everything above was framed in a standard two-way FE regression with an interaction. That’s exactly the continuous DID setting:
+Everything above was framed in a standard two-way FE regression with an interaction. That's exactly the continuous DID setting:
 
 - $A^*_{it}$ is a continuous treatment intensity,
 - $POST_t$ turns on at some date,
@@ -429,16 +428,16 @@ The key takeaways for this context:
 
 From a practice-oriented DID perspective:
 
-- What people often write as “allowing unit-specific post shifts” can be reinterpreted as  
+- What people often write as "allowing unit-specific post shifts" can be reinterpreted as  
   **correcting for unit-specific measurement error that only bites in the post period**.
 
-Which is a nice way to justify those extra fixed effects when your “treatment” is a detector-based index, a noisy score, or any construct where unit-level mis-calibration is plausible.
+Which is a nice way to justify those extra fixed effects when your "treatment" is a detector-based index, a noisy score, or any construct where unit-level mis-calibration is plausible.
 
 ---
 
 ## 6. Recap
 
-Let’s summarize the punchlines:
+Let's summarize the punchlines:
 
 - **Model:**  
   Two-way FE with a continuous regressor $A^*_{it}$ and interaction $A^*_{it} \times POST_t$.
