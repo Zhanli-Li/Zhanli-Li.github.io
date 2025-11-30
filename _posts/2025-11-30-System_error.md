@@ -20,10 +20,7 @@ tags:
 
 ## 1\. Motivation
 
-We all learn early on that classical measurement error in a regressor biases OLS estimates (usually towards zero). However, in panel data with fixed effects—especially in **two-way fixed effects (TWFE)** or **continuous-treatment DiD** models—the story is subtler:
-
-  * Some types of **systematic** measurement error get absorbed by fixed effects.
-  * Others "leak" into interaction terms (like $A^*_{it} \times POST_t$) and bias the parameter of interest.
+We all learn early on that classical measurement error in a regressor biases OLS estimates (usually towards zero). However, in panel data with fixed effects—especially in **two-way fixed effects (TWFE)** or **continuous-treatment DiD** models—the story is subtler:Some types of **systematic** measurement error get absorbed by fixed effects; Others "leak" into interaction terms (like $A^*_{it} \times POST_t$) and bias the parameter of interest.
 
 This post walks through:
 
@@ -40,13 +37,7 @@ The math below is light but explicit, allowing you to adapt the logic to your ow
 
 ## 2\. Baseline Setup: Continuous Treatment + Two-Way FE
 
-Consider a panel with units $i$ and time $t$. Let us define the variables:
-
-  * The outcome $y_{it}$ (e.g., analyst forecast error).
-  * The **true** continuous treatment $A^*_{it}$ (e.g., the true "AIGC adoption rate").
-  * A post-treatment dummy $POST_t$ (e.g., 1 after the release of ChatGPT, 0 before).
-  * A vector of controls $X_{it}$.
-  * Unit fixed effects $\mu_i$ and time fixed effects $\lambda_t$.
+Consider a panel with units $i$ and time $t$. Let us define the variables: The outcome $y_{it}$ (e.g., analyst forecast error); The **true** continuous treatment $A^*_{it}$ (e.g., the true "AIGC adoption rate"); A post-treatment dummy $POST_t$ (e.g., 1 after the release of ChatGPT, 0 before); A vector of controls $X_{it}$; Unit fixed effects $\mu_i$ and time fixed effects $\lambda_t$.
 
 A natural baseline model (continuous-treatment DiD) is given by:
 
@@ -54,10 +45,7 @@ $$
 y_{it} = \alpha + \beta_1 A^*_{it} + \beta_2 (A^*_{it} \times POST_t) + \gamma' X_{it} + \mu_i + \lambda_t + u_{it} \tag{1}
 $$
 
-**Interpretation:**
-
-  * The coefficient $\beta_1$ captures the "baseline" association of the treatment.
-  * The coefficient $\beta_2$ captures how the effect of $A^*_{it}$ **changes after** the event ($POST_t = 1$). This is the core continuous-treatment DiD estimand.
+**Interpretation:** The coefficient $\beta_1$ captures the "baseline" association of the treatment, The coefficient $\beta_2$ captures how the effect of $A^*_{it}$ **changes after** the event ($POST_t = 1$). This is the core continuous-treatment DiD estimand.
 
 In practice, we never observe the true $A^*_{it}$. Instead, we see a noisy proxy:
 
@@ -71,11 +59,7 @@ The critical question is: **What happens to the estimates $\hat\beta_1$ and $\ha
 
 ## 3\. Three Types of Systematic Additive Measurement Error
 
-We analyze three simple but general cases of measurement error structure:
-
-1.  **Constant error:** $\widehat A_{it} = A^*_{it} + \theta$
-2.  **Unit-specific error:** $\widehat A_{it} = A^*_{it} + \theta_i$
-3.  **Time-specific error:** $\widehat A_{it} = A^*_{it} + \theta_t$
+We analyze three simple but general cases of measurement error structure: (1) **Constant error:** $\widehat A_{it} = A^*_{it} + \theta$, (2) **Unit-specific error:** $\widehat A_{it} = A^*_{it} + \theta_i$, (3) **Time-specific error:** $\widehat A_{it} = A^*_{it} + \theta_t$
 
 The key lies in how these errors interact with unit FE ($\mu_i$), time FE ($\lambda_t$), and critically, the interaction term $A^*_{it} \times POST_t$.
 
@@ -129,10 +113,7 @@ $$
 \widehat A_{it} = A^*_{it} + \theta_i
 $$
 
-We have:
-
-  * $A^*_{it} = \widehat A_{it} - \theta_i$
-  * $A^*_{it} POST_t = \widehat A_{it}POST_t - \theta_i POST_t$
+We have: $A^*_{it} = \widehat A_{it} - \theta_i$, $A^*_{it} POST_t = \widehat A_{it}POST_t - \theta_i POST_t$
 
 Plugging into Equation (1):
 
@@ -149,10 +130,7 @@ $$
 y_{it} = \alpha + \beta_1\widehat A_{it} + \beta_2\widehat A_{it}POST_t + \gamma'X_{it} + \tilde\mu_i + \lambda_t + \underbrace{\bigl(u_{it} - \beta_2\theta_i POST_t\bigr)}_{\xi_{it}} \tag{3}
 $$
 
-We observe two key facts:
-
-1.  **Levels are safe:** The unit FE absorbs $\theta_i$ in the main effect. $\beta_1$ is unbiased.
-2.  **Interaction is biased:** The regressor is $\widehat A_{it}POST_t$, which contains $A^*_{it}POST_t + \theta_i POST_t$. The composite error term $\xi_{it}$ contains $-\beta_2\theta_i POST_t$.
+We observe two key facts:(1) **Levels are safe:** The unit FE absorbs $\theta_i$ in the main effect. $\beta_1$ is unbiased. (2) **Interaction is biased:** The regressor is $\widehat A_{it}POST_t$, which contains $A^*_{it}POST_t + \theta_i POST_t$. The composite error term $\xi_{it}$ contains $-\beta_2\theta_i POST_t$.
 
 Because both the regressor and the error term depend on $\theta_i POST_t$, they are correlated:
 
@@ -257,10 +235,7 @@ $$
 
 ## 5\. Connection to "Continuous DiD"
 
-The derivations above are framed as a regression problem, but they describe the exact challenge in **continuous-treatment DiD**:
-
-1.  $A^*_{it}$ is the intensity of treatment.
-2.  $\beta_2$ measures the change in marginal effect after the policy shock.
+The derivations above are framed as a regression problem, but they describe the exact challenge in **continuous-treatment DiD**: $A^*_{it}$ is the intensity of treatment, $\beta_2$ measures the change in marginal effect after the policy shock.
 
 **Key Takeaways for Practitioners:**
 
