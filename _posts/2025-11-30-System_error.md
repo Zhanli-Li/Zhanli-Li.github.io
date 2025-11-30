@@ -1,5 +1,5 @@
 ---
-title: "Fixing Systematic Measurement Error in Two-Way FE and Continuous DID"
+title: "How to Ensure the Consistency of Estimators When Dealing with Systematic Errors in Continuous Variable Systems"
 date: 2025-11-30
 permalink: /posts/2025/11/System_error/
 tags:
@@ -15,438 +15,269 @@ tags:
 
 ---
 
-## 1. Motivation
 
-We all learn early that classical measurement error in a regressor biases OLS.  
-But in panel data with fixed effects — especially in **two-way FE** or **continuous‑treatment DID** — the story is subtler:
+# How to Ensure the Consistency of Estimators When Dealing with Systematic Errors in Continuous Variable Systems
 
-- Some types of **systematic** measurement error get absorbed by fixed effects.
-- Others leak into interaction terms (like $A^*_{it} \times POST_t$) and bias the parameter you actually care about.
+## 1\. Motivation
+
+We all learn early on that classical measurement error in a regressor biases OLS estimates (usually towards zero). However, in panel data with fixed effects—especially in **two-way fixed effects (TWFE)** or **continuous-treatment DiD** models—the story is subtler:
+
+  * Some types of **systematic** measurement error get absorbed by fixed effects.
+  * Others "leak" into interaction terms (like $A^*_{it} \times POST_t$) and bias the parameter of interest.
 
 This post walks through:
 
-1. A simple two-way FE model with a continuous "treatment" and a DID-style interaction.
-2. Three types of **additive systematic measurement error** in the regressor.
-3. When two-way FE is enough, and when it isn't.
-4. Two equivalent, easy-to-implement fixes:
-   - Add `unit × Post` fixed effects.
-   - Or, do a **post-period centering** / FWL residualization trick.
+1.  A simple two-way FE model with a continuous "treatment" and a DiD-style interaction.
+2.  Three types of **additive systematic measurement error** in the regressor.
+3.  When two-way FE is sufficient, and when it fails.
+4.  Two equivalent, easy-to-implement fixes:
+      * Adding `unit × Post` fixed effects.
+      * Using a **post-period centering** (FWL residualization) trick.
 
-The math is light but explicit, so you can copy-paste the logic into your own work.
+The math below is light but explicit, allowing you to adapt the logic to your own research.
 
----
+-----
 
-## 2. Baseline setup: continuous treatment + two-way FE
+## 2\. Baseline Setup: Continuous Treatment + Two-Way FE
 
-Consider a panel with units $i$ and time $t$. Think of
+Consider a panel with units $i$ and time $t$. Let us define the variables:
 
-- $y_{it}$: outcome (e.g., analyst forecast error),
-- $A^*_{it}$: **true** continuous treatment (e.g., "true AIGC rate" in a report),
-- $POST_t$: post-treatment dummy (e.g., 1 after ChatGPT appears, 0 before),
-- $X_{it}$: controls,
-- $\mu_i$: unit fixed effects,
-- $\lambda_t$: time fixed effects.
+  * The outcome $y_{it}$ (e.g., analyst forecast error).
+  * The **true** continuous treatment $A^*_{it}$ (e.g., the true "AIGC adoption rate").
+  * A post-treatment dummy $POST_t$ (e.g., 1 after the release of ChatGPT, 0 before).
+  * A vector of controls $X_{it}$.
+  * Unit fixed effects $\mu_i$ and time fixed effects $\lambda_t$.
 
-A natural baseline model (continuous-treatment DID) is:
-
-$$
-y_{it}
-= \alpha
-+ \beta_1 A^*_{it}
-+ \beta_2 (A^*_{it} \times POST_t)
-+ \gamma' X_{it}
-+ \mu_i + \lambda_t
-+ u_{it}.
-\tag{1}
-$$
-
-Interpretation:
-
-- $\beta_1$ captures the "baseline" association of the treatment.
-- $\beta_2$ captures how the effect of $A^*_{it}$ **changes after** $POST_t = 1$.  
-  That's the continuous-treatment DID piece.
-
-In practice we never see $A^*_{it}$. We see a noisy proxy:
+A natural baseline model (continuous-treatment DiD) is given by:
 
 $$
-\widehat A_{it} = A^*_{it} + \text{(measurement error)}.
+y_{it} = \alpha + \beta_1 A^*_{it} + \beta_2 (A^*_{it} \times POST_t) + \gamma' X_{it} + \mu_i + \lambda_t + u_{it} \tag{1}
 $$
 
-The question is: **what happens to $\hat\beta_1, \hat\beta_2$ if the measurement error is structured in different ways?**  
-And if it's bad, can we fix it without heroic assumptions?
+**Interpretation:**
 
----
+  * The coefficient $\beta_1$ captures the "baseline" association of the treatment.
+  * The coefficient $\beta_2$ captures how the effect of $A^*_{it}$ **changes after** the event ($POST_t = 1$). This is the core continuous-treatment DiD estimand.
 
-## 3. Three types of systematic additive measurement error
+In practice, we never observe the true $A^*_{it}$. Instead, we see a noisy proxy:
 
-We'll look at three simple but surprisingly general cases:
+$$
+\widehat A_{it} = A^*_{it} + \text{Measurement Error}
+$$
 
-1. **Constant error**  
-   $\widehat A_{it} = A^*_{it} + \theta$
-2. **Unit-specific error**  
-   $\widehat A_{it} = A^*_{it} + \theta_i$
-3. **Time-specific error**  
-   $\widehat A_{it} = A^*_{it} + \theta_t$
+The critical question is: **What happens to the estimates $\hat\beta_1$ and $\hat\beta_2$ if the measurement error has specific structures?** If the bias is significant, can we correct it without making heroic assumptions?
 
-The key is how these interact with:
+-----
 
-- unit FE ($\mu_i$),
-- time FE ($\lambda_t$),
-- and especially the interaction $A^*_{it} \times POST_t$.
+## 3\. Three Types of Systematic Additive Measurement Error
 
----
+We analyze three simple but general cases of measurement error structure:
 
-### 3.1 Case 1: Constant error $\widehat A_{it} = A^*_{it} + \theta$
+1.  **Constant error:** $\widehat A_{it} = A^*_{it} + \theta$
+2.  **Unit-specific error:** $\widehat A_{it} = A^*_{it} + \theta_i$
+3.  **Time-specific error:** $\widehat A_{it} = A^*_{it} + \theta_t$
 
-Plug into (1):
+The key lies in how these errors interact with unit FE ($\mu_i$), time FE ($\lambda_t$), and critically, the interaction term $A^*_{it} \times POST_t$.
 
-- $A^*_{it} = \widehat A_{it} - \theta$
-- $A^*_{it} POST_t = (\widehat A_{it} - \theta) POST_t = \widehat A_{it} POST_t - \theta POST_t$.
+### 3.1 Case 1: Constant Error
 
-Substitute:
+Suppose the measurement error is a constant shift:
+
+$$
+\widehat A_{it} = A^*_{it} + \theta
+$$
+
+Substituting $A^*_{it} = \widehat A_{it} - \theta$ into the interaction term, we get:
+
+$$
+A^*_{it} POST_t = (\widehat A_{it} - \theta) POST_t = \widehat A_{it} POST_t - \theta POST_t
+$$
+
+Plugging this back into Equation (1):
 
 $$
 \begin{aligned}
-y_{it}
-&= \alpha
-+ \beta_1(\widehat A_{it}-\theta)
-+ \beta_2(\widehat A_{it}POST_t-\theta POST_t)
-+ \gamma'X_{it}
-+ \mu_i + \lambda_t
-+ u_{it} \\
-&= (\alpha - \beta_1\theta)
-+ \beta_1\widehat A_{it}
-+ \beta_2(\widehat A_{it}POST_t)
-- \beta_2\theta POST_t
-+ \gamma'X_{it}
-+ \mu_i + \lambda_t
-+ u_{it}.
+y_{it} &= \alpha + \beta_1(\widehat A_{it}-\theta) + \beta_2(\widehat A_{it}POST_t-\theta POST_t) + \gamma'X_{it} + \mu_i + \lambda_t + u_{it} \\
+&= (\alpha - \beta_1\theta) + \beta_1\widehat A_{it} + \beta_2(\widehat A_{it}POST_t) - \beta_2\theta POST_t + \gamma'X_{it} + \mu_i + \lambda_t + u_{it}
 \end{aligned}
 $$
 
-Define a *re-centered* time FE
+Notice that the term $-\beta_2\theta POST_t$ depends only on time. We can define a *re-centered* time fixed effect:
 
 $$
-\tilde\lambda_t := \lambda_t - \beta_2\theta POST_t,
+\tilde\lambda_t := \lambda_t - \beta_2\theta POST_t
 $$
 
-and a new intercept $\tilde\alpha := \alpha - \beta_1\theta$. Then
+and a new intercept $\tilde\alpha := \alpha - \beta_1\theta$. The model becomes:
 
 $$
-y_{it}
-= \tilde\alpha
-+ \beta_1\widehat A_{it}
-+ \beta_2(\widehat A_{it}POST_t)
-+ \gamma'X_{it}
-+ \mu_i + \tilde\lambda_t
-+ u_{it}.
+y_{it} = \tilde\alpha + \beta_1\widehat A_{it} + \beta_2(\widehat A_{it}POST_t) + \gamma'X_{it} + \mu_i + \tilde\lambda_t + u_{it} \tag{2}
 $$
 
-This is exactly the same as estimating
+This is functionally identical to estimating the standard model.
+
+**Conclusion (Case 1):**
+If the measurement error is a **constant shift**, and the model includes time fixed effects, the OLS estimates for $\beta_1$ and $\beta_2$ using $\widehat A_{it}$ remain **consistent**. The error is simply absorbed by the intercept and time FEs.
+
+-----
+
+### 3.2 Case 2: Unit-Specific Error
+
+This is the most dangerous case. Suppose the error varies by unit:
 
 $$
-y_{it}
-= a
-+ b_1\widehat A_{it}
-+ b_2(\widehat A_{it}POST_t)
-+ \delta'X_{it}
-+ \mu_i + \lambda_t
-+ \varepsilon_{it},
-\tag{2}
+\widehat A_{it} = A^*_{it} + \theta_i
 $$
 
-just with reparameterized intercept and time FE.
+We have:
 
-**Conclusion (Case 1).**
+  * $A^*_{it} = \widehat A_{it} - \theta_i$
+  * $A^*_{it} POST_t = \widehat A_{it}POST_t - \theta_i POST_t$
 
-- If the only measurement error is a **constant shift** $\theta$,
-- and model (1) is correctly specified, with two-way FE,
-- then FE-OLS estimates of $\beta_1, \beta_2$ using $\widehat A_{it}$ remain **consistent**.
-
-The error just gets absorbed into the intercept and time FE.
-
----
-
-### 3.2 Case 2: Unit-specific error $\widehat A_{it} = A^*_{it} + \theta_i$
-
-This is the interesting (and dangerous) one.
-
-Now:
-
-- $A^*_{it} = \widehat A_{it} - \theta_i$,
-- $A^*_{it} POST_t = \widehat A_{it}POST_t - \theta_i POST_t$.
-
-Plug into (1):
+Plugging into Equation (1):
 
 $$
 \begin{aligned}
-y_{it}
-&= \alpha
-+ \beta_1(\widehat A_{it}-\theta_i)
-+ \beta_2(\widehat A_{it}POST_t-\theta_i POST_t)
-+ \gamma'X_{it}
-+ \mu_i + \lambda_t
-+ u_{it} \\
-&= \alpha - \beta_1\theta_i
-+ \beta_1\widehat A_{it}
-+ \beta_2\widehat A_{it}POST_t
-- \beta_2\theta_i POST_t
-+ \gamma'X_{it}
-+ \mu_i + \lambda_t
-+ u_{it}.
+y_{it} &= \alpha + \beta_1(\widehat A_{it}-\theta_i) + \beta_2(\widehat A_{it}POST_t-\theta_i POST_t) + \gamma'X_{it} + \mu_i + \lambda_t + u_{it} \\
+&= \alpha - \beta_1\theta_i + \beta_1\widehat A_{it} + \beta_2\widehat A_{it}POST_t - \beta_2\theta_i POST_t + \gamma'X_{it} + \mu_i + \lambda_t + u_{it}
 \end{aligned}
 $$
 
-Define
+Let us absorb the level error into the unit fixed effect by defining $\tilde\mu_i := \mu_i - \beta_1\theta_i$. The model becomes:
 
 $$
-\tilde\mu_i := \mu_i - \beta_1\theta_i
+y_{it} = \alpha + \beta_1\widehat A_{it} + \beta_2\widehat A_{it}POST_t + \gamma'X_{it} + \tilde\mu_i + \lambda_t + \underbrace{\bigl(u_{it} - \beta_2\theta_i POST_t\bigr)}_{\xi_{it}} \tag{3}
 $$
 
-and rewrite:
+We observe two key facts:
+
+1.  **Levels are safe:** The unit FE absorbs $\theta_i$ in the main effect. $\beta_1$ is unbiased.
+2.  **Interaction is biased:** The regressor is $\widehat A_{it}POST_t$, which contains $A^*_{it}POST_t + \theta_i POST_t$. The composite error term $\xi_{it}$ contains $-\beta_2\theta_i POST_t$.
+
+Because both the regressor and the error term depend on $\theta_i POST_t$, they are correlated:
 
 $$
-y_{it}
-= \alpha
-+ \beta_1\widehat A_{it}
-+ \beta_2\widehat A_{it}POST_t
-+ \gamma'X_{it}
-+ \tilde\mu_i + \lambda_t
-+ \underbrace{\bigl(u_{it} - \beta_2\theta_i POST_t\bigr)}_{\xi_{it}}.
-\tag{3}
+\operatorname{Cov}(\widehat A_{it}POST_t, \xi_{it}) \neq 0
 $$
 
-We now have two key observations:
+**Conclusion (Case 2):**
+With **unit-specific** additive error, standard two-way FE **does not** fix the bias in $\beta_2$. The continuous DiD effect is generally **inconsistent**.
 
-1. **Unit FE will kill $\theta_i$ in the *level* term.**  
-   After within-transformation, $\theta_i$ no longer appears in $\widehat A_{it}$. So $\beta_1$ is still OK.
-2. But for the interaction:
-   $$
-   \widehat A_{it}POST_t
-   = A^*_{it}POST_t + \theta_i POST_t.
-   $$
-   At the same time, the error term contains $-\beta_2\theta_i POST_t$.  
+-----
 
-   So $\widehat A_{it}POST_t$ and $\xi_{it}$ **share the same $\theta_i POST_t$ component**. That is,
-   $$
-   \operatorname{Cov}(\widehat A_{it}POST_t,\xi_{it}) \neq 0
-   $$
-   whenever $\beta_2 \neq 0$ and $\operatorname{Var}(\theta_i)>0$.
+### 3.3 Case 3: Time-Specific Error
 
-**Conclusion (Case 2).**
-
-- With unit-specific additive measurement error $\theta_i$,
-- two-way FE **does not** fix the bias in $\beta_2$ (the interaction coefficient).
-- The continuous DID effect is **generally inconsistent** if you just regress on $\widehat A_{it}$ and $\widehat A_{it}POST_t$ with unit and time FE.
-
-We need an extra move.
-
----
-
-### 3.3 Case 3: Time-specific error $\widehat A_{it} = A^*_{it} + \theta_t$
-
-This is very similar: for each $t$,
-
-- $A^*_{it} = \widehat A_{it} - \theta_t$,
-- $A^*_{it} POST_t = \widehat A_{it}POST_t - \theta_t POST_t$.
-
-Plug in and collect terms:
+Suppose the error varies only by time:
 
 $$
--\beta_1\theta_t - \beta_2\theta_t POST_t
+\widehat A_{it} = A^*_{it} + \theta_t
 $$
 
-depends only on $t$, so it can be absorbed into a **redefined** time FE:
+Substituting terms, the error components become $-\beta_1\theta_t$ and $-\beta_2\theta_t POST_t$. Since these depend *only* on $t$, they can be fully absorbed into a redefined time fixed effect:
 
 $$
-\tilde\lambda_t
-= \lambda_t - \beta_1\theta_t - \beta_2\theta_t POST_t.
+\tilde\lambda_t = \lambda_t - \beta_1\theta_t - \beta_2\theta_t POST_t
 $$
 
-Again we land in a model of form (2) with the same $\beta_1, \beta_2$.
+**Conclusion (Case 3):**
+Purely **time-specific** additive errors are absorbed by time fixed effects. The estimates $\hat\beta_1$ and $\hat\beta_2$ remain consistent.
 
-**Conclusion (Case 3).**
+-----
 
-- Purely **time-specific additive errors** in the regressor can be absorbed by time FE.
-- $\hat\beta_1, \hat\beta_2$ remain consistent under the usual FE assumptions.
+## 4\. Fixing the Unit-Specific Error: Two Equivalent Tricks
 
----
-
-## 4. Fixing the unit-specific error: two equivalent tricks
-
-The problematic term is $-\beta_2\theta_i POST_t$. It lives in the span of the dummy variables:
+The problematic term in Case 2 is $-\beta_2\theta_i POST_t$. This term exists in the subspace defined by the interaction of unit dummies and the post dummy:
 
 $$
 G_{it} := \mathbb{I}\{i\} \times POST_t
 $$
 
-i.e. "**unit $i$ in the post period**". The idea is very simple:
+This represents "unit $i$ in the post period." The logic for the fix is simple: **If the bias lives in the `unit × Post` subspace, add that subspace to the model or project it out.**
 
-> If the bias lives in the `unit × Post` subspace,  
-> **add that subspace explicitly to the model, or project it out.**
+### 4.1 Strategy M1: Add Unit × Post Fixed Effects
 
-These give two algebraically equivalent strategies:
-
-1. Add **unit × Post fixed effects** (M1).
-2. Or, residualize all variables with respect to those dummies (= **post-period centering**, M2).
-
----
-
-### 4.1 Strategy M1: add unit × Post FE
-
-Augment the model with one dummy for each unit's post period:
+We can explicitly add a dummy for each unit's post period. Let $G_{it}^j = \mathbb{I}\{i=j\} \cdot POST_t$. We estimate:
 
 $$
-G_{it}^j := \mathbb{I}\{i=j\} \cdot POST_t,\quad j = 1,\dots,N.
+y_{it} = \alpha + \beta_1\widehat A_{it} + \beta_2(\widehat A_{it}POST_t) + \gamma'X_{it} + \mu_i + \lambda_t + \sum_{j} \phi_j G_{it}^j + e_{it} \tag{4}
 $$
 
-Estimate
+**Intuition:**
+The spurious term is a deterministic linear combination of $G_{it}^j$, so the OLS estimator absorbs it into the coefficients $\phi_j$. The remaining error $e_{it}$ is clean.
 
-$$
-y_{it}
-= \alpha
-+ \beta_1\widehat A_{it}
-+ \beta_2(\widehat A_{it}POST_t)
-+ \gamma'X_{it}
-+ \mu_i + \lambda_t
-+ \sum_{j} \phi_j G_{it}^j
-+ e_{it}.
-\tag{4}
-$$
-
-Intuition:
-
-- The spurious term $-\beta_2\theta_i POST_t$ is a **deterministic linear combination** of the $G_{it}^j$.  
-  So it gets absorbed into the $\phi_j$'s by OLS.
-- What's left in $e_{it}$ is just the "good" noise $u_{it}$ (up to innocuous linear transformation).
-- As long as the original model (1) satisfied the usual FE assumptions,  
-  $\hat\beta_1, \hat\beta_2$ from (4) are **consistent**.
-
-#### Implementation Sketches
-
-**Stata-style pseudocode**
+**Implementation (Stata):**
 
 ```stata
-* Suppose a_hat is the mismeasured regressor
-* post is the post-treatment dummy
-
+* Generate the interaction
 gen a_post = a_hat * post
 
-* Two-way FE + unit×post
+* Run regression with Unit x Post FE
+* c.id#post creates the unit-specific post dummies
 reghdfe y a_hat a_post X*, absorb(id year c.id#post) vce(cluster id)
 ```
 
-**R (fixest)**
+**Implementation (R - fixest):**
 
 ```r
 library(fixest)
 
 feols(
   y ~ a_hat + I(a_hat * post) + X1 + X2 |
-    id + year + id:post,
+  id + year + id:post,  # id:post adds the FE
   data = panel_df,
   cluster = "id"
 )
 ```
 
-The `id:post` fixed effect is exactly the unit × Post term.
+-----
 
----
+### 4.2 Strategy M2: Post-Period Centering / FWL Residualization
 
-### 4.2 Strategy M2: post-period centering / FWL residualization
+If you prefer not to add thousands of dummies, the Frisch–Waugh–Lovell (FWL) theorem offers an equivalent path: **Residualize all variables with respect to the `unit × Post` dummies.**
 
-Sometimes you don't want to literally add thousands of dummies.  
-The Frisch–Waugh–Lovell (FWL) theorem tells you there is an equivalent route:
-
-Residualize all variables with respect to the unit × Post dummies,  
-then run the regression on the residuals.
-
-Define the projection onto the column space of $G$ (all id×post dummies) as $P_G$, and the residual maker as $M_G = I - P_G$. For any variable $Z$, let
-
-$$
-Z^\dagger := M_G Z.
-$$
-
-Concretely, this becomes a simple post-period centering:
-
-- For each unit $i$, compute its post-period mean $\bar{Z}_{i,\text{post}}$.
-- Then set
+This is effectively a **post-period centering**. For any variable $Z$, we calculate its post-period mean for unit $i$, denoted as $\bar{Z}_{i,\text{post}}$. The transformed variable $Z^\dagger$ is:
 
 $$
 Z^\dagger_{it} =
 \begin{cases}
-Z_{it} - \bar{Z}_{i,\text{post}}, & \text{if } POST_t=1, \\
-Z_{it}, & \text{if } POST_t=0.
+Z_{it} - \bar{Z}_{i,\text{post}} & \text{if } POST_t=1 \\
+Z_{it} & \text{if } POST_t=0
 \end{cases}
 $$
 
-Apply this to all variables in the regression:  
-$(y, \widehat A, \widehat A POST, X)$.
-
-Then estimate the usual two-way FE model on the transformed data:
+We then estimate the standard model on the transformed data:
 
 $$
-y^\dagger_{it}
-= \alpha^\dagger
-+ \beta_1 \widehat A^\dagger_{it}
-+ \beta_2 (\widehat A POST)^\dagger_{it}
-+ \gamma' X^\dagger_{it}
-+ \mu_i^\dagger + \lambda_t^\dagger
-+ \varepsilon^\dagger_{it}.
-\tag{5}
+y^\dagger_{it} = \alpha^\dagger + \beta_1 \widehat A^\dagger_{it} + \beta_2 (\widehat A POST)^\dagger_{it} + \gamma' X^\dagger_{it} + \mu_i^\dagger + \lambda_t^\dagger + \varepsilon^\dagger_{it} \tag{5}
 $$
 
-FWL guarantees that $\hat\beta_1, \hat\beta_2$ from (5) are numerically identical to those from (4). You've just done the "dummies regression" implicitly.
+**Result:** The estimates for $\beta_1$ and $\beta_2$ from Strategy M2 are numerically identical to Strategy M1.
 
-**Implementation intuition**
+-----
 
-In code, you typically don't implement (5) manually; you let the estimator handle it. But conceptually:
+## 5\. Connection to "Continuous DiD"
 
-- M1 = add id×post FE explicitly.
-- M2 = subtract id×post means from all variables and then do a standard FE.
+The derivations above are framed as a regression problem, but they describe the exact challenge in **continuous-treatment DiD**:
 
-They are the same for $\beta$.
+1.  $A^*_{it}$ is the intensity of treatment.
+2.  $\beta_2$ measures the change in marginal effect after the policy shock.
 
----
+**Key Takeaways for Practitioners:**
 
-## 5. How does this relate to "continuous DID"?
+  * If your treatment measure has **constant** or **time-specific** errors, standard two-way FE is safe.
+  * If your treatment measure has **unit-specific** errors (e.g., a detector-based index that is consistently biased high for some firms and low for others), standard estimates of $\beta_2$ are biased.
+  * To fix this, you must control for **unit-specific shifts in the post period** (via explicit FEs or centering).
 
-Everything above was framed in a standard two-way FE regression with an interaction. That's exactly the continuous DID setting:
+This provides a rigorous justification for including `id × post` fixed effects: it is not just "flexibility," it is a correction for unit-specific measurement error that becomes problematic only when interacted with the time dummy.
 
-- $A^*_{it}$ is a continuous treatment intensity,
-- $POST_t$ turns on at some date,
-- $\beta_2$ measures how the marginal effect of the treatment shifts after the policy shock.
+-----
 
-The key takeaways for this context:
+## 6\. Recap
 
-1. If your treatment measure has constant or purely time-specific additive error, two-way FE already absorbs it. No extra work needed.
-2. If your treatment measure has unit-specific additive error, and you interact it with a post dummy, then:
-   - Vanilla two-way FE does not guarantee a consistent estimate of the DID effect $\beta_2$.
-   - You can restore consistency under the same structural assumptions by:
-     - adding unit × post fixed effects (M1), or
-     - equivalently, residualizing with respect to those dummies (M2).
+| Error Structure | Formula | Impact on Standard TWFE | Fix |
+| :--- | :--- | :--- | :--- |
+| **Constant** | $\widehat A_{it} = A^*_{it} + \theta$ | **None.** Absorbed by intercept/time FE. | None needed. |
+| **Time-specific** | $\widehat A_{it} = A^*_{it} + \theta_t$ | **None.** Absorbed by time FE. | None needed. |
+| **Unit-specific** | $\widehat A_{it} = A^*_{it} + \theta_i$ | **Bias.** Interaction term $\beta_2$ is inconsistent. | Add `id × post` FE or use post-period centering. |
 
-From a practice-oriented DID perspective:
-
-- What people often write as "allowing unit-specific post shifts" can be reinterpreted as  
-  **correcting for unit-specific measurement error that only bites in the post period**.
-
-Which is a nice way to justify those extra fixed effects when your "treatment" is a detector-based index, a noisy score, or any construct where unit-level mis-calibration is plausible.
-
----
-
-## 6. Recap
-
-Let's summarize the punchlines:
-
-- **Model:**  
-  Two-way FE with a continuous regressor $A^*_{it}$ and interaction $A^*_{it} \times POST_t$.
-- **Measurement error structures:**
-  - **Constant:** $\widehat A_{it} = A^*_{it} + \theta$ → harmless, absorbed into intercept/year FE.
-  - **Time-specific:** $\widehat A_{it} = A^*_{it} + \theta_t$ → harmless, absorbed into year FE.
-  - **Unit-specific:** $\widehat A_{it} = A^*_{it} + \theta_i$ → dangerous for $\beta_2$, because the interaction picks up $\theta_i POST_t$.
-- **Fix for unit-specific error:**
-  - **Explicit:** add unit × post fixed effects.
-  - **Implicit:** residualize variables with respect to unit × post (FWL / post-period centering).
-
-All of this uses only very standard linear algebra and fixed-effects machinery — no fancy estimators — but it gives you a clean, operational recipe for dealing with structured measurement error in continuous-treatment DID designs.
+This logic uses standard linear algebra and fixed-effects machinery to provide a clean, operational recipe for handling measurement error in modern panel designs.
