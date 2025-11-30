@@ -18,8 +18,6 @@ tags:
 ---
 
 
------
-
 # How to Ensure the Consistency of Estimators When Dealing with Systematic Errors in Continuous Variable Systems
 
 ## 1\. Motivation
