@@ -23,8 +23,8 @@ redirect_from:
 💬 Beyond academic research, I also enjoy playing ping pong, throwing a frisbee, taking walks, running, and cycling in my free time. Finally, I welcome all friends interested in my work or seeking potential collaborations to contact me via this email address: lizhanli@stu.zuel.edu.cn
 
 ## Selected Publications 📓
-- **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian ,[Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/). [**HDReAct: Multi-Turn Hierarchical Document Retrieval and Reasoning**](https://zhanli-li.github.io) *Will submit to ICML 26*
-- **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/). [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io) *Will submit to ACL 26*
+- **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian ,[Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/). [**HDReAct: Multi-Turn Hierarchical Document Retrieval and Reasoning**](https://zhanli-li.github.io) *Will submit to ICML 26* <embed src="files/HDReAct.pdf" type="application/pdf" width="100%" height="600px">
+- **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/). [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io) *Will submit to ACL 26* <embed src="files/new_agent.pdf" type="application/pdf" width="100%" height="600px">
 - **[Zhanli Li](https://zhanli-li.github.io)**, & [Zichao Yang](https://yzc.me). [**ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction**](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903) *Finance Research Letters (JCR Q1, IF 6.9)*
 
 ## Research Interests 🔍
