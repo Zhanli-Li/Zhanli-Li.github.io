@@ -38,7 +38,9 @@ redirect_from:
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, & [Zichao Yang](https://yzc.me).  
   [**ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction**](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903) *Finance Research Letters (JCR Q1, IF 6.9)*
-
+  <div style="text-align:center;">
+    <img src="{{ '/files/ESG.png' | relative_url }}" alt="ESG_TFP" width="50%">
+  </div>
 
 ## Research Interests 🔍
 - LLM
