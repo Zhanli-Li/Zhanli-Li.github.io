@@ -15,5 +15,5 @@ redirect_from:
 </p>
 
 <iframe src="{{ base_path }}/files/CV-Zhanli.pdf" style="width: 100%; min-height: 80vh; border: none;" title="Preview of Zhanli Li CV PDF" aria-label="CV PDF document">
-  <p>Your browser does not support embedded PDFs. Please download the CV to view it: <a href="{{ base_path }}/files/CV-Zhanli.pdf">Download CV</a>.</p>
+  <p>Your browser does not support embedded PDFs. Please <a href="{{ base_path }}/files/CV-Zhanli.pdf">download the CV</a> or open it in a new tab.</p>
 </iframe>
