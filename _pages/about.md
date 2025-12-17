@@ -66,3 +66,10 @@ redirect_from:
 - `2025.3.8` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online.
 - `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
 - `2024.11.4` I was [Finalist of Tsinghua University Big Data and Causal Inference Seminar](https://lcg.tsinghua.edu.cn/info/1022/1852.htm).
+
+## 访客地图 🗺️
+<div style="text-align: center; margin-top: 1rem;">
+  <div style="display: inline-block; max-width: 100%; overflow: hidden; border-radius: 8px;">
+    <script id="_wau7pd">var _wau = _wau || []; _wau.push(["map", "ybl51s1h5v", "classic"]);</script><script async src="https://waust.at/m.js"></script>
+  </div>
+</div>
