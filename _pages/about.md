@@ -68,8 +68,5 @@ redirect_from:
 - `2024.11.4` I was [Finalist of Tsinghua University Big Data and Causal Inference Seminar](https://lcg.tsinghua.edu.cn/info/1022/1852.htm).
 
 ## Vistor 🗺️
-<div style="text-align: center; margin-top: 1rem;">
-  <div style="display: inline-block; max-width: 100%; overflow: hidden; border-radius: 8px;">
-    <script id="_wau7pd">var _wau = _wau || []; _wau.push(["map", "ybl51s1h5v", "classic"]);</script><script async src="https://waust.at/m.js"></script>
-  </div>
-</div>
+
+<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=UZU2bfTZx6Vda78KauTK7MywoMbL4X9qDtrtEHJk7nw"></script>
