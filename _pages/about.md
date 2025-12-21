@@ -14,19 +14,19 @@ redirect_from:
     async defer>
 </script>
 
-👋 Hi, I'm Zhanli Li (李展利), currently pursuing a bachelor's degree in **Digital Economy**  (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL). At ZUEL, I had the privilege of meeting an amazing group of senior students who possess incredible insights into deep learning. Their achievements have inspired me to keep exploring the exciting field of AI, especially [Kaichen Xu (徐恺辰)](https://catchxu.github.io/) and [Yihang Du (杜艺航)](https://yihdu.github.io/), whose accomplishments have shattered the stereotype that ZUEL isn't good at AI work.
-  
-🎓 From 2024 to February 2025, I am honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) of Zhongnan University of Economics and Law. Our research focuses on  **machine learning**, **tabular data** and **applied microeconometrics**. Currently, I am an intern working with [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences and [PAI TECH (庖丁科技)](https://www.paodingai.com/), with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are really committed to building a **multi-document Q&A Agent**.
+👋 Hi, I'm Zhanli Li (李展利), currently pursuing a bachelor's degree in **Digital Economy** (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL). During my time at ZUEL, I've had the privilege of meeting an amazing group of senior students with incredible insights into deep learning. Their achievements have inspired me to explore the exciting field of AI—especially [Kaichen Xu (徐恺辰)](https://catchxu.github.io/) and [Yihang Du (杜艺航)](https://yihdu.github.io/), whose work has powerfully proven the potential of ZUEL students in top-tier AI research.
 
-💡 I am committed to any research with practical significance, meaning that the motivation for research stems from real-world needs or the potential to improve or solve real-world problems. I hope my research can contribute to incremental progress in human society. Currently, with the great success of LLMs, there is potential to accomplish many useful downstream applications. However, numerous **hallucinations** and **security** issues exist within this landscape. The focus of my research is currently on to realize more **trustworthy** and **secure** downstream applications. I hope these applications are as universal and interpretable as possible, with underlying theories that are both intuitive and rigorously sound.
+🎓 From 2024 to February 2025, I was honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) at ZUEL, where our research focused on **machine learning**, **tabular data**, and **applied microeconometrics**. Currently, I am interning with [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, and [PAI TECH (庖丁科技)](https://www.paodingai.com/). Together with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are committed to building a **multi-document Q&A Agent**.
 
-🎯 I am currently actively seeking PhD position opportunities in the following fields: 
--  Computer Science
--  Data Science
--  Statistics  
--  Fintech
+💡 I am committed to research with practical significance, meaning that the motivation stems from real-world needs or the potential to solve tangible problems. Currently, I am dedicated to **LLM-driven document understanding and reasoning**, with a vision to enable models to **read documents like a human**. My research interests specifically span **Agent Reinforcement Learning**, **Representation Learning**, and **Information Retrieval**. I hope my solutions are universal and interpretable, grounded in theories that are both intuitive and rigorously sound.
 
-💬 Beyond academic research, I also enjoy playing ping pong, throwing a frisbee, taking walks, running, and cycling in my free time. Finally, I welcome all friends interested in my work or seeking potential collaborations to contact me via this email address: lizhanli@stu.zuel.edu.cn
+🎯 I am currently actively seeking PhD positions in the following fields:
+- Computer Science
+- Data Science
+- Statistics
+- Fintech
+
+💬 Beyond academic research, I enjoy playing ping pong, throwing a frisbee, taking walks, running, and cycling in my free time. I welcome anyone interested in my work or seeking potential collaborations to reach out via email: lizhanli@stu.zuel.edu.cn
 
 ## Selected Publications 📓
 
