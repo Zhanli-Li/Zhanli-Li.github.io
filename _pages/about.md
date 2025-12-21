@@ -69,4 +69,4 @@ redirect_from:
 
 ## Vistor 🗺️
 
-<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=UZU2bfTZx6Vda78KauTK7MywoMbL4X9qDtrtEHJk7nw"></script>
+<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=FjJWmwPYdXixO3-iVOvojPqj524TD039mxTnZaJEHMo"></script>
