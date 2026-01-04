@@ -20,7 +20,7 @@ redirect_from:
 
 💡 I am committed to research with practical significance, meaning that the motivation stems from real-world needs or the potential to solve tangible problems. Currently, I am dedicated to **LLM-driven document understanding and reasoning**, with a vision to enable models to **read documents like a human**. My research interests specifically span **Agent Reinforcement Learning**, **Representation Learning**, and **Information Retrieval**. I hope my solutions are universal and interpretable, grounded in theories that are both intuitive and rigorously sound.
 
-🎯 I am currently actively seeking PhD positions in the following fields:
+🎯 Although game theory and causal inference have greatly aided my understanding of the world, I currently maintain a neutral stance regarding the rigor and universality of these theories. I do not intend to pursue economics research in the future. Instead, the field of AI is a verifiable domain whose rapid development and swift implementation deeply excite me. This inspires me to dedicate myself to exploring this field in the future, hoping to make a marginal contribution to understanding the world and advancing real-world progress. So I am currently actively seeking PhD positions in the following fields:
 - Computer Science
 - Data Science
 - Statistics
