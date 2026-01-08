@@ -31,13 +31,13 @@ redirect_from:
 ## Selected Publications 📓
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
-  [**HDReAct: Multi-Turn Hierarchical Document Retrieval and Reasoning**](https://zhanli-li.github.io) *Will submit to ICML 26*  
+  [**HDReAct: Multi-Turn Hierarchical Document Retrieval and Reasoning**](https://zhanli-li.github.io) *Will submit to KDD 26*  
   <div style="text-align:center;">
     <img src="{{ '/files/HDReAct_01.png' | relative_url }}" alt="HDReAct paper" width="50%">
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/).  
-  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io) *Will submit to ACL 26*  
+  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io) *Under Review at ARR Jan 26 and will submit to ACL 26*  
   <div style="text-align:center;">
     <img src="{{ '/files/new_agent_01.png' | relative_url }}" alt="MuDABench paper" width="50%">
   </div>
