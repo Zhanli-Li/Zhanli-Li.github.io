@@ -100,8 +100,8 @@
     object-fit: cover;
 
     @include breakpoint($large) {
-      // padding: 5px;
-      // border: 1px solid var(--global-border-color);
+      padding: 5px;
+      border: 1px solid var(--global-border-color);
     }
   }
 }
