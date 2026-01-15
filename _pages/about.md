@@ -73,4 +73,4 @@ I am well aware that it is challenging for an undergraduate economics major to p
 
 ## Vistor 🗺️
 
-<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=FjJWmwPYdXixO3-iVOvojPqj524TD039mxTnZaJEHMo"></script>
+<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=WXSSc628QC23fwsXFrb6F7S0xVGlrpQ6FxN2cjbHc7o&cl=ffffff&w=a"></script>
