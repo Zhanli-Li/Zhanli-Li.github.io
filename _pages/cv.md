@@ -7,7 +7,6 @@ redirect_from:
   - /resume
 ---
 
-*Last Update: 2026.1.1*
 <script
     src="https://chatdoc-studio.test.paodingai.com/chatbot/embed.js"
     data-id="vZDHARVS"
@@ -15,6 +14,8 @@ redirect_from:
 </script>
 
 {% include base_path %}
+
+*Last Update: 2026.1.1*
 
 <p>
   <a class="btn btn--primary" href="{{ base_path }}/files/CV-Zhanli.pdf" download aria-label="Download CV as PDF">Download CV (PDF)</a>
