@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-
+*Last Update: 2026.1.1*
 <script
     src="https://chatdoc-studio.test.paodingai.com/chatbot/embed.js"
     data-id="vZDHARVS"
