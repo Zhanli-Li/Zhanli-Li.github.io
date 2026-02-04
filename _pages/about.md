@@ -29,13 +29,12 @@ redirect_from:
 
 🎶 I am well aware that it is challenging for an undergraduate economics major to pursue a graduate (or PhD) position in computer science, as the lack of systematic CS training is often questioned. Fortunately, I encountered several seniors with similar backgrounds and aspirations. They selflessly shared invaluable experience, helping me avoid many pitfalls. More importantly, their spirit greatly inspired me to persistently pursue my passion, teaching me the profound truth that “Passion is all you need!”
 
-
 💬 Beyond academic research, I enjoy playing ping pong, throwing a frisbee, taking walks, running, and cycling in my free time. I welcome anyone interested in my work or seeking potential collaborations to reach out via email: lizhanli@stu.zuel.edu.cn
 
 ## Selected Publications 📓
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
-  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://zhanli-li.github.io) *Will submit to KDD 26*  
+  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://zhanli-li.github.io) [DeepRead](https://github.com/Zhanli-Li/DeepRead)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)  
   <div style="text-align:center;">
     <img src="{{ '/files/HDReAct_01.png' | relative_url }}" alt="HDReAct paper" width="50%">
   </div>
