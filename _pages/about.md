@@ -34,7 +34,7 @@ redirect_from:
 ## Selected Publications 📓
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
-  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/pdf/2602.05014v1) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)  
+  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)  
   <div style="text-align:center;">
     <img src="{{ '/files/HDReAct_01.png' | relative_url }}" alt="HDReAct paper" width="50%">
   </div>
