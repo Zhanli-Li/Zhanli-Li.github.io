@@ -40,7 +40,7 @@ redirect_from:
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/).  
-  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io) *Under Review at ARR 26 Jan and will submit to ACL 26*  
+  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io)
   <div style="text-align:center;">
     <img src="{{ '/files/new_agent_01.png' | relative_url }}" alt="MuDABench paper" width="50%">
   </div>
