@@ -51,20 +51,12 @@ redirect_from:
     <img src="{{ '/files/ESG.png' | relative_url }}" alt="ESG_TFP" width="75%">
   </div>
 
-## Research Interests 🔍
-- LLM
-- Agentic RL
-- Deep Learning
-- Causal Inference
-
 ## News 📧
+- `2026.2.9` One paper about **Document-QA** was submitted to KDD26.
+- `2026.1.6` One paper about **Document-QA** was submitted to ACL26.
 - `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
 - `2025.9` I lead an open-source project for automated outreach, it's [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
-- `2025.8.2` One paper about **Document-QA** was submitted to AAAI26 (Update: Rejected by AC in phase 2 🥲)
 - `2025.8.1` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* was awarded an **outstanding paper** by [Tsinghua University](https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA) (Top 3% in all participants)!
-- `2025.5.19` I led a team and got first prize of [Central China Mathematical Modeling Competition](http://www.hzbmmc.com/views/award/award-item.html?navigate=inform&id=1923308824495611905) (Top 3% in all teams)!
-- `2025.5.6` [Emotion Classification with Rotated Position Encoding](https://github.com/Zhanli-Li/ROPE-BERT) coding for my coursework open-sourced at GitHub.
-- `2025.4` Start exploring how to use Agents for multi-hop, multi-document quizzes with [Prof. Yixuan Cao](https://yixuancao.github.io/) and [Prof. Ping Luo](https://ping-luo.github.io/).
 - `2025.3.13` I was invited as a reviewer of *Finance Research Letters*.
 - `2025.3.8` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online.
 - `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
