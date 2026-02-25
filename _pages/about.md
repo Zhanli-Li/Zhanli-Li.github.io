@@ -52,7 +52,7 @@ redirect_from:
   </div>
 
 ## News 📧
-- `2026.2.9` One paper about **Document-QA** was submitted to KDD26.
+- `2026.2.9` One paper about **Agentic Search** was submitted to KDD26.
 - `2026.1.6` One paper about **Document-QA** was submitted to ACL26.
 - `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
 - `2025.9` I lead an open-source project for automated outreach, it's [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
