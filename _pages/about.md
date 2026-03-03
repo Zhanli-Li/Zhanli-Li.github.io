@@ -18,7 +18,7 @@ redirect_from:
 
 🎓 From 2024 to February 2025, I was honored to be mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) at ZUEL, where our research focused on causal inference. Currently, I am an intern of [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/) at the Institute of Computing Technology, Chinese Academy of Sciences, and [PAI TECH (庖丁科技)](https://www.paodingai.com/). Together with the advanced PDF parsing model ([PDFlux](https://pdflux.com/en/)) developed by [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team, we are committed to building a **multi-document Q&A Agent**.
 
-<span style="color:red">**Update:** My current internship is drawing to a close. I am now actively seeking new Internship/RA opportunities and potential PhD positions in related fields.</span>
+<span style="color:red">**Update: My current internship is drawing to a close. I am now actively seeking new Internship/RA opportunities and potential PhD positions in related fields.**</span>
 
 💡 I am committed to research with practical significance, meaning that the motivation stems from real-world needs or the potential to solve tangible problems. Currently, I am dedicated to **LLM-driven document understanding and reasoning**, with a vision to enable models to **read documents like a human**. My research interests specifically span **Agentic Reinforcement Learning**, **Representation Learning**, and **Information Retrieval**. I hope my solutions are universal and interpretable, grounded in theories that are both intuitive and rigorously sound.
 
