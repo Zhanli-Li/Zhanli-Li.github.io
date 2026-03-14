@@ -57,7 +57,6 @@ redirect_from:
 - `2025.3.13` I was invited as a reviewer of *Finance Research Letters*.
 - `2025.3.8` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online.
 - `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
-- `2024.11.4` I was [Finalist of Tsinghua University Big Data and Causal Inference Seminar](https://lcg.tsinghua.edu.cn/info/1022/1852.htm).
 
 ## Vistor 🗺️
 
