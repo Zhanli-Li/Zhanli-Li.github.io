@@ -26,7 +26,7 @@ redirect_from:
 
 🎶 I am well aware that it is challenging for an undergraduate economics major to pursue a graduate (or PhD) position in computer science, as the lack of systematic CS training is often questioned. Fortunately, I encountered several seniors with similar backgrounds and aspirations. They selflessly shared invaluable experience, helping me avoid many pitfalls. More importantly, their spirit greatly inspired me to persistently pursue my passion, teaching me the profound truth that “Passion is all you need!”
 
-💬 Beyond academic research, I enjoy playing ping pong, throwing a frisbee, taking walks, running, and cycling in my free time. I welcome anyone interested in my work or seeking potential collaborations to reach out via email: lizhanli@stu.zuel.edu.cn
+💬 Beyond academic research, In my free time, I enjoy playing table tennis, running, and cycling. I also really enjoy playing video games, especially Valorant and MOBA mobile games. I welcome anyone interested in my work or seeking potential collaborations to reach out via email: lizhanli@stu.zuel.edu.cn
 
 ## Selected Publications 📓
 
