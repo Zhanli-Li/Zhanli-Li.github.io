@@ -7,12 +7,6 @@ redirect_from:
   - /resume
 ---
 
-<script
-    src="https://chatdoc-studio.test.paodingai.com/chatbot/embed.js"
-    data-id="vZDHARVS"
-    async defer>
-</script>
-
 {% include base_path %}
 
 *Last Update: 2026.1.1*
