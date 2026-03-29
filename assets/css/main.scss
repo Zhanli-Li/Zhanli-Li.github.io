@@ -41,3 +41,54 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+.pdf-parser {
+  margin-top: 1.5rem;
+}
+
+.pdf-parser__intro {
+  margin-bottom: 1rem;
+}
+
+.pdf-parser__panel {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid #d7dce3;
+  border-radius: 0.75rem;
+  background: #fafbfd;
+}
+
+.pdf-parser__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.pdf-parser__input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.pdf-parser__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.pdf-parser__status {
+  margin: 0;
+  color: #334155;
+}
+
+.pdf-parser__status--error {
+  color: #b42318;
+}
+
+.pdf-parser__output {
+  min-height: 24rem;
+  width: 100%;
+  resize: vertical;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
