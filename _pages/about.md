@@ -1,11 +1,18 @@
 ---
 permalink: /
-title: "Zhanli Li / 李展利"
+title: "About Zhanli Li (李展利)"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+
+<script
+    src="https://chatdoc-studio.test.paodingai.com/chatbot/embed.js"
+    data-id="vZDHARVS"
+    async defer>
+</script>
 
 👋 Hi, I'm Zhanli Li (李展利), currently pursuing a bachelor's degree in **Digital Economy** (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL). During my time at ZUEL, I've had the privilege of meeting an amazing group of senior students with incredible insights into deep learning. Their achievements have inspired me to explore the exciting field of AI—especially [Kaichen Xu (徐恺辰)](https://catchxu.github.io/) and [Yihang Du (杜艺航)](https://yihdu.github.io/), whose work has powerfully proven the potential of ZUEL students in AI research. As of now, my open-source projects have earned [![GitHub Stars](https://img.shields.io/badge/dynamic/json?style=social&logo=github&label=Stars&query=%24.stars&url=https://api.github-star-counter.workers.dev/user/Zhanli-Li)](https://github.com/Zhanli-Li) and my publications as first author have received [![Google Scholar Citations](https://img.shields.io/badge/dynamic/xml?style=social&logo=googlescholar&label=Citations&url=https%3A%2F%2Fscholar.google.com%2Fcitations%3Fuser%3DLW5bAdAAAAAJ%26hl%3Den&query=(%2F%2Ftd%5B%40class%3D%22gsc_rsb_std%22%5D)%5B1%5D)](https://scholar.google.com/citations?user=LW5bAdAAAAAJ&hl=en).
 
@@ -19,7 +26,7 @@ redirect_from:
 
 💬 Beyond academic research, In my free time, I enjoy playing table tennis, running, and cycling. I also really enjoy playing video games, especially Valorant and MOBA mobile games. I welcome anyone interested in my work or seeking potential collaborations to reach out via email: lizhanli@stu.zuel.edu.cn
 
-## Selected Publications
+## Selected Publications 📓
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
   [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)  
@@ -39,7 +46,7 @@ redirect_from:
     <img src="{{ '/files/ESG.png' | relative_url }}" alt="ESG_TFP" width="75%">
   </div>
 
-## News
+## News 📧
 - `2026.2.9` One paper about **Agentic Search** was submitted to KDD26.
 - `2026.1.6` One paper about **Document-QA** was submitted to ACL26.
 - `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
@@ -48,3 +55,7 @@ redirect_from:
 - `2025.3.13` I was invited as a reviewer of *Finance Research Letters*.
 - `2025.3.8` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online.
 - `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
+
+## Vistor 🗺️
+
+<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=080808&w=a&t=tt&d=WXSSc628QC23fwsXFrb6F7S0xVGlrpQ6FxN2cjbHc7o&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
