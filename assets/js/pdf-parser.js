@@ -46,6 +46,29 @@
     });
   };
 
+  const isPendingResult = function (rawText, maybeJson) {
+    const normalizedText = typeof rawText === "string" ? rawText.trim().toLowerCase() : "";
+
+    if (normalizedText === "document parsing has not been completed.") {
+      return true;
+    }
+
+    if (normalizedText === "document parsing has not been completed") {
+      return true;
+    }
+
+    if (maybeJson && maybeJson.data) {
+      const status = typeof maybeJson.data.status === "string" ? maybeJson.data.status.toLowerCase() : "";
+      const markdown = typeof maybeJson.data.markdown === "string" ? maybeJson.data.markdown.trim() : "";
+
+      if ((status === "chunking" || status === "processing" || status === "pending") && !markdown) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
   const fetchMarkdown = async function (uploadId, authHeader) {
     const resultEndpoint = "https://api.chatdoc.studio/v1/pdf/parser/" + encodeURIComponent(uploadId) + "/markdown";
 
@@ -66,6 +89,11 @@
       if (!response.ok) {
         const detail = maybeJson && (maybeJson.detail || maybeJson.message || maybeJson.code);
         throw new Error(detail || "Failed to fetch parsed Markdown.");
+      }
+
+      if (isPendingResult(rawText, maybeJson)) {
+        await wait(pollIntervalMs);
+        continue;
       }
 
       if (typeof rawText === "string" && rawText.trim()) {
