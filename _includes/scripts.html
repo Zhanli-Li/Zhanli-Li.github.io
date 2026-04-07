@@ -1,8 +1,12 @@
-<script src="{{ base_path }}/assets/js/main.min.js"></script>
 <script>
   try {
     localStorage.setItem("theme", "light");
+    document.documentElement.removeAttribute("data-theme");
   } catch (e) {}
+</script>
+<script src="{{ base_path }}/assets/js/main.min.js"></script>
+<script>
+  document.documentElement.removeAttribute("data-theme");
 </script>
 
 {% include analytics.html %}
