@@ -313,34 +313,6 @@
   }
 }
 
-.home-page {
-  font-family: "Comic Sans MS", "Arial Rounded MT Bold", "Verdana", "Segoe Print", "Lucida Handwriting", "Apple Chancery", "Zapfino", sans-serif;
-  font-size: 15px;
-
-  .page__title {
-    font-family: "Permanent Marker", cursive;
-    line-height: 1.15;
-  }
-
-  .page__content h2,
-  .page__content h3,
-  .page__content h4,
-  .page__content h5,
-  .page__content h6,
-  .sidebar h2,
-  .sidebar h3,
-  .sidebar h4,
-  .sidebar h5,
-  .sidebar h6,
-  .sidebar .author__name,
-  .sidebar .author__urls-wrapper,
-  .sidebar .author__urls,
-  .sidebar p,
-  .sidebar li {
-    font-family: "Comic Sans MS", "Arial Rounded MT Bold", "Verdana", "Segoe Print", "Lucida Handwriting", "Apple Chancery", "Zapfino", sans-serif;
-  }
-}
-
 .comment {
   @include clearfix();
   margin: 1em 0;

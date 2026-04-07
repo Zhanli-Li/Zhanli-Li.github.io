@@ -12,7 +12,6 @@ layout: compress
   </head>
 
   {% assign body_classes = "" %}
-  {% if page.url == "/" %}{% assign body_classes = body_classes | append: " home-page" %}{% endif %}
   {% if page.layout %}{% assign body_classes = body_classes | append: " layout--" | append: page.layout %}{% endif %}
   <body{% if body_classes != "" %} class="{{ body_classes | strip }}"{% endif %}>
 

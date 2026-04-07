@@ -14,8 +14,8 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* System typefaces */
-$serif                      : "Times New Roman", "Songti SC", "SimSun", "STSong", "宋体", serif;
-$sans-serif                 : "Times New Roman", "Songti SC", "SimSun", "STSong", "宋体", serif;
+$serif                      : Georgia, Times, serif;
+$sans-serif                 : "Arial Rounded MT Bold", "Verdana", "Comic Sans MS", "Segoe Print", "Lucida Handwriting", "Apple Chancery", "Zapfino", sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */
@@ -59,9 +59,9 @@ $x-large                    : 1280px !default;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow : auto;
-$right-sidebar-width        : auto;
-$right-sidebar-width-wide   : auto;
+$right-sidebar-width-narrow : 0px;
+$right-sidebar-width        : 0px;
+$right-sidebar-width-wide   : 0px;
 
 $susy: (
     columns: 12,

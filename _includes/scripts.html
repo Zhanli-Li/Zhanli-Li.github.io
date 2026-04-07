@@ -1,3 +1,8 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
+<script>
+  try {
+    localStorage.setItem("theme", "light");
+  } catch (e) {}
+</script>
 
 {% include analytics.html %}
