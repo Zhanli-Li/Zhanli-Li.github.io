@@ -43,8 +43,8 @@ redirect_from:
   </div>
 
 ## News 📧
+- `2026.4.6` **MuDABench** was accepted as Findings of ACL 2026!
 - `2026.2.9` One paper about **Agentic Search** was submitted to KDD26.
-- `2026.1.6` One paper about **Document-QA** was submitted to ACL26.
 - `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
 - `2025.9` I lead an open-source project for automated outreach, it's [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
 - `2025.8.1` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* was awarded an **outstanding paper** by [Tsinghua University](https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA) (Top 3% in all participants)!
