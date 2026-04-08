@@ -9,8 +9,8 @@ redirect_from:
 
 
 <script
-    src="https://chatdoc-studio.test.paodingai.com/chatbot/embed.js"
-    data-id="vZDHARVS"
+    src="https://chatdoc.studio/chatbot/embed.js"
+    data-id="hvmg1mRs"
     async defer>
 </script>
 
