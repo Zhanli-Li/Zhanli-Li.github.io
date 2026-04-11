@@ -518,11 +518,11 @@ body.claude-theme .page__footer-copyright {
 }
 
 @media screen and (min-width: 992px) {
-  body.claude-theme .page__content > .claude-section:first-of-type > ul {
+  body.claude-theme .page__content > .claude-section > ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  body.claude-theme .page__content > .claude-section:first-of-type > ul > li {
+  body.claude-theme .page__content > .claude-section > ul > li {
     display: flex;
     flex-direction: column;
   }
