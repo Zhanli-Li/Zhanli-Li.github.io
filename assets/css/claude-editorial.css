@@ -96,45 +96,79 @@ body.claude-theme .masthead {
 }
 
 body.claude-theme .masthead__inner-wrap {
-  padding-top: 0.82rem;
-  padding-bottom: 0.82rem;
-  font-size: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.72rem 1.25rem;
+  font-size: 0.96rem;
   font-weight: 500;
 }
 
+body.claude-theme .masthead__menu {
+  width: 100%;
+}
+
 body.claude-theme .greedy-nav {
+  min-width: 0;
+  width: 100%;
+  background: transparent;
+}
+
+body.claude-theme .masthead__menu-item {
   background: transparent;
 }
 
 body.claude-theme .greedy-nav a {
   color: var(--claude-olive-gray);
+  margin: 0 0.28rem;
+  padding: 0.48rem 0.78rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body.claude-theme .greedy-nav .visible-links a:before {
-  background: rgba(232, 230, 220, 0.95);
+  display: none;
 }
 
-body.claude-theme .greedy-nav a:hover {
+body.claude-theme .greedy-nav a:hover,
+body.claude-theme .greedy-nav a:focus {
+  background: rgba(232, 230, 220, 0.92);
   color: var(--claude-near-black);
 }
 
 body.claude-theme .masthead__menu-item--lg {
-  padding-right: 2rem;
+  padding-right: 0.9rem;
 }
 
 body.claude-theme .masthead__menu-item--lg a {
   color: var(--claude-near-black);
-  font-family: var(--claude-font-serif);
-  font-size: 1.16rem;
-  font-weight: 500;
+  font-family: var(--claude-font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 body.claude-theme .greedy-nav button {
+  top: 50%;
+  min-width: 2.5rem;
+  height: 2.35rem;
+  padding: 0 0.72rem;
   background: var(--claude-warm-sand);
   color: var(--claude-charcoal-warm);
+  border: 0;
   border-radius: 10px;
   box-shadow: 0 0 0 1px var(--claude-ring-warm);
+  transform: translateY(-50%);
+}
+
+body.claude-theme .greedy-nav .navicon,
+body.claude-theme .greedy-nav .navicon:before,
+body.claude-theme .greedy-nav .navicon:after {
+  background: var(--claude-charcoal-warm);
 }
 
 body.claude-theme .greedy-nav button:hover {
@@ -159,7 +193,15 @@ body.claude-theme .greedy-nav .hidden-links:after {
 }
 
 body.claude-theme .greedy-nav .hidden-links li {
+  background: transparent;
   border-bottom: 1px solid var(--claude-border-cream);
+}
+
+body.claude-theme .greedy-nav .hidden-links a {
+  margin: 0;
+  padding: 0.72rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
 }
 
 body.claude-theme #main {
@@ -267,11 +309,11 @@ body.claude-theme .page {
 body.claude-theme .page__title {
   color: var(--claude-near-black);
   font-family: var(--claude-font-serif);
-  font-size: clamp(2rem, 3.8vw, 3.1rem);
+  font-size: clamp(1.85rem, 3.15vw, 2.72rem);
   font-weight: 500;
-  line-height: 1.14;
-  margin-bottom: 1.5rem;
-  max-width: 18ch;
+  line-height: 1.12;
+  margin-bottom: 1.3rem;
+  max-width: 19ch;
 }
 
 body.claude-theme .page__meta,
@@ -388,7 +430,10 @@ body.claude-theme .page__content > .claude-section > h2 {
 }
 
 body.claude-theme .page__content > .claude-section--publications > h2 {
-  max-width: 14ch;
+  font-size: clamp(1.38rem, 2vw, 1.92rem);
+  line-height: 1.16;
+  margin-bottom: 1rem;
+  max-width: none;
 }
 
 body.claude-theme .page__content > .claude-section > p + p {
@@ -450,14 +495,20 @@ body.claude-theme .page__content > .claude-section--dark img {
 body.claude-theme .page__content > .claude-section--publications > ul {
   display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
 }
 
 body.claude-theme .page__content > .claude-section--publications > ul > li {
-  padding: 1.2rem;
+  padding: 1.05rem 1rem 1.1rem;
   border-radius: 18px;
   border: 1px solid var(--claude-border-warm);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 0 1px rgba(209, 207, 197, 0.46);
+}
+
+body.claude-theme .page__content > .claude-section--publications > ul > li p {
+  font-size: 0.98rem;
+  line-height: 1.56;
 }
 
 body.claude-theme .page__content > .claude-section--publications > ul > li > p:first-child {
@@ -467,16 +518,16 @@ body.claude-theme .page__content > .claude-section--publications > ul > li > p:f
 body.claude-theme .page__content > .claude-section--publications > ul > li strong a,
 body.claude-theme .page__content > .claude-section--publications > ul > li a strong {
   font-family: var(--claude-font-serif);
-  font-size: 1.08em;
+  font-size: 1.02em;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 body.claude-theme .page__content > .claude-section--publications > ul > li img:not([src*="shields.io"]) {
   display: block;
   width: 100%;
   max-width: min(100%, 34rem);
-  margin: 1rem auto 0;
+  margin: 0.85rem auto 0;
 }
 
 body.claude-theme .page__content > .claude-section--news > ul {
@@ -579,9 +630,10 @@ body.claude-theme .archive .list__item + .list__item {
 
 body.claude-theme .page__content iframe {
   width: 100%;
-  min-height: min(80vh, 980px);
+  display: block;
+  min-height: clamp(28rem, 62vh, 42rem);
   border: 1px solid var(--claude-border-warm) !important;
-  border-radius: 24px;
+  border-radius: 22px;
   background: var(--claude-white);
   box-shadow: 0 0 0 1px rgba(209, 207, 197, 0.34), var(--claude-shadow-whisper);
 }
@@ -605,7 +657,7 @@ body.claude-theme .page__content .btn--primary:hover {
 }
 
 body.claude-theme .page__content > .claude-section--document {
-  padding-bottom: 1.7rem;
+  padding-bottom: 1.5rem;
 }
 
 body.claude-theme .page__content .social,
@@ -640,10 +692,6 @@ body.claude-theme .page__footer-copyright {
 }
 
 @media screen and (min-width: 992px) {
-  body.claude-theme .page__content > .claude-section--publications > ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   body.claude-theme .page__content > .claude-section--publications > ul > li {
     display: flex;
     flex-direction: column;
@@ -679,16 +727,24 @@ body.claude-theme .page__footer-copyright {
 
 @media screen and (max-width: 640px) {
   body.claude-theme .masthead__inner-wrap {
-    padding: 0.78rem 1rem;
+    padding: 0.72rem 1rem;
   }
 
   body.claude-theme .greedy-nav button {
-    height: 2.25rem;
-    top: 0.1rem;
+    height: 2.2rem;
+    min-width: 2.2rem;
+    padding: 0 0.58rem;
   }
 
   body.claude-theme .masthead__menu-item--lg a {
-    font-size: 1.05rem;
+    font-size: 0.96rem;
+    max-width: 11ch;
+  }
+
+  body.claude-theme .greedy-nav a {
+    margin: 0 0.18rem;
+    padding: 0.42rem 0.58rem;
+    font-size: 0.9rem;
   }
 
   body.claude-theme .page__content p,
@@ -713,5 +769,9 @@ body.claude-theme .page__footer-copyright {
   body.claude-theme .archive__item {
     padding: 1rem;
     border-radius: 18px;
+  }
+
+  body.claude-theme .page__content iframe {
+    min-height: 25rem;
   }
 }
