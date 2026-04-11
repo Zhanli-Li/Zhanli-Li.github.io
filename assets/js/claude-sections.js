@@ -1,4 +1,27 @@
 (function () {
+  function classifySection(section, headingText) {
+    var normalized = headingText.toLowerCase();
+
+    if (normalized.indexOf("publication") !== -1) {
+      section.classList.add("claude-section--publications");
+      return;
+    }
+
+    if (normalized.indexOf("news") !== -1) {
+      section.classList.add("claude-section--news", "claude-section--dark");
+      return;
+    }
+
+    if (normalized.indexOf("vistor") !== -1 || normalized.indexOf("visitor") !== -1) {
+      section.classList.add("claude-section--visitor");
+      return;
+    }
+
+    if (section.dataset.claudeSectionIndex && Number(section.dataset.claudeSectionIndex) % 2 === 1) {
+      section.classList.add("claude-section--dark");
+    }
+  }
+
   function wrapClaudeSections() {
     if (!document.body.classList.contains("claude-theme")) {
       return;
@@ -10,7 +33,7 @@
     }
 
     var headings = Array.prototype.filter.call(content.children, function (node) {
-      return node.tagName === "H2";
+      return node.nodeType === 1 && node.tagName === "H2";
     });
 
     if (!headings.length) {
@@ -22,10 +45,8 @@
     headings.forEach(function (heading, index) {
       var section = document.createElement("section");
       section.className = "claude-section";
-
-      if (index % 2 === 1) {
-        section.classList.add("claude-section--dark");
-      }
+      section.dataset.claudeSectionIndex = String(index);
+      section.dataset.claudeSectionTitle = (heading.textContent || "").trim();
 
       content.insertBefore(section, heading);
       section.appendChild(heading);
@@ -41,6 +62,8 @@
 
         section.appendChild(currentNode);
       }
+
+      classifySection(section, section.dataset.claudeSectionTitle);
     });
   }
 

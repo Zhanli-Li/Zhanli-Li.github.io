@@ -13,6 +13,7 @@ layout: compress
 
   {% assign body_classes = "" %}
   {% if page.layout %}{% assign body_classes = body_classes | append: " layout--" | append: page.layout %}{% endif %}
+  {% if page.claude_theme %}{% assign body_classes = body_classes | append: " claude-theme" %}{% endif %}
   <body{% if body_classes != "" %} class="{{ body_classes | strip }}"{% endif %}>
 
     {% include browser-upgrade.html %}

@@ -2,6 +2,7 @@
 permalink: /
 title: "About Zhanli Li (李展利)"
 author_profile: true
+claude_theme: true
 redirect_from: 
   - /about/
   - /about.html
