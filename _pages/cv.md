@@ -3,6 +3,7 @@ layout: single
 title: "CV"
 permalink: /cv/
 author_profile: true
+claude_theme: true
 redirect_from:
   - /resume
 ---
@@ -17,12 +18,12 @@ redirect_from:
 
 *Last Update: 2026.4.8*
 
-<p>
+<div class="claude-download-group">
   <a class="btn btn--primary" href="{{ base_path }}/files/Zhanli_s_CV.pdf" download aria-label="Download English CV as PDF">Download English CV</a>
   <a class="btn btn--inverse" href="{{ base_path }}/files/Zhanli_s_CV.pdf" target="_blank" rel="noopener" aria-label="Open English CV PDF in a new tab">Open English CV</a>
   <a class="btn btn--primary" href="{{ base_path }}/files/李展利_CV.pdf" download aria-label="下载中文简历 PDF">下载中文简历</a>
   <a class="btn btn--inverse" href="{{ base_path }}/files/李展利_CV.pdf" target="_blank" rel="noopener" aria-label="在新标签页打开中文简历 PDF">打开中文简历</a>
-</p>
+</div>
 
 ## English CV
 

@@ -17,6 +17,11 @@
       return;
     }
 
+    if (normalized.indexOf("cv") !== -1 || normalized.indexOf("resume") !== -1 || normalized.indexOf("简历") !== -1) {
+      section.classList.add("claude-section--document");
+      return;
+    }
+
     if (section.dataset.claudeSectionIndex && Number(section.dataset.claudeSectionIndex) % 2 === 1) {
       section.classList.add("claude-section--dark");
     }

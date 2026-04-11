@@ -236,6 +236,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      claude_theme: true
       read_time: true
       comments: false
       share: false
