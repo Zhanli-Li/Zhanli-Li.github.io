@@ -31,7 +31,7 @@ redirect_from:
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/).  
-  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://zhanli-li.github.io) *Findings of ACL 2026* [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/MuDABench?style=social)](https://github.com/Zhanli-Li/MuDABench)
+  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://arxiv.org/abs/2604.22239v1) *Findings of ACL 2026* [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/MuDABench?style=social)](https://github.com/Zhanli-Li/MuDABench)
   <div style="text-align:center;">
     <img src="{{ '/files/MuDABench.png' | relative_url }}" alt="MuDABench paper" width="50%">
   </div>
