@@ -1,3 +1,109 @@
 {
-  "papers": []
+  "papers": [
+    {
+      "stable_id": "arXiv:2604.26733",
+      "title": "FutureWorld: A Live Environment for Training Predictive Agents with Real-World Outcome Rewards",
+      "authors": [
+        "Zhixin Han",
+        "Yanzhi Zhang",
+        "Chuyang Wei",
+        "Maohang Gao",
+        "Xiawei Yue",
+        "Kefei Chen",
+        "Yu Zhuang",
+        "Haoxiang Guan",
+        "Jiyan He",
+        "Jian Li",
+        "Yitong Duan",
+        "Yu Shi",
+        "Mengting Hu",
+        "Shuxin Zheng"
+      ],
+      "date": "2026-04-29",
+      "source_url": "https://arxiv.org/abs/2604.26733",
+      "fulltext_url": "https://arxiv.org/html/2604.26733",
+      "topics": [
+        "agentic training",
+        "agents"
+      ],
+      "digest": "_posts/2026-04-30-2309-paper-digest.md",
+      "added_at": "2026-04-30 23:09:48 +0800"
+    },
+    {
+      "stable_id": "arXiv:2604.26182",
+      "title": "Lifting Embodied World Models for Planning and Control",
+      "authors": [
+        "Alex N. Wang",
+        "Trevor Darrell",
+        "Pavel Izmailov",
+        "Yutong Bai",
+        "Amir Bar"
+      ],
+      "date": "2026-04-28",
+      "source_url": "https://arxiv.org/abs/2604.26182",
+      "fulltext_url": "https://arxiv.org/html/2604.26182",
+      "topics": [
+        "world models",
+        "embodied agents"
+      ],
+      "digest": "_posts/2026-04-30-2309-paper-digest.md",
+      "added_at": "2026-04-30 23:09:48 +0800"
+    },
+    {
+      "stable_id": "arXiv:2604.26130",
+      "title": "reward-lens: A Mechanistic Interpretability Library for Reward Models",
+      "authors": [
+        "Mohammed Suhail B Nadaf"
+      ],
+      "date": "2026-04-28",
+      "source_url": "https://arxiv.org/abs/2604.26130",
+      "fulltext_url": "https://arxiv.org/html/2604.26130",
+      "topics": [
+        "large model mechanisms",
+        "mechanistic interpretability",
+        "reward models"
+      ],
+      "digest": "_posts/2026-04-30-2309-paper-digest.md",
+      "added_at": "2026-04-30 23:09:48 +0800"
+    },
+    {
+      "stable_id": "arXiv:2604.26382",
+      "title": "Benchmarking Complex Multimodal Document Processing Pipelines: A Unified Evaluation Framework for Enterprise AI",
+      "authors": [
+        "Saurabh K. Singh",
+        "Sachin Raj"
+      ],
+      "date": "2026-04-29",
+      "source_url": "https://arxiv.org/abs/2604.26382",
+      "fulltext_url": "https://arxiv.org/html/2604.26382",
+      "topics": [
+        "document intelligence",
+        "enterprise AI",
+        "RAG evaluation"
+      ],
+      "digest": "_posts/2026-04-30-2309-paper-digest.md",
+      "added_at": "2026-04-30 23:09:48 +0800"
+    },
+    {
+      "stable_id": "arXiv:2604.24067",
+      "title": "DataClaw: An Autonomous Data Agent with Instant Messaging Integration",
+      "authors": [
+        "Huahang Li",
+        "Wentao Hu",
+        "Zhuoyue Wan",
+        "Chen Jason Zhang",
+        "Haoyang Li",
+        "Xiaoyong Wei"
+      ],
+      "date": "2026-04-27",
+      "source_url": "https://arxiv.org/abs/2604.24067",
+      "fulltext_url": "https://arxiv.org/html/2604.24067",
+      "topics": [
+        "data agents",
+        "agent systems"
+      ],
+      "digest": "_posts/2026-04-30-2309-paper-digest.md",
+      "added_at": "2026-04-30 23:09:48 +0800"
+    }
+  ]
 }
