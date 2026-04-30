@@ -101,6 +101,8 @@ def assert_prompt_shape() -> None:
         "主题化标题",
         "机构",
         "核心图表",
+        "临时渲染开放 PDF/HTML 页面",
+        "模拟截图",
         "不要在最终博客里展示 `原文读取状态：fulltext_read`",
         "英文版是 Paper Radar 默认入口",
         "lang: en",

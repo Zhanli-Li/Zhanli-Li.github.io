@@ -40,8 +40,10 @@ For each selected paper produce an internal reading note with:
 Figure guidance:
 
 - Prefer overview diagrams, method figures, key result tables, or important curves.
+- If a figure/table is central to understanding the paper, temporarily render the open PDF/HTML page or make a local ephemeral screenshot/page crop to inspect it closely.
+- Temporary screenshots are analysis artifacts only; do not commit screenshots, PDFs, or large images to the repository.
 - If arXiv HTML exposes stable figure image URLs, use remote URLs in the final Markdown.
-- If no reliable image URL is available, write a short figure pointer such as `Figure 2: ...` or `Table 1: ...`.
+- If no reliable image URL is available, write a short figure pointer such as `Figure 2: ...` or `Table 1: ...`, and summarize what the figure shows based on the temporary inspection.
 - Never fabricate figures or captions.
 
 Writing handoff:
