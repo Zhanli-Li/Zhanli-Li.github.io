@@ -27,19 +27,21 @@ For each selected paper produce an internal reading note with:
 
 - `source_fulltext_url`
 - `read_status`: `fulltext_read`, `partial_read`, or `metadata_only`
+- `one_sentence_idea`
 - `core_question`
-- `method`
-- `evidence`
+- `method`: concrete mechanism, pipeline, training signal, data construction, or evaluation design
+- `evidence`: datasets, benchmarks, baselines, ablations, key tables/curves, and any source-backed numbers
 - `contribution`
 - `limitation`
 - `institutions`
 - `figures`: 1-3 candidates with `label`, `image_url` if reliable, otherwise `source_hint`, and `caption_summary`
+- `visual_claims`: what each figure/table supports and what should be interpreted carefully
 - `relevance`
 - `confidence`
 
 Figure guidance:
 
-- Prefer overview diagrams, method figures, key result tables, or important curves.
+- Prefer the main figure or method overview first, then key result tables/curves, then important ablations or case studies.
 - If a figure/table is central to understanding the paper, render the open PDF/HTML page or make a local screenshot/page crop to inspect it closely.
 - Important screenshots may be committed only under `images/paper-radar/YYYY-MM-DD-HHMM/`.
 - Use short, lowercase, hyphenated filenames such as `futureworld-main-figure.png`.
@@ -52,4 +54,5 @@ Writing handoff:
 
 - Do not expose raw `read_status` labels in the blog.
 - If the reading was partial, explain the limitation naturally.
-- Keep methods and evidence specific enough to show close reading.
+- Hand off enough detail for a mini explainer: the reader should grasp the core idea quickly, then see how the method works and what evidence actually supports it.
+- Keep methods and evidence specific enough to show close reading; do not hand off abstract paraphrases as if they were analysis.

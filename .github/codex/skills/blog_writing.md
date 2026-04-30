@@ -82,11 +82,22 @@ Each paper section must include:
 - date or venue
 - links
 - key figures: 1-3 remote images with captions, or figure/table pointers if images are not reliable
-- summary
-- method and evidence
+- quick idea: one or two sentences that let a reader immediately understand the paper's core move
+- why it matters: the concrete research or product bottleneck the paper addresses
+- method walkthrough: 2-4 concrete steps covering mechanism, system design, training signal, data construction, or evaluation design
+- evidence: source-backed datasets, benchmarks, baselines, ablations, key numbers, result tables, or curves
 - why I care
 - limitations/questions
 - connection to the tracked themes
+
+Depth and figure rules:
+
+- Treat each selected paper as a mini explainer, not an abstract rewrite.
+- Prefer fewer papers with deeper reading over more papers with shallow notes.
+- English paper sections should usually be 450-800 words; Chinese paper sections should usually be 700-1200 Chinese characters.
+- Include or point to the main figure/method diagram whenever possible, plus one key result table/curve when it materially helps the reader.
+- After every image or figure/table pointer, write 2-4 sentences explaining what it shows, which claim it supports, and what caveat matters.
+- If figure extraction is unreliable, use precise pointers such as `Figure 2` or `Table 1` and explain the visual from the inspected source.
 
 Do not expose internal labels:
 

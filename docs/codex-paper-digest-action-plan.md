@@ -190,6 +190,7 @@ Hugging Face papers
 4. 查找机构信息。
 5. 尝试提取 1 到 3 个核心图表候选，包括主图、方法框架图、关键实验表格或重要曲线。
 6. 如果关键图表对理解论文十分重要，可以渲染开放 PDF/HTML、模拟截图或截取页面局部来辅助细读，并把重要截图保存到 `images/paper-radar/YYYY-MM-DD-HHMM/`。
+7. 为每篇论文形成足够写成 mini explainer 的内部笔记：一句话核心 idea、为什么重要、方法拆解、关键证据、图表支撑的 claim、局限和下一步问题。
 
 约束：
 
@@ -223,6 +224,8 @@ Hugging Face papers
 3. 每篇论文包含机构、核心图表或图表线索、方法和证据、局限或疑问。
 4. 文章标题使用本期主题，不用时间。
 5. 文章风格清晰、克制、具体，有真人研究笔记感。
+6. 每篇论文写成有深度的 mini explainer：先让读者快速抓住 idea，再用方法拆解和关键证据提供深度。
+7. 每张核心图或每个 Figure/Table 指针后，都要解释它说明了什么、支撑了哪个 claim、需要谨慎解读什么。
 
 文件名格式：
 
@@ -434,7 +437,9 @@ bundle exec jekyll build
 9. 博客标题是否是主题化标题，而不是日期。
 10. `_data/paper_digest_memory.json` 是否更新了主题线索、open questions 和最近 digest 记录。
 11. 中文和英文摘要是否具体、可信、不过度发挥。
-12. 是否没有泄露任何 API key、token 或 secret。
+12. 每篇论文是否像 mini explainer，而不是摘要改写：有核心 idea、方法拆解、关键证据和作者自己的判断。
+13. 每张图或每个 Figure/Table 指针是否有解释，而不是只贴图。
+14. 是否没有泄露任何 API key、token 或 secret。
 
 ## 风险与控制
 
@@ -513,9 +518,11 @@ bundle exec jekyll build
 7. 每篇论文包含机构信息。
 8. 每篇论文包含核心图表远程图片或图表线索。
 9. 博客标题是主题化标题。
-10. `_data/paper_digest_seen.json` 能记录已收录论文。
-11. `_data/paper_digest_memory.json` 能在每次运行前被 recall，并在运行后更新。
-12. workflow 能自动 commit 并 push。
+10. 每篇论文的讲解能让读者快速抓住 idea，并看到方法机制、关键证据和谨慎判断。
+11. 每张主图、方法图或关键结果图都有具体解读。
+12. `_data/paper_digest_seen.json` 能记录已收录论文。
+13. `_data/paper_digest_memory.json` 能在每次运行前被 recall，并在运行后更新。
+14. workflow 能自动 commit 并 push。
 13. Jekyll 网站可以正常构建。
 14. 生成内容有真实链接、没有明显重复、没有无来源编造。
 15. 不泄露任何 API key、token 或 secret。

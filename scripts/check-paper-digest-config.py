@@ -112,6 +112,12 @@ def assert_prompt_shape() -> None:
         "lang: en",
         "lang: zh",
         "translation_url",
+        "mini explainer",
+        "一句话核心 idea",
+        "方法拆解",
+        "关键证据",
+        "主图 / 方法框架图",
+        "英文版每篇论文建议写 450 到 800 words",
     ]
     for snippet in required_snippets:
         if snippet not in prompt:
