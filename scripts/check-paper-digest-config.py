@@ -85,6 +85,9 @@ def assert_workflow_shape() -> None:
         "CODEX_SANDBOX_MODE: danger-full-access",
         "npm install --no-save @openai/codex-sdk @openai/codex",
         "git add _posts _data images/paper-radar",
+        "git diff --cached --quiet",
+        "git pull --rebase origin master",
+        "git push origin master",
     ]
     for snippet in required_snippets:
         if snippet not in workflow:
