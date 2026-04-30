@@ -12,7 +12,7 @@ File rules:
 - Create English post: `_posts/YYYY-MM-DD-HHMM-paper-radar-en.md`.
 - Create Chinese post: `_posts/YYYY-MM-DD-HHMM-paper-radar-zh.md`.
 - Do not overwrite an existing post.
-- Do not save PDFs, screenshots, or large images to the repo.
+- Do not save PDFs or large images to the repo; only save essential figure/table screenshots under `images/paper-radar/YYYY-MM-DD-HHMM/`.
 
 English front matter:
 
@@ -83,7 +83,7 @@ Each paper section must include:
 - institutions
 - date or venue
 - links
-- key figures: 1-3 remote images with captions, or figure/table pointers if images are not reliable
+- key figures: 1-3 images with captions; every figure/table referenced in text must be shown (remote or local), no pointer-only references
 - quick idea: one or two sentences that let a reader immediately understand the paper's core move
 - why it matters: the concrete research or product bottleneck the paper addresses
 - method walkthrough: 2-4 concrete steps covering mechanism, system design, training signal, data construction, or evaluation design
@@ -97,9 +97,9 @@ Depth and figure rules:
 - Treat each selected paper as a mini explainer, not an abstract rewrite.
 - Prefer fewer papers with deeper reading over more papers with shallow notes.
 - English paper sections should usually be 450-800 words; Chinese paper sections should usually be 700-1200 Chinese characters.
-- Include or point to the main figure/method diagram whenever possible, plus one key result table/curve when it materially helps the reader.
-- After every image or figure/table pointer, write 2-4 sentences explaining what it shows, which claim it supports, and what caveat matters.
-- If figure extraction is unreliable, use precise pointers such as `Figure 2` or `Table 1` and explain the visual from the inspected source.
+- Include the main figure/method diagram whenever possible, plus one key result table/curve when it materially helps the reader; every figure/table mentioned must be embedded as an image.
+- After every image, write 2-4 sentences explaining what it shows, which claim it supports, and what caveat matters.
+- If figure extraction is unreliable, capture a local screenshot or crop from the open PDF/HTML; if you still cannot obtain an image, do not reference that figure/table.
 
 Do not expose internal labels:
 
