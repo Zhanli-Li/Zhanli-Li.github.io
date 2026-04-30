@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-01 02:30:00 +0800",
+  "last_updated": "2026-05-01 03:05:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -22,15 +22,43 @@
         "arxiv:2604.26622"
       ],
       "judgment": "The strongest common pattern is not longer context alone, but explicit state objects that can be generated, checked, retrieved, or distilled."
+    },
+    {
+      "theme": "Closed loops for auditable agents",
+      "summary": "Second issue shifted from static verifier/state papers toward feedback loops and evidence trails: delayed real-world rewards, verifiable RAG traces, data-visualization workflows, and mechanistic probes of post-training damage.",
+      "papers": [
+        "arxiv:2604.26733",
+        "arxiv:2604.26653",
+        "arxiv:2604.25914",
+        "arxiv:2604.26866"
+      ],
+      "judgment": "The useful frontier is not only better agent scores, but loops where rewards, traces, user clarifications, and internal model changes can be audited."
     }
   ],
   "open_questions": [
     "Will synthetic agent-task generators converge on reusable verifier patterns that transfer outside their benchmark harnesses?",
     "Can world-model teachers expose reliability estimates for each generated transition instead of relying mainly on hard filtering?",
     "Can data and document agents move from answer accuracy toward audit trails that survive deployment review?",
-    "How do optical-memory methods behave when one episode mixes tables, code diffs, screenshots, multilingual documents, and UI history?"
+    "How do optical-memory methods behave when one episode mixes tables, code diffs, screenshots, multilingual documents, and UI history?",
+    "Can live prediction environments attach calibrated uncertainty to delayed labels when outcomes are ambiguous or sources conflict?",
+    "Can trace simulators capture messy, contradictory evidence instead of producing overly clean RAG trajectories?",
+    "Can post-training pipelines detect internal knowledge-access damage before it appears as deployment failures?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-01 03:05:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-0305-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-01-0305-zh/",
+      "title_en": "Closed Loops for Auditable Agents",
+      "title_zh": "从闭环反馈到可审计工作流",
+      "covered_papers": [
+        "arxiv:2604.26733",
+        "arxiv:2604.26653",
+        "arxiv:2604.25914",
+        "arxiv:2604.26866"
+      ],
+      "selection_note": "Selected four recent open arXiv papers with stable HTML figures and enough full-text detail for close reading. Deferred official model reports, medical-agent reports, and robotics world-model papers to avoid a diffuse issue."
+    },
     {
       "date": "2026-05-01 02:30:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-0230-en/",
@@ -55,9 +83,37 @@
         "Figures were referenced from arXiv HTML remote image URLs and table pointers; no local screenshots were needed.",
         "The English and Chinese posts are independent rather than one being a direct stub of the other."
       ]
+    },
+    {
+      "date": "2026-05-01",
+      "observations": [
+        "This run avoided repeating the previous verifiable-state framing and instead used closed-loop feedback and auditability as the theme.",
+        "Each selected paper includes at least two embedded figures rather than relying on unshown table pointers.",
+        "The search considered arXiv, Hugging Face Daily Papers, Chinese tech media, community leads, and official lab blogs, but final selection returned to open primary sources.",
+        "The issue still relies on remote arXiv HTML images; local screenshots were not needed because figure URLs were stable and directly embeddable."
+      ]
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-01",
+      "improved": [
+        "Used source-specialized subagents early for academic, Chinese-media, community, and lab-blog leads, then pressure-tested the shortlist against open full text.",
+        "Removed two already-covered watchlist papers from final selection and added seen records immediately after writing.",
+        "Embedded multiple core figures per paper and explained each figure's claim and caveat in both languages."
+      ],
+      "remaining_issues": [
+        "Some high-signal official reports, especially medical and multimodal model reports, were deferred because PDF figure extraction would have made the issue too broad.",
+        "The English and Chinese sections are independently readable, but both remain long because each paper required a mini explainer plus figure notes.",
+        "No local figure crops were produced, so future link stability depends on arXiv HTML image paths."
+      ],
+      "next_run_adjustments": [
+        "Consider one official technical report only if it has a clear primary PDF or HTML with extractable figures and fits the issue theme.",
+        "If a table is central and no image exists, use a local screenshot crop under images/paper-radar rather than describing an unshown table.",
+        "Keep the theme narrow: one loop such as world-action modeling, scientific data agents, or multimodal document agents per issue."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-01",
       "improved": [
@@ -90,11 +146,6 @@
       "reason": "Promising data-engineering/data-agent framing around tests as data quality checks."
     },
     {
-      "id": "arxiv:2604.25914",
-      "title": "DV-World: Benchmarking Data Visualization Agents in Real-World Scenarios",
-      "reason": "Data visualization agent benchmark; useful for tracking data-agent evaluation beyond SQL and table QA."
-    },
-    {
       "id": "technical-report:nvidia-nemotron-3-nano-omni",
       "title": "NVIDIA Nemotron 3 Nano Omni Technical Report",
       "reason": "Official multimodal agent model report; revisit if a future issue covers computer-use/document-intelligence model releases."
@@ -110,11 +161,6 @@
       "reason": "Broad world-model survey with community signal; useful as background but less suited to this issue's primary-paper depth target."
     },
     {
-      "id": "arxiv:2604.26733",
-      "title": "FutureWorld: A Live Environment for Training Predictive Agents with Real-World Outcome Rewards",
-      "reason": "Directly relevant to closed-loop agent training with real-world outcome realization; strong candidate for a future issue on live environments."
-    },
-    {
       "id": "arxiv:2604.24005",
       "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
       "reason": "Targets trajectory-depth instability in multi-turn agent distillation; useful for following agentic training mechanics."
@@ -128,6 +174,31 @@
       "id": "arxiv:2604.26462",
       "title": "A Multistage Extraction Pipeline for Long Scanned Financial Documents",
       "reason": "Practical document-intelligence pipeline for scanned KYC workflows; useful if next issue emphasizes industrial document agents."
+    },
+    {
+      "id": "arxiv:2604.26848",
+      "title": "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+      "reason": "Strong Apr 29 world-model candidate with action-centric spatial-temporal prediction and real-world robotics results."
+    },
+    {
+      "id": "arxiv:2604.26752",
+      "title": "GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents",
+      "reason": "Relevant to multimodal agents over documents, webpages, GUIs, and visual tool use; revisit for a model-report-focused issue."
+    },
+    {
+      "id": "official-report:google-ai-co-clinician",
+      "title": "AI Co-Clinician Technical Report",
+      "reason": "Official Apr 30 medical-agent report with dual-agent consultation architecture; include only with careful clinical caveats and primary-report reading."
+    },
+    {
+      "id": "anthropic:biomysterybench",
+      "title": "BioMysteryBench",
+      "reason": "Official Apr 29 scientific data-agent benchmark with messy real-world bioinformatics tasks; useful for a future scientific-agent issue."
+    },
+    {
+      "id": "arxiv:2604.26180",
+      "title": "Evergreen: Efficient Claim Verification for Semantic Aggregates",
+      "reason": "Data-agent adjacent claim verification over relational/semantic aggregates; pairs well with auditability and data workflow themes."
     }
   ]
 }

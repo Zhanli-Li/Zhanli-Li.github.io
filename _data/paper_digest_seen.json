@@ -47,6 +47,54 @@
         "agent memory",
         "auditable evidence retrieval"
       ]
+    },
+    {
+      "id": "arxiv:2604.26733",
+      "title": "FutureWorld: A Live Environment for Training Predictive Agents with Real-World Outcome Rewards",
+      "canonical_url": "https://arxiv.org/abs/2604.26733",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0305-en/",
+      "themes": [
+        "agentic training",
+        "delayed real-world rewards",
+        "calibrated prediction agents"
+      ]
+    },
+    {
+      "id": "arxiv:2604.26653",
+      "title": "AgentSim: A Platform for Verifiable Agent-Trace Simulation",
+      "canonical_url": "https://arxiv.org/abs/2604.26653",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0305-en/",
+      "themes": [
+        "document intelligence",
+        "RAG agents",
+        "verifiable traces"
+      ]
+    },
+    {
+      "id": "arxiv:2604.25914",
+      "title": "DV-World: Benchmarking Data Visualization Agents in Real-World Scenarios",
+      "canonical_url": "https://arxiv.org/abs/2604.25914",
+      "date": "2026-04-28",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0305-en/",
+      "themes": [
+        "data agents",
+        "visualization workflows",
+        "interactive intent alignment"
+      ]
+    },
+    {
+      "id": "arxiv:2604.26866",
+      "title": "MoRFI: Monotonic Sparse Autoencoder Feature Identification",
+      "canonical_url": "https://arxiv.org/abs/2604.26866",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0305-en/",
+      "themes": [
+        "large model mechanisms",
+        "post-training reliability",
+        "sparse autoencoder analysis"
+      ]
     }
   ]
 }
