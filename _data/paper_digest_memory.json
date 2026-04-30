@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": null,
+  "last_updated": "2026-05-01-0101",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -11,7 +11,49 @@
     ],
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
-  "topic_threads": [],
-  "open_questions": [],
-  "recent_digests": []
+  "topic_threads": [
+    {
+      "theme": "agentic training",
+      "summary": "本期重点从静态 benchmark 转向闭环训练：FutureWorld 使用真实世界延迟结果作为预测智能体奖励，DataPRM 使用可与环境交互的过程奖励监督数据分析智能体。"
+    },
+    {
+      "theme": "world models",
+      "summary": "Lifting Embodied World Models 表明高维低层动作空间会限制规划，可通过视觉 waypoint 等高层动作接口提升可控性和搜索效率。"
+    },
+    {
+      "theme": "document intelligence and agent memory",
+      "summary": "OCR-Memory 将长程交互轨迹渲染为带标记图像，再确定性取回原始文本，强调在 token 预算下保留可追溯证据。"
+    },
+    {
+      "theme": "large model mechanisms",
+      "summary": "RL generalization 论文用 sparse crosscoder 比较 SFT 与 RL 后训练，提出 RL 可能通过重加权紧凑共享特征实现跨任务泛化。"
+    }
+  ],
+  "open_questions": [
+    "FutureWorld 这类真实结果奖励系统如何利用更长延迟才揭晓的样本，而不是在固定回收窗口后丢弃？",
+    "DataPRM 这样的环境感知 verifier 在自身工具调用失败、代码执行异常或数据状态不完整时如何校准奖励？",
+    "OCR-Memory 在真实生产任务中是否能在存储、延迟和可追溯性之间保持优势？",
+    "RL 泛化的紧凑特征解释能否跨更多模型架构、训练目标和解释性工具复现？"
+  ],
+  "recent_digests": [
+    {
+      "id": "2026-05-01-0101",
+      "title_en": "Closed-Loop Agents, Visual Memory, and Mechanistic Post-Training",
+      "title_zh": "从闭环智能体到可追溯数据工作流",
+      "papers": [
+        "arxiv:2604.26733",
+        "arxiv:2604.26182",
+        "arxiv:2604.26622",
+        "arxiv:2604.24198",
+        "arxiv:2604.25011"
+      ],
+      "judgment": "本期不追单点 SOTA，而关注智能体训练闭环、长程记忆保真、世界模型可控接口和 RL 后训练机制之间的共同问题：反馈信号如何进入系统并留下可审计证据。"
+    }
+  ],
+  "next_run_suggestions": [
+    "继续搜索 agentic RL、process reward model、live benchmark、long-horizon agent memory、world model planning、sparse crosscoder 与 post-training mechanisms。",
+    "优先跟进本轮只作为候选热点但未细读的论文或技术报告：X-WAM (arxiv:2604.26694)、SciHorizon-DataEVA (arxiv:2604.26645)、Bian Que (arxiv:2604.26805)、DreamProver (arxiv:2604.26311)、ClawGym (arxiv:2604.26904)、GLM-5V-Turbo (arxiv:2604.26752)、MiniCPM-o 4.5、TIDE (arxiv:2604.26951)。",
+    "下次也检查官方实验室报告线索：Google DeepMind AI co-clinician、Google Empirical Research Assistance、Anthropic BioMysteryBench、Anthropic Project Deal、Stanford In-the-Flow Agentic System Optimization。",
+    "检查是否出现 FutureWorld/DataPRM/OCR-Memory 的后续代码、数据集或复现实验。"
+  ]
 }
