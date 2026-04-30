@@ -23,6 +23,7 @@ date: YYYY-MM-DD HH:MM:SS +0800
 permalink: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-en/
 lang: en
 translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-zh/
+author_profile: false
 tags:
   - paper-digest
   - paper-radar
@@ -41,6 +42,7 @@ date: YYYY-MM-DD HH:MM:SS +0800
 permalink: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-zh/
 lang: zh
 translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-en/
+author_profile: false
 tags:
   - paper-digest
   - paper-radar

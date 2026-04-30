@@ -112,6 +112,7 @@ def assert_prompt_shape() -> None:
         "lang: en",
         "lang: zh",
         "translation_url",
+        "author_profile: false",
         "mini explainer",
         "一句话核心 idea",
         "方法拆解",
@@ -126,6 +127,7 @@ def assert_prompt_shape() -> None:
 
 def assert_paper_radar_page_shape() -> None:
     page = (ROOT / "_pages/paper-radar.html").read_text(encoding="utf-8")
+    year_archive = (ROOT / "_pages/year-archive.html").read_text(encoding="utf-8")
     include = (ROOT / "_includes/archive-single-paper-radar.html").read_text(
         encoding="utf-8",
     )
@@ -143,6 +145,8 @@ def assert_paper_radar_page_shape() -> None:
     for snippet in page_snippets:
         if snippet not in page:
             raise SystemExit(f"Paper Radar page missing expected snippet: {snippet}")
+    if "post.tags contains 'paper-digest'" not in year_archive:
+        raise SystemExit("Year archive must filter Paper Radar posts out of the general blog archive")
     if "where_exp" in page:
         raise SystemExit("Paper Radar page must not use where_exp; GitHub Pages Liquid rejects complex expressions here")
     for snippet in include_snippets:

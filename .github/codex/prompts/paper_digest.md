@@ -28,8 +28,8 @@
 6. 对最终确定要汇报的论文，获取可合法访问的原文或全文页面，并进行细读。博客必须基于细读结果，而不只是摘要页；不要把摘要改写成博客。
 7. 避免重复收录已出现在 _data/paper_digest_seen.json 或历史 _posts 中的论文。
 8. 在 _posts/ 下创建两篇 Markdown：一篇英文版，一篇中文版。英文和中文必须是两个独立文件，不要在同一个 Markdown 里上下拼接。
-9. 英文版是 Paper Radar 默认入口，文件名用 `YYYY-MM-DD-HHMM-paper-radar-en.md`，front matter 必须有 `lang: en` 和 `translation_url` 指向中文 permalink。
-10. 中文版文件名用 `YYYY-MM-DD-HHMM-paper-radar-zh.md`，front matter 必须有 `lang: zh` 和 `translation_url` 指向英文 permalink。
+9. 英文版是 Paper Radar 默认入口，文件名用 `YYYY-MM-DD-HHMM-paper-radar-en.md`，front matter 必须有 `lang: en`、`translation_url` 指向中文 permalink，并设置 `author_profile: false`。
+10. 中文版文件名用 `YYYY-MM-DD-HHMM-paper-radar-zh.md`，front matter 必须有 `lang: zh`、`translation_url` 指向英文 permalink，并设置 `author_profile: false`。
 11. 两篇文章标题都必须是主题化标题，不能用时间作为标题主体。例如英文标题可以围绕 “Closed-Loop Agents and Auditable Data Workflows”，中文标题可以围绕“从闭环智能体到可审计数据流”。
 12. 每篇论文必须展示作者机构或主要机构；如果公开页面没有机构信息，写“机构：未注明”或 “Institutions: not specified”，不要编造。
 13. 每篇论文都要写成一个有深度的 mini explainer，让读者先快速抓住 idea，再获得足够的方法和证据细节。每篇论文至少覆盖：
