@@ -67,6 +67,9 @@ def assert_memory_shape() -> None:
     for snippet in required_snippets:
         if snippet not in style:
             raise SystemExit(f"Memory style preference missing expected snippet: {snippet}")
+    for key in ["quality_feedback", "evolution_log"]:
+        if key not in memory or not isinstance(memory[key], list):
+            raise SystemExit(f"Memory missing list field: {key}")
 
 
 def assert_workflow_shape() -> None:
@@ -119,6 +122,10 @@ def assert_prompt_shape() -> None:
         "关键证据",
         "主图 / 方法框架图",
         "英文版每篇论文建议写 450 到 800 words",
+        "自进化分析",
+        "质量反馈",
+        "演化日志",
+        "不得降低安全要求",
     ]
     for snippet in required_snippets:
         if snippet not in prompt:

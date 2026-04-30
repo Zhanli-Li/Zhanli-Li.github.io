@@ -24,13 +24,14 @@ _data/paper_digest_memory.json
 
 Action 调用 Codex SDK，让 Codex 自动完成以下工作：
 
-1. Recall 历史论文速读、主题偏好和未完成问题。
-2. 搜索近期论文。
-3. 筛选最值得关注的论文。
-4. 对确定要汇报的论文获取可合法访问的原文或全文页面，并进行细读。
-5. 生成英文版和中文版两个独立 Jekyll Markdown 博客，标题用本期主题，不用时间命名。
-6. 更新去重记录和长期研究记忆。
-7. 自动提交到仓库。
+1. Recall 历史论文速读、主题偏好、未完成问题、质量反馈和演化日志。
+2. 基于过去推送做自进化分析，把历史反馈转化成本次搜索、筛选、图表和写作策略。
+3. 搜索近期论文。
+4. 筛选最值得关注的论文。
+5. 对确定要汇报的论文获取可合法访问的原文或全文页面，并进行细读。
+6. 生成英文版和中文版两个独立 Jekyll Markdown 博客，标题用本期主题，不用时间命名。
+7. 更新去重记录、长期研究记忆、质量反馈和下一轮自进化提示。
+8. 自动提交到仓库。
 
 每次运行开始时，Codex 还会先检查 SkillHub CLI 是否可用；如果没有安装，会按 SkillHub 官方 CLI-only 安装方式安装 CLI，然后安装 `multi-search-engine`、`arxiv`、`humanizer`、`pdf` 四个技能。这个步骤失败时不阻断 Paper Radar，会回退到仓库内置 skills。
 
@@ -209,11 +210,13 @@ Hugging Face papers
 职责：
 
 1. 每次运行开始前读取 `_data/paper_digest_memory.json`。
-2. Recall 历史 digest、topic threads、open questions。
-3. 在本次搜索和写作中延续值得追踪的问题。
-4. 运行结束后更新长期记忆。
+2. Recall 历史 digest、topic threads、open questions、quality feedback 和 evolution log。
+3. 搜索前做自进化分析：识别重复选题、过浅解读、图表使用不足、来源缺口和中英文写作问题。
+4. 将自进化分析转化成本次搜索优先级、筛选 rubric、深读目标、图表目标和写作注意事项。
+5. 在本次搜索和写作中延续值得追踪的问题。
+6. 运行结束后更新长期记忆、质量反馈和演化日志。
 
-记忆文件只保存短摘要、稳定 ID、主题标签和判断，不保存论文全文。
+记忆文件只保存短摘要、稳定 ID、主题标签、质量反馈和判断，不保存论文全文。自进化只用于提升研究和写作策略，不能降低安全要求、来源要求、secret 处理或 workflow 权限约束。
 
 ### blog_writing
 
@@ -386,7 +389,9 @@ _data/paper_digest_memory.json
   },
   "topic_threads": [],
   "open_questions": [],
-  "recent_digests": []
+  "recent_digests": [],
+  "quality_feedback": [],
+  "evolution_log": []
 }
 ```
 
@@ -436,10 +441,12 @@ bundle exec jekyll build
 8. 每篇论文是否有核心图表远程图片或可靠图表线索。
 9. 博客标题是否是主题化标题，而不是日期。
 10. `_data/paper_digest_memory.json` 是否更新了主题线索、open questions 和最近 digest 记录。
-11. 中文和英文摘要是否具体、可信、不过度发挥。
-12. 每篇论文是否像 mini explainer，而不是摘要改写：有核心 idea、方法拆解、关键证据和作者自己的判断。
-13. 每张图或每个 Figure/Table 指针是否有解释，而不是只贴图。
-14. 是否没有泄露任何 API key、token 或 secret。
+11. `_data/paper_digest_memory.json` 是否更新了 quality_feedback 和 evolution_log。
+12. 本期是否明显吸收了过去推送的质量反馈，而不是机械重复上一期结构和选题。
+13. 中文和英文摘要是否具体、可信、不过度发挥。
+14. 每篇论文是否像 mini explainer，而不是摘要改写：有核心 idea、方法拆解、关键证据和作者自己的判断。
+15. 每张图或每个 Figure/Table 指针是否有解释，而不是只贴图。
+16. 是否没有泄露任何 API key、token 或 secret。
 
 ## 风险与控制
 
