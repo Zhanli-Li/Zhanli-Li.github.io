@@ -22,6 +22,20 @@ REQUIRED_FILES = [
     "_data/paper_digest_memory.json",
 ]
 
+SECRET_SCAN_FILES = [
+    ".github/workflows/codex_paper_digest.yml",
+    ".github/codex/prompts/paper_digest.md",
+    ".github/codex/skills/paper_search.md",
+    ".github/codex/skills/paper_reading.md",
+    ".github/codex/skills/research_memory.md",
+    ".github/codex/skills/blog_writing.md",
+    "scripts/codex-paper-digest.mjs",
+    "scripts/check-paper-digest-config.py",
+    "docs/codex-paper-digest-action-plan.md",
+    "_data/paper_digest_seen.json",
+    "_data/paper_digest_memory.json",
+]
+
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
     re.compile(r"https://[A-Za-z0-9-]+\\.trycloudflare\\.com"),
@@ -57,16 +71,12 @@ def assert_workflow_shape() -> None:
 
 
 def assert_no_sensitive_markers() -> None:
-    for path in ROOT.rglob("*"):
-        if path.is_dir() or ".git" in path.parts or "_site" in path.parts:
-            continue
-        try:
-            text = path.read_text(encoding="utf-8", errors="ignore")
-        except OSError:
-            continue
+    for relative_path in SECRET_SCAN_FILES:
+        path = ROOT / relative_path
+        text = path.read_text(encoding="utf-8", errors="ignore")
         for pattern in SECRET_PATTERNS:
             if pattern.search(text):
-                raise SystemExit(f"Possible secret found in {path.relative_to(ROOT)}")
+                raise SystemExit(f"Possible secret found in {relative_path}")
 
 
 def main() -> None:

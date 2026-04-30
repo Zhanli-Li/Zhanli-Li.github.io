@@ -28,11 +28,11 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install Codex SDK
-        run: npm install @openai/codex-sdk @openai/codex
-
       - name: Check digest configuration
         run: python3 scripts/check-paper-digest-config.py
+
+      - name: Install Codex SDK
+        run: npm install @openai/codex-sdk @openai/codex
 
       - name: Run Codex paper digest
         env:
