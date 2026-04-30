@@ -74,7 +74,7 @@ def assert_workflow_shape() -> None:
         encoding="utf-8",
     )
     required_snippets = [
-        'cron: "17 */8 * * *"',
+        'cron: "0 0 * * *"',
         "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}",
         "OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}",
         "CODEX_MODEL: gpt-5.5",

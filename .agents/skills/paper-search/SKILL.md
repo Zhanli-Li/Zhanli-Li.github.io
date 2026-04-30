@@ -21,7 +21,7 @@ Workflow:
 2. Build a dedup set from DOI, arXiv ID, OpenReview ID, Semantic Scholar ID, canonical URL, and normalized title.
 3. Search by topic, not one broad query.
 4. Prefer arXiv, Semantic Scholar, OpenReview, Papers with Code, Hugging Face papers, official conference pages, author pages, and university/lab pages.
-5. Prefer the newest 8 hours; expand to 3 days, then 7 days only if needed.
+5. Prefer the newest 24 hours; expand to 3 days, then 7 days only if needed.
 6. Shortlist 8-15 candidates, then select 3-5 papers worth reporting.
 
 For each candidate capture:

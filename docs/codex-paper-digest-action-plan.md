@@ -2,7 +2,7 @@
 
 ## 当前实现
 
-这个仓库已经按本方案落地了一个 MVP：GitHub Action 每 8 小时运行一次，调用 Codex SDK，让 Codex 搜索、细读并生成一组可以直接发布的 Paper Radar 论文速读博客。每期输出英文和中文两个独立 Markdown，Paper Radar 页面默认展示英文入口。
+这个仓库已经按本方案落地了一个 MVP：GitHub Action 每天北京时间 08:00 运行一次，调用 Codex SDK，让 Codex 搜索、细读并生成一组可以直接发布的 Paper Radar 论文速读博客。每期输出英文和中文两个独立 Markdown，Paper Radar 页面默认展示英文入口。
 
 实现文件：
 
@@ -47,10 +47,10 @@ _posts/2026-05-04-0617-paper-radar-zh.md
 
 ```yaml
 schedule:
-  - cron: "17 */8 * * *"
+  - cron: "0 0 * * *"
 ```
 
-这表示 UTC 每 8 小时运行一次，分别约为北京时间 00:17、08:17、16:17。
+这表示 UTC 每天 00:00 运行一次，对应北京时间每天 08:00。
 
 默认模型配置：
 
@@ -95,7 +95,7 @@ Settings -> Secrets and variables -> Actions -> New repository secret
 
 搜索优先级：
 
-1. 最近 8 小时内的新内容。
+1. 最近 24 小时内的新内容。
 2. 若不足，扩展到最近 3 天。
 3. 若仍不足，扩展到最近 7 天。
 
@@ -293,7 +293,7 @@ name: Codex Paper Digest
 
 on:
   schedule:
-    - cron: "17 */8 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -472,7 +472,7 @@ bundle exec jekyll build
 
 1. 每次最终细读 3 到 5 篇论文。
 2. prompt 和 skills 保持简洁。
-3. 如果 8 小时频率成本偏高，可改成 12 小时或每日一次。
+3. 如果每日频率成本偏高，可改成隔日或每周固定日期运行。
 
 ### 长期记忆膨胀
 
@@ -505,7 +505,7 @@ bundle exec jekyll build
 实现完成后，应该满足：
 
 1. GitHub Action 可以手动触发。
-2. 定时任务可以每 8 小时自动运行。
+2. 定时任务可以每天北京时间 08:00 自动运行。
 3. Codex 能读取 `paper_search`、`paper_reading`、`research_memory` 和 `blog_writing` 四个技能。
 4. Codex 能生成一组有效的英文/中文 Jekyll 博客。
 5. Paper Radar 导航页可以访问 `/paper-radar/`。
