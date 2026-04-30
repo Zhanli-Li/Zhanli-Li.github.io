@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-04-30T23:53:00+08:00",
+  "last_updated": null,
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -11,55 +11,7 @@
     ],
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
-  "topic_threads": [
-    {
-      "theme": "agentic training as closed-loop executable systems",
-      "summary": "Recent papers are moving agent training away from static QA and toward executable environments: ClawGym uses local workspace tasks with code/rubric verifiers; FutureWorld uses real-world delayed outcomes and probabilistic rewards.",
-      "paper_ids": [
-        "arxiv:2604.26904",
-        "arxiv:2604.26733"
-      ]
-    },
-    {
-      "theme": "world models as training-time teachers",
-      "summary": "World2VLM treats a controllable world model as a source of action-conditioned transition supervision, suggesting a path where imagination is distilled into VLM parameters instead of invoked at every inference step.",
-      "paper_ids": [
-        "arxiv:2604.26934"
-      ]
-    },
-    {
-      "theme": "auditable data and document intelligence",
-      "summary": "DataPRM argues data agents need environment-aware process verifiers that can catch silent errors and avoid punishing recoverable exploration. EnterpriseDocBench shifts document AI evaluation from single answers to parsing-indexing-retrieval-generation pipelines and highlights answer completeness as a deployment risk.",
-      "paper_ids": [
-        "arxiv:2604.24198",
-        "arxiv:2604.26382"
-      ]
-    }
-  ],
-  "open_questions": [
-    "Can agent verifiers avoid becoming shortcuts that models learn to satisfy without completing the real task?",
-    "How should world-model teacher reliability be estimated per sample and per task before distillation?",
-    "For live prediction environments, how should delayed or unresolved outcomes be retained instead of discarded?",
-    "In document intelligence, how should answer completeness and auditability be reported alongside factual accuracy?"
-  ],
-  "recent_digests": [
-    {
-      "date": "2026-04-30",
-      "post": "/posts/2026/04/paper-digest-2026-04-30-2353/",
-      "title": "从闭环训练到可审计数据智能",
-      "covered_papers": [
-        "arxiv:2604.26904",
-        "arxiv:2604.26733",
-        "arxiv:2604.26934",
-        "arxiv:2604.24198",
-        "arxiv:2604.26382"
-      ],
-      "next_run_suggestions": [
-        "Track public release and independent replication for ClawGym resources.",
-        "Search for reliability-weighted world-model distillation and multi-teacher agreement methods.",
-        "Search for data-agent PRMs tested on messy notebooks, spreadsheets, and enterprise file systems.",
-        "Follow document intelligence benchmarks that combine parsing, retrieval, generation, citation, and completeness evaluation."
-      ]
-    }
-  ]
+  "topic_threads": [],
+  "open_questions": [],
+  "recent_digests": []
 }
