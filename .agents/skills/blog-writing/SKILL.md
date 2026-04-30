@@ -1,25 +1,46 @@
 ---
 name: blog-writing
-description: Use when Codex needs to write a publish-ready bilingual Paper Radar Jekyll post with a thematic title, institutions, key figures, and a human research-note voice.
+description: Use when Codex needs to write publish-ready Paper Radar Jekyll posts as two separate English and Chinese Markdown files with thematic titles, institutions, key figures, and a human research-note voice.
 ---
 
 # Blog Writing
 
-Write a publish-ready bilingual Paper Radar post.
+Write publish-ready Paper Radar posts as two separate Markdown files: one English, one Chinese.
 
 File rules:
 
-- Create `_posts/YYYY-MM-DD-HHMM-paper-digest.md`.
+- Create English post: `_posts/YYYY-MM-DD-HHMM-paper-radar-en.md`.
+- Create Chinese post: `_posts/YYYY-MM-DD-HHMM-paper-radar-zh.md`.
 - Do not overwrite an existing post.
 - Do not save PDFs, screenshots, or large images to the repo.
 
-Front matter:
+English front matter:
 
 ```yaml
 ---
-title: "A thematic title, not a date"
+title: "A thematic English title, not a date"
 date: YYYY-MM-DD HH:MM:SS +0800
-permalink: /posts/YYYY/MM/paper-digest-YYYY-MM-DD-HHMM/
+permalink: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-en/
+lang: en
+translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-zh/
+tags:
+  - paper-digest
+  - paper-radar
+  - AI
+  - agents
+  - research
+---
+```
+
+Chinese front matter:
+
+```yaml
+---
+title: "中文主题标题，不要用日期"
+date: YYYY-MM-DD HH:MM:SS +0800
+permalink: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-zh/
+lang: zh
+translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-en/
 tags:
   - paper-digest
   - paper-radar
@@ -31,19 +52,27 @@ tags:
 
 Style:
 
-- Chinese first, English second.
+- English post contains English only.
+- Chinese post contains Chinese only.
+- Both posts must be independently readable; do not make one a stub or append one language after the other.
 - Use a human research-note voice: concrete, reflective, lightly personal, not promotional.
 - The title must summarize the issue's theme, not the timestamp.
 - Avoid hype and vague claims.
 - It is fine to say “我会优先看这篇的原因是...” when useful.
 
+English structure:
+
+1. Short TL;DR.
+2. "What I am watching this round" or similar human-feeling framing.
+3. Paper notes.
+4. Reading priority and next questions.
+
 Chinese structure:
 
-1. Start with a stable anchor heading: `## 中文版 {#chinese-version}`.
-2. Thematic title and TL;DR.
-3. "本期我在看什么" or similar human-feeling framing.
-4. Paper notes.
-5. Reading priority and next questions.
+1. 简短 TL;DR。
+2. “本期我在看什么”或类似真人研究笔记式开场。
+3. 论文细读笔记。
+4. 阅读优先级和下期问题。
 
 Each paper section must include:
 
@@ -58,12 +87,6 @@ Each paper section must include:
 - why I care
 - limitations/questions
 - connection to the tracked themes
-
-English section:
-
-- Start with `## English Version {#english-version}`.
-- Provide a concise English digest, not a literal translation.
-- Include institutions and key figures/figure pointers.
 
 Do not expose internal labels:
 

@@ -2,7 +2,7 @@
 
 ## 当前实现
 
-这个仓库已经按本方案落地了一个 MVP：GitHub Action 每 8 小时运行一次，调用 Codex SDK，让 Codex 搜索、细读并生成一篇可以直接发布的中英双语论文速读博客。
+这个仓库已经按本方案落地了一个 MVP：GitHub Action 每 8 小时运行一次，调用 Codex SDK，让 Codex 搜索、细读并生成一组可以直接发布的 Paper Radar 论文速读博客。每期输出英文和中文两个独立 Markdown，Paper Radar 页面默认展示英文入口。
 
 实现文件：
 
@@ -28,16 +28,17 @@ Action 调用 Codex SDK，让 Codex 自动完成以下工作：
 2. 搜索近期论文。
 3. 筛选最值得关注的论文。
 4. 对确定要汇报的论文获取可合法访问的原文或全文页面，并进行细读。
-5. 生成中英双语、可直接发布的 Jekyll Markdown 博客，标题用本期主题，不用时间命名。
+5. 生成英文版和中文版两个独立 Jekyll Markdown 博客，标题用本期主题，不用时间命名。
 6. 更新去重记录和长期研究记忆。
 7. 自动提交到仓库。
 
-每次运行开始时，Codex 还会先检查 SkillHub CLI 是否可用；如果没有安装，会按 SkillHub 官方 CLI-only 安装方式安装 CLI，然后安装 `find-skills` 技能。这个步骤失败时不阻断 Paper Radar，会回退到仓库内置 skills。
+每次运行开始时，Codex 还会先检查 SkillHub CLI 是否可用；如果没有安装，会按 SkillHub 官方 CLI-only 安装方式安装 CLI，然后安装 `multi-search-engine`、`arxiv`、`humanizer`、`pdf` 四个技能。这个步骤失败时不阻断 Paper Radar，会回退到仓库内置 skills。
 
 理想输出示例：
 
 ```text
-_posts/2026-05-04-0617-paper-digest.md
+_posts/2026-05-04-0617-paper-radar-en.md
+_posts/2026-05-04-0617-paper-radar-zh.md
 ```
 
 ## 运行频率与模型
@@ -113,30 +114,40 @@ _pages/paper-radar.html
 _includes/archive-single-paper-radar.html
 ```
 
-这个页面只聚合带有 `paper-digest` 标签的文章，并为每篇文章提供两个入口：
+这个页面只聚合带有 `paper-digest` 标签且 `lang != zh` 的文章，因此优先展示英文版。每篇英文文章提供两个入口：
 
 ```text
-中文 -> post_url#chinese-version
-English -> post_url#english-version
+English -> English post permalink
+中文 -> English post front matter 中的 translation_url
 ```
 
-因此每篇自动生成的博客必须包含：
+因此每组自动生成的博客必须包含：
 
-```markdown
-## 中文版 {#chinese-version}
-## English Version {#english-version}
+```yaml
+lang: en
+translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-zh/
+```
+
+以及中文对应文章：
+
+```yaml
+lang: zh
+translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-en/
 ```
 
 ## 技能设计
 
 这套方案把 Codex 当成一个定期运行的研究助理。它拥有四个可版本化技能，主版本存放在官方推荐的 `.agents/skills/<skill>/SKILL.md`；`.github/codex/skills/*.md` 只是兼容副本。
 
-运行时还会尝试通过 SkillHub 安装 `find-skills`：
+运行时还会尝试通过 SkillHub 安装四个外部技能：
 
 ```bash
 command -v skillhub
 curl -fsSL https://skillhub-1388575217.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash -s -- --cli-only
-skillhub install find-skills
+skillhub install multi-search-engine
+skillhub install arxiv
+skillhub install humanizer
+skillhub install pdf
 ```
 
 要求：
@@ -205,7 +216,7 @@ Hugging Face papers
 职责：
 
 1. 生成可以直接发布的 Jekyll Markdown。
-2. 中文在前，英文在后。
+2. 英文版和中文版分别生成独立 Markdown。
 3. 每篇论文包含机构、核心图表或图表线索、方法和证据、局限或疑问。
 4. 文章标题使用本期主题，不用时间。
 5. 文章风格清晰、克制、具体，有真人研究笔记感。
@@ -213,16 +224,37 @@ Hugging Face papers
 文件名格式：
 
 ```text
-_posts/YYYY-MM-DD-HHMM-paper-digest.md
+_posts/YYYY-MM-DD-HHMM-paper-radar-en.md
+_posts/YYYY-MM-DD-HHMM-paper-radar-zh.md
 ```
 
-Front matter 格式：
+英文 front matter：
 
 ```yaml
 ---
-title: "A thematic title, not a date"
+title: "A thematic English title, not a date"
 date: YYYY-MM-DD HH:MM:SS +0800
-permalink: /posts/YYYY/MM/paper-digest-YYYY-MM-DD-HHMM/
+permalink: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-en/
+lang: en
+translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-zh/
+tags:
+  - paper-digest
+  - paper-radar
+  - AI
+  - agents
+  - research
+---
+```
+
+中文 front matter：
+
+```yaml
+---
+title: "中文主题标题，不要用日期"
+date: YYYY-MM-DD HH:MM:SS +0800
+permalink: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-zh/
+lang: zh
+translation_url: /posts/YYYY/MM/paper-radar-YYYY-MM-DD-HHMM-en/
 tags:
   - paper-digest
   - paper-radar
@@ -241,9 +273,10 @@ GitHub schedule / 手动触发
   -> 运行 scripts/codex-paper-digest.mjs
   -> SDK 读取主 prompt + 四个 skills
   -> Codex recall 历史记忆和已推送论文
+  -> Codex 可并行启动多个子任务/subagent，从论文源、中文科技媒体、X 大博主、研究者博客和实验室博客收集热点线索
   -> Codex 联网搜索候选论文
   -> Codex 对入选论文获取可合法访问的原文并细读
-  -> Codex 写中英双语博客并更新记忆文件
+  -> Codex 写英文和中文两个独立 Markdown 并更新记忆文件
   -> git add _posts _data
   -> commit + push
 ```
@@ -343,7 +376,7 @@ _data/paper_digest_memory.json
       "document intelligence",
       "data agents"
     ],
-    "style_preference": "中英双语，中文在前，英文在后；克制、具体、有判断力，避免新闻稿式写作"
+    "style_preference": "英文和中文分别成文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [],
   "open_questions": [],
@@ -389,7 +422,7 @@ bundle exec jekyll build
 
 1. 是否只修改了 `_posts/` 和 `_data/`。
 2. Markdown front matter 是否有效。
-3. 是否中英双语展示，中文在前，英文在后。
+3. 是否生成英文和中文两个独立 Markdown，且 Paper Radar 默认展示英文。
 4. 链接是否真实可打开。
 5. 是否出现重复论文。
 6. 最终博客是否没有展示 `原文读取状态：fulltext_read` 等内部字段。
@@ -471,7 +504,7 @@ bundle exec jekyll build
 1. GitHub Action 可以手动触发。
 2. 定时任务可以每 8 小时自动运行。
 3. Codex 能读取 `paper_search`、`paper_reading`、`research_memory` 和 `blog_writing` 四个技能。
-4. Codex 能生成一篇有效的中英双语 Jekyll 博客。
+4. Codex 能生成一组有效的英文/中文 Jekyll 博客。
 5. Paper Radar 导航页可以访问 `/paper-radar/`。
 6. 最终博客不展示 `fulltext_read` 等内部状态字段。
 7. 每篇论文包含机构信息。

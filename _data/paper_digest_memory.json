@@ -9,7 +9,7 @@
       "document intelligence",
       "data agents"
     ],
-    "style_preference": "中英双语，中文在前，英文在后；克制、具体、有判断力，避免新闻稿式写作"
+    "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
     {

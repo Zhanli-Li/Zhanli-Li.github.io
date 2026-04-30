@@ -16,9 +16,13 @@
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 180 }}</p>
   {% endif %}
 
+  {% assign english_url = post.url %}
+  {% assign chinese_url = post.translation_url %}
   <p class="paper-radar__links">
-    <a href="{{ base_path }}{{ post.url }}#chinese-version">中文</a>
-    <span aria-hidden="true"> / </span>
-    <a href="{{ base_path }}{{ post.url }}#english-version">English</a>
+    <a href="{{ base_path }}{{ english_url }}">English</a>
+    {% if chinese_url %}
+      <span aria-hidden="true"> / </span>
+      <a href="{{ base_path }}{{ chinese_url }}">中文</a>
+    {% endif %}
   </p>
 </article>

@@ -56,6 +56,18 @@ def assert_valid_json(path: str) -> None:
         raise SystemExit(f"Invalid JSON in {path}: {exc}") from exc
 
 
+def assert_memory_shape() -> None:
+    memory = json.loads((ROOT / "_data/paper_digest_memory.json").read_text())
+    style = memory.get("research_profile", {}).get("style_preference", "")
+    required_snippets = [
+        "英文和中文分别生成独立 Markdown",
+        "Paper Radar 默认展示英文",
+    ]
+    for snippet in required_snippets:
+        if snippet not in style:
+            raise SystemExit(f"Memory style preference missing expected snippet: {snippet}")
+
+
 def assert_workflow_shape() -> None:
     workflow = (ROOT / ".github/workflows/codex_paper_digest.yml").read_text(
         encoding="utf-8",
@@ -80,14 +92,20 @@ def assert_prompt_shape() -> None:
     )
     required_snippets = [
         "command -v skillhub",
-        "skillhub install find-skills",
+        "skillhub install multi-search-engine",
+        "skillhub install arxiv",
+        "skillhub install humanizer",
+        "skillhub install pdf",
         "--cli-only",
+        "可以并行启动多个子任务/subagent",
         "主题化标题",
         "机构",
         "核心图表",
         "不要在最终博客里展示 `原文读取状态：fulltext_read`",
-        "## 中文版 {#chinese-version}",
-        "## English Version {#english-version}",
+        "英文版是 Paper Radar 默认入口",
+        "lang: en",
+        "lang: zh",
+        "translation_url",
     ]
     for snippet in required_snippets:
         if snippet not in prompt:
@@ -101,13 +119,12 @@ def assert_paper_radar_page_shape() -> None:
     )
     page_snippets = [
         "archive-single-paper-radar.html",
-        "post.tags contains 'paper-digest'",
+        "post.tags contains 'paper-digest' and post.lang != 'zh'",
     ]
     include_snippets = [
-        "#chinese-version",
-        "#english-version",
-        "中文",
         "English",
+        "中文",
+        "translation_url",
     ]
     for snippet in page_snippets:
         if snippet not in page:
@@ -131,6 +148,7 @@ def main() -> None:
         assert_file_exists(path)
     assert_valid_json("_data/paper_digest_seen.json")
     assert_valid_json("_data/paper_digest_memory.json")
+    assert_memory_shape()
     assert_workflow_shape()
     assert_prompt_shape()
     assert_paper_radar_page_shape()
