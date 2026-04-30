@@ -1,0 +1,18 @@
+---
+layout: archive
+title: "Paper Radar"
+permalink: /paper-radar/
+author_profile: true
+---
+
+{% include base_path %}
+
+{% assign radar_posts = site.posts | where_exp: "post", "post.tags contains 'paper-digest'" %}
+
+{% if radar_posts.size > 0 %}
+  {% for post in radar_posts %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p>No Paper Radar posts yet.</p>
+{% endif %}

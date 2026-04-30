@@ -13,22 +13,23 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     ".github/workflows/codex_paper_digest.yml",
     ".github/codex/prompts/paper_digest.md",
-    ".github/codex/skills/paper_search.md",
-    ".github/codex/skills/paper_reading.md",
-    ".github/codex/skills/research_memory.md",
-    ".github/codex/skills/blog_writing.md",
+    ".agents/skills/paper-search/SKILL.md",
+    ".agents/skills/paper-reading/SKILL.md",
+    ".agents/skills/research-memory/SKILL.md",
+    ".agents/skills/blog-writing/SKILL.md",
     "scripts/codex-paper-digest.mjs",
     "_data/paper_digest_seen.json",
     "_data/paper_digest_memory.json",
+    "_pages/paper-radar.html",
 ]
 
 SECRET_SCAN_FILES = [
     ".github/workflows/codex_paper_digest.yml",
     ".github/codex/prompts/paper_digest.md",
-    ".github/codex/skills/paper_search.md",
-    ".github/codex/skills/paper_reading.md",
-    ".github/codex/skills/research_memory.md",
-    ".github/codex/skills/blog_writing.md",
+    ".agents/skills/paper-search/SKILL.md",
+    ".agents/skills/paper-reading/SKILL.md",
+    ".agents/skills/research-memory/SKILL.md",
+    ".agents/skills/blog-writing/SKILL.md",
     "scripts/codex-paper-digest.mjs",
     "scripts/check-paper-digest-config.py",
     "docs/codex-paper-digest-action-plan.md",
@@ -72,6 +73,24 @@ def assert_workflow_shape() -> None:
             raise SystemExit(f"Workflow missing expected snippet: {snippet}")
 
 
+def assert_prompt_shape() -> None:
+    prompt = (ROOT / ".github/codex/prompts/paper_digest.md").read_text(
+        encoding="utf-8",
+    )
+    required_snippets = [
+        "command -v skillhub",
+        "skillhub install find-skills",
+        "--cli-only",
+        "主题化标题",
+        "机构",
+        "核心图表",
+        "不要在最终博客里展示 `原文读取状态：fulltext_read`",
+    ]
+    for snippet in required_snippets:
+        if snippet not in prompt:
+            raise SystemExit(f"Prompt missing expected snippet: {snippet}")
+
+
 def assert_no_sensitive_markers() -> None:
     for relative_path in SECRET_SCAN_FILES:
         path = ROOT / relative_path
@@ -87,6 +106,7 @@ def main() -> None:
     assert_valid_json("_data/paper_digest_seen.json")
     assert_valid_json("_data/paper_digest_memory.json")
     assert_workflow_shape()
+    assert_prompt_shape()
     assert_no_sensitive_markers()
     print("paper digest config checks passed")
 

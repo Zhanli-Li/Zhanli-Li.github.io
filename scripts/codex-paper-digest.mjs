@@ -6,10 +6,10 @@ const readText = async (path) => fs.readFile(path, "utf8");
 
 const requiredPaths = [
   ".github/codex/prompts/paper_digest.md",
-  ".github/codex/skills/paper_search.md",
-  ".github/codex/skills/paper_reading.md",
-  ".github/codex/skills/research_memory.md",
-  ".github/codex/skills/blog_writing.md",
+  ".agents/skills/paper-search/SKILL.md",
+  ".agents/skills/paper-reading/SKILL.md",
+  ".agents/skills/research-memory/SKILL.md",
+  ".agents/skills/blog-writing/SKILL.md",
 ];
 
 for (const path of requiredPaths) {
@@ -23,7 +23,7 @@ if (!process.env.OPENAI_API_KEY) {
 const mainPrompt = await readText(".github/codex/prompts/paper_digest.md");
 const skillBlocks = await Promise.all(
   requiredPaths
-    .filter((path) => path.includes("/skills/"))
+    .filter((path) => path.includes("/skills/") || path.includes(".agents/skills/"))
     .map(async (path) => {
       const content = await readText(path);
       return `<skill path="${path}">\n${content}\n</skill>`;
