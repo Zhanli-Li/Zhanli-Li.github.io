@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-04-30 23:09:48 +0800",
+  "last_updated": null,
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -11,62 +11,7 @@
     ],
     "style_preference": "中英双语，中文在前，英文在后；克制、具体、有判断力，避免新闻稿式写作"
   },
-  "topic_threads": [
-    {
-      "topic": "agentic training",
-      "summary": "FutureWorld frames live future prediction as a delayed-feedback RL environment for agents, suggesting a shift from static benchmarks toward real-world outcome rewards. Key concern: unresolved outcomes and delayed ground truth can create missing-reward bias.",
-      "papers": [
-        "arXiv:2604.26733"
-      ]
-    },
-    {
-      "topic": "world models",
-      "summary": "Lifting Embodied World Models emphasizes controllable high-level action abstractions over raw prediction quality. Waypoint-conditioned lifting may be a useful lens for agent-world-model integration.",
-      "papers": [
-        "arXiv:2604.26182"
-      ]
-    },
-    {
-      "topic": "large model mechanisms",
-      "summary": "reward-lens extends mechanistic interpretability to scalar reward models. The main finding to carry forward is that observational attribution and causal patching can disagree sharply.",
-      "papers": [
-        "arXiv:2604.26130"
-      ]
-    },
-    {
-      "topic": "document intelligence",
-      "summary": "EnterpriseDocBench evaluates document AI as a multi-stage pipeline across parsing, indexing, retrieval, and generation. Early evidence questions simple linear cascade assumptions but remains limited by pilot data and automated metrics.",
-      "papers": [
-        "arXiv:2604.26382"
-      ]
-    },
-    {
-      "topic": "data agents",
-      "summary": "DataClaw shows a chat-native data agent design with ReAct, local execution, persistent memory, pluggable skills, and event streaming. Current evidence is demo-level rather than benchmark-level.",
-      "papers": [
-        "arXiv:2604.24067"
-      ]
-    }
-  ],
-  "open_questions": [
-    "How should live agent training environments handle delayed, missing, or disputed real-world outcomes without introducing reward-selection bias?",
-    "For world-model agents, should evaluation prioritize high-level controllability and planning efficiency alongside prediction fidelity?",
-    "Can reward-model interpretability be integrated during reward-model training rather than only after training?",
-    "What benchmark design best captures enterprise document workflows rather than only structural document complexity?",
-    "What end-to-end metrics should data agents report: task success, auditability, privacy, local execution cost, memory quality, or all of these?"
-  ],
-  "recent_digests": [
-    {
-      "date": "2026-04-30 23:09:48 +0800",
-      "file": "_posts/2026-04-30-2309-paper-digest.md",
-      "papers": [
-        "arXiv:2604.26733",
-        "arXiv:2604.26182",
-        "arXiv:2604.26130",
-        "arXiv:2604.26382",
-        "arXiv:2604.24067"
-      ],
-      "next_recall": "Prioritize papers that test live feedback loops, world-model action abstraction, reward-model causal interpretability, document-pipeline evaluation, and data-agent benchmarks."
-    }
-  ]
+  "topic_threads": [],
+  "open_questions": [],
+  "recent_digests": []
 }
