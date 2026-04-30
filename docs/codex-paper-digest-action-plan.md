@@ -114,7 +114,7 @@ _pages/paper-radar.html
 _includes/archive-single-paper-radar.html
 ```
 
-这个页面只聚合带有 `paper-digest` 标签且 `lang != zh` 的文章，因此优先展示英文版。每篇英文文章提供两个入口：
+这个页面用兼容 GitHub Pages/Jekyll 的 Liquid 循环，只聚合带有 `paper-digest` 标签且 `lang != zh` 的文章，因此优先展示英文版。每篇英文文章提供两个入口：
 
 ```text
 English -> English post permalink

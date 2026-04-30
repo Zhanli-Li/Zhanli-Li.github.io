@@ -125,7 +125,9 @@ def assert_paper_radar_page_shape() -> None:
     )
     page_snippets = [
         "archive-single-paper-radar.html",
-        "post.tags contains 'paper-digest' and post.lang != 'zh'",
+        "post.tags contains 'paper-digest'",
+        "post.lang == 'zh'",
+        "radar_count",
     ]
     include_snippets = [
         "English",
@@ -135,6 +137,8 @@ def assert_paper_radar_page_shape() -> None:
     for snippet in page_snippets:
         if snippet not in page:
             raise SystemExit(f"Paper Radar page missing expected snippet: {snippet}")
+    if "where_exp" in page:
+        raise SystemExit("Paper Radar page must not use where_exp; GitHub Pages Liquid rejects complex expressions here")
     for snippet in include_snippets:
         if snippet not in include:
             raise SystemExit(f"Paper Radar include missing expected snippet: {snippet}")

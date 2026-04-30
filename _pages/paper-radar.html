@@ -7,12 +7,17 @@ author_profile: false
 
 {% include base_path %}
 
-{% assign radar_posts = site.posts | where_exp: "post", "post.tags contains 'paper-digest' and post.lang != 'zh'" %}
+{% assign radar_count = 0 %}
 
-{% if radar_posts.size > 0 %}
-  {% for post in radar_posts %}
-    {% include archive-single-paper-radar.html %}
-  {% endfor %}
-{% else %}
+{% for post in site.posts %}
+  {% if post.tags contains 'paper-digest' %}
+    {% unless post.lang == 'zh' %}
+      {% assign radar_count = radar_count | plus: 1 %}
+      {% include archive-single-paper-radar.html %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+
+{% if radar_count == 0 %}
   <p>No Paper Radar posts yet.</p>
 {% endif %}
