@@ -22,6 +22,7 @@ REQUIRED_FILES = [
     "_data/paper_digest_memory.json",
     "_pages/paper-radar.html",
     "_includes/archive-single-paper-radar.html",
+    "images/paper-radar/.gitkeep",
 ]
 
 SECRET_SCAN_FILES = [
@@ -80,6 +81,7 @@ def assert_workflow_shape() -> None:
         "CODEX_REASONING_EFFORT: xhigh",
         "CODEX_SANDBOX_MODE: danger-full-access",
         "npm install --no-save @openai/codex-sdk @openai/codex",
+        "git add _posts _data images/paper-radar",
     ]
     for snippet in required_snippets:
         if snippet not in workflow:
@@ -98,10 +100,12 @@ def assert_prompt_shape() -> None:
         "skillhub install pdf",
         "--cli-only",
         "可以并行启动多个子任务/subagent",
+        "subagent 优先使用 `gpt-5.5`",
         "主题化标题",
         "机构",
         "核心图表",
-        "临时渲染开放 PDF/HTML 页面",
+        "images/paper-radar/YYYY-MM-DD-HHMM/",
+        "渲染开放 PDF/HTML 页面",
         "模拟截图",
         "不要在最终博客里展示 `原文读取状态：fulltext_read`",
         "英文版是 Paper Radar 默认入口",

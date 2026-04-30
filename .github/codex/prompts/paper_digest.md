@@ -11,6 +11,7 @@
    - 如果 SkillHub 安装或技能安装失败，记录失败原因，然后继续使用仓库内置 skills 完成本次 Paper Radar。
 1. 先读取 _data/paper_digest_memory.json、_data/paper_digest_seen.json 和历史 _posts，recall 之前推送过的论文、持续关注的主题、已经形成的判断和未完成的问题。
 2. 可以并行启动多个子任务/subagent 来收集热点线索，建议按来源拆分：
+   - 如果可配置模型，subagent 优先使用 `gpt-5.5`，reasoning effort 使用 `xhigh`。
    - 学术来源：arXiv、OpenReview、Semantic Scholar、Papers with Code、Hugging Face papers。
    - 中文科技媒体：机器之心、新智元、量子位等。
    - 社交媒体与社区：X 上的大博主、知名研究者、实验室账号、Hacker News、Reddit、GitHub trending。
@@ -32,7 +33,7 @@
 11. 两篇文章标题都必须是主题化标题，不能用时间作为标题主体。例如英文标题可以围绕 “Closed-Loop Agents and Auditable Data Workflows”，中文标题可以围绕“从闭环智能体到可审计数据流”。
 12. 每篇论文必须展示作者机构或主要机构；如果公开页面没有机构信息，写“机构：未注明”或 “Institutions: not specified”，不要编造。
 13. 每篇论文尽量展示 1 到 3 张核心图表：优先主图、方法框架图、关键实验表格或最能说明问题的曲线。可以使用来自开放 HTML / arXiv source / 官方项目页的图片链接；如果无法可靠提取图片，写一个“图表线索 / Figure pointers”小段说明应查看原文中的哪张图或表，不要强行伪造截图。
-14. 如果某些图片、表格或方法图对理解论文非常重要，你需要临时渲染开放 PDF/HTML 页面、模拟截图或提取页面局部视图来辅助细读和写作。截图只作为临时分析材料，不要把截图二进制、PDF 或大图片提交到仓库。最终博客优先使用公开远程图片链接；如果没有可靠图片链接，就用准确的 Figure/Table 指针和你基于临时截图得到的图表解读。
+14. 如果某些图片、表格或方法图对理解论文非常重要，你需要渲染开放 PDF/HTML 页面、模拟截图或提取页面局部视图来辅助细读和写作。重要截图可以保存进仓库，但必须组织在 `images/paper-radar/YYYY-MM-DD-HHMM/` 下，文件名使用小写英文、短横线和论文短名，例如 `futureworld-main-figure.png`。不要保存整篇 PDF、无关页面截图或大体积原始图。最终博客可以引用这些本地截图路径，也可以使用公开远程图片链接；如果没有可靠图片，就用准确的 Figure/Table 指针和图表解读。
 15. 不要在最终博客里展示 `原文读取状态：fulltext_read`、`partial_read` 或 `metadata_only` 这类内部字段。读取状态只用于内部判断，不直接暴露给读者。
 16. 写作要有真人研究笔记感：允许简短的一人称判断，如“我会优先看这篇的原因是...”，但不要写成闲聊或营销文。
 17. 英文版正文只写英文，中文版正文只写中文；两篇都应可独立阅读，不要互相依赖。
@@ -55,4 +56,4 @@
 - 博客中的方法、实验和结论判断必须来自可访问原文或明确标注的信息来源。
 - 如果找不到足够好的论文，宁可少写，不要凑数。
 - 不要输出或保存任何 API key、token、secret 或 credential。
-- 不要把论文 PDF、截图二进制或大图片下载提交到仓库；优先使用远程图片链接或原文图表定位说明。
+- 不要把论文 PDF 或无关大图片下载提交到仓库；关键截图只允许保存到 `images/paper-radar/YYYY-MM-DD-HHMM/`。

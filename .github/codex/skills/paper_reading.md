@@ -19,7 +19,7 @@ Do not:
 
 - bypass paywalls
 - use pirate paper sites
-- save PDFs, screenshots, or large binary files to the repo
+- save PDFs or unrelated large binary files to the repo
 - copy long passages
 - pretend a paper was fully read when only metadata was available
 
@@ -40,8 +40,10 @@ For each selected paper produce an internal reading note with:
 Figure guidance:
 
 - Prefer overview diagrams, method figures, key result tables, or important curves.
-- If a figure/table is central to understanding the paper, temporarily render the open PDF/HTML page or make a local ephemeral screenshot/page crop to inspect it closely.
-- Temporary screenshots are analysis artifacts only; do not commit screenshots, PDFs, or large images to the repository.
+- If a figure/table is central to understanding the paper, render the open PDF/HTML page or make a local screenshot/page crop to inspect it closely.
+- Important screenshots may be committed only under `images/paper-radar/YYYY-MM-DD-HHMM/`.
+- Use short, lowercase, hyphenated filenames such as `futureworld-main-figure.png`.
+- Do not commit whole PDFs, unrelated screenshots, or oversized raw images.
 - If arXiv HTML exposes stable figure image URLs, use remote URLs in the final Markdown.
 - If no reliable image URL is available, write a short figure pointer such as `Figure 2: ...` or `Table 1: ...`, and summarize what the figure shows based on the temporary inspection.
 - Never fabricate figures or captions.

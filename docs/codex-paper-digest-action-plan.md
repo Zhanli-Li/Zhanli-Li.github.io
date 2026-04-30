@@ -60,7 +60,7 @@ CODEX_REASONING_EFFORT=xhigh
 CODEX_SANDBOX_MODE=danger-full-access
 ```
 
-说明：GitHub hosted runner 对 Codex 默认的 bubblewrap sandbox 有内核权限限制，可能出现 `bwrap: setting up uid map: Permission denied`。因此 CI 中使用 `danger-full-access`，但 workflow 最后仍只 `git add _posts _data`，不会自动提交其他文件。
+说明：GitHub hosted runner 对 Codex 默认的 bubblewrap sandbox 有内核权限限制，可能出现 `bwrap: setting up uid map: Permission denied`。因此 CI 中使用 `danger-full-access`，但 workflow 最后只提交 `_posts`、`_data` 和 `images/paper-radar`，不会自动提交其他文件。
 
 ## Secret 配置
 
@@ -189,18 +189,19 @@ Hugging Face papers
 3. 提取核心问题、方法、证据、贡献、局限和研究关联。
 4. 查找机构信息。
 5. 尝试提取 1 到 3 个核心图表候选，包括主图、方法框架图、关键实验表格或重要曲线。
-6. 如果关键图表对理解论文十分重要，可以临时渲染开放 PDF/HTML、模拟截图或截取页面局部来辅助细读。
+6. 如果关键图表对理解论文十分重要，可以渲染开放 PDF/HTML、模拟截图或截取页面局部来辅助细读，并把重要截图保存到 `images/paper-radar/YYYY-MM-DD-HHMM/`。
 
 约束：
 
 1. 不绕过 paywall。
 2. 不使用盗版论文站点。
 3. 不把 PDF 保存到仓库。
-4. 不把截图或大图片保存到仓库。
-5. 临时截图只作为分析材料；最终博客优先使用远程图片链接，没有可靠链接时写准确的 Figure/Table 指针和图表解读。
-6. 不复制长段原文。
-7. 不能假装读过无法访问的全文。
-8. 读取状态只作为内部判断，不在最终博客里显示 `fulltext_read` 等字段。
+4. 不把无关截图或大图片保存到仓库。
+5. 关键截图必须按期号组织在 `images/paper-radar/YYYY-MM-DD-HHMM/`，文件名使用小写英文和短横线。
+6. 最终博客可以引用本地截图路径或远程图片链接；没有可靠图片时写准确的 Figure/Table 指针和图表解读。
+7. 不复制长段原文。
+8. 不能假装读过无法访问的全文。
+9. 读取状态只作为内部判断，不在最终博客里显示 `fulltext_read` 等字段。
 
 ### research_memory
 
@@ -275,11 +276,11 @@ GitHub schedule / 手动触发
   -> 运行 scripts/codex-paper-digest.mjs
   -> SDK 读取主 prompt + 四个 skills
   -> Codex recall 历史记忆和已推送论文
-  -> Codex 可并行启动多个子任务/subagent，从论文源、中文科技媒体、X 大博主、研究者博客和实验室博客收集热点线索
+  -> Codex 可并行启动多个子任务/subagent，从论文源、中文科技媒体、X 大博主、研究者博客和实验室博客收集热点线索；subagent 优先使用 gpt-5.5 + xhigh
   -> Codex 联网搜索候选论文
   -> Codex 对入选论文获取可合法访问的原文并细读
   -> Codex 写英文和中文两个独立 Markdown 并更新记忆文件
-  -> git add _posts _data
+  -> git add _posts _data images/paper-radar
   -> commit + push
 ```
 
@@ -337,7 +338,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add _posts _data
+          git add _posts _data images/paper-radar
           git commit -m "Add automated paper digest" || echo "No changes to commit"
           git push
 ```
