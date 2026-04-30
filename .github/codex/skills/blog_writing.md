@@ -39,10 +39,11 @@ Style:
 
 Chinese structure:
 
-1. Thematic title and TL;DR.
-2. "本期我在看什么" or similar human-feeling framing.
-3. Paper notes.
-4. Reading priority and next questions.
+1. Start with a stable anchor heading: `## 中文版 {#chinese-version}`.
+2. Thematic title and TL;DR.
+3. "本期我在看什么" or similar human-feeling framing.
+4. Paper notes.
+5. Reading priority and next questions.
 
 Each paper section must include:
 
@@ -60,7 +61,7 @@ Each paper section must include:
 
 English section:
 
-- Start with `## English Version`.
+- Start with `## English Version {#english-version}`.
 - Provide a concise English digest, not a literal translation.
 - Include institutions and key figures/figure pointers.
 

@@ -26,8 +26,9 @@
 10. 每篇论文尽量展示 1 到 3 张核心图表：优先主图、方法框架图、关键实验表格或最能说明问题的曲线。可以使用来自开放 HTML / arXiv source / 官方项目页的图片链接；如果无法可靠提取图片，写一个“图表线索”小段说明应查看原文中的哪张图或表，不要强行伪造截图。
 11. 不要在最终博客里展示 `原文读取状态：fulltext_read`、`partial_read` 或 `metadata_only` 这类内部字段。读取状态只用于内部判断，不直接暴露给读者。
 12. 写作要有真人研究笔记感：允许简短的一人称判断，如“我会优先看这篇的原因是...”，但不要写成闲聊或营销文。
-13. 更新 _data/paper_digest_seen.json。
-14. 更新 _data/paper_digest_memory.json，记录本期新增主题、重要判断、后续值得追踪的问题和下次 recall 提示。
+13. 博客必须提供两个稳定锚点：中文部分使用 `## 中文版 {#chinese-version}`，英文部分使用 `## English Version {#english-version}`。Paper Radar 页面会用这两个锚点分别进入对应语言。
+14. 更新 _data/paper_digest_seen.json。
+15. 更新 _data/paper_digest_memory.json，记录本期新增主题、重要判断、后续值得追踪的问题和下次 recall 提示。
 
 仓库背景：
 

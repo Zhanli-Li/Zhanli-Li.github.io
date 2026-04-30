@@ -1,0 +1,24 @@
+{% include base_path %}
+
+<article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <h2 class="archive__item-title" itemprop="headline">
+    <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+  </h2>
+
+  {% if post.date %}
+    <p class="page__meta">
+      <i class="fa fa-clock" aria-hidden="true"></i>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    </p>
+  {% endif %}
+
+  {% if post.excerpt %}
+    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 180 }}</p>
+  {% endif %}
+
+  <p class="paper-radar__links">
+    <a href="{{ base_path }}{{ post.url }}#chinese-version">中文</a>
+    <span aria-hidden="true"> / </span>
+    <a href="{{ base_path }}{{ post.url }}#english-version">English</a>
+  </p>
+</article>

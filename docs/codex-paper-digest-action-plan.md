@@ -110,9 +110,22 @@ Paper Radar -> /paper-radar/
 
 ```text
 _pages/paper-radar.html
+_includes/archive-single-paper-radar.html
 ```
 
-这个页面只聚合带有 `paper-digest` 标签的文章。
+这个页面只聚合带有 `paper-digest` 标签的文章，并为每篇文章提供两个入口：
+
+```text
+中文 -> post_url#chinese-version
+English -> post_url#english-version
+```
+
+因此每篇自动生成的博客必须包含：
+
+```markdown
+## 中文版 {#chinese-version}
+## English Version {#english-version}
+```
 
 ## 技能设计
 

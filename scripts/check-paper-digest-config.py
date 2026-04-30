@@ -21,6 +21,7 @@ REQUIRED_FILES = [
     "_data/paper_digest_seen.json",
     "_data/paper_digest_memory.json",
     "_pages/paper-radar.html",
+    "_includes/archive-single-paper-radar.html",
 ]
 
 SECRET_SCAN_FILES = [
@@ -85,10 +86,35 @@ def assert_prompt_shape() -> None:
         "机构",
         "核心图表",
         "不要在最终博客里展示 `原文读取状态：fulltext_read`",
+        "## 中文版 {#chinese-version}",
+        "## English Version {#english-version}",
     ]
     for snippet in required_snippets:
         if snippet not in prompt:
             raise SystemExit(f"Prompt missing expected snippet: {snippet}")
+
+
+def assert_paper_radar_page_shape() -> None:
+    page = (ROOT / "_pages/paper-radar.html").read_text(encoding="utf-8")
+    include = (ROOT / "_includes/archive-single-paper-radar.html").read_text(
+        encoding="utf-8",
+    )
+    page_snippets = [
+        "archive-single-paper-radar.html",
+        "post.tags contains 'paper-digest'",
+    ]
+    include_snippets = [
+        "#chinese-version",
+        "#english-version",
+        "中文",
+        "English",
+    ]
+    for snippet in page_snippets:
+        if snippet not in page:
+            raise SystemExit(f"Paper Radar page missing expected snippet: {snippet}")
+    for snippet in include_snippets:
+        if snippet not in include:
+            raise SystemExit(f"Paper Radar include missing expected snippet: {snippet}")
 
 
 def assert_no_sensitive_markers() -> None:
@@ -107,6 +133,7 @@ def main() -> None:
     assert_valid_json("_data/paper_digest_memory.json")
     assert_workflow_shape()
     assert_prompt_shape()
+    assert_paper_radar_page_shape()
     assert_no_sensitive_markers()
     print("paper digest config checks passed")
 
