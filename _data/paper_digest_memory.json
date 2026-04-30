@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": null,
+  "last_updated": "2026-05-01 02:30:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -11,9 +11,123 @@
     ],
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
-  "topic_threads": [],
-  "open_questions": [],
-  "recent_digests": [],
-  "quality_feedback": [],
-  "evolution_log": []
+  "topic_threads": [
+    {
+      "theme": "Verifiable state for long-horizon agents",
+      "summary": "First Paper Radar issue centered on making agent state inspectable: executable task/verifier pipelines, training-time world-model transition supervision, environment-aware process rewards, and optical evidence retrieval.",
+      "papers": [
+        "arxiv:2604.26904",
+        "arxiv:2604.26934",
+        "arxiv:2604.24198",
+        "arxiv:2604.26622"
+      ],
+      "judgment": "The strongest common pattern is not longer context alone, but explicit state objects that can be generated, checked, retrieved, or distilled."
+    }
+  ],
+  "open_questions": [
+    "Will synthetic agent-task generators converge on reusable verifier patterns that transfer outside their benchmark harnesses?",
+    "Can world-model teachers expose reliability estimates for each generated transition instead of relying mainly on hard filtering?",
+    "Can data and document agents move from answer accuracy toward audit trails that survive deployment review?",
+    "How do optical-memory methods behave when one episode mixes tables, code diffs, screenshots, multilingual documents, and UI history?"
+  ],
+  "recent_digests": [
+    {
+      "date": "2026-05-01 02:30:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-0230-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-01-0230-zh/",
+      "title_en": "Verifiable State for Long-Horizon Agents",
+      "title_zh": "让长程智能体拥有可核验的状态",
+      "covered_papers": [
+        "arxiv:2604.26904",
+        "arxiv:2604.26934",
+        "arxiv:2604.24198",
+        "arxiv:2604.26622"
+      ],
+      "selection_note": "Selected four recent open arXiv papers with accessible HTML full text, method figures, and result tables. Deferred social/media-hot leads when they were older, survey-like, or less suitable for close reading this round."
+    }
+  ],
+  "quality_feedback": [
+    {
+      "date": "2026-05-01",
+      "observations": [
+        "No prior Paper Radar posts or seen records existed, so this run established the initial memory and dedup baseline.",
+        "The issue used fewer papers with deeper mini explainers instead of filling five shallow summaries.",
+        "Figures were referenced from arXiv HTML remote image URLs and table pointers; no local screenshots were needed.",
+        "The English and Chinese posts are independent rather than one being a direct stub of the other."
+      ]
+    }
+  ],
+  "evolution_log": [
+    {
+      "date": "2026-05-01",
+      "improved": [
+        "Started with SkillHub handling, memory recall, and a self-evolution review before searching.",
+        "Used topic-specific arXiv searches and subagent/source cross-checks rather than one broad query.",
+        "Chose a coherent issue theme around verifiable agent state and tied every paper back to that theme."
+      ],
+      "remaining_issues": [
+        "Subagent findings from lab blogs and social/community sources arrived after local selection; next run should use them earlier for final shortlist pressure-testing.",
+        "Some candidate technical reports had strong community signal but lacked the same open HTML/table accessibility as the selected arXiv papers.",
+        "Figure usage relied on remote arXiv images and table pointers; next run should consider local figure crops only when remote images are unstable or tables are central but hard to read."
+      ],
+      "next_run_adjustments": [
+        "Search Hugging Face Daily Papers, arXiv, OpenReview, lab blogs, and Chinese media in parallel at the beginning, then rank candidates by open-fulltext depth and figure quality.",
+        "Keep avoiding repeated agent benchmark papers unless the new paper contributes a distinct verifier, memory, reward, or world-model mechanism.",
+        "For bilingual writing, keep the English default concise and the Chinese version independently explanatory, with the same evidence but natural Chinese structure."
+      ],
+      "safety_note": "Self-evolution is limited to research and writing quality; source, paywall, secret-handling, and workflow restrictions remain unchanged."
+    }
+  ],
+  "next_run_watchlist": [
+    {
+      "id": "arxiv:2604.25917",
+      "title": "Recursive Multi-Agent Systems",
+      "reason": "Strong community signal from Hugging Face Daily Papers; relevant to multi-agent collaboration and latent computation."
+    },
+    {
+      "id": "arxiv:2604.24819",
+      "title": "Programming with Data: Test-Driven Data Engineering for Self-Improving LLMs from Raw Corpora",
+      "reason": "Promising data-engineering/data-agent framing around tests as data quality checks."
+    },
+    {
+      "id": "arxiv:2604.25914",
+      "title": "DV-World: Benchmarking Data Visualization Agents in Real-World Scenarios",
+      "reason": "Data visualization agent benchmark; useful for tracking data-agent evaluation beyond SQL and table QA."
+    },
+    {
+      "id": "technical-report:nvidia-nemotron-3-nano-omni",
+      "title": "NVIDIA Nemotron 3 Nano Omni Technical Report",
+      "reason": "Official multimodal agent model report; revisit if a future issue covers computer-use/document-intelligence model releases."
+    },
+    {
+      "id": "technical-report:deepseek-thinking-with-visual-primitives",
+      "title": "Thinking with Visual Primitives",
+      "reason": "Relevant to multimodal reasoning mechanisms and visual grounding; verify primary report details before inclusion."
+    },
+    {
+      "id": "arxiv:2604.22748",
+      "title": "Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond",
+      "reason": "Broad world-model survey with community signal; useful as background but less suited to this issue's primary-paper depth target."
+    },
+    {
+      "id": "arxiv:2604.26733",
+      "title": "FutureWorld: A Live Environment for Training Predictive Agents with Real-World Outcome Rewards",
+      "reason": "Directly relevant to closed-loop agent training with real-world outcome realization; strong candidate for a future issue on live environments."
+    },
+    {
+      "id": "arxiv:2604.24005",
+      "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
+      "reason": "Targets trajectory-depth instability in multi-turn agent distillation; useful for following agentic training mechanics."
+    },
+    {
+      "id": "arxiv:2604.26694",
+      "title": "Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising",
+      "reason": "World-action modeling for robotics with video priors; compare against World2VLM and other training-time world-model supervision papers."
+    },
+    {
+      "id": "arxiv:2604.26462",
+      "title": "A Multistage Extraction Pipeline for Long Scanned Financial Documents",
+      "reason": "Practical document-intelligence pipeline for scanned KYC workflows; useful if next issue emphasizes industrial document agents."
+    }
+  ]
 }

@@ -1,3 +1,52 @@
 {
-  "papers": []
+  "papers": [
+    {
+      "id": "arxiv:2604.26904",
+      "title": "ClawGym: A Scalable Framework for Building Effective Claw Agents",
+      "canonical_url": "https://arxiv.org/abs/2604.26904",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0230-en/",
+      "themes": [
+        "agentic training",
+        "verifiable tool use",
+        "synthetic task generation"
+      ]
+    },
+    {
+      "id": "arxiv:2604.26934",
+      "title": "World2VLM: Distilling World Model Imagination into VLMs for Dynamic Spatial Reasoning",
+      "canonical_url": "https://arxiv.org/abs/2604.26934",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0230-en/",
+      "themes": [
+        "world models",
+        "multimodal reasoning",
+        "training-time distillation"
+      ]
+    },
+    {
+      "id": "arxiv:2604.24198",
+      "title": "Rewarding the Scientific Process: Process-Level Reward Modeling for Agentic Data Analysis",
+      "canonical_url": "https://arxiv.org/abs/2604.24198",
+      "date": "2026-04-27",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0230-en/",
+      "themes": [
+        "data agents",
+        "process reward models",
+        "environment-grounded verification"
+      ]
+    },
+    {
+      "id": "arxiv:2604.26622",
+      "title": "OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory",
+      "canonical_url": "https://arxiv.org/abs/2604.26622",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-0230-en/",
+      "themes": [
+        "document intelligence",
+        "agent memory",
+        "auditable evidence retrieval"
+      ]
+    }
+  ]
 }
