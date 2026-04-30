@@ -49,7 +49,7 @@ const codex = new Codex(codexOptions);
 
 const thread = codex.startThread({
   workingDirectory: process.cwd(),
-  sandboxMode: "workspace-write",
+  sandboxMode: process.env.CODEX_SANDBOX_MODE || "danger-full-access",
   networkAccessEnabled: true,
   webSearchMode: "live",
   approvalPolicy: "never",

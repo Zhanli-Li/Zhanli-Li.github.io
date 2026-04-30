@@ -32,7 +32,7 @@ jobs:
         run: python3 scripts/check-paper-digest-config.py
 
       - name: Install Codex SDK
-        run: npm install @openai/codex-sdk @openai/codex
+        run: npm install --no-save @openai/codex-sdk @openai/codex
 
       - name: Run Codex paper digest
         env:
@@ -40,6 +40,7 @@ jobs:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           CODEX_MODEL: gpt-5.5
           CODEX_REASONING_EFFORT: xhigh
+          CODEX_SANDBOX_MODE: danger-full-access
         run: node scripts/codex-paper-digest.mjs
 
       - name: Commit generated digest

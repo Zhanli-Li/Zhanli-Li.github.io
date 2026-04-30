@@ -64,6 +64,8 @@ def assert_workflow_shape() -> None:
         "OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}",
         "CODEX_MODEL: gpt-5.5",
         "CODEX_REASONING_EFFORT: xhigh",
+        "CODEX_SANDBOX_MODE: danger-full-access",
+        "npm install --no-save @openai/codex-sdk @openai/codex",
     ]
     for snippet in required_snippets:
         if snippet not in workflow:

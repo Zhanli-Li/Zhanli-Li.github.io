@@ -53,7 +53,10 @@ schedule:
 ```text
 CODEX_MODEL=gpt-5.5
 CODEX_REASONING_EFFORT=xhigh
+CODEX_SANDBOX_MODE=danger-full-access
 ```
+
+说明：GitHub hosted runner 对 Codex 默认的 bubblewrap sandbox 有内核权限限制，可能出现 `bwrap: setting up uid map: Permission denied`。因此 CI 中使用 `danger-full-access`，但 workflow 最后仍只 `git add _posts _data`，不会自动提交其他文件。
 
 ## Secret 配置
 
@@ -234,11 +237,11 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install Codex SDK
-        run: npm install @openai/codex-sdk @openai/codex
-
       - name: Check digest configuration
         run: python3 scripts/check-paper-digest-config.py
+
+      - name: Install Codex SDK
+        run: npm install --no-save @openai/codex-sdk @openai/codex
 
       - name: Run Codex paper digest
         env:
@@ -246,6 +249,7 @@ jobs:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           CODEX_MODEL: gpt-5.5
           CODEX_REASONING_EFFORT: xhigh
+          CODEX_SANDBOX_MODE: danger-full-access
         run: node scripts/codex-paper-digest.mjs
 
       - name: Commit generated digest
