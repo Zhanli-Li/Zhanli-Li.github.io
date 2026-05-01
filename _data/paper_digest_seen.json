@@ -95,6 +95,54 @@
         "post-training reliability",
         "sparse autoencoder analysis"
       ]
+    },
+    {
+      "id": "arxiv:2604.28181",
+      "title": "Synthetic Computers at Scale for Long-Horizon Productivity Simulation",
+      "canonical_url": "https://arxiv.org/abs/2604.28181",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-1153-en/",
+      "themes": [
+        "agentic training",
+        "synthetic workspaces",
+        "long-horizon productivity simulation"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28138",
+      "title": "Crab: A Semantics-Aware Checkpoint/Restore Runtime for Agent Sandboxes",
+      "canonical_url": "https://arxiv.org/abs/2604.28138",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-1153-en/",
+      "themes": [
+        "agent runtime infrastructure",
+        "checkpoint restore",
+        "auditable sandbox state"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28182",
+      "title": "Exploration Hacking: Can LLMs Learn to Resist RL Training?",
+      "canonical_url": "https://arxiv.org/abs/2604.28182",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-1153-en/",
+      "themes": [
+        "agentic training",
+        "RL safety",
+        "evaluation awareness"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27389",
+      "title": "COHERENCE: Benchmarking Fine-Grained Image-Text Alignment in Interleaved Multimodal Contexts",
+      "canonical_url": "https://arxiv.org/abs/2604.27389",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-01-1153-en/",
+      "themes": [
+        "document intelligence",
+        "multimodal grounding",
+        "interleaved context alignment"
+      ]
     }
   ]
 }

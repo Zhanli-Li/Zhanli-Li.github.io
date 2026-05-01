@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-01 03:05:00 +0800",
+  "last_updated": "2026-05-01 11:53:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,17 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Replayable workspaces for long-horizon agents",
+      "summary": "Third issue focused on making long-horizon agent workspaces explicit and recoverable: synthetic user computers for productivity simulations, OS-level checkpoint/restore for sandboxes, RL-resistance model organisms, and verifiable image-text alignment in interleaved documents.",
+      "papers": [
+        "arxiv:2604.28181",
+        "arxiv:2604.28138",
+        "arxiv:2604.28182",
+        "arxiv:2604.27389"
+      ],
+      "judgment": "The frontier is shifting from final-answer evaluation toward full workspace state: files, processes, trajectories, and multimodal evidence bindings must be generated, preserved, stress-tested, and checked."
+    },
     {
       "theme": "Verifiable state for long-horizon agents",
       "summary": "First Paper Radar issue centered on making agent state inspectable: executable task/verifier pipelines, training-time world-model transition supervision, environment-aware process rewards, and optical evidence retrieval.",
@@ -42,9 +53,27 @@
     "How do optical-memory methods behave when one episode mixes tables, code diffs, screenshots, multilingual documents, and UI history?",
     "Can live prediction environments attach calibrated uncertainty to delayed labels when outcomes are ambiguous or sources conflict?",
     "Can trace simulators capture messy, contradictory evidence instead of producing overly clean RAG trajectories?",
-    "Can post-training pipelines detect internal knowledge-access damage before it appears as deployment failures?"
+    "Can post-training pipelines detect internal knowledge-access damage before it appears as deployment failures?",
+    "Can synthetic workspaces include enough everyday mess, stale files, broken references, and collaborator drift to avoid overfitting to curated file worlds?",
+    "Can checkpoint/restore systems preserve browser profiles, GUI state, remote services, GPU memory, and external databases as reliably as Linux sandbox state?",
+    "Can agentic RL pipelines detect strategic under-exploration without relying on visible chain-of-thought or narrowly engineered model organisms?",
+    "Can multimodal document agents expose image-text alignment confidence before multi-step reasoning begins?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-01 11:53:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-1153-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-01-1153-zh/",
+      "title_en": "Replayable Workspaces for Long-Horizon Agents",
+      "title_zh": "让长程智能体拥有可回放工作区",
+      "covered_papers": [
+        "arxiv:2604.28181",
+        "arxiv:2604.28138",
+        "arxiv:2604.28182",
+        "arxiv:2604.27389"
+      ],
+      "selection_note": "Selected four newest Apr 30 open arXiv papers after source-specialized candidate collection. Favored a coherent stack around workspaces, sandbox state, RL training failure modes, and multimodal evidence alignment over another broad GUI/data-agent benchmark issue."
+    },
     {
       "date": "2026-05-01 03:05:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-0305-en/",
@@ -78,6 +107,15 @@
     {
       "date": "2026-05-01",
       "observations": [
+        "This run pivoted after academic subagent results surfaced stronger Apr 30 candidates, keeping the final issue aligned with the newest 24-hour window.",
+        "The issue avoided repeating prior verifier/closed-loop framing by using replayable workspaces as the through-line across training data, runtime state, RL safety, and document grounding.",
+        "Every figure discussed in the body is embedded as an image from arXiv HTML; unembedded tables are not referenced as standalone figures.",
+        "No local screenshots were needed, but reliance on remote arXiv images remains a link-stability risk."
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "observations": [
         "No prior Paper Radar posts or seen records existed, so this run established the initial memory and dedup baseline.",
         "The issue used fewer papers with deeper mini explainers instead of filling five shallow summaries.",
         "Figures were referenced from arXiv HTML remote image URLs and table pointers; no local screenshots were needed.",
@@ -95,6 +133,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-01",
+      "improved": [
+        "Waited for source-specialized subagent results before final selection and replaced older Apr 27-29 candidates with stronger Apr 30 papers.",
+        "Used a narrower issue theme that connects workspace synthesis, sandbox C/R, RL-resistance, and image-text alignment rather than mixing unrelated hot leads.",
+        "Removed unshown table pointers from the final prose and kept figure explanations tied to embedded images."
+      ],
+      "remaining_issues": [
+        "Figure assets still depend on arXiv HTML remote paths; local crops would be safer for long-term archival stability.",
+        "The posts remain long because four papers each require multiple figures and mini-explainers.",
+        "Chinese media and X/Reddit leads did not contribute final selections beyond cross-checking heat, so the issue remains arXiv-primary."
+      ],
+      "next_run_adjustments": [
+        "If a paper's central evidence is a numeric table, make a local screenshot crop or generated table image before writing about it.",
+        "For the next issue, consider a scientific/data-agent theme using Intern-Atlas, Heterogeneous Scientific Foundation Model Collaboration, AutoResearchBench, Evergreen, or Programming with Data if still fresh and non-duplicate.",
+        "Keep asking whether selected agent papers add a new state object, verifier, runtime mechanism, or evidence boundary instead of only reporting leaderboard gains."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-01",
       "improved": [
@@ -135,6 +192,31 @@
     }
   ],
   "next_run_watchlist": [
+    {
+      "id": "arxiv:2604.25256",
+      "title": "AutoResearchBench",
+      "reason": "Benchmark for autonomous research/literature agents; relevant to Paper Radar's own workflow and scientific data agents."
+    },
+    {
+      "id": "arxiv:2604.25850",
+      "title": "Agentic Harness Engineering",
+      "reason": "Community/HN signal for coding-agent harness evolution and observability; include only after primary full-text reading."
+    },
+    {
+      "id": "arxiv:2604.27351",
+      "title": "Heterogeneous Scientific Foundation Model Collaboration",
+      "reason": "Scientific-agent framework for coordinating domain foundation models; strong Hugging Face signal and fits data/science agent theme."
+    },
+    {
+      "id": "arxiv:2604.28158",
+      "title": "Intern-Atlas: A Methodological Evolution Graph as Research Infrastructure for AI Scientists",
+      "reason": "Scientific/data-agent infrastructure; useful for a future issue on agent-readable research memory and method graphs."
+    },
+    {
+      "id": "arxiv:2604.28139",
+      "title": "Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows",
+      "reason": "Fresh Apr 30 workflow-agent benchmark with live snapshots, execution traces, audit logs, and service/workspace state; revisit only if it will not repeat ClawGym framing."
+    },
     {
       "id": "arxiv:2604.25917",
       "title": "Recursive Multi-Agent Systems",
