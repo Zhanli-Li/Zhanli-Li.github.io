@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-02 04:45:00 +0800",
+  "last_updated": "2026-05-02 06:17:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,17 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Hard evidence for data and workflow agents",
+      "summary": "This issue shifted from middle-layer architecture to harder evaluation objects: executable scientific environments, implicit predictive table tasks, exact GUI state labels, and competence-aware reward-hypothesis verification.",
+      "papers": [
+        "arxiv:2604.27977",
+        "arxiv:2604.28076",
+        "arxiv:2604.27974",
+        "arxiv:2604.28056"
+      ],
+      "judgment": "The strongest pattern is that agents are being evaluated against inspectable artifacts rather than fluent end states. This makes failures less flattering but more useful for training and deployment review."
+    },
     {
       "theme": "Explicit middle layers for agents and documents",
       "summary": "This issue connected a unified driving world model, latent physical reasoning for VLA post-training, manifold-aware interpretability, and staged OCR/retrieval for KYC extraction. The common move was to expose the representation between input and output and make it optimizable or inspectable.",
@@ -58,12 +69,15 @@
     }
   ],
   "open_questions": [
+    "Can reward-hypothesis verification transfer from embodied control to language-agent traces, tool calls, and final-answer rewards?",
+    "Can exact GUI-state labels be attached to multi-step interactive rollouts without losing failure attribution?",
+    "Can table agents ask for missing historical data instead of forcing a prediction from whatever table is present?",
+    "Can automatically generated scientific verifiers be audited for hidden brittleness beyond agreement with gold scripts?",
     "Will synthetic agent-task generators converge on reusable verifier patterns that transfer outside their benchmark harnesses?",
     "Can world-model teachers expose reliability estimates for each generated transition instead of relying mainly on hard filtering?",
     "Can data and document agents move from answer accuracy toward audit trails that survive deployment review?",
     "How do optical-memory methods behave when one episode mixes tables, code diffs, screenshots, multilingual documents, and UI history?",
     "Can live prediction environments attach calibrated uncertainty to delayed labels when outcomes are ambiguous or sources conflict?",
-    "Can trace simulators capture messy, contradictory evidence instead of producing overly clean RAG trajectories?",
     "Can post-training pipelines detect internal knowledge-access damage before it appears as deployment failures?",
     "Can synthetic workspaces include enough everyday mess, stale files, broken references, and collaborator drift to avoid overfitting to curated file worlds?",
     "Can checkpoint/restore systems preserve browser profiles, GUI state, remote services, GPU memory, and external databases as reliably as Linux sandbox state?",
@@ -75,6 +89,20 @@
     "Can staged OCR-plus-retrieval pipelines stay robust when OCR gets worse or layouts get messier?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-02 06:17:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-0617-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-02-0617-zh/",
+      "title_en": "Hard Evidence for Data and Workflow Agents",
+      "title_zh": "让数据与界面智能体面对硬证据",
+      "covered_papers": [
+        "arxiv:2604.27977",
+        "arxiv:2604.28076",
+        "arxiv:2604.27974",
+        "arxiv:2604.28056"
+      ],
+      "selection_note": "Selected four fresh Apr 30 open arXiv papers after academic, Chinese-media, community, and lab-blog cross-checks. The issue avoided repeating the previous explicit-middle-layer theme by focusing on evaluation objects that harden data and workflow-agent evidence."
+    },
     {
       "date": "2026-05-02 04:45:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-0445-en/",
@@ -136,6 +164,15 @@
     {
       "date": "2026-05-02",
       "observations": [
+        "This run used SkillHub setup as requested and then relied on primary open arXiv HTML/PDF sources for final selection.",
+        "The final theme avoided another world-model/middle-layer issue and instead centered verifiable data and GUI workflow evidence.",
+        "Core figures were saved locally under images/paper-radar/2026-05-02-0617; unshown tables were only paraphrased with source-locatable numbers.",
+        "English and Chinese posts were written as separate standalone posts with matching but natural structure."
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "observations": [
         "The issue shifted away from the earlier verifier/closed-loop framing and instead centered explicit intermediate state across world models, latent control, geometry, and document extraction.",
         "Local screenshots were created for the key comparison tables, which is safer than relying only on remote HTML image paths.",
         "The selected papers are still mostly arXiv-primary, but the mix is more diverse than another benchmark-only sweep.",
@@ -171,6 +208,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-02",
+      "improved": [
+        "Converted the self-evolution brief into a narrower issue theme instead of mechanically continuing the previous explicit-middle-layer framing.",
+        "Used parallel source collection to pressure-test arXiv candidates with Chinese media, Hugging Face/community, and official lab-blog leads.",
+        "Kept the final selection to four papers with open full text and local figures, enabling deeper mini-explainers without relying on unshown table pointers."
+      ],
+      "remaining_issues": [
+        "The issue still relies primarily on arXiv papers; official blog/report leads such as AI co-clinician and ERA were deferred to avoid a diffuse issue.",
+        "Some important numeric evidence comes from HTML tables that are paraphrased rather than embedded as table screenshots; this is acceptable but less visually direct.",
+        "SkillHub installed skills into the repository workspace; they were intentionally left untracked/cleaned rather than committed, but this install behavior should be anticipated next time."
+      ],
+      "next_run_adjustments": [
+        "Consider an official-report issue only if the report has clear open figures and enough technical depth for close reading.",
+        "Follow data-agent leads such as AutoResearchBench, Eywa, Programming with Data, ERA, and BioMysteryBench if still fresh and non-duplicate.",
+        "When numeric tables are central and not available as images, capture clean local table crops if tooling allows; otherwise avoid over-discussing unshown table structure."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-02",
       "improved": [
@@ -250,19 +306,39 @@
   ],
   "next_run_watchlist": [
     {
+      "id": "official-report:google-ai-co-clinician",
+      "title": "AI co-clinician technical report",
+      "reason": "Official Apr 30 Google/DeepMind dual-agent clinical consultation report; use only with careful clinical caveats and primary-report reading."
+    },
+    {
+      "id": "official-blog:google-era-applications",
+      "title": "Empirical Research Assistance applications",
+      "reason": "Official Apr 29 Google Research lead on scientific coding/data agents; pair with open arXiv papers if doing a scientific-agent issue."
+    },
+    {
       "id": "arxiv:2604.25256",
       "title": "AutoResearchBench",
       "reason": "Benchmark for autonomous research/literature agents; relevant to Paper Radar's own workflow and scientific data agents."
     },
     {
+      "id": "arxiv:2604.27351",
+      "title": "Heterogeneous Scientific Foundation Model Collaboration / Eywa",
+      "reason": "Strong Hugging Face signal for scientific agents coordinating domain foundation models."
+    },
+    {
+      "id": "arxiv:2604.24819",
+      "title": "Programming with Data",
+      "reason": "Test-driven data engineering for self-improving LLMs from raw corpora; useful for data-agent training loops."
+    },
+    {
+      "id": "technical-report:qwen-scope",
+      "title": "Qwen-Scope technical report",
+      "reason": "Chinese media signal for SAE interpretability as a development tool; verify primary report and figures before inclusion."
+    },
+    {
       "id": "arxiv:2604.25850",
       "title": "Agentic Harness Engineering",
       "reason": "Community/HN signal for coding-agent harness evolution and observability; include only after primary full-text reading."
-    },
-    {
-      "id": "arxiv:2604.27351",
-      "title": "Heterogeneous Scientific Foundation Model Collaboration",
-      "reason": "Scientific-agent framework for coordinating domain foundation models; strong Hugging Face signal and fits data/science agent theme."
     },
     {
       "id": "arxiv:2604.28158",
@@ -278,11 +354,6 @@
       "id": "arxiv:2604.25917",
       "title": "Recursive Multi-Agent Systems",
       "reason": "Strong community signal from Hugging Face Daily Papers; relevant to multi-agent collaboration and latent computation."
-    },
-    {
-      "id": "arxiv:2604.24819",
-      "title": "Programming with Data: Test-Driven Data Engineering for Self-Improving LLMs from Raw Corpora",
-      "reason": "Promising data-engineering/data-agent framing around tests as data quality checks."
     },
     {
       "id": "technical-report:nvidia-nemotron-3-nano-omni",
@@ -323,11 +394,6 @@
       "id": "arxiv:2604.26752",
       "title": "GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents",
       "reason": "Relevant to multimodal agents over documents, webpages, GUIs, and visual tool use; revisit for a model-report-focused issue."
-    },
-    {
-      "id": "official-report:google-ai-co-clinician",
-      "title": "AI Co-Clinician Technical Report",
-      "reason": "Official Apr 30 medical-agent report with dual-agent consultation architecture; include only with careful clinical caveats and primary-report reading."
     },
     {
       "id": "anthropic:biomysterybench",

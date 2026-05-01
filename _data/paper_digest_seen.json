@@ -1,6 +1,54 @@
 {
   "papers": [
     {
+      "id": "arxiv:2604.28056",
+      "title": "RHyVE: Competence-Aware Verification and Phase-Aware Deployment for LLM-Generated Reward Hypotheses",
+      "canonical_url": "https://arxiv.org/abs/2604.28056",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0617-en/",
+      "themes": [
+        "agentic training",
+        "reward hypotheses",
+        "phase-aware verification"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27974",
+      "title": "FineState-Bench: Benchmarking State-Conditioned Grounding for Fine-grained GUI State Setting",
+      "canonical_url": "https://arxiv.org/abs/2604.27974",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0617-en/",
+      "themes": [
+        "GUI agents",
+        "state-conditioned grounding",
+        "exact state verification"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28076",
+      "title": "TopBench: A Benchmark for Implicit Prediction and Reasoning over Tabular Question Answering",
+      "canonical_url": "https://arxiv.org/abs/2604.28076",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0617-en/",
+      "themes": [
+        "data agents",
+        "tabular reasoning",
+        "implicit predictive intent"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27977",
+      "title": "D3-Gym: Constructing Real-World Verifiable Environments for Data-Driven Discovery",
+      "canonical_url": "https://arxiv.org/abs/2604.27977",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0617-en/",
+      "themes": [
+        "data agents",
+        "scientific workflows",
+        "executable verification"
+      ]
+    },
+    {
       "id": "arxiv:2604.28196",
       "title": "Hermes++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation",
       "canonical_url": "https://arxiv.org/abs/2604.28196",
