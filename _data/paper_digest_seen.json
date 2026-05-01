@@ -1,6 +1,55 @@
 {
   "papers": [
     {
+      "id": "arxiv:2604.28196",
+      "title": "Hermes++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation",
+      "canonical_url": "https://arxiv.org/abs/2604.28196",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0445-en/",
+      "themes": [
+        "world models",
+        "driving",
+        "semantic-geometric coupling"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28192",
+      "title": "LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models",
+      "canonical_url": "https://arxiv.org/abs/2604.28192",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0445-en/",
+      "themes": [
+        "agentic training",
+        "world models",
+        "latent reasoning"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28119",
+      "title": "Do Sparse Autoencoders Capture Concept Manifolds?",
+      "canonical_url": "https://arxiv.org/abs/2604.28119",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0445-en/",
+      "themes": [
+        "large model mechanisms",
+        "interpretability",
+        "geometry"
+      ]
+    },
+    {
+      "id": "arxiv:2604.26462",
+      "title": "A Multistage Extraction Pipeline for Long Scanned Financial Documents: An Empirical Study in Industrial KYC Workflows",
+      "canonical_url": "https://arxiv.org/abs/2604.26462",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-0445-en/",
+      "themes": [
+        "document intelligence",
+        "OCR",
+        "retrieval",
+        "financial workflows"
+      ]
+    },
+    {
       "id": "arxiv:2604.26904",
       "title": "ClawGym: A Scalable Framework for Building Effective Claw Agents",
       "canonical_url": "https://arxiv.org/abs/2604.26904",

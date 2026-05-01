@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-01 11:53:00 +0800",
+  "last_updated": "2026-05-02 04:45:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,17 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Explicit middle layers for agents and documents",
+      "summary": "This issue connected a unified driving world model, latent physical reasoning for VLA post-training, manifold-aware interpretability, and staged OCR/retrieval for KYC extraction. The common move was to expose the representation between input and output and make it optimizable or inspectable.",
+      "papers": [
+        "arxiv:2604.28196",
+        "arxiv:2604.28192",
+        "arxiv:2604.28119",
+        "arxiv:2604.26462"
+      ],
+      "judgment": "The middle layer is no longer just a hidden state. In these papers it becomes the control surface, evidence boundary, or interpretability object, and that seems like a healthier direction than pure end-to-end scaling."
+    },
     {
       "theme": "Replayable workspaces for long-horizon agents",
       "summary": "Third issue focused on making long-horizon agent workspaces explicit and recoverable: synthetic user computers for productivity simulations, OS-level checkpoint/restore for sandboxes, RL-resistance model organisms, and verifiable image-text alignment in interleaved documents.",
@@ -57,9 +68,27 @@
     "Can synthetic workspaces include enough everyday mess, stale files, broken references, and collaborator drift to avoid overfitting to curated file worlds?",
     "Can checkpoint/restore systems preserve browser profiles, GUI state, remote services, GPU memory, and external databases as reliably as Linux sandbox state?",
     "Can agentic RL pipelines detect strategic under-exploration without relying on visible chain-of-thought or narrowly engineered model organisms?",
-    "Can multimodal document agents expose image-text alignment confidence before multi-step reasoning begins?"
+    "Can multimodal document agents expose image-text alignment confidence before multi-step reasoning begins?",
+    "Can world-query bridges expose uncertainty instead of only higher benchmark scores?",
+    "Can latent reasoning trajectories be audited or constrained the way outputs are?",
+    "Can concept manifolds become stable steering handles across models and layers?",
+    "Can staged OCR-plus-retrieval pipelines stay robust when OCR gets worse or layouts get messier?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-02 04:45:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-0445-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-02-0445-zh/",
+      "title_en": "Why Agents Need an Explicit Middle Layer",
+      "title_zh": "为什么智能体需要显式中间层",
+      "covered_papers": [
+        "arxiv:2604.28196",
+        "arxiv:2604.28192",
+        "arxiv:2604.28119",
+        "arxiv:2604.26462"
+      ],
+      "selection_note": "Selected four open-access papers with readable HTML figures and, where useful, local table screenshots. The issue avoided repeating the previous verifier/workspace loop by centering explicit intermediate state across world models, latent RL, interpretability, and document extraction."
+    },
     {
       "date": "2026-05-01 11:53:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-1153-en/",
@@ -105,6 +134,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-02",
+      "observations": [
+        "The issue shifted away from the earlier verifier/closed-loop framing and instead centered explicit intermediate state across world models, latent control, geometry, and document extraction.",
+        "Local screenshots were created for the key comparison tables, which is safer than relying only on remote HTML image paths.",
+        "The selected papers are still mostly arXiv-primary, but the mix is more diverse than another benchmark-only sweep.",
+        "The English and Chinese posts are independently readable and keep the same evidence without one being a stub of the other."
+      ]
+    },
+    {
       "date": "2026-05-01",
       "observations": [
         "This run pivoted after academic subagent results surfaced stronger Apr 30 candidates, keeping the final issue aligned with the newest 24-hour window.",
@@ -133,6 +171,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-02",
+      "improved": [
+        "Used local screenshots for the main comparison tables instead of depending entirely on remote arXiv images.",
+        "Kept the issue coherent by tying world models, latent RL, interpretability, and document extraction to one theme: explicit middle layers.",
+        "Avoided filling the issue with too many papers; four deeper mini-explainers were enough to keep the thread readable."
+      ],
+      "remaining_issues": [
+        "The issue still leans heavily on open arXiv papers rather than a broader mix of official reports and lab blogs.",
+        "The data-agent/research-graph angle is present in the backlog but did not make the final cut this round.",
+        "If a future paper depends on a dense table, the screenshot workflow should be reused rather than falling back to remote image links."
+      ],
+      "next_run_adjustments": [
+        "If the next issue needs more breadth, pull one strong data-agent or research-graph paper only if it adds a new control surface or evidence boundary.",
+        "Keep checking whether new papers expose a middle layer that can be trained, retrieved, or audited.",
+        "Consider follow-up leads like DeepSeek-V4, MiniCPM-o 4.5, and GS-Playground if the next round wants a model-report or document/world-model pivot."
+      ],
+      "safety_note": "Self-evolution stays limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-01",
       "improved": [
@@ -281,6 +338,21 @@
       "id": "arxiv:2604.26180",
       "title": "Evergreen: Efficient Claim Verification for Semantic Aggregates",
       "reason": "Data-agent adjacent claim verification over relational/semantic aggregates; pairs well with auditability and data workflow themes."
+    },
+    {
+      "id": "technical-report:deepseek-v4",
+      "title": "DeepSeek-V4 technical report",
+      "reason": "Fresh Chinese model report with agentic coding and long-context relevance; useful for a future mechanisms or agentic-training issue."
+    },
+    {
+      "id": "technical-report:minicpm-o-4.5",
+      "title": "MiniCPM-o 4.5 technical report",
+      "reason": "Practical document-intelligence and multimodal assistant lead with open report and strong Chinese ecosystem signal."
+    },
+    {
+      "id": "arxiv:2604.25459",
+      "title": "GS-Playground",
+      "reason": "Fresh world-model / embodied training lead with Real2Sim angle and a public project page."
     }
   ]
 }
