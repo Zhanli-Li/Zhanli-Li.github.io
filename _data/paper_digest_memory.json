@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-02 11:29:00 +0800",
+  "last_updated": "2026-05-02 16:04:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,17 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Structured operating surfaces for reliable agents",
+      "summary": "This issue shifted from scientific-agent interfaces to the concrete operating surfaces that keep agents correct: shared web-to-table workboards, step-level escalation monitors for computer-use agents, trace-native contamination diagnostics, and reward-head-centered interpretability for reward models.",
+      "papers": [
+        "arxiv:2604.27221",
+        "arxiv:2604.27151",
+        "arxiv:2604.27586",
+        "arxiv:2604.26130"
+      ],
+      "judgment": "The strongest pattern is that long-horizon agents need inspectable surfaces where state, routing, evidence, cost, and training signals can be checked locally. More context and stronger models help, but the interface determines whether errors can be localized and corrected."
+    },
     {
       "theme": "Structured interfaces for scientific agents",
       "summary": "This issue moved from harder evaluation objects to the interfaces research agents need: method-evolution graphs, domain foundation-model calls, full-text literature discovery, and inspectable scientific-visualization workflow states.",
@@ -80,6 +91,10 @@
     }
   ],
   "open_questions": [
+    "Can shared workboards support cross-worker contradiction resolution rather than only parallel row filling?",
+    "Can GUI-agent event detectors transfer across products, slow services, and enterprise-specific UI states?",
+    "Can trace divergence trigger targeted validation before final-answer checking, with different policies for extraction, computation, and synthesis failures?",
+    "Can reward-model interpretability become a live RLHF alarm instead of a post-hoc notebook?",
     "Can scientific workflow agents expose intermediate visual or computational states as first-class verification objects before final files are produced?",
     "Can literature-search agents maintain durable hypothesis ledgers so failed constraints improve later search rather than wasting more turns?",
     "Can scientific agents detect when a specialist foundation model is out of distribution or poorly calibrated before routing decisions through it?",
@@ -104,6 +119,20 @@
     "Can staged OCR-plus-retrieval pipelines stay robust when OCR gets worse or layouts get messier?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-02 16:04:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-1604-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-02-1604-zh/",
+      "title_en": "Operating Surfaces for Agents That Need to Stay Correct",
+      "title_zh": "让智能体有可操作的结构化表面",
+      "covered_papers": [
+        "arxiv:2604.27221",
+        "arxiv:2604.27151",
+        "arxiv:2604.27586",
+        "arxiv:2604.26130"
+      ],
+      "selection_note": "Selected four open-access papers after SkillHub setup, memory recall, arXiv/API search, SkillHub-installed lead checks, and academic/community/lab-blog subagent cross-checks. The issue avoids another scientific-interface or benchmark-only digest by focusing on structured operating surfaces: workboards, event monitors, traces, and reward-head axes."
+    },
     {
       "date": "2026-05-02 11:29:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-1129-en/",
@@ -193,6 +222,15 @@
     {
       "date": "2026-05-02",
       "observations": [
+        "This run incorporated the user's feedback by adding more field introductions before each paper and avoiding a title/abstract/evaluation template.",
+        "Figures were saved locally under images/paper-radar/2026-05-02-1604 and were used only when they directly supported a claim; no ugly recreated tables were used in the blog.",
+        "The reward-lens section included the core formula and the attribution-vs-patching distinction so the mechanism paper has technical depth rather than a vague summary.",
+        "SkillHub CLI and skills installed successfully, but the installed arxiv wrapper lacked its Python dependency; arXiv official API/HTML and primary source files were used instead."
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "observations": [
         "This run used the newly installed SkillHub leads but relied on primary arXiv HTML full text for final paper reading and figures.",
         "The final issue pivoted away from repeated hard-evidence/workspace framing and centered structured interfaces for scientific agents.",
         "Each selected paper includes locally saved core figures under images/paper-radar/2026-05-02-1129; dense result tables were summarized without unshown table pointers.",
@@ -246,6 +284,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-02",
+      "improved": [
+        "Responded to the explicit user feedback by adding domain on-ramps before methods, using original screenshots/images, and including formulas for the mechanism paper.",
+        "Moved away from the previous scientific-agent-interface framing to a new issue theme around operating surfaces: workboards, event monitors, trace signatures, and reward-head axes.",
+        "Used locally saved figures for every visual reference and avoided discussing any unshown table as a standalone evidence object."
+      ],
+      "remaining_issues": [
+        "The newest 24-hour window had limited relevant arXiv submissions, so the final set expanded to Apr 28-30 while still prioritizing fresh Apr 29-30 papers.",
+        "Some result tables were captured via Chromium screenshots rather than high-resolution PDF crops because the environment lacked PDF rendering tools; the screenshots are readable but not ideal archival assets.",
+        "Official/community leads such as ATA, Dash, LDA-1B, MiniCPM-o 4.5, PRISM, Latent-GRPO, and Claw-Eval-Live were deferred to preserve theme coherence."
+      ],
+      "next_run_adjustments": [
+        "For theory or mechanism papers, include at least one central equation and explain what changes operationally when that equation becomes the inspection target.",
+        "If dense tables are central, prefer original table screenshots or clean Markdown tables only when the Markdown version is more readable than a screenshot.",
+        "Consider a follow-up issue on agentic training/live evaluation using PRISM, Latent-GRPO, Claw-Eval-Live, and terminal-agent benchmark design if still fresh and non-duplicate."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-02",
       "improved": [
@@ -362,6 +419,41 @@
     }
   ],
   "next_run_watchlist": [
+    {
+      "id": "arxiv:2604.28123",
+      "title": "PRISM: Pre-alignment via Black-box On-policy Distillation for Multimodal Reinforcement Learning",
+      "reason": "Fresh Apr 30 agentic-training lead with distribution alignment between SFT and RLVR; useful for a post-training issue if primary figures and claims check out."
+    },
+    {
+      "id": "arxiv:2604.27998",
+      "title": "Latent-GRPO: Group Relative Policy Optimization for Latent Reasoning",
+      "reason": "Relevant to latent-space RL instability and efficient reasoning; read closely before using because institutions were not visible in quick scan."
+    },
+    {
+      "id": "arxiv:2604.28169",
+      "title": "PhyCo: Learning Controllable Physical Priors for Generative Motion",
+      "reason": "World-model/video-generation lead with physics-supervised fine-tuning and VLM-guided reward optimization; suitable for a physical-priors issue."
+    },
+    {
+      "id": "arxiv:2604.28049",
+      "title": "Agent-Agnostic Evaluation of SQL Accuracy in Production Text-to-SQL Systems",
+      "reason": "Practical data-agent evaluation lead that avoids assuming ground-truth SQL or one fixed agent trace."
+    },
+    {
+      "id": "project:ata-terminal-research-agent",
+      "title": "ATA: terminal research agent for keeping up with papers",
+      "reason": "Fresh HN tool lead directly adjacent to Paper Radar workflows; include only if paired with a primary paper or technical report."
+    },
+    {
+      "id": "project:dash-self-learning-data-agent",
+      "title": "Dash: A Self-Learning Data Agent That Remembers Its Mistakes",
+      "reason": "Production-style data-agent memory lead; verify primary docs and claims before treating it as research content."
+    },
+    {
+      "id": "project:lda-1b",
+      "title": "LDA-1B: Scaling Latent Dynamics Action Model via Universal Embodied Data Ingestion",
+      "reason": "Chinese media/community world-model lead with embodied data mixing and action grounding; verify paper/project details before inclusion."
+    },
     {
       "id": "arxiv:2604.24764",
       "title": "World-R1: Reinforcing 3D Constraints for Text-to-Video Generation",

@@ -1,6 +1,58 @@
 {
   "papers": [
     {
+      "id": "arxiv:2604.27221",
+      "title": "Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction",
+      "canonical_url": "https://arxiv.org/abs/2604.27221",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1604-en/",
+      "themes": [
+        "data agents",
+        "web-to-table search",
+        "multi-agent workboards",
+        "external skill memory"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27151",
+      "title": "Step-level Optimization for Efficient Computer-use Agents",
+      "canonical_url": "https://arxiv.org/abs/2604.27151",
+      "date": "2026-04-29",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1604-en/",
+      "themes": [
+        "GUI agents",
+        "agentic training",
+        "step-level routing",
+        "compute allocation"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27586",
+      "title": "Trace-Level Analysis of Information Contamination in Multi-Agent Systems",
+      "canonical_url": "https://arxiv.org/abs/2604.27586",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1604-en/",
+      "themes": [
+        "multi-agent reliability",
+        "document intelligence",
+        "trace-native evaluation",
+        "information contamination"
+      ]
+    },
+    {
+      "id": "arxiv:2604.26130",
+      "title": "reward-lens: A Mechanistic Interpretability Library for Reward Models",
+      "canonical_url": "https://arxiv.org/abs/2604.26130",
+      "date": "2026-04-28",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1604-en/",
+      "themes": [
+        "large model mechanisms",
+        "reward models",
+        "agentic training",
+        "mechanistic interpretability"
+      ]
+    },
+    {
       "id": "arxiv:2604.27996",
       "title": "Exploring Interaction Paradigms for LLM Agents in Scientific Visualization",
       "canonical_url": "https://arxiv.org/abs/2604.27996",
