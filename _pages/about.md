@@ -25,13 +25,13 @@ redirect_from:
 ## Selected Publications 📓
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
-  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)  
+  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014) [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)
   <div style="text-align:center;">
     <img src="{{ '/files/HDReAct_01.png' | relative_url }}" alt="HDReAct paper" width="50%">
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/).  
-  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://arxiv.org/abs/2604.22239v1) *Findings of ACL 2026* [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/MuDABench?style=social)](https://github.com/Zhanli-Li/MuDABench)
+  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://arxiv.org/abs/2604.22239v1) *Findings of ACL 2026* [Hugging Face Dataset](https://huggingface.co/datasets/Zhanli-Li/MuDABench) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/MuDABench?style=social)](https://github.com/Zhanli-Li/MuDABench)
   <div style="text-align:center;">
     <img src="{{ '/files/MuDABench.png' | relative_url }}" alt="MuDABench paper" width="50%">
   </div>
@@ -44,6 +44,7 @@ redirect_from:
 
 ## News 📧
 - `2026.4.6` **MuDABench** was accepted as Findings of ACL 2026!
+- `2026.3.17` **DeepRead** was covered by [新智元](https://hub.baai.ac.cn/view/53185).
 - `2026.2.9` One paper about **Agentic Search** was submitted to KDD26.
 - `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
 - `2025.9` I lead an open-source project for automated outreach, it's [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
