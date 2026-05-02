@@ -25,13 +25,15 @@ redirect_from:
 ## Selected Publications 📓
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
-  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014) [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)
+  [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014)<br>
+  [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)
   <div style="text-align:center;">
     <img src="{{ '/files/HDReAct_01.png' | relative_url }}" alt="HDReAct paper" width="50%">
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/).  
-  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://arxiv.org/abs/2604.22239v1) *Findings of ACL 2026* [Hugging Face Dataset](https://huggingface.co/datasets/Zhanli-Li/MuDABench) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/MuDABench?style=social)](https://github.com/Zhanli-Li/MuDABench)
+  [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://arxiv.org/abs/2604.22239v1) *Findings of ACL 2026*<br>
+  [Hugging Face Dataset](https://huggingface.co/datasets/Zhanli-Li/MuDABench) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/MuDABench?style=social)](https://github.com/Zhanli-Li/MuDABench)
   <div style="text-align:center;">
     <img src="{{ '/files/MuDABench.png' | relative_url }}" alt="MuDABench paper" width="50%">
   </div>
