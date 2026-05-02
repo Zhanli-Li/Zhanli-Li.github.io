@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-02 06:17:00 +0800",
+  "last_updated": "2026-05-02 11:29:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,17 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Structured interfaces for scientific agents",
+      "summary": "This issue moved from harder evaluation objects to the interfaces research agents need: method-evolution graphs, domain foundation-model calls, full-text literature discovery, and inspectable scientific-visualization workflow states.",
+      "papers": [
+        "arxiv:2604.28158",
+        "arxiv:2604.27351",
+        "arxiv:2604.25256",
+        "arxiv:2604.27996"
+      ],
+      "judgment": "The strongest pattern is that research agents fail when language is the only interface. Useful systems expose method lineage, specialist computation, evidence search, and workflow state as structured objects that can be queried or checked."
+    },
     {
       "theme": "Hard evidence for data and workflow agents",
       "summary": "This issue shifted from middle-layer architecture to harder evaluation objects: executable scientific environments, implicit predictive table tasks, exact GUI state labels, and competence-aware reward-hypothesis verification.",
@@ -69,6 +80,10 @@
     }
   ],
   "open_questions": [
+    "Can scientific workflow agents expose intermediate visual or computational states as first-class verification objects before final files are produced?",
+    "Can literature-search agents maintain durable hypothesis ledgers so failed constraints improve later search rather than wasting more turns?",
+    "Can scientific agents detect when a specialist foundation model is out of distribution or poorly calibrated before routing decisions through it?",
+    "Can method-evolution graphs be edited, audited, and versioned by domain experts without breaking downstream research-agent operators?",
     "Can reward-hypothesis verification transfer from embodied control to language-agent traces, tool calls, and final-answer rewards?",
     "Can exact GUI-state labels be attached to multi-step interactive rollouts without losing failure attribution?",
     "Can table agents ask for missing historical data instead of forcing a prediction from whatever table is present?",
@@ -89,6 +104,20 @@
     "Can staged OCR-plus-retrieval pipelines stay robust when OCR gets worse or layouts get messier?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-02 11:29:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-1129-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-02-1129-zh/",
+      "title_en": "Structured Interfaces for Scientific Agents",
+      "title_zh": "给科学研究智能体更好的结构化接口",
+      "covered_papers": [
+        "arxiv:2604.28158",
+        "arxiv:2604.27351",
+        "arxiv:2604.25256",
+        "arxiv:2604.27996"
+      ],
+      "selection_note": "Selected four open-access papers after SkillHub setup, memory recall, arXiv/API search, Chinese-media lead checks, and academic/community subagent cross-checks. The issue avoided another verifier/workspace/world-model framing by focusing on structured interfaces for scientific agents."
+    },
     {
       "date": "2026-05-02 06:17:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-0617-en/",
@@ -164,6 +193,15 @@
     {
       "date": "2026-05-02",
       "observations": [
+        "This run used the newly installed SkillHub leads but relied on primary arXiv HTML full text for final paper reading and figures.",
+        "The final issue pivoted away from repeated hard-evidence/workspace framing and centered structured interfaces for scientific agents.",
+        "Each selected paper includes locally saved core figures under images/paper-radar/2026-05-02-1129; dense result tables were summarized without unshown table pointers.",
+        "English and Chinese posts are independent and use a research-note voice rather than a title/abstract/evaluation template."
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "observations": [
         "This run used SkillHub setup as requested and then relied on primary open arXiv HTML/PDF sources for final selection.",
         "The final theme avoided another world-model/middle-layer issue and instead centered verifiable data and GUI workflow evidence.",
         "Core figures were saved locally under images/paper-radar/2026-05-02-0617; unshown tables were only paraphrased with source-locatable numbers.",
@@ -174,7 +212,7 @@
       "date": "2026-05-02",
       "observations": [
         "The issue shifted away from the earlier verifier/closed-loop framing and instead centered explicit intermediate state across world models, latent control, geometry, and document extraction.",
-        "Local screenshots were created for the key comparison tables, which is safer than relying only on remote HTML image paths.",
+        "Local screenshots were created for the key comparison tables, which is safer than relying only on remote arXiv images.",
         "The selected papers are still mostly arXiv-primary, but the mix is more diverse than another benchmark-only sweep.",
         "The English and Chinese posts are independently readable and keep the same evidence without one being a stub of the other."
       ]
@@ -208,6 +246,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-02",
+      "improved": [
+        "Converted the self-evolution brief into a new issue theme around agent interfaces instead of repeating verifiable-state, replayable-workspace, explicit-middle-layer, or hard-evidence themes.",
+        "Used academic, Chinese media, and community subagents to pressure-test candidates, then selected only papers with open full text and extractable figures.",
+        "Saved core figures locally, reducing reliance on remote arXiv image paths for this issue."
+      ],
+      "remaining_issues": [
+        "The selected set is still arXiv-primary; official lab reports and Chinese technical reports were used as leads but not final papers.",
+        "Several high-signal community leads, including Recursive MAS, Programming with Data, World-R1, and GS-Playground, were deferred because they would broaden the issue or require deeper leakage/reproducibility checks.",
+        "Some numeric evidence still comes from text-rendered HTML tables rather than local table screenshots; the prose avoids naming unshown tables, but future issues should crop central tables when they are the evidence object."
+      ],
+      "next_run_adjustments": [
+        "Follow high-signal community leads only if they can be tied to one narrow theme rather than becoming a grab bag of popular agent papers.",
+        "For data-agent and scientific-agent issues, explicitly compare interface designs: graph memory, specialist model calls, tool APIs, hypothesis ledgers, and intermediate-state verifiers.",
+        "When selecting papers with central table evidence, capture readable local table crops or choose figures that carry the claim without relying on hidden table structure."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-02",
       "improved": [
@@ -306,6 +363,46 @@
   ],
   "next_run_watchlist": [
     {
+      "id": "arxiv:2604.24764",
+      "title": "World-R1: Reinforcing 3D Constraints for Text-to-Video Generation",
+      "reason": "Strong world-model/RL signal with Microsoft project page; useful for a world-model issue if code/weights and 3D-reward claims can be verified."
+    },
+    {
+      "id": "arxiv:2604.24927",
+      "title": "Large Language Models Explore by Latent Distilling",
+      "reason": "Latent exploration and test-time sampling lead; relevant to agentic training mechanisms but should be read for throughput and Pass@k evidence before selection."
+    },
+    {
+      "id": "arxiv:2604.27151",
+      "title": "Step-level Optimization for Efficient Computer-use Agents",
+      "reason": "Efficient GUI-agent escalation policy; pairs well with workflow-interface and intermediate-state verification themes."
+    },
+    {
+      "id": "arxiv:2604.27419",
+      "title": "InteractWeb-Bench",
+      "reason": "Interactive website-generation benchmark for multimodal coding agents; revisit if doing a web/document/GUI agent issue."
+    },
+    {
+      "id": "arxiv:2604.27586",
+      "title": "Trace-Level Analysis of Information Contamination in Multi-Agent Systems",
+      "reason": "Trace-divergence and artifact-contamination lead for multi-agent reliability; read closely if the next issue covers data/document provenance."
+    },
+    {
+      "id": "arxiv:2604.28028",
+      "title": "Reliable Answers for Recurring Questions: Boosting Text-to-SQL Accuracy with Template Constrained Decoding",
+      "reason": "Practical data-agent/Text-to-SQL reliability lead; useful for a future structured-data workflow issue."
+    },
+    {
+      "id": "arxiv:2604.23644",
+      "title": "RaV-IDP: Reconstruction-as-Validation for Intelligent Document Processing",
+      "reason": "Document-intelligence validation lead; include only if the open full text provides enough figure/evidence detail and reproducibility is clear."
+    },
+    {
+      "id": "official-report:zhipu-scaling-pain-coding-agent-inference",
+      "title": "Scaling Pain: Coding Agent Inference Practice",
+      "reason": "Chinese official technical report on coding-agent serving failures and LayerSplit; useful for an agent infrastructure issue if primary figures are open."
+    },
+    {
       "id": "official-report:google-ai-co-clinician",
       "title": "AI co-clinician technical report",
       "reason": "Official Apr 30 Google/DeepMind dual-agent clinical consultation report; use only with careful clinical caveats and primary-report reading."
@@ -314,16 +411,6 @@
       "id": "official-blog:google-era-applications",
       "title": "Empirical Research Assistance applications",
       "reason": "Official Apr 29 Google Research lead on scientific coding/data agents; pair with open arXiv papers if doing a scientific-agent issue."
-    },
-    {
-      "id": "arxiv:2604.25256",
-      "title": "AutoResearchBench",
-      "reason": "Benchmark for autonomous research/literature agents; relevant to Paper Radar's own workflow and scientific data agents."
-    },
-    {
-      "id": "arxiv:2604.27351",
-      "title": "Heterogeneous Scientific Foundation Model Collaboration / Eywa",
-      "reason": "Strong Hugging Face signal for scientific agents coordinating domain foundation models."
     },
     {
       "id": "arxiv:2604.24819",
@@ -339,11 +426,6 @@
       "id": "arxiv:2604.25850",
       "title": "Agentic Harness Engineering",
       "reason": "Community/HN signal for coding-agent harness evolution and observability; include only after primary full-text reading."
-    },
-    {
-      "id": "arxiv:2604.28158",
-      "title": "Intern-Atlas: A Methodological Evolution Graph as Research Infrastructure for AI Scientists",
-      "reason": "Scientific/data-agent infrastructure; useful for a future issue on agent-readable research memory and method graphs."
     },
     {
       "id": "arxiv:2604.28139",

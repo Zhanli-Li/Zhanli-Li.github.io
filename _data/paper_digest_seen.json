@@ -1,6 +1,54 @@
 {
   "papers": [
     {
+      "id": "arxiv:2604.27996",
+      "title": "Exploring Interaction Paradigms for LLM Agents in Scientific Visualization",
+      "canonical_url": "https://arxiv.org/abs/2604.27996",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1129-en/",
+      "themes": [
+        "data agents",
+        "scientific visualization",
+        "workflow-agent interfaces"
+      ]
+    },
+    {
+      "id": "arxiv:2604.25256",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "canonical_url": "https://arxiv.org/abs/2604.25256",
+      "date": "2026-04-28",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1129-en/",
+      "themes": [
+        "data agents",
+        "document intelligence",
+        "autonomous literature discovery"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27351",
+      "title": "Heterogeneous Scientific Foundation Model Collaboration",
+      "canonical_url": "https://arxiv.org/abs/2604.27351",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1129-en/",
+      "themes": [
+        "data agents",
+        "scientific foundation models",
+        "heterogeneous agent systems"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28158",
+      "title": "Intern-Atlas: A Methodological Evolution Graph as Research Infrastructure for AI Scientists",
+      "canonical_url": "https://arxiv.org/abs/2604.28158",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-02-1129-en/",
+      "themes": [
+        "data agents",
+        "research memory",
+        "method-evolution graphs"
+      ]
+    },
+    {
       "id": "arxiv:2604.28056",
       "title": "RHyVE: Competence-Aware Verification and Phase-Aware Deployment for LLM-Generated Reward Hypotheses",
       "canonical_url": "https://arxiv.org/abs/2604.28056",
