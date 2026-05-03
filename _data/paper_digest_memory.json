@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-02 16:04:00 +0800",
+  "last_updated": "2026-05-03 11:38:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,17 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Checks before multimodal and agent systems drift",
+      "summary": "This issue moved earlier in the failure chain: PRISM corrects SFT-induced distribution drift before multimodal RLVR, PhyCo exposes physical-property controls before generated video motion drifts from dynamics, FCMBench-Video preserves temporal document evidence before flattened OCR loses auditability, and LAD probes activation trajectories before multi-turn adversarial intent becomes an explicit harmful request.",
+      "papers": [
+        "arxiv:2604.28123",
+        "arxiv:2604.28169",
+        "arxiv:2604.25186",
+        "arxiv:2604.28129"
+      ],
+      "judgment": "The common pattern is not another final-answer benchmark. Each paper creates a pre-final check: distribution alignment, physical control variables, temporal evidence ledgers, or activation-path sensors. This is a useful direction because fluent final artifacts are increasingly easy to produce and increasingly poor as the only inspection point."
+    },
     {
       "theme": "Structured operating surfaces for reliable agents",
       "summary": "This issue shifted from scientific-agent interfaces to the concrete operating surfaces that keep agents correct: shared web-to-table workboards, step-level escalation monitors for computer-use agents, trace-native contamination diagnostics, and reward-head-centered interpretability for reward models.",
@@ -116,9 +127,28 @@
     "Can world-query bridges expose uncertainty instead of only higher benchmark scores?",
     "Can latent reasoning trajectories be audited or constrained the way outputs are?",
     "Can concept manifolds become stable steering handles across models and layers?",
-    "Can staged OCR-plus-retrieval pipelines stay robust when OCR gets worse or layouts get messier?"
+    "Can staged OCR-plus-retrieval pipelines stay robust when OCR gets worse or layouts get messier?",
+    "Can PRISM-style pre-alignment replace perception/reasoning experts with tool-state or environment-state experts for data and GUI agents?",
+    "Can physical property maps scale from clean object interactions to cluttered manipulation scenes with hands, tools, occlusion, and multi-object contact?",
+    "Can document-video agents expose a durable evidence ledger that records what was read, when it was visible, and why it was trusted?",
+    "Can activation trajectory probes collect enough representative benign deployment data to avoid becoming another brittle classifier?",
+    "Can visual prompt-injection robustness be separated from recency bias in document-video workflows?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-03 11:38:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-03-1138-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-03-1138-zh/",
+      "title_en": "Checks Before Agents Drift",
+      "title_zh": "在漂移变成答案之前加检查",
+      "covered_papers": [
+        "arxiv:2604.28123",
+        "arxiv:2604.28169",
+        "arxiv:2604.25186",
+        "arxiv:2604.28129"
+      ],
+      "selection_note": "May 1-3 target-topic arXiv CS submissions were effectively empty, so the issue expanded to the newest Apr 30 fallback window. Selected four open arXiv HTML papers after memory deduplication, local arXiv/API search, and academic/community/lab-blog subagent cross-checks. The issue avoids another operating-surface/live-benchmark digest by focusing on checks before drift becomes a final artifact. Dense result tables were rewritten as Markdown rather than screenshotting ugly table crops."
+    },
     {
       "date": "2026-05-02 16:04:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-02-1604-en/",
@@ -220,6 +250,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-03",
+      "observations": [
+        "This run followed the user feedback by adding field introductions, central formulas, and clean Markdown result tables instead of ugly recreated table screenshots.",
+        "The final theme shifted away from repeated workboard/live-benchmark framing and centered pre-final drift checks across training, world modeling, document evidence, and activation monitoring.",
+        "Figures were saved locally under images/paper-radar/2026-05-03-1138 with 300 DPI metadata; dense tables were rendered as Markdown and explained after the table.",
+        "SkillHub CLI and four requested skills installed successfully; SkillHub wrote installed skill files into repo-local skills/, and those untracked artifacts were removed before final verification."
+      ]
+    },
+    {
       "date": "2026-05-02",
       "observations": [
         "This run incorporated the user's feedback by adding more field introductions before each paper and avoiding a title/abstract/evaluation template.",
@@ -284,6 +323,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-03",
+      "improved": [
+        "Converted the prior quality feedback into concrete writing choices: field setup before methods, formulas where they matter, and Markdown tables for central quantitative evidence.",
+        "Used subagents for source-side lead collection while keeping final selection anchored to open arXiv HTML full-text reading and primary figures.",
+        "Maintained a narrower issue theme around pre-final drift checks rather than collecting another set of loosely related agent benchmarks."
+      ],
+      "remaining_issues": [
+        "The newest 24-hour and May 1-3 arXiv windows had no sufficient target-topic CS submissions, so the issue relied on Apr 30 fallback papers.",
+        "Subagent findings arrived after deep reading had already converged; their strongest extra leads were saved for the next run instead of causing a late theme pivot.",
+        "The post is still long because four papers each required method detail, figure explanation, and source-backed table evidence."
+      ],
+      "next_run_adjustments": [
+        "Start by checking whether delayed source leads such as Scaling Pain, Claw-Eval-Live, Co-Evolving Policy Distillation, ObjectGraph, Xmemory, HealthBench Professional, and Visual Generation in the New Era are still fresh and non-duplicate.",
+        "If selecting a coding-agent infrastructure report, pair it with primary papers on runtime monitors or live evaluation rather than mixing it into a document/world-model issue.",
+        "For document-intelligence papers, prefer benchmarks or systems that expose temporal/evidence ledgers instead of only static extraction accuracy."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-02",
       "improved": [
@@ -420,9 +478,134 @@
   ],
   "next_run_watchlist": [
     {
-      "id": "arxiv:2604.28123",
-      "title": "PRISM: Pre-alignment via Black-box On-policy Distillation for Multimodal Reinforcement Learning",
-      "reason": "Fresh Apr 30 agentic-training lead with distribution alignment between SFT and RLVR; useful for a post-training issue if primary figures and claims check out."
+      "id": "anthropic:biomysterybench",
+      "title": "BioMysteryBench",
+      "reason": "Official Apr 29 scientific data-agent benchmark with messy real-world bioinformatics tasks; useful for a future scientific-agent issue."
+    },
+    {
+      "id": "arxiv:2604.22748",
+      "title": "Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond",
+      "reason": "Broad world-model survey with community signal; useful as background but less suited to this issue's primary-paper depth target."
+    },
+    {
+      "id": "arxiv:2604.23644",
+      "title": "RaV-IDP: Reconstruction-as-Validation for Intelligent Document Processing",
+      "reason": "Document-intelligence validation lead; include only if the open full text provides enough figure/evidence detail and reproducibility is clear."
+    },
+    {
+      "id": "arxiv:2604.24005",
+      "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
+      "reason": "Targets trajectory-depth instability in multi-turn agent distillation; useful for following agentic training mechanics."
+    },
+    {
+      "id": "arxiv:2604.24764",
+      "title": "World-R1: Reinforcing 3D Constraints for Text-to-Video Generation",
+      "reason": "Strong world-model/RL signal with Microsoft project page; useful for a world-model issue if code/weights and 3D-reward claims can be verified."
+    },
+    {
+      "id": "arxiv:2604.24819",
+      "title": "Programming with Data",
+      "reason": "Test-driven data engineering for self-improving LLMs from raw corpora; useful for data-agent training loops."
+    },
+    {
+      "id": "arxiv:2604.24927",
+      "title": "Large Language Models Explore by Latent Distilling",
+      "reason": "Latent exploration and test-time sampling lead; relevant to agentic training mechanisms but should be read for throughput and Pass@k evidence before selection."
+    },
+    {
+      "id": "arxiv:2604.25459",
+      "title": "GS-Playground",
+      "reason": "Fresh world-model / embodied training lead with Real2Sim angle and a public project page."
+    },
+    {
+      "id": "arxiv:2604.25850",
+      "title": "Agentic Harness Engineering",
+      "reason": "Community/HN signal for coding-agent harness evolution and observability; include only after primary full-text reading."
+    },
+    {
+      "id": "arxiv:2604.25917",
+      "title": "Recursive Multi-Agent Systems",
+      "reason": "Strong community signal from Hugging Face Daily Papers; relevant to multi-agent collaboration and latent computation."
+    },
+    {
+      "id": "arxiv:2604.26180",
+      "title": "Evergreen: Efficient Claim Verification for Semantic Aggregates",
+      "reason": "Data-agent adjacent claim verification over relational/semantic aggregates; pairs well with auditability and data workflow themes."
+    },
+    {
+      "id": "arxiv:2604.26462",
+      "title": "A Multistage Extraction Pipeline for Long Scanned Financial Documents",
+      "reason": "Practical document-intelligence pipeline for scanned KYC workflows; useful if next issue emphasizes industrial document agents."
+    },
+    {
+      "id": "arxiv:2604.26694",
+      "title": "Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising",
+      "reason": "World-action modeling for robotics with video priors; compare against World2VLM and other training-time world-model supervision papers."
+    },
+    {
+      "id": "arxiv:2604.26752",
+      "title": "GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents",
+      "reason": "Relevant to multimodal agents over documents, webpages, GUIs, and visual tool use; revisit for a model-report-focused issue."
+    },
+    {
+      "id": "arxiv:2604.26848",
+      "title": "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+      "reason": "Strong Apr 29 world-model candidate with action-centric spatial-temporal prediction and real-world robotics results."
+    },
+    {
+      "id": "arxiv:2604.27083",
+      "title": "Co-Evolving Policy Distillation",
+      "reason": "Community/HF lead for RLVR plus on-policy distillation during expert training; compare with PRISM before selecting to avoid redundant post-training coverage."
+    },
+    {
+      "id": "arxiv:2604.27151",
+      "title": "Step-level Optimization for Efficient Computer-use Agents",
+      "reason": "Efficient GUI-agent escalation policy; pairs well with workflow-interface and intermediate-state verification themes."
+    },
+    {
+      "id": "arxiv:2604.27393",
+      "title": "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction",
+      "reason": "OpenBMB/Tsinghua ecosystem lead for real-time multimodal agents; verify report figures and avoid model-release hype before inclusion."
+    },
+    {
+      "id": "arxiv:2604.27419",
+      "title": "InteractWeb-Bench",
+      "reason": "Interactive website-generation benchmark for multimodal coding agents; revisit if doing a web/document/GUI agent issue."
+    },
+    {
+      "id": "arxiv:2604.27470",
+      "title": "HealthBench Professional: Evaluating Large Language Models on Real Clinician Chats",
+      "reason": "OpenAI-linked technical-report lead for clinical workflow evaluation; use only with careful clinical caveats and primary report reading."
+    },
+    {
+      "id": "arxiv:2604.27505",
+      "title": "Leveraging Verifier-Based Reinforcement Learning in Image Editing / Edit-R1",
+      "reason": "Verifier and reward-model training lead for image editing; useful if a future issue tracks multimodal verifier signals rather than general RLVR."
+    },
+    {
+      "id": "arxiv:2604.27586",
+      "title": "Trace-Level Analysis of Information Contamination in Multi-Agent Systems",
+      "reason": "Trace-divergence and artifact-contamination lead for multi-agent reliability; read closely if the next issue covers data/document provenance."
+    },
+    {
+      "id": "arxiv:2604.27820",
+      "title": "ObjectGraph: From Document Injection to Knowledge Traversal",
+      "reason": "Document-intelligence lead proposing a graph-native document format with role-scoped access and progressive disclosure; read closely for evidence and token-reduction claims."
+    },
+    {
+      "id": "arxiv:2604.27895",
+      "title": "Graph World Models: Concepts, Taxonomy, and Future Directions",
+      "reason": "World-model taxonomy lead around graph/relational environment modeling; useful as context if paired with concrete method papers."
+    },
+    {
+      "id": "arxiv:2604.27906",
+      "title": "Xmemory / Schema-Grounded Memory",
+      "reason": "HN lead for schema-aware persistent agent memory and verified records; verify full text and claims before using in a data-agent memory issue."
+    },
+    {
+      "id": "arxiv:2604.27929",
+      "title": "DPN-LE: Dual Personality Neuron Localization and Editing for Large Language Models",
+      "reason": "Mechanism lead on neuron localization/editing and activation steering; read full text before using for a model-mechanisms issue."
     },
     {
       "id": "arxiv:2604.27998",
@@ -430,14 +613,44 @@
       "reason": "Relevant to latent-space RL instability and efficient reasoning; read closely before using because institutions were not visible in quick scan."
     },
     {
-      "id": "arxiv:2604.28169",
-      "title": "PhyCo: Learning Controllable Physical Priors for Generative Motion",
-      "reason": "World-model/video-generation lead with physics-supervised fine-tuning and VLM-guided reward optimization; suitable for a physical-priors issue."
+      "id": "arxiv:2604.28028",
+      "title": "Reliable Answers for Recurring Questions: Boosting Text-to-SQL Accuracy with Template Constrained Decoding",
+      "reason": "Practical data-agent/Text-to-SQL reliability lead; useful for a future structured-data workflow issue."
     },
     {
       "id": "arxiv:2604.28049",
       "title": "Agent-Agnostic Evaluation of SQL Accuracy in Production Text-to-SQL Systems",
       "reason": "Practical data-agent evaluation lead that avoids assuming ground-truth SQL or one fixed agent trace."
+    },
+    {
+      "id": "arxiv:2604.28111",
+      "title": "GSDrive: Reinforcing Driving Policies by Multi-mode Trajectory Probing with 3D Gaussian Splatting Environment",
+      "reason": "World-model-like driving RL lead with 3DGS environment and dense rewards; compare against prior driving/world-model coverage before selecting."
+    },
+    {
+      "id": "arxiv:2604.28139",
+      "title": "Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows",
+      "reason": "Subagent-confirmed live workflow-agent benchmark with execution traces, audit logs, service state, and official project page; revisit only if it will not repeat the prior ClawGym/live-workspace framing."
+    },
+    {
+      "id": "arxiv:2604.28185",
+      "title": "Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling",
+      "reason": "Lab-blog subagent lead for agentic/world-modeling generation roadmap; likely better as background unless the issue explicitly covers visual-generation evaluation frameworks."
+    },
+    {
+      "id": "official-blog:google-era-applications",
+      "title": "Empirical Research Assistance applications",
+      "reason": "Official Apr 29 Google Research lead on scientific coding/data agents; pair with open arXiv papers if doing a scientific-agent issue."
+    },
+    {
+      "id": "official-report:google-ai-co-clinician",
+      "title": "AI co-clinician technical report",
+      "reason": "Official Apr 30 Google/DeepMind dual-agent clinical consultation report; use only with careful clinical caveats and primary-report reading."
+    },
+    {
+      "id": "official-report:zhipu-scaling-pain-coding-agent-inference",
+      "title": "Scaling Pain: Coding Agent Inference Practice",
+      "reason": "Subagent-confirmed May 1 Chinese/community lead with official Z.ai report; useful for a coding-agent infrastructure issue if primary report figures and serving claims are read carefully."
     },
     {
       "id": "project:ata-terminal-research-agent",
@@ -455,129 +668,9 @@
       "reason": "Chinese media/community world-model lead with embodied data mixing and action grounding; verify paper/project details before inclusion."
     },
     {
-      "id": "arxiv:2604.24764",
-      "title": "World-R1: Reinforcing 3D Constraints for Text-to-Video Generation",
-      "reason": "Strong world-model/RL signal with Microsoft project page; useful for a world-model issue if code/weights and 3D-reward claims can be verified."
-    },
-    {
-      "id": "arxiv:2604.24927",
-      "title": "Large Language Models Explore by Latent Distilling",
-      "reason": "Latent exploration and test-time sampling lead; relevant to agentic training mechanisms but should be read for throughput and Pass@k evidence before selection."
-    },
-    {
-      "id": "arxiv:2604.27151",
-      "title": "Step-level Optimization for Efficient Computer-use Agents",
-      "reason": "Efficient GUI-agent escalation policy; pairs well with workflow-interface and intermediate-state verification themes."
-    },
-    {
-      "id": "arxiv:2604.27419",
-      "title": "InteractWeb-Bench",
-      "reason": "Interactive website-generation benchmark for multimodal coding agents; revisit if doing a web/document/GUI agent issue."
-    },
-    {
-      "id": "arxiv:2604.27586",
-      "title": "Trace-Level Analysis of Information Contamination in Multi-Agent Systems",
-      "reason": "Trace-divergence and artifact-contamination lead for multi-agent reliability; read closely if the next issue covers data/document provenance."
-    },
-    {
-      "id": "arxiv:2604.28028",
-      "title": "Reliable Answers for Recurring Questions: Boosting Text-to-SQL Accuracy with Template Constrained Decoding",
-      "reason": "Practical data-agent/Text-to-SQL reliability lead; useful for a future structured-data workflow issue."
-    },
-    {
-      "id": "arxiv:2604.23644",
-      "title": "RaV-IDP: Reconstruction-as-Validation for Intelligent Document Processing",
-      "reason": "Document-intelligence validation lead; include only if the open full text provides enough figure/evidence detail and reproducibility is clear."
-    },
-    {
-      "id": "official-report:zhipu-scaling-pain-coding-agent-inference",
-      "title": "Scaling Pain: Coding Agent Inference Practice",
-      "reason": "Chinese official technical report on coding-agent serving failures and LayerSplit; useful for an agent infrastructure issue if primary figures are open."
-    },
-    {
-      "id": "official-report:google-ai-co-clinician",
-      "title": "AI co-clinician technical report",
-      "reason": "Official Apr 30 Google/DeepMind dual-agent clinical consultation report; use only with careful clinical caveats and primary-report reading."
-    },
-    {
-      "id": "official-blog:google-era-applications",
-      "title": "Empirical Research Assistance applications",
-      "reason": "Official Apr 29 Google Research lead on scientific coding/data agents; pair with open arXiv papers if doing a scientific-agent issue."
-    },
-    {
-      "id": "arxiv:2604.24819",
-      "title": "Programming with Data",
-      "reason": "Test-driven data engineering for self-improving LLMs from raw corpora; useful for data-agent training loops."
-    },
-    {
-      "id": "technical-report:qwen-scope",
-      "title": "Qwen-Scope technical report",
-      "reason": "Chinese media signal for SAE interpretability as a development tool; verify primary report and figures before inclusion."
-    },
-    {
-      "id": "arxiv:2604.25850",
-      "title": "Agentic Harness Engineering",
-      "reason": "Community/HN signal for coding-agent harness evolution and observability; include only after primary full-text reading."
-    },
-    {
-      "id": "arxiv:2604.28139",
-      "title": "Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows",
-      "reason": "Fresh Apr 30 workflow-agent benchmark with live snapshots, execution traces, audit logs, and service/workspace state; revisit only if it will not repeat ClawGym framing."
-    },
-    {
-      "id": "arxiv:2604.25917",
-      "title": "Recursive Multi-Agent Systems",
-      "reason": "Strong community signal from Hugging Face Daily Papers; relevant to multi-agent collaboration and latent computation."
-    },
-    {
-      "id": "technical-report:nvidia-nemotron-3-nano-omni",
-      "title": "NVIDIA Nemotron 3 Nano Omni Technical Report",
-      "reason": "Official multimodal agent model report; revisit if a future issue covers computer-use/document-intelligence model releases."
-    },
-    {
       "id": "technical-report:deepseek-thinking-with-visual-primitives",
       "title": "Thinking with Visual Primitives",
       "reason": "Relevant to multimodal reasoning mechanisms and visual grounding; verify primary report details before inclusion."
-    },
-    {
-      "id": "arxiv:2604.22748",
-      "title": "Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond",
-      "reason": "Broad world-model survey with community signal; useful as background but less suited to this issue's primary-paper depth target."
-    },
-    {
-      "id": "arxiv:2604.24005",
-      "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
-      "reason": "Targets trajectory-depth instability in multi-turn agent distillation; useful for following agentic training mechanics."
-    },
-    {
-      "id": "arxiv:2604.26694",
-      "title": "Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising",
-      "reason": "World-action modeling for robotics with video priors; compare against World2VLM and other training-time world-model supervision papers."
-    },
-    {
-      "id": "arxiv:2604.26462",
-      "title": "A Multistage Extraction Pipeline for Long Scanned Financial Documents",
-      "reason": "Practical document-intelligence pipeline for scanned KYC workflows; useful if next issue emphasizes industrial document agents."
-    },
-    {
-      "id": "arxiv:2604.26848",
-      "title": "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
-      "reason": "Strong Apr 29 world-model candidate with action-centric spatial-temporal prediction and real-world robotics results."
-    },
-    {
-      "id": "arxiv:2604.26752",
-      "title": "GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents",
-      "reason": "Relevant to multimodal agents over documents, webpages, GUIs, and visual tool use; revisit for a model-report-focused issue."
-    },
-    {
-      "id": "anthropic:biomysterybench",
-      "title": "BioMysteryBench",
-      "reason": "Official Apr 29 scientific data-agent benchmark with messy real-world bioinformatics tasks; useful for a future scientific-agent issue."
-    },
-    {
-      "id": "arxiv:2604.26180",
-      "title": "Evergreen: Efficient Claim Verification for Semantic Aggregates",
-      "reason": "Data-agent adjacent claim verification over relational/semantic aggregates; pairs well with auditability and data workflow themes."
     },
     {
       "id": "technical-report:deepseek-v4",
@@ -590,9 +683,14 @@
       "reason": "Practical document-intelligence and multimodal assistant lead with open report and strong Chinese ecosystem signal."
     },
     {
-      "id": "arxiv:2604.25459",
-      "title": "GS-Playground",
-      "reason": "Fresh world-model / embodied training lead with Real2Sim angle and a public project page."
+      "id": "technical-report:nvidia-nemotron-3-nano-omni",
+      "title": "NVIDIA Nemotron 3 Nano Omni Technical Report",
+      "reason": "Official multimodal agent model report; revisit if a future issue covers computer-use/document-intelligence model releases."
+    },
+    {
+      "id": "technical-report:qwen-scope",
+      "title": "Qwen-Scope technical report",
+      "reason": "Chinese media signal for SAE interpretability as a development tool; verify primary report and figures before inclusion."
     }
   ]
 }

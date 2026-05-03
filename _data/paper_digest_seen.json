@@ -1,6 +1,58 @@
 {
   "papers": [
     {
+      "id": "arxiv:2604.28123",
+      "title": "PRISM: Pre-alignment via Black-box On-policy Distillation for Multimodal Reinforcement Learning",
+      "canonical_url": "https://arxiv.org/abs/2604.28123",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-03-1138-en/",
+      "themes": [
+        "agentic training",
+        "multimodal RL",
+        "pre-alignment",
+        "on-policy distillation"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28169",
+      "title": "PhyCo: Learning Controllable Physical Priors for Generative Motion",
+      "canonical_url": "https://arxiv.org/abs/2604.28169",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-03-1138-en/",
+      "themes": [
+        "world models",
+        "physical priors",
+        "controllable video generation",
+        "VLM reward optimization"
+      ]
+    },
+    {
+      "id": "arxiv:2604.25186",
+      "title": "FCMBench-Video: Benchmarking Document Video Intelligence",
+      "canonical_url": "https://arxiv.org/abs/2604.25186",
+      "date": "2026-04-28",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-03-1138-en/",
+      "themes": [
+        "document intelligence",
+        "video MLLMs",
+        "temporal grounding",
+        "visual prompt injection"
+      ]
+    },
+    {
+      "id": "arxiv:2604.28129",
+      "title": "Latent Adversarial Detection: Adaptive Probing of LLM Activations for Multi-Turn Attack Detection",
+      "canonical_url": "https://arxiv.org/abs/2604.28129",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-03-1138-en/",
+      "themes": [
+        "large model mechanisms",
+        "activation probes",
+        "multi-turn safety",
+        "runtime monitoring"
+      ]
+    },
+    {
       "id": "arxiv:2604.27221",
       "title": "Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction",
       "canonical_url": "https://arxiv.org/abs/2604.27221",
