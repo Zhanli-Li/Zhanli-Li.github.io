@@ -392,6 +392,45 @@
         "multimodal grounding",
         "interleaved context alignment"
       ]
+    },
+    {
+      "id": "arxiv:2604.28139",
+      "title": "Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows",
+      "canonical_url": "https://arxiv.org/abs/2604.28139",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-04-0215-en/",
+      "themes": [
+        "workflow agents",
+        "live evaluation",
+        "auditable execution",
+        "data agents"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27820",
+      "title": "ObjectGraph: From Document Injection to Knowledge Traversal -- A Native File Format for the Agentic Era",
+      "canonical_url": "https://arxiv.org/abs/2604.27820",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-04-0215-en/",
+      "themes": [
+        "document intelligence",
+        "agent memory",
+        "graph-native documents",
+        "RAG infrastructure"
+      ]
+    },
+    {
+      "id": "arxiv:2604.27495",
+      "title": "Debiasing Reward Models via Causally Motivated Inference-Time Intervention",
+      "canonical_url": "https://arxiv.org/abs/2604.27495",
+      "date": "2026-04-30",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-04-0215-en/",
+      "themes": [
+        "large model mechanisms",
+        "reward models",
+        "agentic training",
+        "inference-time intervention"
+      ]
     }
   ]
 }

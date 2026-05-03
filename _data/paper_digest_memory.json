@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-03 11:38:00 +0800",
+  "last_updated": "2026-05-04 02:15:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Evidence surfaces outside the prompt",
+      "summary": "This issue focused on where agent evidence should live once work leaves the chat window: Claw-Eval-Live grounds workflow-agent scores in live demand signals and observable service/workspace artifacts, ObjectGraph moves document evidence into a traversable typed file format, and CIRM makes reward-model shortcut signals explicit enough to intervene before they become DPO labels.",
+      "papers": [
+        "arxiv:2604.28139",
+        "arxiv:2604.27820",
+        "arxiv:2604.27495"
+      ],
+      "judgment": "The common move is to stop treating the prompt as the evidence container. Stronger agent systems need external surfaces that can be refreshed, traversed, audited, or causally edited: benchmark releases, document formats, and reward-model activations."
+    },
     {
       "theme": "Checks before multimodal and agent systems drift",
       "summary": "This issue moved earlier in the failure chain: PRISM corrects SFT-induced distribution drift before multimodal RLVR, PhyCo exposes physical-property controls before generated video motion drifts from dynamics, FCMBench-Video preserves temporal document evidence before flattened OCR loses auditability, and LAD probes activation trajectories before multi-turn adversarial intent becomes an explicit harmful request.",
@@ -132,9 +142,25 @@
     "Can physical property maps scale from clean object interactions to cluttered manipulation scenes with hands, tools, occlusion, and multi-object contact?",
     "Can document-video agents expose a durable evidence ledger that records what was read, when it was visible, and why it was trusted?",
     "Can activation trajectory probes collect enough representative benign deployment data to avoid becoming another brittle classifier?",
-    "Can visual prompt-injection robustness be separated from recency bias in document-video workflows?"
+    "Can visual prompt-injection robustness be separated from recency bias in document-video workflows?",
+    "Can live workflow benchmarks expose enough failure evidence without turning semantic dimensions into another judge-model benchmark?",
+    "Can graph-native agent documents support cross-file edge resolution, versioning, and team authoring without becoming harder to maintain than Markdown plus retrieval?",
+    "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-04 02:15:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-04-0215-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-04-0215-zh/",
+      "title_en": "Evidence Surfaces for Agents Outside the Prompt",
+      "title_zh": "把证据从提示词里移出来",
+      "covered_papers": [
+        "arxiv:2604.28139",
+        "arxiv:2604.27820",
+        "arxiv:2604.27495"
+      ],
+      "selection_note": "May 1-3 target-topic arXiv was sparse, so the run expanded to Apr 30 after deduplicating against all prior Paper Radar items. Selected three open arXiv HTML papers with enough method detail and figures for deep reading: a live workflow-agent benchmark, a graph-native document format, and a reward-model causal intervention paper. Dense evidence tables were rewritten as Markdown; method diagrams and plots were saved locally under images/paper-radar/2026-05-04-0215."
+    },
     {
       "date": "2026-05-03 11:38:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-03-1138-en/",
@@ -250,6 +276,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-04",
+      "observations": [
+        "This run avoided another generic state/workboard issue by narrowing the theme to evidence surfaces outside the prompt: benchmark artifacts, document graph structure, and reward-model mediator activations.",
+        "The posts add more field setup before each paper, include core CIRM formulas, and rewrite central numeric evidence as Markdown tables instead of using hard-to-read table screenshots.",
+        "ObjectGraph SVG figures required local Chromium rendering because arXiv HTML exposed them as inline SVG; the final images are local PNGs under images/paper-radar/2026-05-04-0215.",
+        "SkillHub CLI installed successfully and the requested skills were installed, but the SkillHub arXiv wrapper lacked the Python arxiv dependency; final search/reading used primary arXiv API/HTML instead."
+      ]
+    },
+    {
       "date": "2026-05-03",
       "observations": [
         "This run followed the user feedback by adding field introductions, central formulas, and clean Markdown result tables instead of ugly recreated table screenshots.",
@@ -323,6 +358,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-04",
+      "improved": [
+        "Converted the user feedback into concrete choices: field introductions, source-locatable formulas, local figure assets, and Markdown result tables for dense evidence.",
+        "Used subagents for academic, Chinese/community, and lab-blog leads while keeping final selection anchored to open primary full text.",
+        "Selected three papers rather than four or five so each could be treated as a mini explainer with figures, methods, evidence, and caveats."
+      ],
+      "remaining_issues": [
+        "The freshest May 1-3 window still lacked enough target-topic source-native papers, so the issue relies on Apr 30 fallback papers surfaced through May 1 community/media attention.",
+        "Some ObjectGraph figure screenshots are rendered from inline SVG rather than PDF crops because the environment lacks PDF/image tooling such as ImageMagick or PIL; they are readable but not perfect archival crops.",
+        "The selected set remains arXiv-heavy; official lab reports were used only as context because they did not fit this narrow issue theme."
+      ],
+      "next_run_adjustments": [
+        "Check whether FlashRT, indirect prompt injection in the wild, xmemory/schema-grounded memory, SpecVQA, and multivector retrieval remain fresh enough for a document-agent safety/retrieval issue.",
+        "If selecting a world-model issue, prefer concrete empirical papers such as GS-Playground, S2VAE/topological encoding, or GSDrive over broad visual-generation surveys unless the issue is explicitly a roadmap digest.",
+        "For graph/document papers, look for cross-file linking, versioning, and human-authoring evidence instead of only token savings."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-03",
       "improved": [
@@ -691,6 +745,31 @@
       "id": "technical-report:qwen-scope",
       "title": "Qwen-Scope technical report",
       "reason": "Chinese media signal for SAE interpretability as a development tool; verify primary report and figures before inclusion."
+    },
+    {
+      "id": "arxiv:2604.28157",
+      "title": "FlashRT: Towards Computationally and Memory Efficient Red-Teaming for Prompt Injection and Knowledge Corruption",
+      "reason": "Potential document/data-agent safety lead; pair with indirect prompt-injection-in-the-wild or evidence-ledger papers if still fresh."
+    },
+    {
+      "id": "arxiv:2604.27202",
+      "title": "Indirect Prompt Injection in the Wild",
+      "reason": "Large-scale web measurement of indirect prompt injection; relevant for agents consuming untrusted pages and documents."
+    },
+    {
+      "id": "arxiv:2604.28142",
+      "title": "Efficient Multivector Retrieval with Token-Aware Clustering and Hierarchical Indexing",
+      "reason": "SIGIR 2026 retrieval infrastructure lead for document intelligence and RAG/data-agent systems."
+    },
+    {
+      "id": "arxiv:2604.28039",
+      "title": "SpecVQA: A Benchmark for Spectral Understanding and Visual Question Answering in Scientific Images",
+      "reason": "Scientific figure/document-intelligence lead with expert QA over spectra; useful for a document-science issue."
+    },
+    {
+      "id": "arxiv:2604.25167",
+      "title": "From Insight to Action: Interpretability-Guided Data Selection in LLMs",
+      "reason": "Mechanism-to-training data selection lead; potentially pair with reward-model intervention papers for a training-signal issue."
     }
   ]
 }
