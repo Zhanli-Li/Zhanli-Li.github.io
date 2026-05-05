@@ -1,6 +1,45 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.02134",
+      "title": "Video Generation with Predictive Latents",
+      "canonical_url": "https://arxiv.org/abs/2605.02134",
+      "date": "2026-05-04",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-05-1128-en/",
+      "themes": [
+        "world models",
+        "predictive latents",
+        "video generation",
+        "representation design"
+      ]
+    },
+    {
+      "id": "arxiv:2605.01882",
+      "title": "Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts",
+      "canonical_url": "https://arxiv.org/abs/2605.01882",
+      "date": "2026-05-03",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-05-1128-en/",
+      "themes": [
+        "document intelligence",
+        "chart reasoning",
+        "multimodal RL",
+        "visual evidence grounding"
+      ]
+    },
+    {
+      "id": "arxiv:2605.02815",
+      "title": "FlexSQL: Flexible Exploration and Execution Make Better Text-to-SQL Agents",
+      "canonical_url": "https://arxiv.org/abs/2605.02815",
+      "date": "2026-05-04",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-05-1128-en/",
+      "themes": [
+        "data agents",
+        "text-to-SQL",
+        "interactive schema exploration",
+        "execution-grounded planning"
+      ]
+    },
+    {
       "id": "arxiv:2604.28123",
       "title": "PRISM: Pre-alignment via Black-box On-policy Distillation for Multimodal Reinforcement Learning",
       "canonical_url": "https://arxiv.org/abs/2604.28123",

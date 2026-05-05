@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-04 02:15:00 +0800",
+  "last_updated": "2026-05-05 11:28:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Inspection loops before agent answers",
+      "summary": "This issue stayed in the fresh May 3-4 window and selected FlexSQL, Chart-FR1, and PV-VAE. The common move is to improve what a model inspects before answering or generating: database schemas/values/execution traces, chart OCR and local visual regions, and future video frames withheld from the encoder.",
+      "papers": [
+        "arxiv:2605.02815",
+        "arxiv:2605.01882",
+        "arxiv:2605.02134"
+      ],
+      "judgment": "The useful pattern is not only external audit after the answer. Agents and generative models need inspection loops or predictive pressure before the answer: query the database while planning, focus visual evidence while reasoning, and force latents to predict future dynamics. This is a narrower and fresher continuation of the evidence-surface theme."
+    },
     {
       "theme": "Evidence surfaces outside the prompt",
       "summary": "This issue focused on where agent evidence should live once work leaves the chat window: Claw-Eval-Live grounds workflow-agent scores in live demand signals and observable service/workspace artifacts, ObjectGraph moves document evidence into a traversable typed file format, and CIRM makes reward-model shortcut signals explicit enough to intervene before they become DPO labels.",
@@ -112,6 +122,10 @@
     }
   ],
   "open_questions": [
+    "Can bilingual SQL/Python data-agent execution preserve auditability when the winning answer is produced procedurally and then transpiled back to SQL?",
+    "Can predictive video latent objectives incorporate actions and interventions so the latent state becomes useful for planning, not only generation?",
+    "Can focus traces in chart and document models be exposed as durable audit evidence after deployment rather than only serving as training-time reasoning tags?",
+    "Can data agents learn a calibrated stopping policy for schema/value exploration instead of relying mainly on larger test-time sample budgets?",
     "Can shared workboards support cross-worker contradiction resolution rather than only parallel row filling?",
     "Can GUI-agent event detectors transfer across products, slow services, and enterprise-specific UI states?",
     "Can trace divergence trigger targeted validation before final-answer checking, with different policies for extraction, computation, and synthesis failures?",
@@ -148,6 +162,19 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-05 11:28:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-05-1128-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-05-1128-zh/",
+      "title_en": "Agents That Look Before They Answer",
+      "title_zh": "先看清证据，再让模型回答",
+      "covered_papers": [
+        "arxiv:2605.02815",
+        "arxiv:2605.01882",
+        "arxiv:2605.02134"
+      ],
+      "selection_note": "Selected three fresh May 3-4 open arXiv HTML papers after SkillHub setup, memory deduplication, local arXiv/API search, and academic/lab-blog subagent cross-checks. The screened 24-hour pool included MolmoAct2, orchestration-trace RL, FlexSQL, latent MLLM reasoning, AcademiClaw, ARA, AutoFocus, long-horizon training, DataClaw, and PhysicianBench. Chose a coherent inspection-before-answering theme and rewrote dense numeric tables as Markdown while saving only core method/analysis figures locally under images/paper-radar/2026-05-05-1128."
+    },
     {
       "date": "2026-05-04 02:15:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-04-0215-en/",
@@ -276,6 +303,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-05",
+      "observations": [
+        "This run avoided another Apr 30 fallback issue by staying inside the fresh May 3-4 arXiv window and selecting three papers with open HTML full text.",
+        "The final theme shifted from post-answer evidence surfaces to pre-answer inspection loops: database exploration, visual focus, and predictive latent pressure.",
+        "Dense result tables were rewritten as Markdown, while method and analysis figures were saved locally; no table screenshots were used for tables better represented in text.",
+        "SkillHub CLI and requested skills installed successfully into repo-local skills/, but those untracked installation artifacts must remain excluded from final repo changes."
+      ]
+    },
+    {
       "date": "2026-05-04",
       "observations": [
         "This run avoided another generic state/workboard issue by narrowing the theme to evidence surfaces outside the prompt: benchmark artifacts, document graph structure, and reward-model mediator activations.",
@@ -358,6 +394,25 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-05",
+      "improved": [
+        "Used the self-evolution brief to avoid repeating the previous evidence-surface/workboard framing and instead selected papers around inspection before answering.",
+        "Kept the issue to three papers so each section could include an introduction, method steps, equations where relevant, source-backed tables, figure explanations, and caveats.",
+        "Used subagents for academic and lab-blog cross-checking, but kept final inclusion anchored to primary open arXiv HTML full text."
+      ],
+      "remaining_issues": [
+        "PV-VAE's arXiv HTML did not expose reliable institution metadata, so the post conservatively marks institutions as not specified.",
+        "Subagent results for Chinese media and community sources arrived too late to influence final selection; their strongest leads should be treated as next-run candidates, not as verified covered papers.",
+        "The selected set is still arXiv-heavy; official lab reports were deferred because they were older, report-only, or less coherent with the fresh May 3-4 theme."
+      ],
+      "next_run_adjustments": [
+        "Follow strict 24-hour leads not selected here: MolmoAct2, long-horizon training horizon length, DataClaw, AutoFocus, latent MLLM reasoning, and orchestration-trace RL.",
+        "If selecting a multi-agent training issue, prioritize credit assignment and stopping policies rather than another benchmark-only digest.",
+        "For document/chart papers, look for evidence traces that can be audited after deployment, not only during training-data construction."
+      ],
+      "safety_note": "Self-evolution remains limited to research and writing quality; it does not change source, paywall, secret-handling, or workflow restrictions."
+    },
     {
       "date": "2026-05-04",
       "improved": [
@@ -531,6 +586,71 @@
     }
   ],
   "next_run_watchlist": [
+    {
+      "id": "arxiv:2604.27818",
+      "title": "MASCing: Activation Steering Masks for MoE Behavior",
+      "reason": "Mechanism/safety lead on MoE activation steering; weak community signal but relevant to model-mechanism tracking."
+    },
+    {
+      "id": "arxiv:2604.14268",
+      "title": "HY-World 2.0",
+      "reason": "World-model repository with strong community signal but older paper date; consider only for a model-release/world-simulation issue."
+    },
+    {
+      "id": "project:nano-world-model",
+      "title": "nano-world-model",
+      "reason": "Fresh GitHub/project lead for compact world-model release; no formal paper found in quick scan, so verify technical writeup before using."
+    },
+    {
+      "id": "arxiv:2604.08538",
+      "title": "ParseBench",
+      "reason": "Document-intelligence parser benchmark with fresh GitHub activity; paper is older, so use only if paired with current document-agent parsing/retrieval theme."
+    },
+    {
+      "id": "arxiv:2605.02178",
+      "title": "T²PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic RL",
+      "reason": "Fresh HF/community lead on stable multi-turn agentic RL; verify collapse/stability evidence and compare with long-horizon training before selection."
+    },
+    {
+      "id": "official-report:microsoft-multi-agent-red-team",
+      "title": "Red-teaming a network of agents",
+      "reason": "Official Microsoft lead on network-only multi-agent failure modes; use only if report has enough technical detail and auditable evidence."
+    },
+    {
+      "id": "official-blog:anthropic-introspection-adapters",
+      "title": "Introspection Adapters: Training LLMs to Report Their Learned Behaviors",
+      "reason": "Official Anthropic lead on model auditing and learned-behavior reports; verify arXiv full text and avoid overclaiming introspection."
+    },
+    {
+      "id": "arxiv:2605.02801",
+      "title": "Reinforcement Learning for LLM-based Multi-Agent Systems through Orchestration Traces",
+      "reason": "Survey/position lead on orchestration traces, reward design, credit assignment, and stopping decisions; use carefully because it is not an empirical method paper."
+    },
+    {
+      "id": "arxiv:2605.02735",
+      "title": "Visual Latents Know More Than They Say: Unsilencing Latent Reasoning in MLLMs",
+      "reason": "Mechanism lead for multimodal latent reasoning; could pair with Chart-FR1 or activation-level papers if full text has strong evidence."
+    },
+    {
+      "id": "arxiv:2605.02630",
+      "title": "AutoFocus: Uncertainty-Aware Active Visual Search for GUI Grounding",
+      "reason": "Training-free GUI grounding lead using coordinate uncertainty; useful for a screen/document-agent perception issue."
+    },
+    {
+      "id": "arxiv:2605.02503",
+      "title": "DataClaw: A Process-Oriented Agent Benchmark for Exploratory Real-World Data Analysis",
+      "reason": "Fresh data-agent benchmark with process milestones; compare against FlexSQL and prior process-reward/data-agent coverage before selecting."
+    },
+    {
+      "id": "arxiv:2605.02572",
+      "title": "On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length",
+      "reason": "Relevant to agentic training instability, exploration, and credit assignment; pair with orchestration-trace RL if doing a training-dynamics issue."
+    },
+    {
+      "id": "arxiv:2605.02881",
+      "title": "MolmoAct2: Action Reasoning Models for Real-world Deployment",
+      "reason": "Strict 24-hour academic lead on open VLA/action reasoning and embodied deployment; read primary full text before using in a world-model/embodied-agent issue."
+    },
     {
       "id": "anthropic:biomysterybench",
       "title": "BioMysteryBench",
