@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-05 11:28:00 +0800",
+  "last_updated": "2026-05-06 11:45:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Structures learned before agent answers",
+      "summary": "This issue selected three fresh May 5 papers after SkillHub setup, memory deduplication, arXiv/API search, Chinese-media and academic/community subagent cross-checks. OpenSeeker-v2 focuses on difficult SFT trajectories for search agents, the agent-memory circuit paper traces write/manage/read computations across Qwen-3 scales, and Learning-to-Theorize treats world understanding as executable latent program induction from raw observation pairs.",
+      "papers": [
+        "arxiv:2605.04036",
+        "arxiv:2605.03354",
+        "arxiv:2605.03413"
+      ],
+      "judgment": "The useful common pattern is structure learned before the final answer: search trajectories encode exploration habits, memory circuits separate routing from content grounding, and latent programs make world models reusable across unseen compositions. This deliberately avoids another evidence-surface or benchmark-only issue."
+    },
     {
       "theme": "Inspection loops before agent answers",
       "summary": "This issue stayed in the fresh May 3-4 window and selected FlexSQL, Chart-FR1, and PV-VAE. The common move is to improve what a model inspects before answering or generating: database schemas/values/execution traces, chart OCR and local visual regions, and future video frames withheld from the encoder.",
@@ -122,6 +132,10 @@
     }
   ],
   "open_questions": [
+    "Can SFT-only search agents preserve evidence quality when benchmark-style graph questions are replaced by private enterprise or scientific search tasks?",
+    "Can theory-style world models keep stable learned primitives under noisy observations, hidden actions, partial observability, and overlapping mechanisms?",
+    "Can memory-stage circuit signatures become runtime alarms in real agent stacks with tool traces, multilingual memories, and external memory rewrites?",
+    "Can search-agent trajectory filters teach calibrated stopping policies rather than only longer exploration?",
     "Can bilingual SQL/Python data-agent execution preserve auditability when the winning answer is produced procedurally and then transpiled back to SQL?",
     "Can predictive video latent objectives incorporate actions and interventions so the latent state becomes useful for planning, not only generation?",
     "Can focus traces in chart and document models be exposed as durable audit evidence after deployment rather than only serving as training-time reasoning tags?",
@@ -162,6 +176,19 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-06 11:45:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-06-1145-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-06-1145-zh/",
+      "title_en": "Training Signals, Memory Circuits, and Theories of the World",
+      "title_zh": "从搜索轨迹到记忆电路，再到世界理论",
+      "covered_papers": [
+        "arxiv:2605.04036",
+        "arxiv:2605.03354",
+        "arxiv:2605.03413"
+      ],
+      "selection_note": "Kept three May 5 open arXiv/PDF papers for depth after screening OpenSeeker-v2, reasoning-intensive retrieval, Workspace-Bench, iWorld-Bench, RoboAlign-R1, VLM curiosity, Agentic-imodels, FINER-SQL, PatRe, and mechanism candidates. The issue avoids another benchmark/evidence-surface digest by focusing on pre-answer learned structure. Dense result tables were rewritten as Markdown; only core explanatory figures were saved locally under images/paper-radar/2026-05-06-1145."
+    },
     {
       "date": "2026-05-05 11:28:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-05-1128-en/",
@@ -257,48 +284,6 @@
         "arxiv:2604.26462"
       ],
       "selection_note": "Selected four open-access papers with readable HTML figures and, where useful, local table screenshots. The issue avoided repeating the previous verifier/workspace loop by centering explicit intermediate state across world models, latent RL, interpretability, and document extraction."
-    },
-    {
-      "date": "2026-05-01 11:53:00 +0800",
-      "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-1153-en/",
-      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-01-1153-zh/",
-      "title_en": "Replayable Workspaces for Long-Horizon Agents",
-      "title_zh": "让长程智能体拥有可回放工作区",
-      "covered_papers": [
-        "arxiv:2604.28181",
-        "arxiv:2604.28138",
-        "arxiv:2604.28182",
-        "arxiv:2604.27389"
-      ],
-      "selection_note": "Selected four newest Apr 30 open arXiv papers after source-specialized candidate collection. Favored a coherent stack around workspaces, sandbox state, RL training failure modes, and multimodal evidence alignment over another broad GUI/data-agent benchmark issue."
-    },
-    {
-      "date": "2026-05-01 03:05:00 +0800",
-      "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-0305-en/",
-      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-01-0305-zh/",
-      "title_en": "Closed Loops for Auditable Agents",
-      "title_zh": "从闭环反馈到可审计工作流",
-      "covered_papers": [
-        "arxiv:2604.26733",
-        "arxiv:2604.26653",
-        "arxiv:2604.25914",
-        "arxiv:2604.26866"
-      ],
-      "selection_note": "Selected four recent open arXiv papers with stable HTML figures and enough full-text detail for close reading. Deferred official model reports, medical-agent reports, and robotics world-model papers to avoid a diffuse issue."
-    },
-    {
-      "date": "2026-05-01 02:30:00 +0800",
-      "permalink_en": "/posts/2026/05/paper-radar-2026-05-01-0230-en/",
-      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-01-0230-zh/",
-      "title_en": "Verifiable State for Long-Horizon Agents",
-      "title_zh": "让长程智能体拥有可核验的状态",
-      "covered_papers": [
-        "arxiv:2604.26904",
-        "arxiv:2604.26934",
-        "arxiv:2604.24198",
-        "arxiv:2604.26622"
-      ],
-      "selection_note": "Selected four recent open arXiv papers with accessible HTML full text, method figures, and result tables. Deferred social/media-hot leads when they were older, survey-like, or less suitable for close reading this round."
     }
   ],
   "quality_feedback": [
@@ -891,5 +876,71 @@
       "title": "From Insight to Action: Interpretability-Guided Data Selection in LLMs",
       "reason": "Mechanism-to-training data selection lead; potentially pair with reward-model intervention papers for a training-signal issue."
     }
-  ]
+  ],
+  "next_run_search_suggestions": [
+    {
+      "id": "arxiv:2605.03571",
+      "title": "PatRe",
+      "reason": "Patent-examination document-intelligence benchmark; useful if next issue focuses on technical/legal document workflows."
+    },
+    {
+      "id": "arxiv:2605.03465",
+      "title": "FINER-SQL",
+      "reason": "Small-model text-to-SQL RL with execution feedback; defer because FlexSQL was just covered."
+    },
+    {
+      "id": "arxiv:2605.03780",
+      "title": "Task Vector Geometry Underlies Dual Modes of Task Inference in Transformers",
+      "reason": "Mechanism lead on task vectors and inference modes; read for a future large-model-mechanisms issue."
+    },
+    {
+      "id": "arxiv:2605.03808",
+      "title": "Agentic-imodels",
+      "reason": "Autoresearch loop for agent-interpretable data-science tools; possible bridge between data agents and mechanism/tool design."
+    },
+    {
+      "id": "arxiv:2605.03782",
+      "title": "What You Think is What You See",
+      "reason": "VLM-agent visual-linguistic curiosity lead; relevant to exploration and internal world-model error signals."
+    },
+    {
+      "id": "arxiv:2605.03821",
+      "title": "RoboAlign-R1",
+      "reason": "Robot video world models with reward alignment; compare to predictive-latent and physical-prior prior coverage before selecting."
+    },
+    {
+      "id": "arxiv:2605.03941",
+      "title": "iWorld-Bench",
+      "reason": "Interactive world-model benchmark with action generation; good follow-up to theory-style world models if read with action-conditioned evidence."
+    },
+    {
+      "id": "arxiv:2605.03596",
+      "title": "Workspace-Bench 1.0",
+      "reason": "Large-scale file-dependency workspace benchmark; useful for a future workspace/data-agent issue if it does not repeat prior replayable-workspace themes."
+    },
+    {
+      "id": "arxiv:2605.04018",
+      "title": "Rethinking Reasoning-Intensive Retrieval",
+      "reason": "Fresh agentic-search retrieval paper from Yale/NUS/NYU Shanghai; pair with OpenSeeker-style trajectory work or data-agent evidence retrieval."
+    }
+  ],
+  "self_evolution": {
+    "last_updated": "2026-05-06 11:45:00 +0800",
+    "this_run_improved": [
+      "Avoided another evidence-surface or benchmark-only framing by selecting papers about pre-answer learned structure: trajectory data, internal memory circuits, and latent theories.",
+      "Used user feedback from 2026-05-02: each paper starts with field context, dense result tables are rewritten as Markdown, and equations are included where they carry the method.",
+      "Extracted high-resolution local figure crops from open arXiv PDFs/HTML and kept only essential explanatory images under images/paper-radar/2026-05-06-1145."
+    ],
+    "still_failed_or_risky": [
+      "Some comparison numbers in OpenSeeker-v2 come from public reports/leaderboards rather than one fully controlled rerun; the blog flags this but future issues should prefer papers with stronger ablations when possible.",
+      "Learning-to-Theorize is conceptually strong but synthetic; the article should not imply natural-world physical modeling has been solved.",
+      "Subagent community/lab-blog leads were useful but final selection still depended mostly on arXiv because those papers had the cleanest open full text and figures."
+    ],
+    "next_adjustments": [
+      "For future world-model issues, prefer action-conditioned and intervention-aware papers after this theory-induction issue.",
+      "For future data-agent issues, avoid back-to-back text-to-SQL unless the paper adds a clearly new training signal or audit mechanism beyond FlexSQL.",
+      "Continue rewriting dense numeric evidence as Markdown tables; reserve screenshots for method diagrams, plots, or visual cases that cannot be cleanly represented in text.",
+      "Keep bilingual posts independently readable, with the Chinese version written as its own research note rather than a literal translation."
+    ]
+  }
 }

@@ -1,6 +1,45 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.03413",
+      "title": "Learning to Theorize the World from Observation",
+      "canonical_url": "https://arxiv.org/abs/2605.03413",
+      "date": "2026-05-05",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-06-1145-en/",
+      "themes": [
+        "world models",
+        "latent programs",
+        "compositional generalization",
+        "theory induction"
+      ]
+    },
+    {
+      "id": "arxiv:2605.03354",
+      "title": "What Happens Inside Agent Memory? Circuit Analysis from Emergence to Diagnosis",
+      "canonical_url": "https://arxiv.org/abs/2605.03354",
+      "date": "2026-05-05",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-06-1145-en/",
+      "themes": [
+        "large model mechanisms",
+        "agent memory",
+        "circuit tracing",
+        "failure diagnosis"
+      ]
+    },
+    {
+      "id": "arxiv:2605.04036",
+      "title": "OpenSeeker-v2: Pushing the Limits of Search Agents with Informative and High-Difficulty Trajectories",
+      "canonical_url": "https://arxiv.org/abs/2605.04036",
+      "date": "2026-05-05",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-06-1145-en/",
+      "themes": [
+        "agentic training",
+        "search agents",
+        "trajectory curation",
+        "supervised fine-tuning"
+      ]
+    },
+    {
       "id": "arxiv:2605.02134",
       "title": "Video Generation with Predictive Latents",
       "canonical_url": "https://arxiv.org/abs/2605.02134",
