@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-06 11:45:00 +0800",
+  "last_updated": "2026-05-07 02:52:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Consumable intermediate artifacts for agents",
+      "summary": "This issue selected three fresh May 5 open papers after SkillHub setup, memory deduplication, arXiv/source search, and academic/community/Chinese-media cross-checks. TraceLift trains reasoning planners with executor-grounded rewards, BRIGHT-Pro evaluates and trains retrievers around weighted evidence portfolios, and Agentic-imodels evolves tabular tools whose string representations are simulatable by LLM agents.",
+      "papers": [
+        "arxiv:2605.03862",
+        "arxiv:2605.04018",
+        "arxiv:2605.03808"
+      ],
+      "judgment": "The common pattern is that intermediate artifacts should be optimized against the component that consumes them: frozen executors for reasoning traces, search agents for retrieval portfolios, and data-analysis agents for model displays. This avoids another benchmark-only or evidence-surface issue by focusing on interface utility."
+    },
     {
       "theme": "Structures learned before agent answers",
       "summary": "This issue selected three fresh May 5 papers after SkillHub setup, memory deduplication, arXiv/API search, Chinese-media and academic/community subagent cross-checks. OpenSeeker-v2 focuses on difficult SFT trajectories for search agents, the agent-memory circuit paper traces write/manage/read computations across Qwen-3 scales, and Learning-to-Theorize treats world understanding as executable latent program induction from raw observation pairs.",
@@ -132,6 +142,11 @@
     }
   ],
   "open_questions": [
+    "Can executor-grounded rewards transfer from code/math reasoning to real tool traces such as retrieval calls, SQL steps, shell commands, and GUI actions?",
+    "Can aspect-aware retrieval become a direct training signal for multi-positive retrievers rather than only an evaluation protocol?",
+    "Can agent-readable data tools preserve auditability when agents move from small tabular regressions to messy scientific notebooks with incomplete provenance?",
+    "Can retriever-agent compatibility be measured separately from standalone retriever quality in adaptive deep-search loops?",
+    "Can agent-interpretability metrics resist reward hacking when the model-design agent sees only a test API rather than visible test prompts?",
     "Can SFT-only search agents preserve evidence quality when benchmark-style graph questions are replaced by private enterprise or scientific search tasks?",
     "Can theory-style world models keep stable learned primitives under noisy observations, hidden actions, partial observability, and overlapping mechanisms?",
     "Can memory-stage circuit signatures become runtime alarms in real agent stacks with tool traces, multilingual memories, and external memory rewrites?",
@@ -176,6 +191,19 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-07 02:52:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-07-0252-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-07-0252-zh/",
+      "title_en": "Intermediate Work That Agents Can Actually Use",
+      "title_zh": "让中间产物能被智能体真正使用",
+      "covered_papers": [
+        "arxiv:2605.03862",
+        "arxiv:2605.04018",
+        "arxiv:2605.03808"
+      ],
+      "selection_note": "Screened 8-15 May 4-5 candidates including TraceLift, BRIGHT-Pro/RTriever, Agentic-imodels, iWorld-Bench, RoboAlign-R1, CC-OCR V2, FINER-SQL, DataClaw, ARGUS, ProgramBench, ARIS, Experience-RAG Skill, QKVShare, and mechanism leads. Selected three open arXiv/source papers with enough method detail and at least two core visuals each. Dense numeric evidence was rewritten as Markdown tables; PDF figures from arXiv source were rendered locally at 320 DPI under images/paper-radar/2026-05-07-0252."
+    },
     {
       "date": "2026-05-06 11:45:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-06-1145-en/",
@@ -288,6 +316,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-07",
+      "observations": [
+        "This run used the user feedback about form checks: every selected paper has at least two rendered or source-extracted visuals, image dimensions/DPI/nonblank ranges were checked, and dense result tables were rewritten as Markdown instead of ugly screenshots.",
+        "The issue avoided repeating search trajectories, memory circuits, or broad evidence-surface framing by centering downstream-consumable intermediate artifacts.",
+        "BRIGHT-Pro and Agentic-imodels lacked arXiv HTML full text, so the run read primary arXiv source packages and rendered source figures locally rather than relying on inaccessible HTML.",
+        "SkillHub CLI and requested skills installed successfully; SkillHub wrote repo-local skills/ artifacts, and those untracked files were removed before final verification."
+      ]
+    },
+    {
       "date": "2026-05-05",
       "observations": [
         "This run avoided another Apr 30 fallback issue by staying inside the fresh May 3-4 arXiv window and selecting three papers with open HTML full text.",
@@ -379,6 +416,26 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-07",
+      "improved": [
+        "Converted the pre-search self-evolution brief into a concrete selection rule: fewer papers, each with open source/full text, at least two useful visuals, and Markdown tables for numeric evidence.",
+        "Used subagents for academic and community/Chinese-media leads, but kept final inclusion anchored to primary arXiv pages and source packages.",
+        "Shifted the theme from visible evidence surfaces to consumer-optimized intermediate artifacts, giving each paper a clearer field on-ramp and implementation-level method walkthrough."
+      ],
+      "remaining_issues": [
+        "The final set is still arXiv-heavy, and official lab/blog leads did not add an eligible primary paper inside the strict freshness window.",
+        "TraceLift has important pending ablations, so the blog had to state the combined-reward result conservatively rather than claiming all reward components are isolated.",
+        "Agentic-imodels depends on LLM-as-judge and exposes reward-hacking risks; the post flags this but future issues should prefer stronger human or programmatic validation when available."
+      ],
+      "next_run_adjustments": [
+        "Follow the deferred world-model and document-intelligence leads only if they add action conditioning or document evidence beyond the themes already covered: iWorld-Bench, RoboAlign-R1, CC-OCR V2, and MedStruct-S.",
+        "For another data-agent issue, compare FINER-SQL, Rose-SQL, DataClaw, and Experience-RAG around feedback granularity and audit trails rather than writing another text-to-SQL summary.",
+        "When source figures are PDFs, render directly from arXiv source at high DPI and verify dimensions/nonblank statistics before writing.",
+        "Keep Chinese and English posts structurally aligned but idiomatic; do not make the Chinese version a literal translation."
+      ],
+      "safety_note": "Self-evolution remains limited to search, reading, figure use, structure, and bilingual writing quality; it does not change source, paywall, secret-handling, or workflow permissions."
+    },
     {
       "date": "2026-05-05",
       "improved": [
@@ -879,6 +936,26 @@
   ],
   "next_run_search_suggestions": [
     {
+      "id": "arxiv:2605.03903",
+      "title": "CC-OCR V2",
+      "reason": "Document-intelligence benchmark over OCR, parsing, grounding, KIE, and DocQA; read if next issue focuses on enterprise document evidence."
+    },
+    {
+      "id": "arxiv:2605.03042",
+      "title": "ARIS",
+      "reason": "Autonomous research harness with adversarial multi-agent collaboration; verify source figures and avoid repo hype before inclusion."
+    },
+    {
+      "id": "arxiv:2605.03546",
+      "title": "ProgramBench",
+      "reason": "Coding-agent evaluation around rebuilding programs from scratch; useful for a future issue on long-horizon coding artifacts."
+    },
+    {
+      "id": "arxiv:2605.03989",
+      "title": "Experience-RAG Skill",
+      "reason": "Retrieval strategy selection as an agent skill with experience memory; pair with BRIGHT-Pro follow-ups if evidence retrieval remains the theme."
+    },
+    {
       "id": "arxiv:2605.03571",
       "title": "PatRe",
       "reason": "Patent-examination document-intelligence benchmark; useful if next issue focuses on technical/legal document workflows."
@@ -892,11 +969,6 @@
       "id": "arxiv:2605.03780",
       "title": "Task Vector Geometry Underlies Dual Modes of Task Inference in Transformers",
       "reason": "Mechanism lead on task vectors and inference modes; read for a future large-model-mechanisms issue."
-    },
-    {
-      "id": "arxiv:2605.03808",
-      "title": "Agentic-imodels",
-      "reason": "Autoresearch loop for agent-interpretable data-science tools; possible bridge between data agents and mechanism/tool design."
     },
     {
       "id": "arxiv:2605.03782",
@@ -917,30 +989,25 @@
       "id": "arxiv:2605.03596",
       "title": "Workspace-Bench 1.0",
       "reason": "Large-scale file-dependency workspace benchmark; useful for a future workspace/data-agent issue if it does not repeat prior replayable-workspace themes."
-    },
-    {
-      "id": "arxiv:2605.04018",
-      "title": "Rethinking Reasoning-Intensive Retrieval",
-      "reason": "Fresh agentic-search retrieval paper from Yale/NUS/NYU Shanghai; pair with OpenSeeker-style trajectory work or data-agent evidence retrieval."
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-06 11:45:00 +0800",
+    "last_updated": "2026-05-07 02:52:00 +0800",
     "this_run_improved": [
-      "Avoided another evidence-surface or benchmark-only framing by selecting papers about pre-answer learned structure: trajectory data, internal memory circuits, and latent theories.",
-      "Used user feedback from 2026-05-02: each paper starts with field context, dense result tables are rewritten as Markdown, and equations are included where they carry the method.",
-      "Extracted high-resolution local figure crops from open arXiv PDFs/HTML and kept only essential explanatory images under images/paper-radar/2026-05-06-1145."
+      "Selected three papers around consumable intermediate artifacts instead of another benchmark/evidence-surface issue.",
+      "Rendered all selected source/PDF figures locally at 320 DPI and checked image dimensions and channel ranges before finalizing.",
+      "Rewrote central numeric evidence as Markdown tables and included formulas or concrete reward/metric definitions where they carried the method."
     ],
     "still_failed_or_risky": [
-      "Some comparison numbers in OpenSeeker-v2 come from public reports/leaderboards rather than one fully controlled rerun; the blog flags this but future issues should prefer papers with stronger ablations when possible.",
-      "Learning-to-Theorize is conceptually strong but synthetic; the article should not imply natural-world physical modeling has been solved.",
-      "Subagent community/lab-blog leads were useful but final selection still depended mostly on arXiv because those papers had the cleanest open full text and figures."
+      "BRIGHT-Pro and Agentic-imodels required reading LaTeX source because arXiv HTML full text was unavailable; this is reliable but slower and easier to mis-cite if not checked carefully.",
+      "TraceLift has pending reward-component ablations, so the issue cannot make a strong causal claim about uplift alone.",
+      "The search was broad but final selection remains centered on arXiv; future runs should keep checking official lab reports and conference pages when they contain eligible full text."
     ],
     "next_adjustments": [
-      "For future world-model issues, prefer action-conditioned and intervention-aware papers after this theory-induction issue.",
-      "For future data-agent issues, avoid back-to-back text-to-SQL unless the paper adds a clearly new training signal or audit mechanism beyond FlexSQL.",
-      "Continue rewriting dense numeric evidence as Markdown tables; reserve screenshots for method diagrams, plots, or visual cases that cannot be cleanly represented in text.",
-      "Keep bilingual posts independently readable, with the Chinese version written as its own research note rather than a literal translation."
+      "Prioritize papers whose intermediate artifacts are consumed by another module and whose consumer loop is experimentally measured.",
+      "For dense tables, continue using Markdown tables when they are more readable than screenshots; reserve images for diagrams, curves, and visual cases.",
+      "For agentic data-science papers, require evidence beyond aggregate benchmark scores, such as tool interfaces, failure analysis, or auditability of produced artifacts.",
+      "Before finalizing each issue, run a lightweight image-form check for path location, file size, DPI metadata, dimensions, and nonblank color range."
     ]
   }
 }

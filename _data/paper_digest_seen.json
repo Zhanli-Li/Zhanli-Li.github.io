@@ -1,6 +1,45 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.03862",
+      "title": "Correct Is Not Enough: Training Reasoning Planners with Executor-Grounded Rewards",
+      "canonical_url": "https://arxiv.org/abs/2605.03862",
+      "date": "2026-05-05",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-07-0252-en/",
+      "themes": [
+        "agentic training",
+        "planner-executor agents",
+        "executor-grounded rewards",
+        "reasoning traces"
+      ]
+    },
+    {
+      "id": "arxiv:2605.04018",
+      "title": "Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems",
+      "canonical_url": "https://arxiv.org/abs/2605.04018",
+      "date": "2026-05-05",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-07-0252-en/",
+      "themes": [
+        "agentic search",
+        "reasoning-intensive retrieval",
+        "evidence portfolios",
+        "document intelligence"
+      ]
+    },
+    {
+      "id": "arxiv:2605.03808",
+      "title": "Agentic-imodels: Evolving agentic interpretability tools via autoresearch",
+      "canonical_url": "https://arxiv.org/abs/2605.03808",
+      "date": "2026-05-05",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-07-0252-en/",
+      "themes": [
+        "data agents",
+        "agentic interpretability",
+        "autoresearch",
+        "agent-readable tools"
+      ]
+    },
+    {
       "id": "arxiv:2605.03413",
       "title": "Learning to Theorize the World from Observation",
       "canonical_url": "https://arxiv.org/abs/2605.03413",
