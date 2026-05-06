@@ -24,6 +24,8 @@ redirect_from:
 
 ## Selected Publications 📓
 
+> *Before introducing my selected publications, I would like to share a few thoughts on how I think about research. In the future, I hope to lead only one paper each year. For each work, I want to start from a problem that I find both interesting and meaningful, spend time understanding its principles and foundations, and then work on it seriously. If the problem is solved, that would be wonderful—a piece of good work. If not, that is also fine; it may still lead to an incremental paper. What truly matters is my own growth and the fact that I have helped push the boundary of the problem forward.*
+
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
   [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014)<br>
   [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)
