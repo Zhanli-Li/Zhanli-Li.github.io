@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-07 02:52:00 +0800",
+  "last_updated": "2026-05-08 11:31:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Agent-facing state for workflows",
+      "summary": "This issue selected three fresh May 7 open arXiv papers after SkillHub setup, memory deduplication, official arXiv/API search, and academic/community/Chinese-media/lab-blog cross-checks. SkillOS learns a curator for reusable Markdown skills, SIRA turns LLM retrieval priors into a single corpus-discriminative BM25 action, and HaM-World structures planner-facing latents with q/p/c geometry plus selective memory.",
+      "papers": [
+        "arxiv:2605.06614",
+        "arxiv:2605.06647",
+        "arxiv:2605.05951"
+      ],
+      "judgment": "The common pattern is state that can be consumed by the next module: a SkillRepo for future tasks, validated lexical terms for a search index, and a memory-conditioned latent for planning. This shifts the issue from generic audit surfaces toward concrete state maintenance and compression."
+    },
     {
       "theme": "Consumable intermediate artifacts for agents",
       "summary": "This issue selected three fresh May 5 open papers after SkillHub setup, memory deduplication, arXiv/source search, and academic/community/Chinese-media cross-checks. TraceLift trains reasoning planners with executor-grounded rewards, BRIGHT-Pro evaluates and trains retrievers around weighted evidence portfolios, and Agentic-imodels evolves tabular tools whose string representations are simulatable by LLM agents.",
@@ -142,6 +152,9 @@
     }
   ],
   "open_questions": [
+    "Can skill-curation policies handle multi-file, executable, and hierarchical skills rather than flattened Markdown-only skills?",
+    "Can corpus-aware lexical expansion be trained directly from retrieval outcomes instead of being mostly hand-designed around LLM priors plus DF filters?",
+    "Can q/p/c structured world-model latents remain stable when moving from state observations and smooth DMC tasks to pixels, discontinuous contact, and richer planning failures?",
     "Can executor-grounded rewards transfer from code/math reasoning to real tool traces such as retrieval calls, SQL steps, shell commands, and GUI actions?",
     "Can aspect-aware retrieval become a direct training signal for multi-positive retrievers rather than only an evaluation protocol?",
     "Can agent-readable data tools preserve auditability when agents move from small tabular regressions to messy scientific notebooks with incomplete provenance?",
@@ -191,6 +204,19 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-08 11:31:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-08-1131-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-08-1131-zh/",
+      "title_en": "Skills, Retrieval, and Memory for Agent Workflows",
+      "title_zh": "技能、检索与记忆化世界模型",
+      "covered_papers": [
+        "arxiv:2605.06614",
+        "arxiv:2605.06647",
+        "arxiv:2605.05951"
+      ],
+      "selection_note": "Screened 8-15 May 6-8 candidates including SkillOS, SIRA, HaM-World, StraTA, RAO, PrefixGuard, cited-source attribution for deep research agents, OpenSearch-VL, ProgramBench, ARIS, A2TGPO, Workspace-Bench, TabEmbed, attention-sink mechanisms, Model Spec Midtraining, and lab/blog leads. Selected three May 7 open arXiv HTML papers with clear method figures and source-backed tables. Numeric evidence was rewritten as Markdown tables; arXiv HTML figures were saved locally under images/paper-radar/2026-05-08-1131 and checked for dimensions, DPI metadata, and nonblank content."
+    },
     {
       "date": "2026-05-07 02:52:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-07-0252-en/",
@@ -316,6 +342,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-08",
+      "observations": [
+        "This run used SkillHub CLI and installed the requested skills; the SkillHub arXiv helper failed at runtime because the Python arxiv dependency was missing, so final search/reading used official arXiv API/HTML and primary open pages.",
+        "The issue avoided another generic evidence-surface framing by centering concrete agent-facing state: skill repositories, corpus-discriminative retrieval terms, and planner-facing latents.",
+        "All selected papers had open arXiv HTML full text and stable method/result figures; figures were saved locally, DPI metadata was normalized to 300, and dimensions/nonblank ranges were checked.",
+        "Dense quantitative evidence was rewritten as Markdown tables, while figures were reserved for method diagrams, training curves, and mechanism diagnostics."
+      ]
+    },
+    {
       "date": "2026-05-07",
       "observations": [
         "This run used the user feedback about form checks: every selected paper has at least two rendered or source-extracted visuals, image dimensions/DPI/nonblank ranges were checked, and dense result tables were rewritten as Markdown instead of ugly screenshots.",
@@ -416,6 +451,26 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-08",
+      "improved": [
+        "Used academic, community, Chinese-media, and lab-blog subagents early enough to pressure-test the final shortlist; SkillOS and SIRA entered from those cross-checks.",
+        "Kept the issue to three papers so each section could include a field setup, mechanism walk-through, local figures, and source-backed Markdown tables.",
+        "Followed the image-form feedback by checking file location, dimensions, DPI metadata, and nonblank content before finalizing posts."
+      ],
+      "remaining_issues": [
+        "The final set is still arXiv-heavy; Chinese media and lab-blog leads such as Model Spec Midtraining, ProgramBench, AlphaEvolve, and Claude Managed Agents were deferred rather than deeply read.",
+        "SkillOS and SIRA both depend partly on LLM priors or LLM-as-judge signals, so claims about durable real-world skill/retrieval quality should stay conservative.",
+        "HaM-World evidence is strong for state-observation DMC tasks but not yet for pixel-based or contact-rich planning."
+      ],
+      "next_run_adjustments": [
+        "If the next issue continues the skill/memory theme, compare SkillOS with A2TGPO, TreeMem, BeliefMem, and Claude Managed Agents around credit assignment and memory update semantics.",
+        "If the next issue focuses on coding/data agents, read ProgramBench, Workspace-Bench, ARIS, and Auto Research with Specialist Agents, but avoid another benchmark-only post unless failure traces are inspectable.",
+        "If the next issue focuses on mechanisms/alignment, consider Model Spec Midtraining, attention-sink structural origins, MiA-Signature, and Subquadratic Sparse Attention only after primary full-text or technical-report validation.",
+        "Continue using Markdown tables for dense numeric evidence and local images only for diagrams, curves, visual cases, or mechanism plots that directly support the explanation."
+      ],
+      "safety_note": "Self-evolution remains limited to search, reading, figure use, structure, and bilingual writing quality; it does not change source, paywall, secret-handling, or workflow permissions."
+    },
     {
       "date": "2026-05-07",
       "improved": [
@@ -628,6 +683,31 @@
     }
   ],
   "next_run_watchlist": [
+    {
+      "id": "arxiv:2605.02087",
+      "title": "Model Spec Midtraining: Improving How Alignment Training Generalizes",
+      "reason": "Chinese-media and Anthropic alignment lead; relevant to agentic training and alignment generalization, especially agentic misalignment reductions."
+    },
+    {
+      "id": "arxiv:2605.03546",
+      "title": "ProgramBench: Can Language Models Rebuild Programs From Scratch?",
+      "reason": "HN/Chinese-media lead for coding-agent evaluation with cleanroom program reconstruction; read if next issue covers long-horizon software agents."
+    },
+    {
+      "id": "arxiv:2605.06200",
+      "title": "A²TGPO: Agentic Turn-Group Policy Optimization with Adaptive Turn-level Clipping",
+      "reason": "Agentic training lead around turn-level credit assignment and clipping for tool-call trajectories."
+    },
+    {
+      "id": "arxiv:2605.05724",
+      "title": "Auto Research with Specialist Agents Develops Effective and Non-Trivial Training Recipes",
+      "reason": "Research-agent/autoresearch lead; compare to ARIS and Agentic-imodels before selecting."
+    },
+    {
+      "id": "report:pageindex",
+      "title": "PageIndex: Vectorless, Reasoning-based RAG",
+      "reason": "GitHub/social document-intelligence lead; include only after validating the technical report and avoiding repo-star recirculation bias."
+    },
     {
       "id": "arxiv:2604.27818",
       "title": "MASCing: Activation Steering Masks for MoE Behavior",
@@ -992,22 +1072,23 @@
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-07 02:52:00 +0800",
+    "last_updated": "2026-05-08 11:31:00 +0800",
     "this_run_improved": [
-      "Selected three papers around consumable intermediate artifacts instead of another benchmark/evidence-surface issue.",
-      "Rendered all selected source/PDF figures locally at 320 DPI and checked image dimensions and channel ranges before finalizing.",
-      "Rewrote central numeric evidence as Markdown tables and included formulas or concrete reward/metric definitions where they carried the method."
+      "Selected three May 7 papers around agent-facing state instead of repeating the previous consumable-intermediate-artifact framing.",
+      "Used subagent leads to improve the shortlist and then anchored final selection to open arXiv HTML full text.",
+      "Saved only necessary figures under images/paper-radar/2026-05-08-1131, normalized DPI metadata to 300, and checked image dimensions and nonblank content.",
+      "Used Markdown tables for dense numeric results rather than screenshots of tables."
     ],
     "still_failed_or_risky": [
-      "BRIGHT-Pro and Agentic-imodels required reading LaTeX source because arXiv HTML full text was unavailable; this is reliable but slower and easier to mis-cite if not checked carefully.",
-      "TraceLift has pending reward-component ablations, so the issue cannot make a strong causal claim about uplift alone.",
-      "The search was broad but final selection remains centered on arXiv; future runs should keep checking official lab reports and conference pages when they contain eligible full text."
+      "The installed SkillHub arXiv helper could not run without its Python dependency, so the workflow relied on direct arXiv API/HTML despite successful SkillHub installation.",
+      "The final issue remains arXiv-centric and deferred strong report/blog leads to memory rather than deeply reading them within the time budget.",
+      "SIRA and SkillOS both expose dependence on frozen LLM priors or LLM-judge signals; future posts should prefer external validation when available."
     ],
     "next_adjustments": [
-      "Prioritize papers whose intermediate artifacts are consumed by another module and whose consumer loop is experimentally measured.",
-      "For dense tables, continue using Markdown tables when they are more readable than screenshots; reserve images for diagrams, curves, and visual cases.",
-      "For agentic data-science papers, require evidence beyond aggregate benchmark scores, such as tool interfaces, failure analysis, or auditability of produced artifacts.",
-      "Before finalizing each issue, run a lightweight image-form check for path location, file size, DPI metadata, dimensions, and nonblank color range."
+      "Start with SkillHub checks but verify installed skills before relying on them; fall back to primary sources immediately if a skill dependency is missing.",
+      "For skill/memory papers, require explicit update semantics and downstream consumer evidence, not just higher final task scores.",
+      "For retrieval-agent papers, separate retriever quality from reader/answerer quality and watch for corpus shift beyond pretraining knowledge.",
+      "For world-model papers, prefer action-conditioned planning evidence, OOD perturbations, and mechanism diagnostics over pretty rollout samples alone."
     ]
   }
 }

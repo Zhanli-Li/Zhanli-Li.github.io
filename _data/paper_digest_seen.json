@@ -1,6 +1,45 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.06614",
+      "title": "SkillOS: Learning Skill Curation for Self-Evolving Agents",
+      "canonical_url": "https://arxiv.org/abs/2605.06614",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-08-1131-en/",
+      "themes": [
+        "agentic training",
+        "self-evolving agents",
+        "skill curation",
+        "experience-driven memory"
+      ]
+    },
+    {
+      "id": "arxiv:2605.06647",
+      "title": "Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval",
+      "canonical_url": "https://arxiv.org/abs/2605.06647",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-08-1131-en/",
+      "themes": [
+        "agentic search",
+        "document intelligence",
+        "retrieval agents",
+        "corpus-aware lexical retrieval"
+      ]
+    },
+    {
+      "id": "arxiv:2605.05951",
+      "title": "HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning",
+      "canonical_url": "https://arxiv.org/abs/2605.05951",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-08-1131-en/",
+      "themes": [
+        "world models",
+        "structured latents",
+        "selective memory",
+        "planning stability"
+      ]
+    },
+    {
       "id": "arxiv:2605.03862",
       "title": "Correct Is Not Enough: Training Reasoning Planners with Executor-Grounded Rewards",
       "canonical_url": "https://arxiv.org/abs/2605.03862",
