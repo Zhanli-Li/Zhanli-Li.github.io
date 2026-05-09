@@ -1,6 +1,48 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.06635",
+      "title": "Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents",
+      "canonical_url": "https://arxiv.org/abs/2605.06635",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-09-1130-en/",
+      "themes": [
+        "document intelligence",
+        "deep research agents",
+        "citation verification",
+        "source attribution",
+        "auditable evidence"
+      ]
+    },
+    {
+      "id": "arxiv:2605.06639",
+      "title": "Recursive Agent Optimization",
+      "canonical_url": "https://arxiv.org/abs/2605.06639",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-09-1130-en/",
+      "themes": [
+        "agentic training",
+        "recursive agents",
+        "subagent delegation",
+        "inference-time scaling",
+        "process rewards"
+      ]
+    },
+    {
+      "id": "arxiv:2605.06642",
+      "title": "StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction",
+      "canonical_url": "https://arxiv.org/abs/2605.06642",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-09-1130-en/",
+      "themes": [
+        "agentic training",
+        "long-horizon agents",
+        "strategy abstraction",
+        "hierarchical GRPO",
+        "credit assignment"
+      ]
+    },
+    {
       "id": "arxiv:2605.06614",
       "title": "SkillOS: Learning Skill Curation for Self-Evolving Agents",
       "canonical_url": "https://arxiv.org/abs/2605.06614",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-08 11:31:00 +0800",
+  "last_updated": "2026-05-09 11:30:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Strategy, delegation, and verification for long-horizon agents",
+      "summary": "This issue selected three fresh May 7 open arXiv papers after SkillHub CLI setup, memory deduplication, primary arXiv/PDF reading, and academic/community/lab-blog lead collection. StraTA makes a trajectory-level strategy a training object for long-horizon agentic RL, RAO trains one shared policy to use recursive subagents through local rewards and depth weighting, and the source-attribution paper audits whether deep-research citations actually support nearby claims.",
+      "papers": [
+        "arxiv:2605.06642",
+        "arxiv:2605.06639",
+        "arxiv:2605.06635"
+      ],
+      "judgment": "The common pattern is no longer just preserving agent state. These papers put control surfaces around long work: a strategy object before acting, a recursively generated execution tree during acting, and claim-source checks after reporting. This moves the digest away from another skill/memory issue toward planning, delegation, and auditability."
+    },
     {
       "theme": "Agent-facing state for workflows",
       "summary": "This issue selected three fresh May 7 open arXiv papers after SkillHub setup, memory deduplication, official arXiv/API search, and academic/community/Chinese-media/lab-blog cross-checks. SkillOS learns a curator for reusable Markdown skills, SIRA turns LLM retrieval priors into a single corpus-discriminative BM25 action, and HaM-World structures planner-facing latents with q/p/c geometry plus selective memory.",
@@ -152,6 +162,11 @@
     }
   ],
   "open_questions": [
+    "Can deep-research agents learn retrieval budgets that optimize factual support rather than citation quantity or topical relevance?",
+    "Can citation-level source-attribution evaluation move from public web search to private document stores with versioned sources, access controls, and changing content?",
+    "Can recursive-agent local rewards remain useful when child-task success is ambiguous, delayed, or judged only after integration?",
+    "Can recursive agents expose blame traces that separate bad task splitting, bad child execution, and bad synthesis?",
+    "Can strategy quality and delegation quality be verified by environment artifacts rather than model self-judgment or final task score?",
     "Can skill-curation policies handle multi-file, executable, and hierarchical skills rather than flattened Markdown-only skills?",
     "Can corpus-aware lexical expansion be trained directly from retrieval outcomes instead of being mostly hand-designed around LLM priors plus DF filters?",
     "Can q/p/c structured world-model latents remain stable when moving from state observations and smooth DMC tasks to pixels, discontinuous contact, and richer planning failures?",
@@ -204,6 +219,19 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-09 11:30:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-09-1130-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-09-1130-zh/",
+      "title_en": "Strategies, Subagents, and Citation Checks for Long-Horizon Work",
+      "title_zh": "让长程智能体会规划、会分工、也会验引文",
+      "covered_papers": [
+        "arxiv:2605.06642",
+        "arxiv:2605.06639",
+        "arxiv:2605.06635"
+      ],
+      "selection_note": "arXiv API had no May 8-9 CS slice at search time, so the run stayed in the May 7 three-day window. Screened 8-15 candidates including STALE, Tool-Integrated Reasoning, Execution Lineage, Constraint Decay, LatentRAG, OBLIQ-Bench, Data Language Models, robotic/world-action model leads, reversible SFT behavior, SoftSAE, ScaleLogic, StraTA, RAO, BAMI, AI Co-Mathematician, and source-attribution evaluation. Selected three open PDFs with enough method and evidence depth around strategy, recursive delegation, and citation verification. Figures were cropped locally at high resolution under images/paper-radar/2026-05-09-1130; dense numeric results were rewritten as Markdown tables. Community/HF cross-checks also surfaced Natural Language Autoencoders, Skill1, OpenSearch-VL, A2TGPO, MiA-Signature, EMO, AI Co-Mathematician, and TabEmbed; these were saved to watchlist when they did not fit the final strategy/delegation/verification theme."
+    },
     {
       "date": "2026-05-08 11:31:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-08-1131-en/",
@@ -342,6 +370,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-09",
+      "observations": [
+        "SkillHub CLI was absent, installed with the requested CLI-only command, and the four requested SkillHub skills installed successfully; SkillHub wrote repo-local skills/ artifacts that were used only as instructions and must be removed before final verification.",
+        "The issue avoided another agent-facing-state or memory-library framing by centering long-horizon control surfaces: explicit strategies, recursive execution trees, and claim-source attribution checks.",
+        "All final papers were read from open arXiv PDFs; local crops were saved under images/paper-radar/2026-05-09-1130 with 300 DPI metadata and nonblank image checks.",
+        "Dense result evidence was written as Markdown tables; screenshots were reserved for diagrams, curves, and histograms that directly support the explanation."
+      ]
+    },
+    {
       "date": "2026-05-08",
       "observations": [
         "This run used SkillHub CLI and installed the requested skills; the SkillHub arXiv helper failed at runtime because the Python arxiv dependency was missing, so final search/reading used official arXiv API/HTML and primary open pages.",
@@ -451,6 +488,26 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-09",
+      "improved": [
+        "Converted the pre-search self-evolution brief into a concrete constraint: keep only three papers, use local figure crops for visuals, and rewrite central numeric evidence as readable Markdown tables.",
+        "Used the academic subagent result to broaden the candidate shortlist and save STALE, LatentRAG, OBLIQ-Bench, Constraint Decay, and world-action model leads for future issues without derailing the current theme.",
+        "Shifted the issue from repeated reusable-state coverage to planning/delegation/verification, giving each paper a different role in long-horizon agent work."
+      ],
+      "remaining_issues": [
+        "The final set is still arXiv-heavy; Chinese media, social, and official lab-blog leads did not displace the stronger primary-paper theme inside the one-hour budget.",
+        "StraTA and the source-attribution paper rely partly on model self-judgment or LLM-as-judge signals, so the blog keeps those claims conservative.",
+        "RAO's strongest benefits are task-shape dependent and can spend far more wall-clock time on sequential tasks; future posts should be more explicit about cost surfaces when covering inference-time scaling."
+      ],
+      "next_run_adjustments": [
+        "If the next issue follows memory freshness, read STALE together with SkillOS/agent-memory follow-ups but require evidence of conflict detection rather than only benchmark accuracy.",
+        "If the next issue follows retrieval/document intelligence, compare LatentRAG, OBLIQ-Bench, and source-attribution evaluation around evidence surfacing, not just retrieval latency.",
+        "If the next issue follows world models, prioritize action-conditioned reliability papers such as adaptive world-action execution and robotic latent semantics over visual sample quality.",
+        "Continue checking figure placement and image quality after writing; use Markdown tables for dense numeric evidence and local crops only for diagrams, curves, formulas, or cases that readers need to see."
+      ],
+      "safety_note": "Self-evolution remains limited to search, reading, figure use, structure, and bilingual writing quality; it does not change source, paywall, secret-handling, or workflow permissions."
+    },
     {
       "date": "2026-05-08",
       "improved": [
@@ -683,6 +740,71 @@
     }
   ],
   "next_run_watchlist": [
+    {
+      "id": "arxiv:2605.06651",
+      "title": "AI Co-Mathematician: Accelerating Mathematicians with Agentic AI",
+      "reason": "Google DeepMind agentic-math workbench with stateful workspace design; include only with careful reading of open report evidence and user-study limitations."
+    },
+    {
+      "id": "arxiv:2605.06416",
+      "title": "MiA-Signature: Approximating Global Activation for Long-Context Understanding",
+      "reason": "Mechanism/long-context lead from HF; consider for a future issue on activation signatures and long-context failure analysis."
+    },
+    {
+      "id": "arxiv:2605.05242",
+      "title": "Beyond Semantic Similarity: Rethinking Retrieval for Agentic Search via Direct Corpus Interaction",
+      "reason": "Agentic search lead on direct corpus interaction; compare with SIRA, LatentRAG, and OBLIQ-Bench around retriever-agent compatibility."
+    },
+    {
+      "id": "arxiv:2605.05185",
+      "title": "OpenSearch-VL: An Open Recipe for Frontier Multimodal Search Agents",
+      "reason": "Multimodal search-agent recipe; useful if the next retrieval/document issue needs visual evidence search rather than text-only RAG."
+    },
+    {
+      "id": "arxiv:2605.06130",
+      "title": "Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning",
+      "reason": "Fresh HF/community agentic-training lead adjacent to SkillOS; compare skill evolution, reward design, and executable skill semantics before selecting."
+    },
+    {
+      "id": "report:transformer-circuits-natural-language-autoencoders",
+      "title": "Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations",
+      "reason": "Fresh Transformer Circuits/HN mechanism lead with open report; useful for a large-model-mechanisms issue if read against SAE and activation-explanation baselines."
+    },
+    {
+      "id": "arxiv:2605.06365",
+      "title": "From Agent Loops to Deterministic Graphs: Execution Lineage for Reproducible AI-Native Work",
+      "reason": "Agent-work provenance lead that may pair well with citation/source attribution and workflow replay."
+    },
+    {
+      "id": "arxiv:2605.06388",
+      "title": "Reconstruction or Semantics? What Makes a Latent Space Useful for Robotic World Models",
+      "reason": "World-model representation lead comparing reconstruction and semantic latents for action-conditioned robotics."
+    },
+    {
+      "id": "arxiv:2605.06222",
+      "title": "When to Trust Imagination: Adaptive Action Execution for World Action Models",
+      "reason": "World/action model reliability lead that verifies imagined rollouts before continuing action chunks."
+    },
+    {
+      "id": "arxiv:2605.06445",
+      "title": "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation",
+      "reason": "Coding/data-agent lead on structural constraint loss around APIs, databases, and ORMs; pair with execution-lineage or verification papers."
+    },
+    {
+      "id": "arxiv:2605.06235",
+      "title": "OBLIQ-Bench: Exposing Overlooked Bottlenecks in Modern Retrievers with Latent and Implicit Queries",
+      "reason": "Retrieval benchmark for latent-pattern queries where verification is easier than surfacing evidence; relevant to document intelligence."
+    },
+    {
+      "id": "arxiv:2605.06285",
+      "title": "LatentRAG: Latent Reasoning and Retrieval for Efficient Agentic RAG",
+      "reason": "Document/retrieval-agent lead that moves multi-step RAG reasoning into latent tokens; compare with source-attribution checks before selecting."
+    },
+    {
+      "id": "arxiv:2605.06527",
+      "title": "STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?",
+      "reason": "Fresh agent-memory benchmark for implicit stale-memory conflicts; useful if the next issue returns to memory freshness and conflict detection."
+    },
     {
       "id": "arxiv:2605.02087",
       "title": "Model Spec Midtraining: Improving How Alignment Training Generalizes",
@@ -1072,23 +1194,22 @@
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-08 11:31:00 +0800",
+    "last_updated": "2026-05-09 11:30:00 +0800",
     "this_run_improved": [
-      "Selected three May 7 papers around agent-facing state instead of repeating the previous consumable-intermediate-artifact framing.",
-      "Used subagent leads to improve the shortlist and then anchored final selection to open arXiv HTML full text.",
-      "Saved only necessary figures under images/paper-radar/2026-05-08-1131, normalized DPI metadata to 300, and checked image dimensions and nonblank content.",
-      "Used Markdown tables for dense numeric results rather than screenshots of tables."
+      "Used SkillHub setup first, then relied on primary arXiv PDFs and local rendering for final reading.",
+      "Avoided repeating the previous skill/retrieval/memory-state theme by selecting strategy, recursive delegation, and citation verification as the through-line.",
+      "Saved local visuals with 300 DPI metadata and checked image dimensions/nonblank ranges; kept dense result evidence as Markdown tables."
     ],
     "still_failed_or_risky": [
-      "The installed SkillHub arXiv helper could not run without its Python dependency, so the workflow relied on direct arXiv API/HTML despite successful SkillHub installation.",
-      "The final issue remains arXiv-centric and deferred strong report/blog leads to memory rather than deeply reading them within the time budget.",
-      "SIRA and SkillOS both expose dependence on frozen LLM priors or LLM-judge signals; future posts should prefer external validation when available."
+      "SkillHub installed skills into repo-local skills/, so cleanup is required before final diff verification.",
+      "Subagent leads from community/lab sources arrived too late to fully diversify beyond arXiv, though they did improve the watchlist.",
+      "Two selected papers rely on model-judgment signals, so future issues should prefer environment-side or human-audited validation when possible."
     ],
     "next_adjustments": [
-      "Start with SkillHub checks but verify installed skills before relying on them; fall back to primary sources immediately if a skill dependency is missing.",
-      "For skill/memory papers, require explicit update semantics and downstream consumer evidence, not just higher final task scores.",
-      "For retrieval-agent papers, separate retriever quality from reader/answerer quality and watch for corpus shift beyond pretraining knowledge.",
-      "For world-model papers, prefer action-conditioned planning evidence, OOD perturbations, and mechanism diagnostics over pretty rollout samples alone."
+      "Start final selection by asking whether the issue adds a new control surface, not just another state object.",
+      "For inference-time scaling papers, always report cost surfaces: tokens, wall-clock time, parallelizability, and failure attribution.",
+      "For research-agent/document papers, require claim-level evidence checks or source-ledger mechanics rather than surface citation counts.",
+      "Keep using local figure crops only when they directly explain methods, curves, histograms, or formulas; write tables in Markdown when that is clearer."
     ]
   }
 }
