@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-09 11:30:00 +0800",
+  "last_updated": "2026-05-10 11:45:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Readable hidden state before agent action",
+      "summary": "This issue selected three fresh May 7 open technical papers/reports after SkillHub setup, memory deduplication, arXiv/source search, and academic/community/Chinese-media/lab-blog cross-checks. Natural Language Autoencoders translate residual-stream activations into auditable text via an AV/AR reconstruction bottleneck, BAMI diagnoses GUI grounding errors and corrects precision/ambiguity bias at test time, and Sheet as Token represents workbook tabs as sheet-level graph nodes for data-agent retrieval.",
+      "papers": [
+        "technical-report:anthropic-natural-language-autoencoders",
+        "arxiv:2605.06664",
+        "arxiv:2605.05811"
+      ],
+      "judgment": "The common pattern is inspection before action: read hidden activations before trusting model behavior, correct screen coordinates before clicking, and retrieve worksheet objects before reasoning over a workbook. This deliberately moves away from another skill/delegation issue and toward state surfaces that can be checked locally."
+    },
     {
       "theme": "Strategy, delegation, and verification for long-horizon agents",
       "summary": "This issue selected three fresh May 7 open arXiv papers after SkillHub CLI setup, memory deduplication, primary arXiv/PDF reading, and academic/community/lab-blog lead collection. StraTA makes a trajectory-level strategy a training object for long-horizon agentic RL, RAO trains one shared policy to use recursive subagents through local rewards and depth weighting, and the source-attribution paper audits whether deep-research citations actually support nearby claims.",
@@ -162,6 +172,10 @@
     }
   ],
   "open_questions": [
+    "Can NLA explanations carry calibrated uncertainty, cross-token recurrence, or independent SAE agreement before automated auditors rely on them?",
+    "Can GUI grounding correction be evaluated in live multi-step computer-use rollouts where a wrong click changes future observations?",
+    "Can sheet-level workbook retrieval preserve exact cell provenance, formulas, comments, and versioned workbook state after selecting supporting sheets?",
+    "Can hidden-state reading tools be connected to action-level audit logs so model cognition, screen evidence, and tool actions are inspected together?",
     "Can deep-research agents learn retrieval budgets that optimize factual support rather than citation quantity or topical relevance?",
     "Can citation-level source-attribution evaluation move from public web search to private document stores with versioned sources, access controls, and changing content?",
     "Can recursive-agent local rewards remain useful when child-task success is ambiguous, delayed, or judged only after integration?",
@@ -219,6 +233,16 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-10 11:45:00 +0800",
+      "title": "Reading Hidden State Before Agents Act",
+      "papers": [
+        "technical-report:anthropic-natural-language-autoencoders",
+        "arxiv:2605.06664",
+        "arxiv:2605.05811"
+      ],
+      "theme": "activation, screen, and sheet state as pre-action inspection surfaces"
+    },
     {
       "date": "2026-05-09 11:30:00 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-09-1130-en/",
@@ -369,6 +393,7 @@
     }
   ],
   "quality_feedback": [
+    "This issue used official/open HTML sources, replaced dense table screenshots with Markdown tables, checked local figure dimensions/nonblank/DPI, and selected fewer papers for deeper mini-explainers.",
     {
       "date": "2026-05-09",
       "observations": [
@@ -488,6 +513,12 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-10 11:45:00 +0800",
+      "improved": "Swapped EMO out after subagent cross-check surfaced a fresher official Anthropic mechanisms report; kept final figures limited to method/diagnostic visuals and wrote dense numeric evidence as Markdown tables.",
+      "still_risky": "NLA is a technical report rather than arXiv, and Sheet as Token has a small benchmark; both are framed with explicit evidence limits.",
+      "next_change": "Prioritize papers with primary HTML/source figures and downstream audit or provenance hooks; continue avoiding repeated skill-memory and retrieval-only themes unless the mechanism is new."
+    },
     {
       "date": "2026-05-09",
       "improved": [
@@ -1138,6 +1169,41 @@
   ],
   "next_run_search_suggestions": [
     {
+      "id": "arxiv:2605.05724",
+      "title": "Auto Research with Specialist Agents Develops Effective and Non-Trivial Training Recipes",
+      "reason": "Fresh CMU autonomous research/data-agent lead with experiment loops, code edits, evaluators, lineage, and failure labels; read if next issue covers empirical research agents."
+    },
+    {
+      "id": "arxiv:2605.05185",
+      "title": "OpenSearch-VL: An Open Recipe for Frontier Multimodal Search Agents",
+      "reason": "Multimodal search-agent recipe with OCR/image/crop tools and agentic training; useful for visual document-search issue."
+    },
+    {
+      "id": "arxiv:2605.06222",
+      "title": "When to Trust Imagination: Adaptive Action Execution for World Action Models",
+      "reason": "World-action model verifier decides when imagined rollouts remain trustworthy; strong follow-up for world-model reliability."
+    },
+    {
+      "id": "arxiv:2605.06632",
+      "title": "Crafting Reversible SFT Behaviors in Large Language Models",
+      "reason": "Mechanism lead on compressing and reversing SFT behaviors with sparse causal carriers; pair with NLA or SAE work."
+    },
+    {
+      "id": "arxiv:2605.06235",
+      "title": "OBLIQ-Bench",
+      "reason": "Retriever benchmark for latent and implicit queries; useful if returning to document intelligence and agentic search bottlenecks."
+    },
+    {
+      "id": "arxiv:2605.06663",
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "reason": "Good large-model mechanisms lead on document-boundary expert pools; deferred because NLA better fit this issue's hidden-state theme."
+    },
+    {
+      "id": "arxiv:2605.06651",
+      "title": "AI Co-Mathematician",
+      "reason": "Agentic research-workbench lead from Google/DeepMind; read if next issue focuses on scientific or mathematical agents."
+    },
+    {
       "id": "arxiv:2605.03903",
       "title": "CC-OCR V2",
       "reason": "Document-intelligence benchmark over OCR, parsing, grounding, KIE, and DocQA; read if next issue focuses on enterprise document evidence."
@@ -1194,22 +1260,24 @@
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-09 11:30:00 +0800",
+    "last_updated": "2026-05-10 11:45:00 +0800",
     "this_run_improved": [
-      "Used SkillHub setup first, then relied on primary arXiv PDFs and local rendering for final reading.",
-      "Avoided repeating the previous skill/retrieval/memory-state theme by selecting strategy, recursive delegation, and citation verification as the through-line.",
-      "Saved local visuals with 300 DPI metadata and checked image dimensions/nonblank ranges; kept dense result evidence as Markdown tables."
+      "Used SkillHub setup first and recorded that the installed arXiv helper lacked its Python dependency, then fell back to arXiv API and primary open HTML/source pages.",
+      "Let subagent leads change final selection: Anthropic NLA replaced EMO because it better matched the hidden-state theme and had an official technical report with usable figures.",
+      "Checked figure downloads with dimensions, DPI metadata, file sizes, and contact sheets; used Markdown tables instead of ugly table screenshots for dense numeric evidence.",
+      "Kept the issue to three papers and wrote each as a mini explainer with method steps, source-backed numbers, caveats, and next questions."
     ],
     "still_failed_or_risky": [
-      "SkillHub installed skills into repo-local skills/, so cleanup is required before final diff verification.",
-      "Subagent leads from community/lab sources arrived too late to fully diversify beyond arXiv, though they did improve the watchlist.",
-      "Two selected papers rely on model-judgment signals, so future issues should prefer environment-side or human-audited validation when possible."
+      "SkillHub installed skill files under repo-local skills/, so cleanup before final diff is required every run unless the CLI install path is configured differently.",
+      "The strict May 8-10 window had few primary papers; the issue relies mostly on May 7 sources inside the allowed three-day expansion.",
+      "NLA figures from an interactive technical page are static crops of a richer page; captions need to explain the lost interactivity.",
+      "Sheet as Token evidence is early and dataset-scale limited, so the post must not imply deployment-grade spreadsheet QA performance."
     ],
     "next_adjustments": [
-      "Start final selection by asking whether the issue adds a new control surface, not just another state object.",
-      "For inference-time scaling papers, always report cost surfaces: tokens, wall-clock time, parallelizability, and failure attribution.",
-      "For research-agent/document papers, require claim-level evidence checks or source-ledger mechanics rather than surface citation counts.",
-      "Keep using local figure crops only when they directly explain methods, curves, histograms, or formulas; write tables in Markdown when that is clearer."
+      "Start with official lab/blog feeds alongside arXiv when looking for mechanisms papers; high-quality technical reports may not appear as arXiv preprints immediately.",
+      "For GUI/data-agent papers, require either live rollout evidence or explicit provenance/audit hooks before making strong deployment claims.",
+      "For interpretability papers, separate hypothesis-generation value from validated causal or behavioral evidence in the writing.",
+      "Continue writing dense result tables in Markdown and reserve screenshots for architecture, diagnostics, curves, formulas, and qualitative examples."
     ]
   }
 }

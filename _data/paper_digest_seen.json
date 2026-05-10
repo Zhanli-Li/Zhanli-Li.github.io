@@ -1,6 +1,48 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.05811",
+      "title": "Sheet as Token: A Graph-Enhanced Representation for Multi-Sheet Spreadsheet Understanding",
+      "canonical_url": "https://arxiv.org/abs/2605.05811",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-10-1145-en/",
+      "themes": [
+        "data agents",
+        "spreadsheet understanding",
+        "sheet-level retrieval",
+        "graph retrievers",
+        "document intelligence"
+      ]
+    },
+    {
+      "id": "arxiv:2605.06664",
+      "title": "BAMI: Training-Free Bias Mitigation in GUI Grounding",
+      "canonical_url": "https://arxiv.org/abs/2605.06664",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-10-1145-en/",
+      "themes": [
+        "GUI agents",
+        "document intelligence",
+        "screen grounding",
+        "test-time correction",
+        "computer-use agents"
+      ]
+    },
+    {
+      "id": "technical-report:anthropic-natural-language-autoencoders",
+      "title": "Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations",
+      "canonical_url": "https://transformer-circuits.pub/2026/nla/index.html",
+      "date": "2026-05-07",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-10-1145-en/",
+      "themes": [
+        "large model mechanisms",
+        "activation verbalization",
+        "model auditing",
+        "evaluation awareness",
+        "interpretability"
+      ]
+    },
+    {
       "id": "arxiv:2605.06635",
       "title": "Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents",
       "canonical_url": "https://arxiv.org/abs/2605.06635",
