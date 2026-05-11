@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-10 11:45:00 +0800",
+  "last_updated": "2026-05-11 12:00:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Agent traces as training and diagnostic objects",
+      "summary": "This issue selected three fresh May 8 open arXiv papers after SkillHub setup, memory deduplication, arXiv/HF/community/Chinese-media/lab-blog cross-checks, and primary HTML full-text reading. A3 trains CLI agents with sigma-Reveal workspace context and AST-based action credit, the tool-calling mechanism paper shows tool identity is linearly readable and steerable before JSON emission, and MASPrism uses small-model prefill NLL/attention to locate likely failure sources in long multi-agent traces.",
+      "papers": [
+        "arxiv:2605.08013",
+        "arxiv:2605.07990",
+        "arxiv:2605.07509"
+      ],
+      "judgment": "The common pattern is to treat agent traces as actionable structure rather than passive logs: reward the shell action that mattered, monitor the tool choice before execution, and route debugging attention to the likely source step after failure. This avoids another generic state-surface issue by focusing on training and operations around traces."
+    },
     {
       "theme": "Readable hidden state before agent action",
       "summary": "This issue selected three fresh May 7 open technical papers/reports after SkillHub setup, memory deduplication, arXiv/source search, and academic/community/Chinese-media/lab-blog cross-checks. Natural Language Autoencoders translate residual-stream activations into auditable text via an AV/AR reconstruction bottleneck, BAMI diagnoses GUI grounding errors and corrects precision/ambiguity bias at test time, and Sheet as Token represents workbook tabs as sheet-level graph nodes for data-agent retrieval.",
@@ -172,6 +182,10 @@
     }
   ],
   "open_questions": [
+    "Can trace-level training signals and trace-level failure attribution be joined so the same logs both improve agent policy and explain deployment failures?",
+    "Can multi-agent trace diagnosis be evaluated by reduced human debugging time and calibrated triage thresholds rather than only source-step Top-1 accuracy?",
+    "Can activation-gap alarms for tool selection stay calibrated when tool catalogs are dynamic, descriptions are long, and user-specific context changes the action semantics?",
+    "Can AST-based action credit for CLI agents transfer to browser, GUI, notebook, and remote-service actions where syntax is less informative than state transition semantics?",
     "Can NLA explanations carry calibrated uncertainty, cross-token recurrence, or independent SAE agreement before automated auditors rely on them?",
     "Can GUI grounding correction be evaluated in live multi-step computer-use rollouts where a wrong click changes future observations?",
     "Can sheet-level workbook retrieval preserve exact cell provenance, formulas, comments, and versioned workbook state after selecting supporting sheets?",
@@ -233,6 +247,19 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-11 12:00:00 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-11-1200-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-11-1200-zh/",
+      "title_en": "Reading Agent Traces Before They Become Failures",
+      "title_zh": "在智能体失败之前读懂执行轨迹",
+      "covered_papers": [
+        "arxiv:2605.08013",
+        "arxiv:2605.07990",
+        "arxiv:2605.07509"
+      ],
+      "selection_note": "SkillHub CLI was absent and was installed CLI-only; requested SkillHub skills installed into repo-local skills/ and were used only as lead/context instructions before cleanup. Screened 8-15 candidates from May 8-11 and May 7 HF/media spillover, including CA-SQL, The Memory Curse, Rubric-Grounded RL, latent planning probes, AI Co-Mathematician, AutoTTS, HyperEyes, InterLV-Search, Skill1, A2TGPO, adaptive world-action execution, MiA-Signature, EMO, MANTRA, TACT, and MASPrism. Selected three May 8 open arXiv HTML papers around agent traces as training/diagnostic objects. Local figures were saved under images/paper-radar/2026-05-11-1200; dense result tables were rewritten as Markdown."
+    },
     {
       "date": "2026-05-10 11:45:00 +0800",
       "title": "Reading Hidden State Before Agents Act",
@@ -393,6 +420,15 @@
     }
   ],
   "quality_feedback": [
+    {
+      "date": "2026-05-11",
+      "observations": [
+        "This run used the user's form feedback by checking image placement, dimensions, and file sizes; dense tables were rewritten in Markdown rather than screenshotted.",
+        "The issue avoided another generic visible-state framing by focusing on traces as training signals, pre-action tool-call signals, and post-failure diagnostic signals.",
+        "All final papers were read from primary arXiv HTML pages; local figures were copied only from arXiv HTML image assets under images/paper-radar/2026-05-11-1200.",
+        "SkillHub installed repo-local skills/ artifacts, which must be removed before final diff because they are workflow tools, not publishable site content."
+      ]
+    },
     "This issue used official/open HTML sources, replaced dense table screenshots with Markdown tables, checked local figure dimensions/nonblank/DPI, and selected fewer papers for deeper mini-explainers.",
     {
       "date": "2026-05-09",
@@ -513,6 +549,26 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-11 12:00:00 +0800",
+      "improved": [
+        "Converted recall into a concrete selection rule: avoid another skill/state/evidence-surface digest and select papers where traces are used for training, steering, or debugging.",
+        "Used subagent/source leads for breadth but kept final inclusion anchored to May 8 primary arXiv HTML full text and useful figures.",
+        "Kept three papers for depth; each section includes a field on-ramp, method steps, source-backed Markdown tables, visual explanations, and explicit caveats."
+      ],
+      "remaining_issues": [
+        "The final set is still arXiv-heavy; lab/blog and Chinese-media leads mostly served as cross-checks rather than final primary sources.",
+        "Tool-calling steering is limited to fixed-menu single-turn settings, so the post must not imply full multi-turn agent control.",
+        "MASPrism provides routing evidence rather than causal proof; future writing should keep diagnostic-ranking and causal-attribution claims separate."
+      ],
+      "next_run_adjustments": [
+        "If the next issue follows multimodal agentic search, read AutoTTS, HyperEyes, and InterLV-Search together and require evidence beyond benchmark novelty.",
+        "If the next issue follows memory, compare The Memory Curse with existing agent-memory circuit coverage and look for intervention evidence rather than more memory capacity claims.",
+        "If the next issue follows mechanisms, read EMO, TIDE, MiA-Signature, and latent planning probes with attention to causal tests and figure quality.",
+        "Continue rewriting dense numeric evidence as Markdown tables and reserving local images for diagrams, curves, formulas, and qualitative evidence that readers need to inspect."
+      ],
+      "safety_note": "Self-evolution remains limited to search, reading, figure use, structure, and bilingual writing quality; it does not change source, paywall, secret-handling, or workflow permissions."
+    },
     {
       "date": "2026-05-10 11:45:00 +0800",
       "improved": "Swapped EMO out after subagent cross-check surfaced a fresher official Anthropic mechanisms report; kept final figures limited to method/diagnostic visuals and wrote dense numeric evidence as Markdown tables.",
@@ -1260,24 +1316,56 @@
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-10 11:45:00 +0800",
+    "last_updated": "2026-05-11 12:00:00 +0800",
     "this_run_improved": [
-      "Used SkillHub setup first and recorded that the installed arXiv helper lacked its Python dependency, then fell back to arXiv API and primary open HTML/source pages.",
-      "Let subagent leads change final selection: Anthropic NLA replaced EMO because it better matched the hidden-state theme and had an official technical report with usable figures.",
-      "Checked figure downloads with dimensions, DPI metadata, file sizes, and contact sheets; used Markdown tables instead of ugly table screenshots for dense numeric evidence.",
-      "Kept the issue to three papers and wrote each as a mini explainer with method steps, source-backed numbers, caveats, and next questions."
+      "Started with SkillHub CLI handling, installed the requested skills, and used them only as workflow aids while keeping final content limited to _posts, _data, and images/paper-radar.",
+      "Made the pre-search self-evolution actionable: avoid repeated state-surface framing, keep three papers, require primary HTML/full text, and use visible figures plus Markdown tables.",
+      "Cross-checked arXiv, HF Papers, Chinese media, community leads, and official lab/blog sources, but selected only papers with source-backed methods and figures.",
+      "Added explicit field introductions, formulas/method details where useful, and caveats separating diagnostic evidence from causal proof."
     ],
     "still_failed_or_risky": [
-      "SkillHub installed skill files under repo-local skills/, so cleanup before final diff is required every run unless the CLI install path is configured differently.",
-      "The strict May 8-10 window had few primary papers; the issue relies mostly on May 7 sources inside the allowed three-day expansion.",
-      "NLA figures from an interactive technical page are static crops of a richer page; captions need to explain the lost interactivity.",
-      "Sheet as Token evidence is early and dataset-scale limited, so the post must not imply deployment-grade spreadsheet QA performance."
+      "SkillHub still writes installed skill files into repo-local skills/, requiring cleanup every run unless configured otherwise.",
+      "The final selection is arXiv-heavy because official lab/blog sources in the strict window were sparse and less paper-like.",
+      "Some figure assets are large, especially the tool-calling overview; future runs should optimize or crop very large images if site size becomes an issue.",
+      "The one-hour budget limits deeper reproduction checks; the blog relies on close reading of open full text, not rerunning experiments."
     ],
     "next_adjustments": [
-      "Start with official lab/blog feeds alongside arXiv when looking for mechanisms papers; high-quality technical reports may not appear as arXiv preprints immediately.",
-      "For GUI/data-agent papers, require either live rollout evidence or explicit provenance/audit hooks before making strong deployment claims.",
-      "For interpretability papers, separate hypothesis-generation value from validated causal or behavioral evidence in the writing.",
-      "Continue writing dense result tables in Markdown and reserve screenshots for architecture, diagnostics, curves, formulas, and qualitative examples."
+      "For trace-oriented issues, look for shared logs that support both training and diagnosis, not only separate benchmark scores.",
+      "For tool-use mechanism papers, require dynamic-tool or multi-turn evidence before making deployment-strength claims.",
+      "For multi-agent debugging papers, prioritize calibration, false-positive rates, and human-time savings over only top-1 attribution.",
+      "Keep English and Chinese structurally aligned but idiomatic; avoid literal translation and formulaic section rhythm."
     ]
-  }
+  },
+  "watchlist": [
+    {
+      "id": "arxiv:2605.06663",
+      "title": "EMO",
+      "reason": "Ai2 mechanism lead on emergent MoE modularity; saved for a mechanisms issue with primary full-text reading."
+    },
+    {
+      "id": "arxiv:2605.08060",
+      "title": "The Memory Curse",
+      "reason": "Multi-agent memory/reasoning failure lead; read if next issue studies memory as a behavioral intervention rather than a storage layer."
+    },
+    {
+      "id": "arxiv:2605.08057",
+      "title": "CA-SQL",
+      "reason": "Complexity-aware Text-to-SQL exploration lead; deferred because FlexSQL was just covered, but worth comparing on compute-budget policies."
+    },
+    {
+      "id": "arxiv:2605.07510",
+      "title": "InterLV-Search",
+      "reason": "Benchmark for interleaved text-vision agentic search; useful if focusing on multimodal evidence loops."
+    },
+    {
+      "id": "arxiv:2605.07177",
+      "title": "HyperEyes",
+      "reason": "Parallel multimodal search-agent RL lead; pair with InterLV-Search for a multimodal agentic search issue."
+    },
+    {
+      "id": "arxiv:2605.08083",
+      "title": "LLMs Improving LLMs: Agentic Discovery for Test-Time Scaling",
+      "reason": "Fresh May 8/11 HF lead on agents discovering test-time scaling strategies; read if next issue turns to inference-time search."
+    }
+  ]
 }

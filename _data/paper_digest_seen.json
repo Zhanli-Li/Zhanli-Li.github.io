@@ -1,6 +1,48 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.08013",
+      "title": "Learning CLI Agents with Structured Action Credit under Selective Observation",
+      "canonical_url": "https://arxiv.org/abs/2605.08013",
+      "date": "2026-05-08",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-11-1200-en/",
+      "themes": [
+        "agentic training",
+        "CLI agents",
+        "structured action credit",
+        "coding agents",
+        "data-agent workspaces"
+      ]
+    },
+    {
+      "id": "arxiv:2605.07990",
+      "title": "Tool Calling is Linearly Readable and Steerable in Language Models",
+      "canonical_url": "https://arxiv.org/abs/2605.07990",
+      "date": "2026-05-08",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-11-1200-en/",
+      "themes": [
+        "large model mechanisms",
+        "tool agents",
+        "activation steering",
+        "pre-action audit signals",
+        "agent safety"
+      ]
+    },
+    {
+      "id": "arxiv:2605.07509",
+      "title": "MASPrism: Lightweight Failure Attribution for Multi-Agent Systems Using Prefill-Stage Signals",
+      "canonical_url": "https://arxiv.org/abs/2605.07509",
+      "date": "2026-05-08",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-11-1200-en/",
+      "themes": [
+        "multi-agent debugging",
+        "trace diagnosis",
+        "prefill signals",
+        "document intelligence",
+        "agent audit"
+      ]
+    },
+    {
       "id": "arxiv:2605.05811",
       "title": "Sheet as Token: A Graph-Enhanced Representation for Multi-Sheet Spreadsheet Understanding",
       "canonical_url": "https://arxiv.org/abs/2605.05811",
