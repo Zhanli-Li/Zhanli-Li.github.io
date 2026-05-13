@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-11 12:00:00 +0800",
+  "last_updated": "2026-05-13 11:50:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,17 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Decision surfaces for agents and model internals",
+      "summary": "This issue selected four fresh May 11-12 open arXiv papers after SkillHub CLI-only setup, requested SkillHub skill installation, memory deduplication, arXiv/API/HTML search, community-source cross-checks, and primary full-text reading. ToolCUA trains GUI-tool path selection with interleaved trajectory synthesis, critical-step RFT, and a tool-efficient path reward; DataMaster organizes autonomous data engineering as a DataTree with red exploration nodes, black exploitation nodes, Data Pool, and Global Memory; PriorZero injects LLM semantic priors only at the MCTS root while a world model handles rollout and value training; and the MoE routing paper shows router-expert geometric coupling and how auxiliary load-balancing can collapse router directions.",
+      "papers": [
+        "arxiv:2605.12481",
+        "arxiv:2605.10906",
+        "arxiv:2605.12289",
+        "arxiv:2605.12476"
+      ],
+      "judgment": "The common pattern is a decision surface rather than another passive trace: choose GUI versus tools, choose data-search branches, choose how much language prior enters planning, and preserve the router geometry that chooses experts. This run deliberately moved away from another trace-diagnosis issue and used Markdown tables for dense numeric evidence instead of hard-to-read table screenshots."
+    },
     {
       "theme": "Agent traces as training and diagnostic objects",
       "summary": "This issue selected three fresh May 8 open arXiv papers after SkillHub setup, memory deduplication, arXiv/HF/community/Chinese-media/lab-blog cross-checks, and primary HTML full-text reading. A3 trains CLI agents with sigma-Reveal workspace context and AST-based action credit, the tool-calling mechanism paper shows tool identity is linearly readable and steerable before JSON emission, and MASPrism uses small-model prefill NLL/attention to locate likely failure sources in long multi-agent traces.",
@@ -182,6 +193,14 @@
     }
   ],
   "open_questions": [
+    "Can router-expert geometry become a diagnostic signal during MoE pretraining rather than a post-hoc interpretability measurement?",
+    "Can MoE load-balancing objectives preserve router-expert geometric coupling while still preventing expert starvation at larger scales?",
+    "Can root-only language-prior injection scale from text games and BabyAI to embodied or GUI action spaces with noisy observations and irreversible actions?",
+    "Can world-model planners adjust language-prior fusion weights based on calibrated uncertainty instead of fixed alpha schedules?",
+    "Can data-agent search objectives distinguish true generalization from validation-set overfitting when many branches are tried under long budgets?",
+    "Can autonomous data-engineering agents produce provenance logs strong enough for leakage checks, human rollback, and reproducible data-state review?",
+    "Can hybrid GUI-tool policies remain calibrated when tool catalogs change, tools overlap, or API results diverge from screenshots?",
+    "Can GUI-tool agents learn tool-beneficial labels online from execution cost and failure patterns rather than relying on dataset-time annotation?",
     "Can trace-level training signals and trace-level failure attribution be joined so the same logs both improve agent policy and explain deployment failures?",
     "Can multi-agent trace diagnosis be evaluated by reduced human debugging time and calibrated triage thresholds rather than only source-step Top-1 accuracy?",
     "Can activation-gap alarms for tool selection stay calibrated when tool catalogs are dynamic, descriptions are long, and user-specific context changes the action semantics?",
@@ -1225,6 +1244,56 @@
   ],
   "next_run_search_suggestions": [
     {
+      "id": "arxiv:2605.12501",
+      "title": "Covering Human Action Space for Computer Use",
+      "reason": "Fresh May 12 computer-use benchmark/data-synthesis lead over GUI/text/table/canvas/image actions; compare with ToolCUA before another CUA issue."
+    },
+    {
+      "id": "arxiv:2605.12294",
+      "title": "Executable Agentic Memory for GUI Agent",
+      "reason": "Executable KG memory for GUI routines; useful if next issue studies memory as reusable action programs."
+    },
+    {
+      "id": "arxiv:2605.12004",
+      "title": "Learning Agentic Policy from Action Guidance",
+      "reason": "ActGuide-RL lead on using human action data as guidance for agentic RL; read alongside GEAR or ToolCUA follow-ups."
+    },
+    {
+      "id": "arxiv:2605.11853",
+      "title": "GEAR",
+      "reason": "Granularity-adaptive advantage reweighting for LLM agents; potential credit-assignment follow-up to A3 and ToolCUA."
+    },
+    {
+      "id": "arxiv:2605.11946",
+      "title": "Counterfactual Trace Auditing of LLM Agent Skills",
+      "reason": "Counterfactual skill auditing lead; useful if returning to skill effects without just measuring pass-rate gains."
+    },
+    {
+      "id": "arxiv:2605.11221",
+      "title": "Agentic literature extraction for targeted protein degradation databases",
+      "reason": "Biomedical document/data-agent lead with papers, tables, and supplements; read if focusing on scientific document extraction workflows."
+    },
+    {
+      "id": "arxiv:2605.12357",
+      "title": "delta-mem: Efficient Online Memory for LLMs",
+      "reason": "High-signal memory mechanism lead from the May 12 window; read if the next issue returns to agent memory internals."
+    },
+    {
+      "id": "arxiv:2605.10434",
+      "title": "WorldReasonBench",
+      "reason": "World-model evaluation lead; pair with PriorZero/RAW-Dream style papers if focusing on world reasoning rather than agent training."
+    },
+    {
+      "id": "arxiv:2605.10923",
+      "title": "Dynamic Skill Lifecycle Management / SLIM",
+      "reason": "Agent skill lifecycle lead with code; useful follow-up if returning to self-evolving agents without repeating SkillOS."
+    },
+    {
+      "id": "arxiv:2605.10899",
+      "title": "RubricEM",
+      "reason": "Fresh May 11 deep-research/evaluation-memory lead surfaced by community search; read if next issue focuses on research-agent evaluation rubrics."
+    },
+    {
       "id": "arxiv:2605.05724",
       "title": "Auto Research with Specialist Agents Develops Effective and Non-Trivial Training Recipes",
       "reason": "Fresh CMU autonomous research/data-agent lead with experiment loops, code edits, evaluators, lineage, and failure labels; read if next issue covers empirical research agents."
@@ -1316,27 +1385,89 @@
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-11 12:00:00 +0800",
+    "last_updated": "2026-05-13 11:50:00 +0800",
     "this_run_improved": [
-      "Started with SkillHub CLI handling, installed the requested skills, and used them only as workflow aids while keeping final content limited to _posts, _data, and images/paper-radar.",
-      "Made the pre-search self-evolution actionable: avoid repeated state-surface framing, keep three papers, require primary HTML/full text, and use visible figures plus Markdown tables.",
-      "Cross-checked arXiv, HF Papers, Chinese media, community leads, and official lab/blog sources, but selected only papers with source-backed methods and figures.",
-      "Added explicit field introductions, formulas/method details where useful, and caveats separating diagnostic evidence from causal proof."
+      "Installed SkillHub CLI in CLI-only mode when it was missing, installed the requested SkillHub skills under /tmp, and kept those installation artifacts out of the repository.",
+      "Started with memory recall and an explicit self-evolution choice: avoid another generic trace/state-surface framing, and instead select papers where intermediate structures change path choice, search, planning, or routing.",
+      "Used arXiv API/HTML plus community and Chinese-tech-source lead collection, then selected only papers with open full text and extractable method/result figures.",
+      "Rewrote dense numerical evidence as Markdown tables instead of table screenshots, while embedding method diagrams and curves as images with explanatory captions.",
+      "Included formulas or compact mathematical forms where they clarify the mechanism, especially ToolCUA's reward logic and the MoE router/expert shared-gradient direction."
     ],
     "still_failed_or_risky": [
-      "SkillHub still writes installed skill files into repo-local skills/, requiring cleanup every run unless configured otherwise.",
-      "The final selection is arXiv-heavy because official lab/blog sources in the strict window were sparse and less paper-like.",
-      "Some figure assets are large, especially the tool-calling overview; future runs should optimize or crop very large images if site size becomes an issue.",
-      "The one-hour budget limits deeper reproduction checks; the blog relies on close reading of open full text, not rerunning experiments."
+      "The final selection remains arXiv-heavy because official lab/blog and Chinese-media sources in the strict 24h-3d window did not provide better primary-paper candidates.",
+      "ToolCUA and DataMaster are system papers with large implementation surfaces; the blog is based on close reading, not reproduction of their environments or cost profiles.",
+      "PriorZero evidence is still concentrated in text-game and BabyAI-style environments, so the post avoids broad embodied-agent claims.",
+      "Some images from arXiv HTML are lower resolution than ideal; dense tables were therefore converted to Markdown, but method figures still depend on arXiv-rendered PNG quality."
     ],
     "next_adjustments": [
-      "For trace-oriented issues, look for shared logs that support both training and diagnosis, not only separate benchmark scores.",
-      "For tool-use mechanism papers, require dynamic-tool or multi-turn evidence before making deployment-strength claims.",
-      "For multi-agent debugging papers, prioritize calibration, false-positive rates, and human-time savings over only top-1 attribution.",
-      "Keep English and Chinese structurally aligned but idiomatic; avoid literal translation and formulaic section rhythm."
+      "When selecting computer-use papers, require evidence about dynamic tools, tool failure, or screenshot/API divergence before making deployment-strength claims.",
+      "For data-agent papers, prioritize provenance, leakage checks, rollback, and human-review surfaces over only leaderboard gains.",
+      "For world-model papers, look for uncertainty-aware interfaces between language priors, learned dynamics, and real environment feedback.",
+      "For mechanism papers, prefer local claims with derivations plus interventions, and connect them to training diagnostics rather than only interpretability narratives.",
+      "Keep using Markdown tables for important numeric evidence and reserve screenshots for figures that genuinely convey method structure or curves."
     ]
   },
   "watchlist": [
+    {
+      "id": "arxiv:2605.12501",
+      "title": "Covering Human Action Space for Computer Use",
+      "reason": "Fresh May 12 computer-use benchmark/data-synthesis lead over GUI/text/table/canvas/image actions; compare with ToolCUA before another CUA issue."
+    },
+    {
+      "id": "arxiv:2605.12294",
+      "title": "Executable Agentic Memory for GUI Agent",
+      "reason": "Executable KG memory for GUI routines; useful if next issue studies memory as reusable action programs."
+    },
+    {
+      "id": "arxiv:2605.12004",
+      "title": "Learning Agentic Policy from Action Guidance",
+      "reason": "ActGuide-RL lead on using human action data as guidance for agentic RL; read alongside GEAR or ToolCUA follow-ups."
+    },
+    {
+      "id": "arxiv:2605.11853",
+      "title": "GEAR",
+      "reason": "Granularity-adaptive advantage reweighting for LLM agents; potential credit-assignment follow-up to A3 and ToolCUA."
+    },
+    {
+      "id": "arxiv:2605.11946",
+      "title": "Counterfactual Trace Auditing of LLM Agent Skills",
+      "reason": "Counterfactual skill auditing lead; useful if returning to skill effects without just measuring pass-rate gains."
+    },
+    {
+      "id": "arxiv:2605.11221",
+      "title": "Agentic literature extraction for targeted protein degradation databases",
+      "reason": "Biomedical document/data-agent lead with papers, tables, and supplements; read if focusing on scientific document extraction workflows."
+    },
+    {
+      "id": "arxiv:2605.12334",
+      "title": "Reinforcing VLAs in Task-Agnostic World Models",
+      "reason": "Strong world-model/VLA lead from May 12; deferred because PriorZero provided a cleaner language-prior planning story this issue."
+    },
+    {
+      "id": "arxiv:2605.12376",
+      "title": "ProfiliTable",
+      "reason": "Fresh data-agent/table lead from May 12; inspect for document/data-agent coverage if not too benchmark-only."
+    },
+    {
+      "id": "arxiv:2605.12357",
+      "title": "delta-mem: Efficient Online Memory for LLMs",
+      "reason": "High-signal memory mechanism lead from the May 12 window; read if the next issue returns to agent memory internals."
+    },
+    {
+      "id": "arxiv:2605.10434",
+      "title": "WorldReasonBench",
+      "reason": "World-model evaluation lead; pair with PriorZero/RAW-Dream style papers if focusing on world reasoning rather than agent training."
+    },
+    {
+      "id": "arxiv:2605.10923",
+      "title": "Dynamic Skill Lifecycle Management / SLIM",
+      "reason": "Agent skill lifecycle lead with code; useful follow-up if returning to self-evolving agents without repeating SkillOS."
+    },
+    {
+      "id": "arxiv:2605.10899",
+      "title": "RubricEM",
+      "reason": "Fresh May 11 deep-research/evaluation-memory lead surfaced by community search; read if next issue focuses on research-agent evaluation rubrics."
+    },
     {
       "id": "arxiv:2605.06663",
       "title": "EMO",

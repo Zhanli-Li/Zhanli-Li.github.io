@@ -1,6 +1,62 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.12481",
+      "title": "ToolCUA: Towards Optimal GUI-Tool Path Orchestration for Computer Use Agents",
+      "canonical_url": "https://arxiv.org/abs/2605.12481",
+      "date": "2026-05-12",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-13-1150-en/",
+      "themes": [
+        "agentic training",
+        "computer-use agents",
+        "GUI-tool orchestration",
+        "online agentic RL",
+        "tool-efficient path reward"
+      ]
+    },
+    {
+      "id": "arxiv:2605.10906",
+      "title": "DataMaster: Towards Autonomous Data Engineering for Machine Learning",
+      "canonical_url": "https://arxiv.org/abs/2605.10906",
+      "date": "2026-05-11",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-13-1150-en/",
+      "themes": [
+        "data agents",
+        "autonomous data engineering",
+        "DataTree",
+        "global memory",
+        "ML data provenance"
+      ]
+    },
+    {
+      "id": "arxiv:2605.12289",
+      "title": "PriorZero: Bridging Language Priors and World Models for Decision Making",
+      "canonical_url": "https://arxiv.org/abs/2605.12289",
+      "date": "2026-05-12",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-13-1150-en/",
+      "themes": [
+        "world models",
+        "language priors",
+        "MCTS",
+        "agentic reinforcement learning",
+        "sparse rewards"
+      ]
+    },
+    {
+      "id": "arxiv:2605.12476",
+      "title": "Routers Learn the Geometry of Their Experts: Geometric Coupling in Sparse Mixture-of-Experts",
+      "canonical_url": "https://arxiv.org/abs/2605.12476",
+      "date": "2026-05-12",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-13-1150-en/",
+      "themes": [
+        "large model mechanisms",
+        "Mixture-of-Experts",
+        "router geometry",
+        "expert specialization",
+        "load balancing"
+      ]
+    },
+    {
       "id": "arxiv:2605.08013",
       "title": "Learning CLI Agents with Structured Action Credit under Selective Observation",
       "canonical_url": "https://arxiv.org/abs/2605.08013",
