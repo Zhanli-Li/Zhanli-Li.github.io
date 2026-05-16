@@ -20,7 +20,7 @@ redirect_from:
 
 💡 I am currently actively seeking CS/AI PhD opportunities of 27 fall. While my background in game theory and causal inference has built my foundational understanding of the world, I am deeply captivated by AI. I am fundamentally driven by the rapid evolution of this field and its unprecedented potential to change the world. AI is a highly verifiable domain where ideas are swiftly implemented into real-world impact, and being part of this progress deeply excites me. I am well aware that transitioning from an undergraduate economics major to a CS PhD is challenging, as the lack of systematic CS training is often questioned. Fortunately, I encountered several senior peers with similar backgrounds and aspirations. They selflessly shared invaluable experiences, helping me avoid many pitfalls. More importantly, their spirit inspired me to persistently pursue my goals, teaching me the profound truth that **“Passion is all you need!”** 
 
-💬 Beyond academic research, I enjoy playing table tennis, running, and cycling in my free time. I am also a big fan of video games, especially Valorant and MOBA mobile games. I welcome anyone interested in my work or seeking potential collaborations to reach out via email: lizhanli@stu.zuel.edu.cn.
+💬 Beyond academic research, I enjoy playing table tennis, running, and cycling in my free time. I am also a big fan of video games, especially Valorant—where I mainly play as a Duelist, frequently locking in Phoenix, Neon, and Omen—as well as MOBA mobile games. I welcome anyone interested in my work or seeking potential collaborations to reach out via email: lizhanli@stu.zuel.edu.cn.
 
 ## Selected Publications 📓
 
