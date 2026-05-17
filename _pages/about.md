@@ -47,6 +47,7 @@ redirect_from:
   </div>
 
 ## News 📧
+- `2026.5.17` One paper about **Agentic Search** was invited to Resubmit to KDD 2027 (First Cycle).
 - `2026.4.6` **MuDABench** was accepted as Findings of ACL 2026!
 - `2026.3.17` **DeepRead** was covered by [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185).
 - `2026.2.9` One paper about **Agentic Search** was submitted to KDD26.
