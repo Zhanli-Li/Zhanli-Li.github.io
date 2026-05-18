@@ -1,6 +1,48 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.15618",
+      "title": "Latent Video Prediction Learns Better World Models",
+      "canonical_url": "https://arxiv.org/abs/2605.15618",
+      "date": "2026-05-15",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-18-1204-en/",
+      "themes": [
+        "world models",
+        "latent prediction",
+        "video representation robustness",
+        "physical contact cues",
+        "temporal reasoning"
+      ]
+    },
+    {
+      "id": "arxiv:2605.16217",
+      "title": "Argus: Evidence Assembly for Scalable Deep Research Agents",
+      "canonical_url": "https://arxiv.org/abs/2605.16217",
+      "date": "2026-05-15",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-18-1204-en/",
+      "themes": [
+        "document intelligence",
+        "deep research agents",
+        "evidence graphs",
+        "source attribution",
+        "parallel agent orchestration"
+      ]
+    },
+    {
+      "id": "arxiv:2605.16143",
+      "title": "Look Before You Leap: Autonomous Exploration for LLM Agents",
+      "canonical_url": "https://arxiv.org/abs/2605.16143",
+      "date": "2026-05-15",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-18-1204-en/",
+      "themes": [
+        "agentic training",
+        "autonomous exploration",
+        "Exploration Checkpoint Coverage",
+        "Explore-then-Act",
+        "verifiable rewards"
+      ]
+    },
+    {
       "id": "arxiv:2605.12481",
       "title": "ToolCUA: Towards Optimal GUI-Tool Path Orchestration for Computer Use Agents",
       "canonical_url": "https://arxiv.org/abs/2605.12481",

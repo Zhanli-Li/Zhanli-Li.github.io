@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-13 11:50:00 +0800",
+  "last_updated": "2026-05-18 12:04:00 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Pre-commit checks for agents and world models",
+      "summary": "This issue selected three May 15 open arXiv papers after SkillHub CLI-only setup, repository memory recall, arXiv recent-list search, and academic/Chinese-media/community/lab-blog cross-checks. Look Before You Leap trains agents to discover environment checkpoints before acting, Argus turns deep research into a Navigator-maintained evidence graph with support/contradiction edges, and Latent Video Prediction Learns Better World Models evaluates V-JEPA-style latent predictors across corruption, occlusion, pretend-action contact cues, and time reversal rather than only clean accuracy.",
+      "papers": [
+        "arxiv:2605.16143",
+        "arxiv:2605.16217",
+        "arxiv:2605.15618"
+      ],
+      "judgment": "The common pattern is pre-commit work: explore before executing, assemble evidence before answering, and stress-test representations before calling them world models. This issue deliberately used three papers for depth and converted dense result tables into Markdown while embedding only method/result figures that clarify the mechanism."
+    },
     {
       "theme": "Decision surfaces for agents and model internals",
       "summary": "This issue selected four fresh May 11-12 open arXiv papers after SkillHub CLI-only setup, requested SkillHub skill installation, memory deduplication, arXiv/API/HTML search, community-source cross-checks, and primary full-text reading. ToolCUA trains GUI-tool path selection with interleaved trajectory synthesis, critical-step RFT, and a tool-efficient path reward; DataMaster organizes autonomous data engineering as a DataTree with red exploration nodes, black exploitation nodes, Data Pool, and Global Memory; PriorZero injects LLM semantic priors only at the MCTS root while a world model handles rollout and value training; and the MoE routing paper shows router-expert geometric coupling and how auxiliary load-balancing can collapse router directions.",
@@ -193,6 +203,11 @@
     }
   ],
   "open_questions": [
+    "Can exploration checkpoints be derived automatically from GUI, database, or lab environments without hand-authoring a benchmark-specific checklist?",
+    "Can agentic RL learn when exploration is worth the extra budget rather than always running a fixed Explore-then-Act phase?",
+    "Can deep-research evidence graphs support human editing, contradiction review, stale-source detection, and versioned provenance?",
+    "Can verification rewards for evidence graphs remain calibrated when source quality varies, pages change, or claims require private documents?",
+    "Can video world-model robustness under corruption, occlusion, contact ambiguity, and time reversal predict closed-loop planning performance?",
     "Can router-expert geometry become a diagnostic signal during MoE pretraining rather than a post-hoc interpretability measurement?",
     "Can MoE load-balancing objectives preserve router-expert geometric coupling while still preventing expert starvation at larger scales?",
     "Can root-only language-prior injection scale from text games and BabyAI to embodied or GUI action spaces with noisy observations and irreversible actions?",
@@ -847,6 +862,36 @@
   ],
   "next_run_watchlist": [
     {
+      "id": "arxiv:2605.15040",
+      "title": "Orchard: An Open-Source Agentic Modeling Framework",
+      "reason": "Microsoft Research agentic modeling framework lead; compare with AstraFlow/SkillSmith if focusing on agent workflow infrastructure."
+    },
+    {
+      "id": "arxiv:2605.15155",
+      "title": "Self-Distilled Agentic Reinforcement Learning",
+      "reason": "Strong May 14 SDAR lead on gated self-distillation for multi-turn agent RL; read if next issue focuses on agentic RL stability."
+    },
+    {
+      "id": "arxiv:2605.15178",
+      "title": "SANA-WM",
+      "reason": "Community-visible open 2.6B minute-scale video world model; read if next issue focuses on generative world models rather than representation evaluation."
+    },
+    {
+      "id": "arxiv:2605.13527",
+      "title": "MMSkills",
+      "reason": "Multimodal reusable skills with state cards/keyframes for GUI and game agents; useful follow-up for visual agent memory and skill packaging."
+    },
+    {
+      "id": "arxiv:2605.15963",
+      "title": "PAGER",
+      "reason": "Point-precise geometric GUI control lead; compare with BAMI/ToolCUA before another GUI-grounding issue."
+    },
+    {
+      "id": "arxiv:2605.15188",
+      "title": "FutureSim",
+      "reason": "Adaptive-agent evaluation via replayed world events; useful if returning to live outcome evaluation and temporal evidence."
+    },
+    {
       "id": "arxiv:2605.06651",
       "title": "AI Co-Mathematician: Accelerating Mathematicians with Agentic AI",
       "reason": "Google DeepMind agentic-math workbench with stateful workspace design; include only with careful reading of open report evidence and user-study limitations."
@@ -1244,6 +1289,36 @@
   ],
   "next_run_search_suggestions": [
     {
+      "id": "arxiv:2605.15040",
+      "title": "Orchard: An Open-Source Agentic Modeling Framework",
+      "reason": "Microsoft Research agentic modeling framework lead; compare with AstraFlow/SkillSmith if focusing on agent workflow infrastructure."
+    },
+    {
+      "id": "arxiv:2605.15155",
+      "title": "Self-Distilled Agentic Reinforcement Learning",
+      "reason": "Strong May 14 SDAR lead on gated self-distillation for multi-turn agent RL; read if next issue focuses on agentic RL stability."
+    },
+    {
+      "id": "arxiv:2605.15178",
+      "title": "SANA-WM",
+      "reason": "Community-visible open 2.6B minute-scale video world model; read if next issue focuses on generative world models rather than representation evaluation."
+    },
+    {
+      "id": "arxiv:2605.13527",
+      "title": "MMSkills",
+      "reason": "Multimodal reusable skills with state cards/keyframes for GUI and game agents; useful follow-up for visual agent memory and skill packaging."
+    },
+    {
+      "id": "arxiv:2605.15963",
+      "title": "PAGER",
+      "reason": "Point-precise geometric GUI control lead; compare with BAMI/ToolCUA before another GUI-grounding issue."
+    },
+    {
+      "id": "arxiv:2605.15188",
+      "title": "FutureSim",
+      "reason": "Adaptive-agent evaluation via replayed world events; useful if returning to live outcome evaluation and temporal evidence."
+    },
+    {
       "id": "arxiv:2605.12501",
       "title": "Covering Human Action Space for Computer Use",
       "reason": "Fresh May 12 computer-use benchmark/data-synthesis lead over GUI/text/table/canvas/image actions; compare with ToolCUA before another CUA issue."
@@ -1385,29 +1460,60 @@
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-13 11:50:00 +0800",
+    "last_updated": "2026-05-18 12:04:00 +0800",
     "this_run_improved": [
-      "Installed SkillHub CLI in CLI-only mode when it was missing, installed the requested SkillHub skills under /tmp, and kept those installation artifacts out of the repository.",
-      "Started with memory recall and an explicit self-evolution choice: avoid another generic trace/state-surface framing, and instead select papers where intermediate structures change path choice, search, planning, or routing.",
-      "Used arXiv API/HTML plus community and Chinese-tech-source lead collection, then selected only papers with open full text and extractable method/result figures.",
-      "Rewrote dense numerical evidence as Markdown tables instead of table screenshots, while embedding method diagrams and curves as images with explanatory captions.",
-      "Included formulas or compact mathematical forms where they clarify the mechanism, especially ToolCUA's reward logic and the MoE router/expert shared-gradient direction."
+      "Installed SkillHub CLI in CLI-only mode when missing and installed requested skills, then kept the installed skills out of the final tracked repo changes.",
+      "Started with memory recall and explicitly avoided another generic state-surface issue; selected papers around pre-commit work: exploration, evidence assembly, and robustness testing before action or claims.",
+      "Used recent arXiv category pages plus subagent checks across academic sources, Chinese media, community sources, and lab blogs; final selections returned to arXiv HTML full text.",
+      "Chose three papers for deeper reading rather than five shallow summaries, and rebuilt dense numeric evidence as Markdown tables instead of low-readability table screenshots.",
+      "Embedded original arXiv-rendered method and result figures, then explained after each figure what claim it supports and what caveat matters."
     ],
     "still_failed_or_risky": [
-      "The final selection remains arXiv-heavy because official lab/blog and Chinese-media sources in the strict 24h-3d window did not provide better primary-paper candidates.",
-      "ToolCUA and DataMaster are system papers with large implementation surfaces; the blog is based on close reading, not reproduction of their environments or cost profiles.",
-      "PriorZero evidence is still concentrated in text-game and BabyAI-style environments, so the post avoids broad embodied-agent claims.",
-      "Some images from arXiv HTML are lower resolution than ideal; dense tables were therefore converted to Markdown, but method figures still depend on arXiv-rendered PNG quality."
+      "The final selection remains arXiv-heavy; Chinese-media and lab-blog checks mainly surfaced older, already-covered, or non-paper leads.",
+      "Figure extraction used arXiv HTML image assets because the environment lacked PDF/image conversion tools; source images are readable but not regenerated at higher DPI.",
+      "Look Before You Leap depends on benchmark-defined checkpoints; the post avoids claiming that ECC is already solved for open-ended enterprise environments.",
+      "Argus reports strong benchmark gains but also high test-time token budgets; the post treats it as a high-value research-agent design rather than a cheap default.",
+      "The latent video paper is representation-level evidence, not closed-loop planning proof; the post keeps that distinction explicit."
     ],
     "next_adjustments": [
-      "When selecting computer-use papers, require evidence about dynamic tools, tool failure, or screenshot/API divergence before making deployment-strength claims.",
-      "For data-agent papers, prioritize provenance, leakage checks, rollback, and human-review surfaces over only leaderboard gains.",
-      "For world-model papers, look for uncertainty-aware interfaces between language priors, learned dynamics, and real environment feedback.",
-      "For mechanism papers, prefer local claims with derivations plus interventions, and connect them to training diagnostics rather than only interpretability narratives.",
-      "Keep using Markdown tables for important numeric evidence and reserve screenshots for figures that genuinely convey method structure or curves."
+      "When covering exploration papers, require details on how checkpoints, affordances, or novelty signals are generated and verified outside benchmark-specific worlds.",
+      "For deep-research agents, prioritize provenance, source freshness, contradiction handling, and human-editable evidence structures over raw benchmark wins.",
+      "For world-model papers, separate representation robustness from action-conditioned rollout, counterfactual planning, and closed-loop control evidence.",
+      "Continue using Markdown tables for important numbers and reserve screenshots for diagrams or curves that actually support the explanation.",
+      "Keep community and media leads as cross-checks and watchlist inputs, not as substitutes for primary full-text reading."
     ]
   },
   "watchlist": [
+    {
+      "id": "arxiv:2605.15040",
+      "title": "Orchard: An Open-Source Agentic Modeling Framework",
+      "reason": "Microsoft Research agentic modeling framework lead; compare with AstraFlow/SkillSmith if focusing on agent workflow infrastructure."
+    },
+    {
+      "id": "arxiv:2605.15155",
+      "title": "Self-Distilled Agentic Reinforcement Learning",
+      "reason": "Strong May 14 SDAR lead on gated self-distillation for multi-turn agent RL; read if next issue focuses on agentic RL stability."
+    },
+    {
+      "id": "arxiv:2605.15178",
+      "title": "SANA-WM",
+      "reason": "Community-visible open 2.6B minute-scale video world model; read if next issue focuses on generative world models rather than representation evaluation."
+    },
+    {
+      "id": "arxiv:2605.13527",
+      "title": "MMSkills",
+      "reason": "Multimodal reusable skills with state cards/keyframes for GUI and game agents; useful follow-up for visual agent memory and skill packaging."
+    },
+    {
+      "id": "arxiv:2605.15963",
+      "title": "PAGER",
+      "reason": "Point-precise geometric GUI control lead; compare with BAMI/ToolCUA before another GUI-grounding issue."
+    },
+    {
+      "id": "arxiv:2605.15188",
+      "title": "FutureSim",
+      "reason": "Adaptive-agent evaluation via replayed world events; useful if returning to live outcome evaluation and temporal evidence."
+    },
     {
       "id": "arxiv:2605.12501",
       "title": "Covering Human Action Space for Computer Use",
