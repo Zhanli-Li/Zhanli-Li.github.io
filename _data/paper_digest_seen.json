@@ -1,6 +1,48 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.18703",
+      "title": "EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL",
+      "canonical_url": "https://arxiv.org/abs/2605.18703",
+      "date": "2026-05-18",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-20-1209-en/",
+      "themes": [
+        "agentic training",
+        "tool-use agents",
+        "executable environments",
+        "synthetic trajectories",
+        "verifiable rewards"
+      ]
+    },
+    {
+      "id": "arxiv:2605.19769",
+      "title": "OpenComputer: Verifiable Software Worlds for Computer-Use Agents",
+      "canonical_url": "https://arxiv.org/abs/2605.19769",
+      "date": "2026-05-19",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-20-1209-en/",
+      "themes": [
+        "computer-use agents",
+        "verifiable software worlds",
+        "desktop task evaluation",
+        "partial-credit rewards",
+        "application-state verifiers"
+      ]
+    },
+    {
+      "id": "arxiv:2605.18303",
+      "title": "PH-Dreamer: A Physics-Driven World Model via Port-Hamiltonian Generative Dynamics",
+      "canonical_url": "https://arxiv.org/abs/2605.18303",
+      "date": "2026-05-18",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-20-1209-en/",
+      "themes": [
+        "world models",
+        "Port-Hamiltonian dynamics",
+        "physical inductive bias",
+        "latent dynamics",
+        "energy-aware control"
+      ]
+    },
+    {
       "id": "arxiv:2605.15618",
       "title": "Latent Video Prediction Learns Better World Models",
       "canonical_url": "https://arxiv.org/abs/2605.15618",
