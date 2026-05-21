@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-20 12:09:16 +0800",
+  "last_updated": "2026-05-21 12:17:40 +0800",
   "research_profile": {
     "core_interests": [
       "agentic training",
@@ -12,6 +12,16 @@
     "style_preference": "英文和中文分别生成独立 Markdown；Paper Radar 默认展示英文；克制、具体、有判断力，避免新闻稿式写作"
   },
   "topic_threads": [
+    {
+      "theme": "Compiled runtimes and selective memory for research agents",
+      "summary": "This issue selected three May 20 open arXiv HTML papers after SkillHub CLI-only setup, repo memory recall, self-evolution review, arXiv/HF/media/community/lab-blog lead collection, and primary full-text reading. Agent JIT compiles web tasks into invariant-checked code plans and latency-aware schedules; Mem-pi trains a separate memory policy to decide when and what guidance to generate; DeepWeb-Bench evaluates deep research as 8x8 provenance-backed matrices and shows derivation/calibration failures dominate retrieval gaps.",
+      "papers": [
+        "arxiv:2605.21470",
+        "arxiv:2605.21463",
+        "arxiv:2605.21482"
+      ],
+      "judgment": "The common pattern is moving agent reliability into runtime interfaces: compiled state-flow checks before browser execution, abstention-aware memory before context injection, and cell-level provenance before accepting research reports. This deliberately avoided another executable-world/verifier issue and used original method/diagnostic figures plus Markdown tables for dense numeric evidence."
+    },
     {
       "theme": "Executable worlds for agents and physical structure for world models",
       "summary": "This issue selected three May 18-19 open arXiv HTML papers after SkillHub CLI-only setup, requested SkillHub skill installation, memory recall, arXiv recent-list scraping after API 429s, and academic/community cross-checks. EnvFactory synthesizes verified executable tool environments and natural multi-turn trajectories for agentic RL, OpenComputer builds verifier-grounded desktop software worlds with application-state rewards and self-evolving verifiers, and PH-Dreamer injects Port-Hamiltonian structure into recurrent visual world models for more compact latent dynamics and lower-energy smoother control.",
@@ -213,6 +223,11 @@
     }
   ],
   "open_questions": [
+    "Can latency-aware scheduling for browser agents remain robust under changing network conditions, A/B-tested interfaces, and cross-session personalization?",
+    "Can agent training target derivation and calibration failures directly instead of optimizing mainly retrieval breadth or final-answer fluency?",
+    "Can deep-research benchmarks move from public web tasks to private/versioned document stores with access controls while preserving external auditability?",
+    "Can generative agent-memory policies expose calibrated confidence, provenance, and retirement rules for each piece of guidance they inject?",
+    "Can web-agent compilers keep tool invariants current when websites change, hidden UI state drifts, or backend semantics are not visible in DOM-level checks?",
     "Can verifier generation for desktop agents scale without narrowing benchmarks to tasks that are easy to inspect programmatically?",
     "Can executable tool environments preserve provenance from real online sources through generated code, tests, trajectories, and RL rewards?",
     "Can agentic RL use partial-credit verifier signals without overfitting to the reward scripts or verifier blind spots?",
@@ -296,6 +311,19 @@
     "Can reward-model interventions move beyond surface style features to deployment artifacts such as citation shape, JSON verbosity, unverified confidence, or clean-looking but wrong tool traces?"
   ],
   "recent_digests": [
+    {
+      "date": "2026-05-21 12:17:40 +0800",
+      "permalink_en": "/posts/2026/05/paper-radar-2026-05-21-1217-en/",
+      "permalink_zh": "/posts/2026/05/paper-radar-2026-05-21-1217-zh/",
+      "title_en": "Compiled Agents, Adaptive Memory, and Derivation Debt",
+      "title_zh": "从编译式智能体到选择性记忆与深度研究推导债",
+      "covered_papers": [
+        "arxiv:2605.21470",
+        "arxiv:2605.21463",
+        "arxiv:2605.21482"
+      ],
+      "selection_note": "SkillHub CLI was missing and installed CLI-only; requested SkillHub skills were installed locally as workflow aids and removed from the final repo diff. Screened 8-15 candidates from May 18-21 across arXiv, Hugging Face, Chinese media, community/repo leads, and lab blogs, including Agentic Model Checking, GaussianDream, CoPhy, Structured Layout Priors, PEEK, SpecBench, DelTA, Equilibrium Reasoners, AutoResearchClaw, Co-Scientist, ERA, and ActGuide-RL. Selected three May 20 open arXiv HTML papers with enough method depth, figures, and source-backed numbers around compiled execution, adaptive memory, and derivation-heavy deep-research evaluation. Dense numeric evidence was rewritten as Markdown tables; local images were saved under images/paper-radar/2026-05-21-1217 and checked for dimensions/DPI."
+    },
     {
       "date": "2026-05-20 12:09:16 +0800",
       "permalink_en": "/posts/2026/05/paper-radar-2026-05-20-1209-en/",
@@ -483,6 +511,15 @@
   ],
   "quality_feedback": [
     {
+      "date": "2026-05-21",
+      "observations": [
+        "This run acted on prior form feedback by using Markdown tables for dense numerical evidence and reserving images for method/diagnostic figures that directly support the explanation.",
+        "The issue avoided repeating the previous executable-world/verifier framing by centering runtime behavior: compilation, selective memory generation, and derivation-level research evaluation.",
+        "All selected papers were read from primary arXiv HTML full text; local figures were copied from arXiv HTML assets under images/paper-radar/2026-05-21-1217.",
+        "Subagent and media/community leads were used for breadth and watchlist updates, not as substitutes for primary full-text reading."
+      ]
+    },
+    {
       "date": "2026-05-20",
       "observations": [
         "This run acted on the form feedback by using Markdown tables for dense numerical evidence and embedding only mechanism/result figures that support the explanation.",
@@ -620,6 +657,26 @@
     }
   ],
   "evolution_log": [
+    {
+      "date": "2026-05-21 12:17:40 +0800",
+      "improved": [
+        "Converted recall into a concrete selection rule: avoid another environment/verifier issue and select papers where runtime control, memory intervention, or derivation evaluation changes the agent workflow.",
+        "Kept the issue to three papers for depth and included field introductions, concrete method steps, source-backed numbers, figure explanations, and explicit limitations.",
+        "Used subagents to collect academic, Chinese-media, community, and lab-blog leads while keeping final inclusion anchored to open primary full text."
+      ],
+      "remaining_issues": [
+        "The final set is still arXiv-heavy; the freshest lab-blog leads were high quality but Nature/publisher pages were less convenient for the required open full-text figure workflow.",
+        "Agent JIT and Mem-pi are early systems papers whose deployment robustness depends on changing websites, memory calibration, and component-level logging beyond the reported benchmarks.",
+        "DeepWeb-Bench uses an automated GPT-5.5 grader with human validation; future runs should keep judge-dependence and reference leakage risks visible."
+      ],
+      "next_run_adjustments": [
+        "If following agentic RL, compare DelTA, RELEX, ActGuide-RL, GoLongRL, and SpecBench around token/action credit and reward hacking rather than only final scores.",
+        "If following agent memory, read PEEK, MINTEval, Mem-pi follow-ups, and OpenViking-style context databases with attention to maintenance and provenance.",
+        "If following mechanisms, inspect Equilibrium Reasoners, circuit-to-theory ILP, language-switching trigger circuits, and RLVR low-rank trajectories for causal evidence and figure quality.",
+        "Continue using Markdown for dense tables and only embed figures that are legible, correctly placed, and directly explained in text."
+      ],
+      "safety_note": "Self-evolution remains limited to search, reading, figure use, structure, and bilingual writing quality; it does not change source, paywall, secret-handling, or workflow permissions."
+    },
     {
       "date": "2026-05-20 12:09:16 +0800",
       "improved": [
@@ -1346,6 +1403,56 @@
   ],
   "next_run_search_suggestions": [
     {
+      "id": "arxiv:2605.21384",
+      "title": "SpecBench",
+      "reason": "Long-horizon coding-agent reward hacking benchmark; read if next issue focuses on verifiable rewards and oversight collapse."
+    },
+    {
+      "id": "arxiv:2605.21467",
+      "title": "DelTA",
+      "reason": "Token-level credit assignment for RLVR; compare with RELEX and ActGuide-RL for training-signal placement."
+    },
+    {
+      "id": "arxiv:2605.21468",
+      "title": "RELEX / Rank-1 Trajectories",
+      "reason": "Mechanism/training-efficiency lead showing low-rank RLVR weight trajectories; useful for a mechanisms-of-RL issue."
+    },
+    {
+      "id": "arxiv:2605.21488",
+      "title": "Equilibrium Reasoners",
+      "reason": "Attractor dynamics for scalable reasoning; possible bridge between mechanisms and test-time scaling."
+    },
+    {
+      "id": "arxiv:2605.21303",
+      "title": "From Circuit Evidence to Mechanistic Theory",
+      "reason": "Inductive-logic layer for comparing circuit evidence; useful if next issue focuses on cumulative mechanistic interpretability."
+    },
+    {
+      "id": "arxiv:2605.19932",
+      "title": "PEEK",
+      "reason": "Context-map orientation cache for recurring corpora/codebases; strong follow-up to selective memory and data-agent context management."
+    },
+    {
+      "id": "arxiv:2605.18565",
+      "title": "MINTEval",
+      "reason": "Memory interference benchmark for long-horizon agents; pair with Mem-pi when evaluating memory governance."
+    },
+    {
+      "id": "arxiv:2605.19309",
+      "title": "How Do Document Parsers Break?",
+      "reason": "Structure-aware document parser vulnerability audit with downstream QA/retrieval impact; useful for document-intelligence robustness."
+    },
+    {
+      "id": "technical-report:google-co-scientist-nature-2026",
+      "title": "Co-Scientist",
+      "reason": "Google DeepMind multi-agent scientific hypothesis system with lab-validated biomedical leads; read from official/Nature open access if available."
+    },
+    {
+      "id": "technical-report:google-era-nature-2026",
+      "title": "Empirical Research Assistance",
+      "reason": "Google research/data-agent system for writing and optimizing empirical scientific code; useful for executable science-agent workflows."
+    },
+    {
       "id": "arxiv:2605.19250",
       "title": "Causal Evidence for Attention Head Imbalance in Modality Conflict Hallucination",
       "reason": "Mechanistic multimodal hallucination lead with causal head interventions; saved for a mechanisms issue."
@@ -1374,11 +1481,6 @@
       "id": "arxiv:2605.17873",
       "title": "HINT-SD",
       "reason": "Targeted hindsight self-distillation for long-horizon agents; compare with SERL before a credit-assignment issue."
-    },
-    {
-      "id": "arxiv:2605.19932",
-      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
-      "reason": "Fresh May 19 context-map lead; read if next issue focuses on persistent orientation knowledge for agents over repos, documents, or recurring contexts."
     },
     {
       "id": "arxiv:2605.15040",
@@ -1552,26 +1654,26 @@
     }
   ],
   "self_evolution": {
-    "last_updated": "2026-05-20 12:09:16 +0800",
+    "last_updated": "2026-05-21 12:17:40 +0800",
     "this_run_improved": [
-      "Installed SkillHub CLI in CLI-only mode when missing and installed requested skills, while keeping installed skill files out of intended publishable outputs.",
-      "After arXiv API 429s and a missing Python dependency in the SkillHub arXiv script, used official arXiv recent HTML pages plus web/subagent cross-checks instead of relying on broken tooling.",
-      "Shifted selection from another pre-action inspection issue to environment/reward/simulator construction, reducing thematic repetition.",
-      "Chose three papers with open arXiv HTML, usable figures, institutions handled conservatively, and enough tables/formulas for deeper mini-explainers.",
-      "Rebuilt dense numerical evidence as Markdown and used local arXiv image assets only for figures that directly support method or evidence explanations."
+      "Handled SkillHub as requested, installed CLI-only and four skills, then kept those workflow artifacts out of the final intended repo diff.",
+      "Used memory recall to avoid repeating the previous verifier/world-construction theme and selected a runtime-control theme instead.",
+      "Screened academic, Chinese-media, community, and lab-blog leads in parallel while requiring final papers to have open primary full text.",
+      "Wrote fewer papers with deeper method/evidence coverage and used Markdown tables instead of table screenshots.",
+      "Checked local figure dimensions and DPI metadata after copying arXiv HTML image assets into the correct issue directory."
     ],
     "still_failed_or_risky": [
-      "The issue remains arXiv-centered because the newest lab/media leads were either older, not open full text, already covered, or not paper-like enough for this workflow.",
-      "OpenComputer Figure 3 was inline SVG in arXiv HTML and not saved as a local raster; its evidence was represented as Markdown tables instead.",
-      "EnvFactory's generated environments and OpenComputer's verifiers may encode blind spots; the post keeps deployment claims conservative.",
-      "PH-Dreamer uses clean simulator physical signals, so the blog does not generalize the result to open-world robotics or video without evidence."
+      "The final selection is still dominated by arXiv because many social/lab leads were either older, publisher-hosted, repo-only, or less aligned with the required figure/full-text workflow.",
+      "One Agent JIT auxiliary planner example figure was too small for detailed inspection, so the final post relied on larger architecture and scheduler figures instead.",
+      "Mem-pi is marked work in progress, so the post keeps claims to reported benchmark behavior and does not treat generated memory as solved governance.",
+      "DeepWeb-Bench's automated grading could introduce judge bias; the post notes human validation but does not overstate benchmark finality."
     ],
     "next_adjustments": [
-      "For agentic RL papers, prioritize where feedback/reward enters the trajectory and whether the reward object can be audited independently.",
-      "For computer-use agents, separate visual grounding, CLI/tool efficiency, and application-state verification instead of merging them into one evaluation claim.",
-      "For world-model papers, require evidence about action-conditioned rollout, physical/contact fidelity, or planning transfer before using strong world-model language.",
-      "For figures, verify that every referenced image is non-placeholder and placed under the correct issue directory; use Markdown tables when inline SVG/table extraction is more readable than screenshots.",
-      "Keep source and safety rules unchanged: open full text only, no paywall bypass, no PDFs committed, no secrets, and no installed SkillHub artifacts in final repo changes."
+      "For agent runtime papers, ask whether cached schemas, tool invariants, and latency distributions survive product drift.",
+      "For memory papers, require evidence about abstention calibration, provenance, and stale-guidance retirement, not only task success.",
+      "For deep-research benchmarks, separate retrieval breadth, derivation accuracy, source conflict handling, and calibrated not-available answers.",
+      "Prefer primary HTML figures for methods and diagnostics; when dense tables are central, rebuild them in Markdown and cite only source-backed numbers.",
+      "Keep safety rules unchanged: open full text only, no paywall bypass, no PDFs committed, no secrets, and no SkillHub installed artifacts in final repo changes."
     ]
   },
   "watchlist": [

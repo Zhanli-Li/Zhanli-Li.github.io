@@ -1,6 +1,48 @@
 {
   "papers": [
     {
+      "id": "arxiv:2605.21470",
+      "title": "Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling",
+      "canonical_url": "https://arxiv.org/abs/2605.21470",
+      "date": "2026-05-20",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-21-1217-en/",
+      "themes": [
+        "computer-use agents",
+        "agent runtime infrastructure",
+        "JIT planning",
+        "tool invariants",
+        "latency-aware scheduling"
+      ]
+    },
+    {
+      "id": "arxiv:2605.21463",
+      "title": "Mem-pi: Adaptive Memory through Learning When and What to Generate",
+      "canonical_url": "https://arxiv.org/abs/2605.21463",
+      "date": "2026-05-20",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-21-1217-en/",
+      "themes": [
+        "agentic training",
+        "adaptive memory",
+        "generative memory policy",
+        "abstention",
+        "workflow agents"
+      ]
+    },
+    {
+      "id": "arxiv:2605.21482",
+      "title": "DeepWeb-Bench: A Deep Research Benchmark Demanding Massive Cross-Source Evidence and Long-Horizon Derivation",
+      "canonical_url": "https://arxiv.org/abs/2605.21482",
+      "date": "2026-05-20",
+      "covered_in": "/posts/2026/05/paper-radar-2026-05-21-1217-en/",
+      "themes": [
+        "document intelligence",
+        "deep research agents",
+        "source provenance",
+        "derivation evaluation",
+        "calibrated abstention"
+      ]
+    },
+    {
       "id": "arxiv:2605.18703",
       "title": "EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL",
       "canonical_url": "https://arxiv.org/abs/2605.18703",
