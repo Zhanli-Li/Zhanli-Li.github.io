@@ -15,3 +15,13 @@ package-lock.json
 # Ignore the vendor file and bundle for alternative installation
 vendor/
 .bundle/
+
+# Ignore LaTeX build artifacts while keeping generated site PDFs tracked
+cv-latex/**/*.aux
+cv-latex/**/*.fdb_latexmk
+cv-latex/**/*.fls
+cv-latex/**/*.log
+cv-latex/**/*.out
+cv-latex/**/*.pdf
+cv-latex/**/*.synctex.gz
+cv-latex/**/*.xdv

@@ -1,0 +1,54 @@
+name: Build CV PDFs
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'cv-latex/**'
+      - 'scripts/build_cv_pdfs.sh'
+      - '.github/workflows/build_cv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-cv-pdfs
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Compile CV PDFs
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: |
+            cv-latex/english/Resume_for_Frehers.tex
+            cv-latex/chinese/resume-zh_CN.tex
+          texlive_version: 2026
+          work_in_root_file_dir: true
+          latexmk_use_xelatex: true
+
+      - name: Publish generated PDFs
+        run: scripts/build_cv_pdfs.sh --publish-only
+
+      - name: Commit generated CV updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _pages/cv.md files/Zhanli-LI_CV.pdf "files/李展利_简历.pdf"
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Update generated CV PDFs"
+          git pull --rebase origin master
+          git push origin master

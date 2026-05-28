@@ -1,0 +1,111 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % 简体中文字体支持（外部字体）
+\usepackage{linespacing_fix}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{wrapfig}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  filecolor=black,
+  citecolor=black,
+}
+\usepackage{graphicx}  % 如果未添加，请加上此行
+\begin{document}
+\pagenumbering{gobble}
+
+
+\name{李展利}
+\contactInfo{\faPhone\ (+86)156-2350-1965}{\faEnvelope\ lizhanli@stu.zuel.edu.cn}
+{\href{https://zhanli-li.github.io/}{\faHome\ zhanli-li.github.io}}
+{\href{https://github.com/Zhanli-Li}{\faGithub\ Zhanli-Li (170 stars+)}}
+%----------------------------------------------------------------------------------------
+% 教育背景
+%----------------------------------------------------------------------------------------
+% 在 \name 命令之后添加
+% \begin{tikzpicture}[remember picture,overlay]
+%   \node[anchor=north east,xshift=-0.1cm,yshift=-0.35cm] at (current page.north east) {
+%     \includegraphics[width=2.5cm,height=3.5cm,keepaspectratio]{头像.png}
+%   };
+% \end{tikzpicture}
+\section{教育背景}
+\datedsubsection{\textbf{中南财经政法大学} \quad \textbf{文澜学院(荣誉学院)} \quad \textit{数字经济}}{2023.9 - 2027.6}
+\textbf{加权平均分:} 93.73/100 \quad \textbf{专业排名:} 2/80 \quad \textbf{奖学金:} \textbf{2025 年国家奖学金} \\
+% \textbf{主修课程:} Python数据科学导论 (100), 数学建模 (95), 数学分析 (95.8), 概率论与数理统计 (99)\\
+\textbf{研究兴趣:} LLM \quad Agentic Training \quad Deep Learning
+\quad Causal Inference
+
+
+%----------------------------------------------------------------------------------------
+% 学术论文
+%----------------------------------------------------------------------------------------
+\section{学术论文}
+\textbf{Zhanli Li}, Huiwen Tian, Lvzhou Luo, Yixuan Cao, Ping Luo. \textit{DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search}. \textit{KDD 2027} (CCF-A), \textbf{Resubmit} \quad \textbf{[First Author]}
+
+\textbf{Zhanli Li}, Yixuan Cao, Lvzhou Luo, Ping Luo. \textit{Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA}. \textit{ACL 2026 Findings} (CCF-A) \quad \textbf{[First Author]}
+ 
+\textbf{Zhanli Li}, Zichao Yang.
+\href{https://www.sciencedirect.com/science/article/pii/S1544612325003903}{\textit{ESG Rating Disagreement and Corporate Total Factor Productivity: Inference and Prediction}}.
+\textit{Finance Research Letters}, vol.~78, p.~107127, 2025. (中科院 Q1 Top，JCR Q1，IF: 6.9） \quad \textbf{[First Author]}
+
+%----------------------------------------------------------------------------------------
+% 科研经历
+%----------------------------------------------------------------------------------------
+\section{科研经历}
+\datedsubsection{\textbf{面向真实数据分析的 Agentic 训练\textsuperscript{‡}} \quad \textit{项目负责人}}{2026.3 - 至今}
+现有数据分析 benchmark 多依赖\textbf{固定标准答案}进行评测，难以覆盖开放场景下 data agent 产生的\textbf{非标准但高价值 insight}，从而系统性低估其真实能力。为此，我们构建了\textbf{大规模交互式数据湖环境}，支持 agent 在真实数据分布中自主探索；并基于该环境，在\textbf{24 张 A100}上训练 \textbf{Qwen3.5-9B} 作为 \textbf{verifier agent}，对 data agent 生成的每条 insight 进行\textbf{细粒度的正确性与价值验证}。进一步地，我们将训练后的 verifier 融入\textbf{迭代式 agent harness}，形成``\textbf{生成-验证-反馈}''闭环，在真实业务场景中产出了许多\textbf{高价值 insight}。\\
+$\triangleright$~ 入选\textbf{中关村学院深澜计划}，预计投稿 \textit{ICLR 2027}
+
+\datedsubsection{\textbf{DeepRead：文档结构感知的Agentic Search\textsuperscript{†}} \quad \textit{项目负责人}}{2025.10 - 2025.2}
+现有 Agentic Search 往往将长文档视为扁平 chunk 集合，忽略文档原生的\textbf{层级结构}与\textbf{顺序逻辑}。我们提出 \textbf{DeepRead}：一种结构感知的文档推理 Agent，利用 OCR 保持版面结构保真，构建\textbf{段落级坐标}，并为 LLM 设计两类协同工具：\textbf{Retrieve}与 \textbf{ReadSection}，使得大模型涌现 ``locate-then-read'' 推理范式，显著缓解传统检索的上下文碎片化问题。在四个覆盖多类型文档的基准上，DeepRead 相比 \textbf{Search-o1} 风格 Agentic Search 基线平均提升 \textbf{10.3\%}。\\
+$\triangleright$~ \textbf{Resubmit} \textit{KDD 2027 (CCF-A)}，, 预印本被知名媒体\textbf{新智元}报道
+
+\datedsubsection{\textbf{MuDABench：多文档分析问答基准与多Agent框架\textsuperscript{†}} \quad \textit{项目负责人}}{2025.4 - 2025.12}
+\textbf{大规模}文档集合蕴含丰富知识，但在\textbf{上千份}长文档中实现可扩展的\textbf{多文档分析问答}仍具挑战。本项目基于\textbf{远程监督}与专家校验，构建了当前\textbf{规模最大的}多文档分析问答基准之一（\textbf{80k+页}文档、\textbf{332}道分析型问题、\textbf{4,964}结构化中间事实），用于系统评测多文档检索、跨文档聚合与数值推理能力。实验显示，标准检索服务在该设置下表现有限：以 OpenAI \textbf{File Search} 为代表的基线最终准确率最高仅为较低水平；我们提出的\textbf{Multi-Agent}工作流则将其显著提升。进一步误差分析表明，主要瓶颈在于\textbf{单文档信息抽取}的稳定性与高精度定位。\\
+$\triangleright$~ \textbf{发表于} \textit{ACL 2026 Findings (CCF-A)}
+
+\datedsubsection{\textbf{基于 SHAP 的公司金融因果推断框架\textsuperscript{*}} \quad \textit{项目负责人}}{2024.9 - 2025.1}
+针对传统面板数据模型依赖线性假设、难以刻画复杂非线性动态的问题，我们考虑了编码面板数据来提升模型的拟合能力，同时保持\textbf{统计因果推断}上的解释性。我们构建了可解释建模框架并集成 \textbf{Optuna} 自动超参搜索，在TFP预测任务上取得 $R^2=0.76$，有效超越传统线性基线；进一步使用 \textbf{SHapley Additive exPlanations (SHAP)} 对面板数据中的机制进行可追溯分析，量化并分解 ESG 评级分歧对结果变量的\textbf{非线性边际贡献}，从而揭示潜在因果路径。\\
+$\triangleright$~ \textbf{发表于} \textit{Finance Research Letters}（中科院 Q1 Top，JCR Q1，IF: 6.9），\href{https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA}{\textbf{清华大学因果推断研讨会优秀论文（Top 3\%）}}
+
+{\small \textit{\textsuperscript{†}代表在中国科学院计算技术研究所智能信息处理重点实验室 \href{https://yixuancao.github.io/}{曹逸轩} 、\href{https://ping-luo.github.io/}{罗平}副教授指导下进行}}
+
+{\small \textit{\textsuperscript{‡}代表在北京大学 \& 中关村学院 \href{https://zwt233.github.io/}{张文涛} 助理教授指导下进行 \quad \textsuperscript{*}在中南财经政法大学文澜学院 \href{https://www.yzc.me}{杨子超} 助理教授指导下进行}}
+
+
+
+
+%----------------------------------------------------------------------------------------
+% 实习经历
+%----------------------------------------------------------------------------------------
+\section{实习经历}
+\datedsubsection{\textbf{北京庖丁科技有限公司 研究组} \quad \textit{AI技术研究实习生}}{2025.6 - 2026.2}
+\textbf{导师:} \href{https://ping-luo.github.io/}{罗平} \quad \href{https://yixuancao.github.io/}{曹逸轩} \quad
+\textbf{项目:} 上下文检索在实际生产环境中的改进 \\
+依托公司先进自研闭源\textbf{文档解析}模型 \href{https://pdflux.com/}{PDFlux}并将结果嵌入商业级RAG系统 \href{https://chatdoc.com/}{ChatDOC}，重点优化使用Reranker精排时面临的\textbf{上下文缺失}的痛点，目前\href{https://chatdoc.com/}{ChatDOC}已经在多家\textbf{顶级金融机构}生产环境部署，显著提升了业务效率。
+
+%----------------------------------------------------------------------------------------
+% 获奖情况
+%----------------------------------------------------------------------------------------
+
+% \section{开源项目}
+
+% \href{https://github.com/Zhanli-Li/Auto-Tutor}{\textbf{Auto-Tutor: 面向科研申请的智能邮件管理系统}}（\textit{GitHub 90+ Stars}）\textit{项目发起者}\\
+% 该项目利用通过大语言模型（LLM）批量自动化生成科研申请与导师沟通邮件，自动解析学生和目标导师的信息，实现了在端侧的\textbf{一键式“智能申请”工作流}。
+
+\section{技能与服务}
+\textbf{编程语言:} Python, C/C++, \LaTeX, Markdown \quad \textbf{工具:} Docker, SSH, tmux, Ubuntu \quad \textbf{英语:} CET-4：522 \quad CET-6: 508\\
+\textbf{框架:} ms-swift, vllm, verl, llamaindex, transformers, torch, sklearn, pandas, numpy\quad
+\textbf{审稿:} \textit{Finance Research Letters}
+
+
+
+\end{document}

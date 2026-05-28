@@ -1,0 +1,149 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+%
+% This template requires the resume.cls file.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{resume}
+
+\usepackage{xeCJK}
+\usepackage[left=0.55in,top=0.45in,right=0.55in,bottom=0.45in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    filecolor=black,
+    citecolor=black
+}
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Zhanli Li (李展利)}
+
+\address{
+\faPhone\ (+86) 156-2350-1965 \\
+\faEnvelope\ lizhanli@stu.zuel.edu.cn \\
+\faHome\ \href{https://zhanli-li.github.io/}{zhanli-li.github.io} \\
+\faGithub\ \href{https://github.com/Zhanli-Li}{Zhanli-Li (170+ stars)}
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf Zhongnan University of Economics and Law} \hfill {\em September 2023 -- June 2027} \\
+Wenlan School of Business (Honors College), B.Sc. in Digital Economy \\
+\textbf{Weighted Avg: 93.73/100} \quad \textbf{Rank: 2/80} \quad \textbf{2025 National Scholarship} \\
+\textbf{Research Interests:} LLMs, Agentic Training, Deep Learning, Causal Inference
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	ACADEMIC PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Publications}
+
+\textbf{Zhanli Li}, Huiwen Tian, Lvzhou Luo, Yixuan Cao, Ping Luo. \textit{DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search}. \textit{KDD 2027} (CCF-A), \textbf{Resubmit}. \textbf{[First Author]}
+
+\textbf{Zhanli Li}, Yixuan Cao, Lvzhou Luo, Ping Luo. \textit{Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA}. \textit{ACL 2026 Findings} (CCF-A). \textbf{[First Author]}
+
+\textbf{Zhanli Li}, Zichao Yang. \href{https://www.sciencedirect.com/science/article/pii/S1544612325003903}{\textit{ESG Rating Disagreement and Corporate Total Factor Productivity: Inference and Prediction}}. \textit{Finance Research Letters}, vol.~78, p.~107127, 2025. (CAS Q1 Top, JCR Q1, IF: 6.9). \textbf{[First Author]}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Research Experience}
+
+{\bf Agentic Training for Real-World Data Analysis\textsuperscript{‡}} \hfill {\em March 2026 -- Present} \\
+\textbf{Role:} Project Leader \\
+Existing evaluation benchmarks for data analysis agents typically rely on \textbf{fixed reference answers}, making it difficult to capture \textbf{non-canonical yet valuable insights} generated in open-ended analytical settings, thereby systematically underestimating their true capability. To address this, we construct a \textbf{large-scale interactive data lake environment} that supports autonomous exploration under realistic data distributions. Built on this environment, we train \textbf{Qwen3.5-9B} as a \textbf{verifier agent} on \textbf{24 A100 GPUs} to perform \textbf{fine-grained verification} of each insight produced by the data agent, assessing both correctness and analytical value. We further integrate the trained verifier into an \textbf{iterative agent harness}, forming a ``\textbf{generate-verify-feedback}'' loop that continuously yields \textbf{high-value insights} in real-world scenarios. \\
+$\triangleright$~ Selected for the \textbf{Zhongguancun Academy Shenlan Program}; intended submission to \textit{ICLR 2027}.
+
+{\bf DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search\textsuperscript{†}} \hfill {\em October 2025 -- February 2026} \\
+\textbf{Role:} Project Leader \\
+Existing agentic search frameworks often treat long documents as flat chunk collections, ignoring native \textbf{hierarchical structures} and \textbf{sequential logic}. We propose \textbf{DeepRead}, a structure-aware document reasoning agent that preserves layout fidelity via OCR, constructs \textbf{paragraph-level coordinates}, and equips the LLM with two synergistic tools: \textbf{Retrieve} and \textbf{ReadSection}. This induces an emergent ``locate-then-read'' reasoning paradigm, significantly mitigating context fragmentation issues inherent in conventional retrieval. Across four benchmarks covering diverse document types, DeepRead outperforms \textbf{Search-o1} style agentic search baselines by an average of \textbf{10.3\%}. \\
+$\triangleright$~ \textbf{Resubmit to} \textit{KDD 2027 (CCF-A)}. The preprint was reported by the prominent tech media \textbf{New Wisdom (新智元)} and received over 130 saves on Xiaohongshu.
+
+{\bf MuDABench: Multi-Document Analytical QA Benchmark and Multi-Agent Framework\textsuperscript{†}} \hfill {\em April 2025 -- December 2025} \\
+\textbf{Role:} Project Leader \\
+\textbf{Large-scale} document collections contain rich knowledge, yet scalable multi-document analytical QA across \textbf{thousands} of long documents remains challenging. We constructed one of the \textbf{largest} multi-document analytical QA benchmarks to date (\textbf{80k+} pages, \textbf{332} analytical questions, \textbf{4,964} structured intermediate facts) using \textbf{distant supervision} and expert verification, enabling systematic evaluation of multi-document retrieval, cross-document aggregation, and numerical reasoning. Experiments reveal that standard retrieval services struggle in this setting: OpenAI's \textbf{File Search} achieves a very low best accuracy. Our proposed \textbf{Multi-Agent} workflow raises this substantially. Further error analysis indicates that the primary bottleneck lies in the stability and high-precision localization of \textbf{single-document information extraction}.
+
+$\triangleright$~ \textbf{Published in} \textit{ACL 2026 Findings (CCF-A)}.
+
+{\bf Causal Inference Framework via SHapley Additive exPlanations in Corporate Finance\textsuperscript{*}} \hfill {\em September 2024 -- January 2025} \\
+\textbf{Role:} Project Leader \\
+Traditional panel data models rely heavily on linear assumptions and struggle to capture complex nonlinear dynamics. We address this by encoding panel structure to enhance model fitting capacity while preserving \textbf{causal interpretability}. We developed an interpretable modeling framework integrated with \textbf{Optuna} for automatic hyperparameter tuning, achieving an $R^2$ of 0.76 in TFP prediction, substantially outperforming linear baselines. We further employed \textbf{SHapley Additive exPlanations (SHAP)} to trace mechanisms within the panel data, quantifying and decomposing the \textbf{nonlinear marginal contributions} of ESG rating disagreement, thereby uncovering latent causal pathways. \\
+$\triangleright$~ \textbf{Published in} \textit{Finance Research Letters} (CAS Q1 Top, JCR Q1, IF: 6.9). Selected as \href{https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA}{\textbf{Outstanding Paper at the Tsinghua University Causal Inference Seminar (Top 3\%)}}.
+
+{\small \textit{\textsuperscript{†}Conducted under the supervision of Associate Professors \href{https://yixuancao.github.io/}{Yixuan Cao} and \href{https://ping-luo.github.io/}{Ping Luo}, Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences}}
+
+{\small \textit{\textsuperscript{‡}Conducted under the supervision of Assistant Professor \href{https://zwt233.github.io/}{Wentao Zhang}, Peking University \& Zhongguancun Academy}}
+
+{\small \textit{\textsuperscript{*}Conducted under the supervision of Assistant Professor \href{https://www.yzc.me}{Zichao Yang}, Wenlan School of Business, Zhongnan University of Economics and Law}}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	INTERNSHIP EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Internship Experience}
+
+{\bf Beijing Paoding Technology Co., Ltd. --- Research Dept.} \hfill {\em June 2025 -- February 2026} \\
+\textbf{Role:} AI Research Intern \quad \textbf{Mentors:} \href{https://ping-luo.github.io/}{Ping Luo}, \href{https://yixuancao.github.io/}{Yixuan Cao} \\
+\textbf{Project:} Improving Context Retrieval in Production-Grade RAG Systems
+
+Leveraged the company's proprietary \textbf{document parsing} model \href{https://pdflux.com/}{PDFlux} and integrated its outputs into the commercial RAG product \href{https://chatdoc.com/}{ChatDOC}, focusing on mitigating \textbf{context-missing} issues introduced by reranker-based retrieval and improving retrieval completeness and ranking quality in complex document scenarios. The system has been deployed in production environments at several \textbf{top-tier financial institutions}, markedly enhancing operational efficiency.
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SELECTED AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Selected Awards}
+
+{\bf China National Scholarship} \hfill {\em November 2025} \\
+Highest academic honor for undergraduates in China (Top 0.2\%).
+
+{\bf China Undergraduate Mathematical Contest in Modeling} \hfill {\em November 2025} \\
+First Prize (Team Leader, Top 3\%).
+
+{\bf Hunan Province Outstanding Student (High School)} \hfill {\em April 2023} \\
+Awarded to the top 0.1\% of high school students in Hunan Province.
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL SKILLS & SERVICE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Technical Skills \& Service}
+
+\textbf{Languages:} Chinese (native), English (CET-4: 522, CET-6: 508) \\
+\textbf{Programming Languages:} Python, C/C++, \LaTeX, Markdown \\
+\textbf{Tools:} Docker, SSH, tmux, Ubuntu \\
+\textbf{Libraries \& Frameworks:} ms-swift, vllm, verl, llamaindex, transformers, torch, sklearn, pandas, numpy \\
+\textbf{Academic Service:} Independent Reviewer for \textit{Finance Research Letters}
+
+\end{rSection}
+
+\end{document}
