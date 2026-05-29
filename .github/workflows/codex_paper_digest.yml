@@ -60,7 +60,7 @@ jobs:
           model: gpt-5.5
           effort: xhigh
           sandbox: danger-full-access
-          codex-args: --search -a never
+          codex-args: -a never
 
       - name: Commit generated digest
         run: |
