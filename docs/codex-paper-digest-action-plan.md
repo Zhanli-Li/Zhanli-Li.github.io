@@ -1,8 +1,8 @@
-# Codex SDK 自动论文速读 GitHub Action 实施方案
+# Codex Action 自动论文速读 GitHub Action 实施方案
 
 ## 当前实现
 
-这个仓库已经按本方案落地了一个 MVP：GitHub Action 每天北京时间 08:00 运行一次，调用 Codex SDK，让 Codex 搜索、细读并生成一组可以直接发布的 Paper Radar 论文速读博客。每期输出英文和中文两个独立 Markdown，Paper Radar 页面默认展示英文入口。
+这个仓库已经按本方案落地了一个 MVP：GitHub Action 每天北京时间 08:00 运行一次，调用官方 `openai/codex-action@v1`，让 Codex 搜索、细读并生成一组可以直接发布的 Paper Radar 论文速读博客。每期输出英文和中文两个独立 Markdown，Paper Radar 页面默认展示英文入口。
 
 实现文件：
 
@@ -14,7 +14,7 @@
 .agents/skills/research-memory/SKILL.md
 .agents/skills/blog-writing/SKILL.md
 _pages/paper-radar.html
-scripts/codex-paper-digest.mjs
+scripts/prepare-codex-paper-digest-prompt.mjs
 scripts/check-paper-digest-config.py
 _data/paper_digest_seen.json
 _data/paper_digest_memory.json
@@ -22,7 +22,7 @@ _data/paper_digest_memory.json
 
 ## 目标
 
-Action 调用 Codex SDK，让 Codex 自动完成以下工作：
+Action 调用官方 Codex Action，让 Codex 自动完成以下工作：
 
 1. Recall 历史论文速读、主题偏好、未完成问题、质量反馈和演化日志。
 2. 基于过去推送做自进化分析，把历史反馈转化成本次搜索、筛选、图表和写作策略。
@@ -56,27 +56,35 @@ schedule:
 默认模型配置：
 
 ```text
-CODEX_MODEL=gpt-5.5
-CODEX_REASONING_EFFORT=xhigh
-CODEX_SANDBOX_MODE=danger-full-access
+model: gpt-5.5
+effort: xhigh
+sandbox: danger-full-access
+codex-args: --search -a never
 ```
 
-说明：GitHub hosted runner 对 Codex 默认的 bubblewrap sandbox 有内核权限限制，可能出现 `bwrap: setting up uid map: Permission denied`。因此 CI 中使用 `danger-full-access`，但 workflow 最后只提交 `_posts`、`_data` 和 `images/paper-radar`，不会自动提交其他文件。
+说明：Codex Action 默认会处理 GitHub hosted runner 上的 sandbox 准备工作。Paper Radar 仍使用 `danger-full-access`，因为它需要安装 SkillHub CLI、搜索网页、渲染/截取开放论文图表并写入仓库；workflow 最后只提交 `_posts`、`_data` 和 `images/paper-radar`，不会自动提交其他文件。
 
 ## Secret 配置
 
-需要在 GitHub 仓库 Settings 中配置两个 secret：
+需要在 GitHub 仓库 Settings 中配置：
 
 ```text
 OPENAI_API_KEY
-OPENAI_BASE_URL
 ```
+
+如果使用自定义 Responses API endpoint，再额外配置：
+
+```text
+OPENAI_RESPONSES_API_ENDPOINT
+```
+
+workflow 也兼容旧 secret 名 `OPENAI_BASE_URL`，但推荐迁移到更准确的 `OPENAI_RESPONSES_API_ENDPOINT`。
 
 注意：
 
 1. API key 只能放在 GitHub Secrets 或本地环境变量中。
 2. 不要把 API key 写入仓库、文档、prompt、日志或 commit message。
-3. `OPENAI_BASE_URL` 用来配置自定义 OpenAI-compatible endpoint。
+3. `OPENAI_RESPONSES_API_ENDPOINT` 会传给 Codex Action 的 `responses-api-endpoint`，用于配置自定义 Responses API endpoint；如果不用自定义 endpoint，可以不设置。旧的 `OPENAI_BASE_URL` 仍作为兼容 fallback。
 
 GitHub 设置路径：
 
@@ -278,9 +286,9 @@ tags:
 ```text
 GitHub schedule / 手动触发
   -> checkout 仓库
-  -> 安装 Node.js 和 Codex SDK
-  -> 运行 scripts/codex-paper-digest.mjs
-  -> SDK 读取主 prompt + 四个 skills
+  -> 安装 Node.js
+  -> 生成合成 prompt
+  -> 官方 Codex Action 读取合成 prompt，其中包含主任务和四个 skills
   -> Codex recall 历史记忆和已推送论文
   -> Codex 可并行启动多个子任务/subagent，从论文源、中文科技媒体、X 大博主、研究者博客和实验室博客收集热点线索；subagent 优先使用 gpt-5.5 + xhigh
   -> Codex 联网搜索候选论文
@@ -328,26 +336,52 @@ jobs:
       - name: Check digest configuration
         run: python3 scripts/check-paper-digest-config.py
 
-      - name: Install Codex SDK
-        run: npm install --no-save @openai/codex-sdk @openai/codex
+      - name: Prepare Codex prompt
+        run: node scripts/prepare-codex-paper-digest-prompt.mjs .github/codex/paper-digest-runtime-prompt.md
+
+      - name: Resolve Responses API endpoint
+        id: responses-endpoint
+        env:
+          OPENAI_RESPONSES_API_ENDPOINT: ${{ secrets.OPENAI_RESPONSES_API_ENDPOINT }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+        run: |
+          endpoint="${OPENAI_RESPONSES_API_ENDPOINT}"
+          if [ -z "$endpoint" ] && [ -n "$OPENAI_BASE_URL" ]; then
+            endpoint="${OPENAI_BASE_URL%/}"
+            case "$endpoint" in
+              */responses) ;;
+              */v1) endpoint="$endpoint/responses" ;;
+              *) endpoint="$endpoint/v1/responses" ;;
+            esac
+          fi
+          echo "endpoint=$endpoint" >> "$GITHUB_OUTPUT"
 
       - name: Run Codex paper digest
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
-          CODEX_MODEL: gpt-5.5
-          CODEX_REASONING_EFFORT: xhigh
-          CODEX_SANDBOX_MODE: danger-full-access
-        run: node scripts/codex-paper-digest.mjs
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          responses-api-endpoint: ${{ steps.responses-endpoint.outputs.endpoint }}
+          prompt-file: .github/codex/paper-digest-runtime-prompt.md
+          model: gpt-5.5
+          effort: xhigh
+          sandbox: danger-full-access
+          codex-args: --search -a never
 
       - name: Commit generated digest
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add _posts _data images/paper-radar
-          git commit -m "Add automated paper digest" || echo "No changes to commit"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Add automated paper digest"
+          git pull --rebase origin master
+          git push origin master
 ```
+
+`prepare-codex-paper-digest-prompt.mjs` 只负责把主 prompt 和四个仓库内置 skills 合成为一个运行时 prompt；真正的 Codex 执行由官方 `openai/codex-action@v1` 完成。`effort` 直接由 Codex Action 传给 Codex；`codex-args` 只负责开启 live web search，并把审批策略设为 `never`，适合无人值守的定时任务。
 
 ## 数据文件
 
@@ -397,7 +431,7 @@ _data/paper_digest_memory.json
 
 ## 本地测试
 
-当前本地环境没有 Node.js / npm，因此无法在本机实际运行 SDK。可以做的本地检查：
+可以做的本地检查：
 
 ```bash
 python3 scripts/check-paper-digest-config.py
@@ -405,14 +439,11 @@ python3 -m json.tool _data/paper_digest_seen.json
 python3 -m json.tool _data/paper_digest_memory.json
 ```
 
-如果本地安装了 Node.js，并配置了环境变量，可以运行：
+如果本地安装了 Node.js，可以生成 Action 使用的合成 prompt：
 
 ```bash
-export OPENAI_API_KEY="..."
-export OPENAI_BASE_URL="..."
-export CODEX_MODEL="gpt-5.5"
-export CODEX_REASONING_EFFORT="xhigh"
-node scripts/codex-paper-digest.mjs
+node scripts/prepare-codex-paper-digest-prompt.mjs /tmp/paper-digest-runtime-prompt.md
+wc -l /tmp/paper-digest-runtime-prompt.md
 ```
 
 运行后检查：

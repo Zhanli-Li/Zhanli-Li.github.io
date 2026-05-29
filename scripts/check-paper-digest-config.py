@@ -17,7 +17,7 @@ REQUIRED_FILES = [
     ".agents/skills/paper-reading/SKILL.md",
     ".agents/skills/research-memory/SKILL.md",
     ".agents/skills/blog-writing/SKILL.md",
-    "scripts/codex-paper-digest.mjs",
+    "scripts/prepare-codex-paper-digest-prompt.mjs",
     "_data/paper_digest_seen.json",
     "_data/paper_digest_memory.json",
     "_pages/paper-radar.html",
@@ -32,7 +32,7 @@ SECRET_SCAN_FILES = [
     ".agents/skills/paper-reading/SKILL.md",
     ".agents/skills/research-memory/SKILL.md",
     ".agents/skills/blog-writing/SKILL.md",
-    "scripts/codex-paper-digest.mjs",
+    "scripts/prepare-codex-paper-digest-prompt.mjs",
     "scripts/check-paper-digest-config.py",
     "docs/codex-paper-digest-action-plan.md",
     "_data/paper_digest_seen.json",
@@ -78,12 +78,19 @@ def assert_workflow_shape() -> None:
     )
     required_snippets = [
         'cron: "0 0 * * *"',
-        "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}",
+        "node scripts/prepare-codex-paper-digest-prompt.mjs .github/codex/paper-digest-runtime-prompt.md",
+        "Resolve Responses API endpoint",
+        "OPENAI_RESPONSES_API_ENDPOINT: ${{ secrets.OPENAI_RESPONSES_API_ENDPOINT }}",
         "OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}",
-        "CODEX_MODEL: gpt-5.5",
-        "CODEX_REASONING_EFFORT: xhigh",
-        "CODEX_SANDBOX_MODE: danger-full-access",
-        "npm install --no-save @openai/codex-sdk @openai/codex",
+        'endpoint="$endpoint/v1/responses"',
+        "uses: openai/codex-action@v1",
+        "openai-api-key: ${{ secrets.OPENAI_API_KEY }}",
+        "responses-api-endpoint: ${{ steps.responses-endpoint.outputs.endpoint }}",
+        "prompt-file: .github/codex/paper-digest-runtime-prompt.md",
+        "model: gpt-5.5",
+        "effort: xhigh",
+        "sandbox: danger-full-access",
+        "codex-args: --search -a never",
         "git add _posts _data images/paper-radar",
         "git diff --cached --quiet",
         "git pull --rebase origin master",
@@ -92,6 +99,13 @@ def assert_workflow_shape() -> None:
     for snippet in required_snippets:
         if snippet not in workflow:
             raise SystemExit(f"Workflow missing expected snippet: {snippet}")
+    forbidden_snippets = [
+        "@openai/codex-sdk",
+        "node scripts/codex-paper-digest.mjs",
+    ]
+    for snippet in forbidden_snippets:
+        if snippet in workflow:
+            raise SystemExit(f"Workflow still contains deprecated snippet: {snippet}")
 
 
 def assert_prompt_shape() -> None:

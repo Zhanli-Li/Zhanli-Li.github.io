@@ -31,17 +31,36 @@ jobs:
       - name: Check digest configuration
         run: python3 scripts/check-paper-digest-config.py
 
-      - name: Install Codex SDK
-        run: npm install --no-save @openai/codex-sdk @openai/codex
+      - name: Prepare Codex prompt
+        run: node scripts/prepare-codex-paper-digest-prompt.mjs .github/codex/paper-digest-runtime-prompt.md
+
+      - name: Resolve Responses API endpoint
+        id: responses-endpoint
+        env:
+          OPENAI_RESPONSES_API_ENDPOINT: ${{ secrets.OPENAI_RESPONSES_API_ENDPOINT }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+        run: |
+          endpoint="${OPENAI_RESPONSES_API_ENDPOINT}"
+          if [ -z "$endpoint" ] && [ -n "$OPENAI_BASE_URL" ]; then
+            endpoint="${OPENAI_BASE_URL%/}"
+            case "$endpoint" in
+              */responses) ;;
+              */v1) endpoint="$endpoint/responses" ;;
+              *) endpoint="$endpoint/v1/responses" ;;
+            esac
+          fi
+          echo "endpoint=$endpoint" >> "$GITHUB_OUTPUT"
 
       - name: Run Codex paper digest
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
-          CODEX_MODEL: gpt-5.5
-          CODEX_REASONING_EFFORT: xhigh
-          CODEX_SANDBOX_MODE: danger-full-access
-        run: node scripts/codex-paper-digest.mjs
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          responses-api-endpoint: ${{ steps.responses-endpoint.outputs.endpoint }}
+          prompt-file: .github/codex/paper-digest-runtime-prompt.md
+          model: gpt-5.5
+          effort: xhigh
+          sandbox: danger-full-access
+          codex-args: --search -a never
 
       - name: Commit generated digest
         run: |

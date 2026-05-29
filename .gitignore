@@ -25,3 +25,6 @@ cv-latex/**/*.out
 cv-latex/**/*.pdf
 cv-latex/**/*.synctex.gz
 cv-latex/**/*.xdv
+
+# Ignore generated Codex automation prompts
+.github/codex/*-runtime-prompt.md

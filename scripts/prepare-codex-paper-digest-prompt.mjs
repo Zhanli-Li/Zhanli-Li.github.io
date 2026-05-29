@@ -1,4 +1,3 @@
-import { Codex } from "@openai/codex-sdk";
 import fs from "node:fs/promises";
 import process from "node:process";
 
@@ -14,10 +13,6 @@ const requiredPaths = [
 
 for (const path of requiredPaths) {
   await fs.access(path);
-}
-
-if (!process.env.OPENAI_API_KEY) {
-  throw new Error("OPENAI_API_KEY is required.");
 }
 
 const mainPrompt = await readText(".github/codex/prompts/paper_digest.md");
@@ -37,26 +32,10 @@ const prompt = [
   mainPrompt,
 ].join("\n\n");
 
-const codexOptions = {
-  apiKey: process.env.OPENAI_API_KEY,
-};
+const outputPath = process.argv[2];
 
-if (process.env.OPENAI_BASE_URL) {
-  codexOptions.baseUrl = process.env.OPENAI_BASE_URL;
+if (!outputPath) {
+  process.stdout.write(prompt);
+} else {
+  await fs.writeFile(outputPath, prompt, "utf8");
 }
-
-const codex = new Codex(codexOptions);
-
-const thread = codex.startThread({
-  workingDirectory: process.cwd(),
-  sandboxMode: process.env.CODEX_SANDBOX_MODE || "danger-full-access",
-  networkAccessEnabled: true,
-  webSearchMode: "live",
-  approvalPolicy: "never",
-  model: process.env.CODEX_MODEL || "gpt-5.5",
-  modelReasoningEffort: process.env.CODEX_REASONING_EFFORT || "xhigh",
-});
-
-const result = await thread.run(prompt);
-
-console.log(result.finalResponse ?? "Codex run completed.");
