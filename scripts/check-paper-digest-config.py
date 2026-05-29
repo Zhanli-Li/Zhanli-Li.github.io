@@ -90,7 +90,6 @@ def assert_workflow_shape() -> None:
         "model: gpt-5.5",
         "effort: xhigh",
         "sandbox: danger-full-access",
-        "codex-args: -a never",
         "git add _posts _data images/paper-radar",
         "git diff --cached --quiet",
         "git pull --rebase origin master",
@@ -102,7 +101,7 @@ def assert_workflow_shape() -> None:
     forbidden_snippets = [
         "@openai/codex-sdk",
         "node scripts/codex-paper-digest.mjs",
-        "codex-args: --search",
+        "codex-args:",
     ]
     for snippet in forbidden_snippets:
         if snippet in workflow:

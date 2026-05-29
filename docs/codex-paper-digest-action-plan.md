@@ -59,10 +59,9 @@ schedule:
 model: gpt-5.5
 effort: xhigh
 sandbox: danger-full-access
-codex-args: -a never
 ```
 
-说明：Codex Action 默认会处理 GitHub hosted runner 上的 sandbox 准备工作。Paper Radar 仍使用 `danger-full-access`，因为它需要安装 SkillHub CLI、搜索网页、渲染/截取开放论文图表并写入仓库；workflow 最后只提交 `_posts`、`_data` 和 `images/paper-radar`，不会自动提交其他文件。
+说明：Codex Action 默认会处理 GitHub hosted runner 上的 sandbox 准备工作。Paper Radar 仍使用 `danger-full-access`，因为它需要安装 SkillHub CLI、搜索网页、渲染/截取开放论文图表并写入仓库；workflow 最后只提交 `_posts`、`_data` 和 `images/paper-radar`，不会自动提交其他文件。当前不配置 `codex-args`，避免把交互式 CLI 或旧版审批参数传给 `codex exec`。
 
 ## Secret 配置
 
@@ -365,7 +364,6 @@ jobs:
           model: gpt-5.5
           effort: xhigh
           sandbox: danger-full-access
-          codex-args: -a never
 
       - name: Commit generated digest
         run: |
@@ -381,7 +379,7 @@ jobs:
           git push origin master
 ```
 
-`prepare-codex-paper-digest-prompt.mjs` 只负责把主 prompt 和四个仓库内置 skills 合成为一个运行时 prompt；真正的 Codex 执行由官方 `openai/codex-action@v1` 完成。`effort` 直接由 Codex Action 传给 Codex；`codex-args` 把审批策略设为 `never`，适合无人值守的定时任务。注意：`codex exec` 当前不接受交互式 CLI 的 `--search` 参数，因此 workflow 不在 `codex-args` 中传 `--search`。
+`prepare-codex-paper-digest-prompt.mjs` 只负责把主 prompt 和四个仓库内置 skills 合成为一个运行时 prompt；真正的 Codex 执行由官方 `openai/codex-action@v1` 完成。`effort` 直接由 Codex Action 传给 Codex；`sandbox` 直接传给 `codex exec`。注意：`codex exec` 当前不接受交互式 CLI 的 `--search` 参数，也不接受旧版审批参数 `-a never`，因此 workflow 不配置 `codex-args`。
 
 ## 数据文件
 
