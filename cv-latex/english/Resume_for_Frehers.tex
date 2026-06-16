@@ -72,6 +72,10 @@ Wenlan School of Business (Honors College), B.Sc. in Digital Economy \\
 
 \begin{rSection}{Research Experience}
 
+{\bf \href{https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard}{NVIDIA Nemotron Model Reasoning Challenge} \quad \textit{Silver Medal}} \hfill {\em June 2026} \\
+On a new \textbf{abstract puzzle reasoning benchmark} built around NVIDIA Nemotron open reasoning models, we explored ways to improve reasoning accuracy under the competition-required \textbf{LoRA fine-tuning} setting. We built an \textbf{agentic reasoning} framework to iteratively solve unsolved puzzles, then organized the induced rules into reusable \textbf{solvers} to preserve prefix-reasoning consistency and answer verifiability, achieving a score of \textbf{0.86}. \\
+$\triangleright$~ \href{https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard}{\textbf{Kaggle Leaderboard Silver Medal}}, ranked \textbf{128/4355} globally on the final leaderboard.
+
 {\bf Agentic Training for Real-World Data Analysis\textsuperscript{‡}} \hfill {\em March 2026 -- Present} \\
 \textbf{Role:} Project Leader \\
 Existing evaluation benchmarks for data analysis agents typically rely on \textbf{fixed reference answers}, making it difficult to capture \textbf{non-canonical yet valuable insights} generated in open-ended analytical settings, thereby systematically underestimating their true capability. To address this, we construct a \textbf{large-scale interactive data lake environment} that supports autonomous exploration under realistic data distributions. Built on this environment, we train \textbf{Qwen3.5-9B} as a \textbf{verifier agent} on \textbf{24 A100 GPUs} to perform \textbf{fine-grained verification} of each insight produced by the data agent, assessing both correctness and analytical value. We further integrate the trained verifier into an \textbf{iterative agent harness}, forming a ``\textbf{generate-verify-feedback}'' loop that continuously yields \textbf{high-value insights} in real-world scenarios. \\
@@ -88,16 +92,9 @@ $\triangleright$~ \textbf{Resubmit to} \textit{KDD 2027 (CCF-A)}. The preprint w
 
 $\triangleright$~ \textbf{Published in} \textit{ACL 2026 Findings (CCF-A)}.
 
-{\bf Causal Inference Framework via SHapley Additive exPlanations in Corporate Finance\textsuperscript{*}} \hfill {\em September 2024 -- January 2025} \\
-\textbf{Role:} Project Leader \\
-Traditional panel data models rely heavily on linear assumptions and struggle to capture complex nonlinear dynamics. We address this by encoding panel structure to enhance model fitting capacity while preserving \textbf{causal interpretability}. We developed an interpretable modeling framework integrated with \textbf{Optuna} for automatic hyperparameter tuning, achieving an $R^2$ of 0.76 in TFP prediction, substantially outperforming linear baselines. We further employed \textbf{SHapley Additive exPlanations (SHAP)} to trace mechanisms within the panel data, quantifying and decomposing the \textbf{nonlinear marginal contributions} of ESG rating disagreement, thereby uncovering latent causal pathways. \\
-$\triangleright$~ \textbf{Published in} \textit{Finance Research Letters} (CAS Q1 Top, JCR Q1, IF: 6.9). Selected as \href{https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA}{\textbf{Outstanding Paper at the Tsinghua University Causal Inference Seminar (Top 3\%)}}.
-
 {\small \textit{\textsuperscript{†}Conducted under the supervision of Associate Professors \href{https://yixuancao.github.io/}{Yixuan Cao} and \href{https://ping-luo.github.io/}{Ping Luo}, Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences}}
 
 {\small \textit{\textsuperscript{‡}Conducted under the supervision of Assistant Professor \href{https://zwt233.github.io/}{Wentao Zhang}, Peking University \& Zhongguancun Academy}}
-
-{\small \textit{\textsuperscript{*}Conducted under the supervision of Assistant Professor \href{https://www.yzc.me}{Zichao Yang}, Wenlan School of Business, Zhongnan University of Economics and Law}}
 
 \end{rSection}
 
