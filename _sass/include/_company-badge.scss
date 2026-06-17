@@ -1,29 +1,44 @@
 .company-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.35em;
+    gap: 0.4em;
     max-width: 100%;
-    padding: 0.12em 0.45em;
-    border: 1px solid var(--global-border-color);
+    padding: 0.16em 0.5em 0.16em 0.28em;
+    border: 1px solid rgba(122, 130, 136, 0.24);
     border-radius: 4px;
     background: var(--global-bg-color);
     color: var(--global-text-color);
     line-height: 1.25;
     text-decoration: none;
     vertical-align: -0.18em;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .company-badge:hover {
     border-color: var(--global-link-color);
     color: var(--global-link-color-hover);
     text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
 }
 
 .company-badge__logo {
     display: block;
     width: auto;
-    height: 1.25em;
+    height: 1.15em;
     max-width: 7.5em;
+    padding: 0.16em 0.2em;
+    border-radius: 3px;
+    background: #fff;
     object-fit: contain;
+}
+
+html[data-theme="dark"] .company-badge {
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="dark"] .company-badge:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
 }
