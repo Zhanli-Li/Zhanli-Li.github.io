@@ -49,7 +49,7 @@ redirect_from:
 
 ## News 📧
 - `2026.6.17` I'm about to start my internship at <span class="company-badge"><img class="company-badge__logo" src="{{ '/images/logos/longcat-interaction.png' | relative_url }}" alt="LongCat Interaction logo"><strong>LongCat Interaction</strong></span> (Shanghai)!
-- `2026.6.16` We ranked **128/4355** and earned a **Silver Medal** in the [NVIDIA Nemotron Model Reasoning Challenge](https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard) on Kaggle.
+- `2026.6.16` We ranked **119/4182** and earned a **Silver Medal** in the [NVIDIA Nemotron Model Reasoning Challenge](https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard) on Kaggle.
 - `2026.5.17` One paper about **Agentic Search** was invited to Resubmit to KDD 2027 (First Cycle).
 - `2026.4.6` **MuDABench** was accepted as Findings of ACL 2026!
 - `2026.3.17` **DeepRead** was covered by [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185).
