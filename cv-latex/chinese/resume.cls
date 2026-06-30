@@ -29,10 +29,10 @@
 
 \RequirePackage[
 	a4paper,
-	left=0.35in,
-	right=0.35in,
-	top=0.25in,
-	bottom=0.20in,
+	left=0.43in,
+	right=0.43in,
+	top=0.33in,
+	bottom=0.28in,
 	nohead
 ]{geometry}
 
@@ -49,13 +49,13 @@
   {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
   {}                           % Can be used to insert code before the heading
   [\titlerule]                 % Inserts a horizontal line after the heading
-\titlespacing*{\section}{0cm}{*1}{*1}
+\titlespacing*{\section}{0cm}{*1}{*0.8}
 
 \titleformat{\subsection}
   {\large\raggedright}
   {}{0em}
   {}
-\titlespacing*{\subsection}{0cm}{*1}{*0.5}
+\titlespacing*{\subsection}{0cm}{*0.8}{*0.4}
 
 \newcommand{\datedsection}[2]{%
   \section[#1]{#1 \hfill #2}%
@@ -69,7 +69,7 @@
 
 \newcommand{\name}[1]{
   \centerline{\Huge\scshape{#1}}
-  \vspace{1ex}
+  \vspace{0.9ex}
 }
 
 \newcommand{\contactInfo}[4]{
@@ -81,7 +81,7 @@
       { } % if {#3} is empty
       {\textperiodcentered\ \ {#4} }
   }
-  \vspace{0.2ex}
+  \vspace{0.25ex}
 }
 
 \newcommand{\role}[2]{

@@ -27,14 +27,10 @@
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 
-\name{Zhanli Li (李展利)}
+\name{Zhanli Li}
 
-\address{
-\faPhone\ (+86) 156-2350-1965 \\
-\faEnvelope\ lizhanli@stu.zuel.edu.cn \\
-\faHome\ \href{https://zhanli-li.github.io/}{zhanli-li.github.io} \\
-\faGithub\ \href{https://github.com/Zhanli-Li}{Zhanli-Li (180+ stars)}
-}
+\address{\faPhone\ (+86) 156-2350-1965 \\ \faEnvelope\ lizhanli@stu.zuel.edu.cn}
+\address{\faHome\ \href{https://zhanli-li.github.io/}{zhanli-li.github.io} \\ \faGithub\ \href{https://github.com/Zhanli-Li}{Zhanli-Li (190+ stars)}}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -48,7 +44,8 @@
 {\bf Zhongnan University of Economics and Law} \hfill {\em September 2023 -- June 2027} \\
 Wenlan School of Business (Honors College), B.Sc. in Digital Economy \\
 \textbf{Weighted Avg: 93.73/100} \quad \textbf{Rank: 2/80} \quad \textbf{2025 National Scholarship} \\
-\textbf{Research Interests:} LLMs, Agentic Training, Deep Learning, Causal Inference
+\textbf{Major Courses:} Neural Networks, Machine Learning, Mathematical Modeling, Mathematical Analysis, Probability and Statistics \\
+\textbf{Research Interests:} LLMs, Agentic Training, Document Intelligence, Causal Inference
 
 \end{rSection}
 
@@ -67,34 +64,28 @@ Wenlan School of Business (Honors College), B.Sc. in Digital Economy \\
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	RESEARCH EXPERIENCE SECTION
+%	PROJECT EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Research Experience}
+\begin{rSection}{Project Experience}
 
-{\bf \href{https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard}{NVIDIA Nemotron Model Reasoning Challenge} \quad \textit{Silver Medal}} \hfill {\em June 2026} \\
-On a new \textbf{abstract puzzle reasoning benchmark} built around NVIDIA Nemotron open reasoning models, we used \textbf{Nemotron-3-Nano-30B-A3B} as the backbone and explored ways to improve reasoning accuracy under the competition-required \textbf{LoRA fine-tuning} setting. The benchmark emphasized multi-step deduction under strict prefix constraints, so we built an \textbf{agentic reasoning} framework that repeatedly generated candidate solutions, checked them against the puzzle rules, and fed failed attempts back into the next search round. We further optimized the \textbf{rule orchestration} process by clustering and ordering discovered rules into a \textbf{low-entropy} representation: redundant heuristics were merged or pruned, rule triggers were made explicit, and solver priorities were arranged to expose stable, learnable decision paths. This turned ad hoc discoveries into a compact rule system of reusable \textbf{solvers}, making the rules easier for the model to learn, retrieve, and reuse while preserving prefix-reasoning consistency and answer verifiability across related puzzles, ultimately achieving a score of \textbf{0.86}. \\
-$\triangleright$~ \href{https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard}{\textbf{Kaggle Leaderboard Silver Medal}}, ranked \textbf{119/4182} globally on the final leaderboard.
+{\bf Data Agent Training of LongCat 2.0\textsuperscript{‡} \quad \textit{Research Intern, LongCat Interaction}} \hfill {\em May 2026 -- Present} \\
+To address the limitations of foundation models in data analysis, such as \textbf{insufficient drill-down} and \textbf{surface-level insights}, I design post-training strategies for \textbf{Data Agents} around \textbf{LongCat 2.0 Pro}. I built a \textbf{synthetic interactive analysis environment generation pipeline} that turns business-analysis scenarios into controllable data environments, a \textbf{trajectory filtering pipeline} that selects deeper and more reliable analytical traces, and explored \textbf{mixing-ratio strategies} with other post-training data to improve \textbf{drill-down ability} and \textbf{insight quality} on BA Agent / Data Agent tasks. \\
+$\triangleright$~ Built scalable environment synthesis, deep-analysis trajectory filtering, and Data Agent data-mixing workflows for post-training; the workflow supports iterative data production, quality screening, and capability evaluation for LongCat 2.0 Pro.
 
-{\bf Agentic Training for Real-World Data Analysis\textsuperscript{‡}} \hfill {\em March 2026 -- Present} \\
-\textbf{Role:} Project Leader \\
-Existing evaluation benchmarks for data analysis agents typically rely on \textbf{fixed reference answers}, making it difficult to capture \textbf{non-canonical yet valuable insights} generated in open-ended analytical settings, thereby systematically underestimating their true capability. To address this, we construct a \textbf{large-scale interactive data lake environment} that supports autonomous exploration under realistic data distributions. Built on this environment, we train \textbf{Qwen3.5-9B} as a \textbf{verifier agent} on \textbf{24 A100 GPUs} to perform \textbf{fine-grained verification} of each insight produced by the data agent, assessing both correctness and analytical value. We further integrate the trained verifier into an \textbf{iterative agent harness}, forming a ``\textbf{generate-verify-feedback}'' loop that continuously yields \textbf{high-value insights} in real-world scenarios. \\
-$\triangleright$~ Selected for the \textbf{Zhongguancun Academy Shenlan Program}; intended submission to \textit{ICLR 2027}.
+{\bf DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search\textsuperscript{†} \quad \textit{First Author}} \hfill {\em October 2025 -- February 2026} \\
+Proposed \textbf{DeepRead}, a structure-aware document reasoning agent that preserves layout fidelity via OCR, constructs \textbf{paragraph-level coordinates}, and equips LLMs with \textbf{Retrieve} and \textbf{ReadSection} tools. Unlike flat chunk-based agentic search, DeepRead explicitly models document hierarchy and reading order, allowing the agent to first locate relevant regions and then inspect complete local context. The method induces a ``locate-then-read'' reasoning paradigm and improves over \textbf{Search-o1} style baselines by an average of \textbf{10.3\%} across four multi-type document benchmarks. \\
+$\triangleright$~ \textbf{Resubmit to} \textit{KDD 2027 (CCF-A)}; the preprint was reported by the prominent technology media \textbf{New Wisdom}.
 
-{\bf DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search\textsuperscript{†}} \hfill {\em October 2025 -- February 2026} \\
-\textbf{Role:} Project Leader \\
-Existing agentic search frameworks often treat long documents as flat chunk collections, ignoring native \textbf{hierarchical structures} and \textbf{sequential logic}. We propose \textbf{DeepRead}, a structure-aware document reasoning agent that preserves layout fidelity via OCR, constructs \textbf{paragraph-level coordinates}, and equips the LLM with two synergistic tools: \textbf{Retrieve} and \textbf{ReadSection}. This induces an emergent ``locate-then-read'' reasoning paradigm, significantly mitigating context fragmentation issues inherent in conventional retrieval. Across four benchmarks covering diverse document types, DeepRead outperforms \textbf{Search-o1} style agentic search baselines by an average of \textbf{10.3\%}. \\
-$\triangleright$~ \textbf{Resubmit to} \textit{KDD 2027 (CCF-A)}. The preprint was reported by the prominent tech media \textbf{New Wisdom (新智元)} and received over 130 saves on Xiaohongshu.
+{\bf MuDABench: Multi-Document Analytical QA Benchmark and Multi-Agent Framework\textsuperscript{†} \quad \textit{First Author}} \hfill {\em April 2025 -- December 2025} \\
+Constructed \textbf{MuDABench}, a multi-document analytical QA benchmark with \textbf{80k+ pages}, \textbf{332 questions}, and \textbf{4,964 structured intermediate facts}, to evaluate multi-document retrieval, cross-document aggregation, and numerical reasoning over large document collections. The benchmark uses structured intermediate facts to expose where a system fails: document selection, single-document extraction, cross-document aggregation, or final numerical reasoning. Designed a \textbf{Multi-Agent} workflow that substantially improves over standard retrieval baselines. \\
+$\triangleright$~ \textbf{Published in} \textit{ACL 2026 (CCF-A)}.
 
-{\bf MuDABench: Multi-Document Analytical QA Benchmark and Multi-Agent Framework\textsuperscript{†}} \hfill {\em April 2025 -- December 2025} \\
-\textbf{Role:} Project Leader \\
-\textbf{Large-scale} document collections contain rich knowledge, yet scalable multi-document analytical QA across \textbf{thousands} of long documents remains challenging. We constructed one of the \textbf{largest} multi-document analytical QA benchmarks to date (\textbf{80k+} pages, \textbf{332} analytical questions, \textbf{4,964} structured intermediate facts) using \textbf{distant supervision} and expert verification, enabling systematic evaluation of multi-document retrieval, cross-document aggregation, and numerical reasoning. Experiments reveal that standard retrieval services struggle in this setting: OpenAI's \textbf{File Search} achieves a very low best accuracy. Our proposed \textbf{Multi-Agent} workflow raises this substantially. Further error analysis indicates that the primary bottleneck lies in the stability and high-precision localization of \textbf{single-document information extraction}.
+{\bf SHAP-Based Causal Inference Framework for Corporate Finance\textsuperscript{*} \quad \textit{Project Leader}} \hfill {\em September 2024 -- January 2025} \\
+Built an interpretable machine learning framework combining manually coded panel data and \textbf{Optuna} hyperparameter optimization, achieving $R^2=0.76$ on corporate total factor productivity prediction. Further used \textbf{SHAP} to quantify the \textbf{nonlinear marginal contribution} of ESG rating disagreement to outcome variables and reveal potential causal pathways linking heterogeneous ESG signals with productivity outcomes. \\
+$\triangleright$~ \textbf{Published in} \textit{Finance Research Letters} (CAS Q1 Top, JCR Q1, IF: 6.9); received the Outstanding Paper Award at the Tsinghua Causal Inference Seminar.
 
-$\triangleright$~ \textbf{Published in} \textit{ACL 2026 Findings (CCF-A)}.
-
-{\small \textit{\textsuperscript{†}Conducted under the supervision of Associate Professors \href{https://yixuancao.github.io/}{Yixuan Cao} and \href{https://ping-luo.github.io/}{Ping Luo}, Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences}}
-
-{\small \textit{\textsuperscript{‡}Conducted under the supervision of Assistant Professor \href{https://zwt233.github.io/}{Wentao Zhang}, Peking University \& Zhongguancun Academy}}
+{\small \textit{\textsuperscript{†}Supervised by \textbf{Institute of Computing Technology, Chinese Academy of Sciences} professors Yixuan Cao and Ping Luo; \textsuperscript{‡}supervised by \textbf{LongCat Interaction} Feng Hong; \textsuperscript{*}supervised by \textbf{Wenlan School of Business} Zichao Yang}}
 
 \end{rSection}
 
@@ -104,45 +95,50 @@ $\triangleright$~ \textbf{Published in} \textit{ACL 2026 Findings (CCF-A)}.
 
 \begin{rSection}{Internship Experience}
 
-{\bf Beijing Paoding Technology Co., Ltd. --- Research Dept.} \hfill {\em June 2025 -- February 2026} \\
-\textbf{Role:} AI Research Intern \quad \textbf{Mentors:} \href{https://ping-luo.github.io/}{Ping Luo}, \href{https://yixuancao.github.io/}{Yixuan Cao} \\
-\textbf{Project:} Improving Context Retrieval in Production-Grade RAG Systems
+{\bf Meituan LongCat Interaction (Foundation Model Team)} \hfill {\em May 2026 -- Present} \\
+\textbf{Role:} Research Intern \quad \textbf{Mentor:} Feng Hong \quad \textbf{Project:} Improving BA Agent capabilities; participated in post-training and capability enhancement of \textbf{LongCat 2.0 Pro} for real-world business data analysis scenarios, with emphasis on data construction, trajectory quality control, and evaluation of deeper analytical behavior.
 
-Leveraged the company's proprietary \textbf{document parsing} model \href{https://pdflux.com/}{PDFlux} and integrated its outputs into the commercial RAG product \href{https://chatdoc.com/}{ChatDOC}, focusing on mitigating \textbf{context-missing} issues introduced by reranker-based retrieval and improving retrieval completeness and ranking quality in complex document scenarios. The system has been deployed in production environments at several \textbf{top-tier financial institutions}, markedly enhancing operational efficiency.
+{\bf Beijing Paoding Technology Co., Ltd. (AI Startup) --- Research Dept.} \hfill {\em June 2025 -- February 2026} \\
+\textbf{Role:} AI Research Intern \quad \textbf{Mentors:} Ping Luo, Yixuan Cao \quad \textbf{Project:} Improved context retrieval in production-grade RAG systems by optimizing context-missing issues with \textbf{PDFlux} and \textbf{ChatDOC}; worked on retrieval completeness and document-context preservation for complex financial-document scenarios.
 
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	SELECTED AWARDS SECTION
+%	COMPETITION EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Selected Awards}
+\begin{rSection}{Competition Experience}
 
-{\bf NVIDIA Nemotron Model Reasoning Challenge} \hfill {\em June 2026} \\
-Silver Medal; ranked 119/4182 globally on the final Kaggle leaderboard.
+{\bf NVIDIA Nemotron Model Reasoning Challenge \quad \textit{Silver Medal}} \hfill {\em June 2026} \\
+Based on \textbf{Nemotron-3-Nano-30B-A3B} and the competition-required \textbf{LoRA} fine-tuning setting, built an agentic reasoning framework for abstract puzzle solving and organized induced rules into reusable solvers. Achieved a score of \textbf{0.86}, ranking \textbf{119/4182} globally.
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	HONORS & SERVICE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Honors \& Service}
 
 {\bf China National Scholarship} \hfill {\em November 2025} \\
-Highest academic honor for undergraduates in China (Top 0.2\%).
+Received the highest national-level undergraduate scholarship in China for academic excellence and research potential.
 
 {\bf China Undergraduate Mathematical Contest in Modeling} \hfill {\em November 2025} \\
-First Prize (Team Leader, Top 3\%).
+Won First Prize as team leader; responsible for problem formulation, modeling strategy, algorithm implementation, and final paper organization.
 
-{\bf Hunan Province Outstanding Student (High School)} \hfill {\em April 2023} \\
-Awarded to the top 0.1\% of high school students in Hunan Province.
+{\bf Academic Service} \hfill {\em 2025 -- Present} \\
+Served as an independent reviewer for \textit{Finance Research Letters}; reviewed empirical corporate-finance and machine-learning manuscripts with attention to identification, robustness, and reproducibility.
 
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	TECHNICAL SKILLS & SERVICE SECTION
+%	TECHNICAL SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Technical Skills \& Service}
+\begin{rSection}{Technical Skills}
 
-\textbf{Languages:} Chinese (native), English (CET-4: 522, CET-6: 508) \\
-\textbf{Programming Languages:} Python, C/C++, \LaTeX, Markdown \\
-\textbf{Tools:} Docker, SSH, tmux, Ubuntu \\
-\textbf{Libraries \& Frameworks:} ms-swift, vllm, verl, llamaindex, transformers, torch, sklearn, pandas, numpy \\
-\textbf{Academic Service:} Independent Reviewer for \textit{Finance Research Letters}
+\textbf{Programming / Tools:} Python, C/C++, \LaTeX, Markdown, Docker, SSH, tmux, Ubuntu \quad \textbf{English:} CET-4: 522, CET-6: 508 \\
+\textbf{Libraries \& Frameworks:} ms-swift, vllm, verl, llamaindex, transformers, torch, sklearn, pandas, numpy
 
 \end{rSection}
 
