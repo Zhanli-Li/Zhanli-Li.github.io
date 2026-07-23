@@ -8,25 +8,32 @@
 \usepackage{cite}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
+\urlstyle{same}
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{wrapfig}
 \hypersetup{
   colorlinks=true,
   linkcolor=black,
-  urlcolor=black,
+  urlcolor=blue,
   filecolor=black,
   citecolor=black,
 }
+\titlespacing*{\section}{0cm}{0.65ex}{0.45ex}
+\titlespacing*{\subsection}{0cm}{0.5ex}{0.2ex}
 \usepackage{graphicx}  % 如果未添加，请加上此行
 \begin{document}
 \pagenumbering{gobble}
 
 
 \name{李展利}
-\contactInfo{\faPhone\ (+86)156-2350-1965}{\faEnvelope\ lizhanli@stu.zuel.edu.cn}
-{\href{https://zhanli-li.github.io/}{\faHome\ zhanli-li.github.io}}
-{\href{https://github.com/Zhanli-Li}{\faGithub\ Zhanli-Li (190 stars+)}}
+\contactInfo{\faPhone\ (+86)156-2350-1965}{\faEnvelope\ lizhanli@stu.zuel.edu.cn}{}{}
+\vspace{-0.45ex}
+\centerline{\sffamily\normalsize
+  \faHome\ zhanli-li.github.io \quad
+  \faGithub\ Zhanli-Li (200+ stars) \quad
+  \faGraduationCap\ Google Scholar: 26 citations}
+\vspace{-0.15ex}
 %----------------------------------------------------------------------------------------
 % 教育背景
 %----------------------------------------------------------------------------------------
@@ -39,7 +46,7 @@
 \section{教育背景}
 \datedsubsection{\textbf{中南财经政法大学} \quad \textbf{文澜学院(荣誉学院)} \quad \textit{数字经济}}{2023.9 - 2027.6}
 \textbf{加权平均分:} 94/100 \quad \textbf{专业排名:} 2/80 \quad \textbf{奖学金:} \textbf{2025 年国家奖学金} \\
-\textbf{主修课程:} 神经网络 \quad 机器学习 \quad 数学建模 \quad 数学分析 \quad 概率论与数理统计\\
+\textbf{主修课程:} 概率论与数理统计（99） \quad 机器学习（98） \quad 数学分析（97.33） \quad 神经网络（92）\\
 \textbf{研究兴趣:} LLM \quad Agentic Training \quad Document Intelligence
 \quad Causal Inference
 
@@ -48,43 +55,46 @@
 % 学术论文
 %----------------------------------------------------------------------------------------
 \section{学术论文}
-\textbf{Zhanli Li}, Huiwen Tian, Lvzhou Luo, Yixuan Cao, Ping Luo. \textit{DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search}. \textit{KDD 2027} (CCF-A), \textbf{Resubmit} \quad \textbf{[First Author]}
+\textbf{Zhanli Li}, Huiwen Tian, Lvzhou Luo, Yixuan Cao, Ping Luo. \textit{DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search}. \textit{EMNLP 2026}, \textbf{Under Review} \quad \textbf{[First Author]}
 
-\textbf{Zhanli Li}, Yixuan Cao, Lvzhou Luo, Ping Luo. \textit{Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA}. \textit{ACL 2026 Findings} (CCF-A) \quad \textbf{[First Author]}
+\textbf{Zhanli Li}, Yixuan Cao, Lvzhou Luo, Ping Luo. \textit{Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA}. \textit{ACL 2026} (CCF-A) \quad \textbf{[First Author]}
  
 \textbf{Zhanli Li}, Zichao Yang. \textit{ESG Rating Disagreement and Corporate Total Factor Productivity: Inference and Prediction}. \textit{Finance Research Letters}, vol.~78, p.~107127, 2025. (中科院 Q1 Top，JCR Q1，IF: 6.9） \quad \textbf{[First Author]}
 
 %----------------------------------------------------------------------------------------
-% 项目经历
+% 研究经历
 %----------------------------------------------------------------------------------------
-\section{项目经历}
-\datedsubsection{\textbf{Data Agent Training of LongCat 2.0\textsuperscript{‡}} \quad \textit{LongCat Interaction 研究实习生}}{2026.5 - 至今}
-针对基座模型数据分析\textbf{下钻不足、洞察表层化}问题，围绕 \textbf{LongCat 2.0 Pro 1.6T} 设计 \textbf{Data Agent} 后训练方案；重点探索 \textbf{Environment Scaling}、\textbf{轨迹筛选 pipeline} 及与其他 post-training 数据的\textbf{混合配比策略}，并在 \textbf{LongCat 2.0 Pro 1.6T} 与\textbf{超万张国产卡（H910-64G）}训练体系上验证，提升 \textbf{Data Agent} 的\textbf{下钻能力}与 \textbf{insight 质量}。\\
-$\triangleright$~ 贡献 \textbf{LongCat 2.0 Pro} 最终合版数据，支撑其复杂长程数据分析 \textbf{Agentic} 能力
+\section{研究经历}
 
 \datedsubsection{\textbf{DeepRead：文档结构感知的 Agentic Search\textsuperscript{†}} \quad \textit{第一作者}}{2025.10 - 2026.2}
-提出 \textbf{DeepRead} 结构感知文档推理 Agent，利用 OCR 保持版面结构保真，构建\textbf{段落级坐标}，并设计 \textbf{Retrieve} 与 \textbf{ReadSection} 工具，使模型形成 ``locate-then-read'' 推理范式；在四个多类型文档基准上较 \textbf{Search-o1} 基线平均提升 \textbf{10.3\%}。\\
-$\triangleright$~ \textbf{Resubmit} \textit{KDD 2027 (CCF-A)}，预印本被知名媒体\textbf{新智元}报道
+提出 \textbf{DeepRead} 结构感知文档推理 Agent，利用 OCR 保持版面结构保真，构建\textbf{段落级坐标}，并设计 \textbf{Retrieve} 与 \textbf{ReadSection} 工具，在我们的环境设置下涌现了 ``locate-then-read'' 类人阅读行为；在四个多类型文档基准上较 \textbf{Search-o1} 基线平均提升 \textbf{10.3\%}。\\
+$\triangleright$~ \textbf{Under Review at} \textit{EMNLP 2026}，预印本被知名媒体\textbf{新智元}报道\\[-2pt]
+{\scriptsize \textbf{论文:} \url{https://arxiv.org/abs/2602.05014} \quad \textbf{代码:} \url{https://github.com/Zhanli-Li/DeepRead}} \quad {\scriptsize \textbf{报道:} \url{https://mp.weixin.qq.com/s/BhvUQgREp4NOvb6axiWXiQ}}\\[-6pt]
 
 \datedsubsection{\textbf{MuDABench：多文档分析问答基准与多 Agent 框架\textsuperscript{†}} \quad \textit{第一作者}}{2025.4 - 2025.12}
 构建 \textbf{MuDABench} 多文档分析问答基准（\textbf{80k+页}文档、\textbf{332}道问题、\textbf{4,964}条结构化中间事实），用于评测多文档检索、跨文档聚合与数值推理能力；设计 \textbf{Multi-Agent} 工作流，显著提升标准检索基线表现。\\
-$\triangleright$~ \textbf{发表于} \textit{ACL 2026 (CCF-A)}
+$\triangleright$~ \textbf{发表于} \textit{ACL 2026 (CCF-A)}\\[-2pt]
+{\scriptsize \textbf{论文:} \url{https://arxiv.org/abs/2604.22239} \quad \textbf{代码:} \url{https://github.com/Zhanli-Li/MuDABench} \quad \textbf{数据:} \url{https://huggingface.co/datasets/Zhanli-Li/MuDABench}}\\[-6pt]
 
 \datedsubsection{\textbf{基于 SHAP 的公司金融因果推断框架\textsuperscript{*}} \quad \textit{项目负责人}}{2024.9 - 2025.1}
 构建可解释机器学习框架，结合编码面板数据与 \textbf{Optuna} 自动超参搜索，在 TFP 预测任务上取得 $R^2=0.76$；进一步使用 \textbf{SHAP} 量化 ESG 评级分歧对结果变量的\textbf{非线性边际贡献}，揭示潜在因果路径。\\
-$\triangleright$~ \textbf{发表于} \textit{Finance Research Letters}（中科院 Q1 Top，JCR Q1，IF: 6.9），获清华大学因果推断研讨会优秀论文
+$\triangleright$~ \textbf{发表于} \textit{Finance Research Letters}（中科院 Q1 Top，JCR Q1，IF: 6.9），获清华大学因果推断研讨会优秀论文\\[-2pt]
+{\scriptsize \textbf{论文:} \url{https://doi.org/10.1016/j.frl.2025.107127} \quad \textbf{报道:} \url{https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA}}\\[-6pt]
 
-{\small \textit{\textsuperscript{†}\textbf{中科院计算所}曹逸轩、罗平指导；\textsuperscript{‡}\textbf{LongCat Interaction} 洪峰指导；\textsuperscript{*}\textbf{文澜学院}杨子超指导}}
+{\small \textit{\textsuperscript{†}\textbf{中科院计算所}曹逸轩、罗平指导；\textsuperscript{*}\textbf{文澜学院}杨子超指导}}
 
 %----------------------------------------------------------------------------------------
-% 实习经历
+% 业界经历
 %----------------------------------------------------------------------------------------
-\section{实习经历}
+\section{业界经历}
 \datedsubsection{\textbf{美团 LongCat Interaction（基座大模型）} \quad \textit{研究实习生}}{2026.5 - 至今}
-\textbf{导师:} 洪峰 \quad \textbf{项目:} BA Agent 能力提升；参与 \textbf{LongCat 2.0 Pro 1.6T} 在真实业务数据分析场景中的后训练与能力增强，并在\textbf{超万张国产卡（H910-64G）}训练体系中完成相关方案验证。
+\textbf{导师:} 洪峰 \quad \textbf{模型:}\ \raisebox{-0.16em}{\includegraphics[height=1.15em]{../../images/logos/longcat.png}} \href{https://longcat.chat/}{https://longcat.chat/}\\[-1pt]
+\textbf{项目:} Data Agent Environment Scaling；面向 post-training 设计 \textbf{Data World}，从显式因果拓扑生成统一潜在世界，并通过\textbf{观测偏差注入}与\textbf{独立审计}构造可验证、难度可控的异构数据环境。\\
+$\triangleright$~ 参与 \textbf{LongCat 2.0 Pro} 最终合版数据构建，支撑复杂长程数据分析。
 
 \datedsubsection{\textbf{北京庖丁科技有限公司（AI Startup）研究组} \quad \textit{AI技术研究实习生}}{2025.6 - 2026.2}
-\textbf{导师:} 罗平、曹逸轩 \quad \textbf{项目:} 上下文检索在实际生产环境中的改进；基于 \textbf{PDFlux} 优化 \textbf{ChatDOC} RAG 系统上下文缺失问题。
+\textbf{导师:} 罗平、曹逸轩 \quad \textbf{产品:}\ \raisebox{-0.17em}{\includegraphics[height=1.2em]{../../images/logos/chatdoc.png}} {\scriptsize\href{https://chatdoc.com/}{https://chatdoc.com/}}\\[-1pt]
+\textbf{项目:} 上下文检索在实际生产环境中的改进；基于 \textbf{PDFlux} 优化 \textbf{ChatDOC}，改进 RAG 系统上下文缺失问题。
 
 %----------------------------------------------------------------------------------------
 % 竞赛经历

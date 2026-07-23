@@ -13,13 +13,15 @@
 \usepackage{xeCJK}
 \usepackage[left=0.55in,top=0.45in,right=0.55in,bottom=0.45in]{geometry}
 \usepackage{hyperref}
+\urlstyle{same}
 \usepackage{enumitem}
 \usepackage{fontawesome5}
+\usepackage{graphicx}
 
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
-    urlcolor=black,
+    urlcolor=blue,
     filecolor=black,
     citecolor=black
 }
@@ -29,7 +31,8 @@
 
 \name{Zhanli Li（李展利）}
 
-\address{\faPhone\ (+86) 156-2350-1965 \\ \faEnvelope\ lizhanli@stu.zuel.edu.cn \faHome\ \href{https://zhanli-li.github.io/}{zhanli-li.github.io} \\ \faGithub\ \href{https://github.com/Zhanli-Li}{Zhanli-Li (190+ stars)}}
+\address{\faPhone\ (+86) 156-2350-1965 \\ \faEnvelope\ lizhanli@stu.zuel.edu.cn}
+\address{\faHome\ zhanli-li.github.io \\ \faGithub\ Zhanli-Li (200+ stars) \\ \faGraduationCap\ Google Scholar: 26 citations}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -43,7 +46,7 @@
 {\bf Zhongnan University of Economics and Law} \hfill {\em September 2023 -- June 2027} \\
 Wenlan School of Business (Honors College), B.Sc. in Digital Economy \\
 \textbf{Weighted Avg: 94/100} \quad \textbf{Rank: 2/80} \quad \textbf{2025 National Scholarship} \\
-\textbf{Major Courses:} Neural Networks, Machine Learning, Mathematical Modeling, Mathematical Analysis, Probability and Statistics \\
+\textbf{Major Courses:} Probability and Statistics (99), Machine Learning (98), Mathematical Analysis (97.33), Neural Networks (92) \\
 \textbf{Research Interests:} LLMs, Agentic Training, Document Intelligence, Causal Inference
 
 \end{rSection}
@@ -54,11 +57,11 @@ Wenlan School of Business (Honors College), B.Sc. in Digital Economy \\
 
 \begin{rSection}{Publications}
 
-\textbf{Zhanli Li}, Huiwen Tian, Lvzhou Luo, Yixuan Cao, Ping Luo. \textit{DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search}. \textit{KDD 2027} (CCF-A), \textbf{Resubmit}. \textbf{[First Author]}
+\textbf{Zhanli Li}, Huiwen Tian, Lvzhou Luo, Yixuan Cao, Ping Luo. \textit{DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search}. \textit{EMNLP 2026}, \textbf{Under Review}. \textbf{[First Author]}
 
-\textbf{Zhanli Li}, Yixuan Cao, Lvzhou Luo, Ping Luo. \textit{Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA}. \textit{ACL 2026 Findings} (CCF-A). \textbf{[First Author]}
+\textbf{Zhanli Li}, Yixuan Cao, Lvzhou Luo, Ping Luo. \textit{Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA}. \textit{ACL 2026} (CCF-A). \textbf{[First Author]}
 
-\textbf{Zhanli Li}, Zichao Yang. \href{https://www.sciencedirect.com/science/article/pii/S1544612325003903}{\textit{ESG Rating Disagreement and Corporate Total Factor Productivity: Inference and Prediction}}. \textit{Finance Research Letters}, vol.~78, p.~107127, 2025. (CAS Q1 Top, JCR Q1, IF: 6.9). \textbf{[First Author]}
+\textbf{Zhanli Li}, Zichao Yang. \textit{ESG Rating Disagreement and Corporate Total Factor Productivity: Inference and Prediction}. \textit{Finance Research Letters}, vol.~78, p.~107127, 2025. (CAS Q1 Top, JCR Q1, IF: 6.9). \textbf{[First Author]}
 
 \end{rSection}
 
@@ -66,25 +69,25 @@ Wenlan School of Business (Honors College), B.Sc. in Digital Economy \\
 %	PROJECT EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Project Experience}
-
-{\bf Data Agent Training of LongCat 2.0\textsuperscript{‡} \quad \textit{Research Intern, LongCat Interaction}} \hfill {\em May 2026 -- Present} \\
-To address the limitations of foundation models in data analysis, such as \textbf{insufficient drill-down} and \textbf{surface-level insights}, I design post-training strategies for \textbf{Data Agents} around \textbf{LongCat 2.0 Pro 1.6T}, with a focus on \textbf{Environment Scaling}, its downstream \textbf{trajectory-filtering pipeline}, and \textbf{mixing-ratio strategies} with other post-training data. The approach has been validated on \textbf{LongCat 2.0 Pro 1.6T} and adapted to a training stack spanning over \textbf{10,000 domestic H910-64G accelerators}, improving \textbf{drill-down ability} and \textbf{insight quality} on \textbf{Data Agent} tasks. \\
-$\triangleright$~ Contributed to the final merged data for \textbf{LongCat 2.0 Pro}, supporting its \textbf{agentic capabilities} for complex long-horizon data analysis.
+\begin{rSection}{Research Experience}
 
 {\bf DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search\textsuperscript{†} \quad \textit{First Author}} \hfill {\em October 2025 -- February 2026} \\
-Proposed \textbf{DeepRead}, a structure-aware document reasoning agent that preserves layout fidelity via OCR, constructs \textbf{paragraph-level coordinates}, and equips LLMs with \textbf{Retrieve} and \textbf{ReadSection} tools. Unlike flat chunk-based agentic search, DeepRead explicitly models document hierarchy and reading order, allowing the agent to first locate relevant regions and then inspect complete local context. The method induces a ``locate-then-read'' reasoning paradigm and improves over \textbf{Search-o1} style baselines by an average of \textbf{10.3\%} across four multi-type document benchmarks. \\
-$\triangleright$~ \textbf{Resubmit to} \textit{KDD 2027 (CCF-A)}; the preprint was reported by the prominent technology media \textbf{New Wisdom}.
+Proposed \textbf{DeepRead}, a structure-aware document reasoning agent that preserves layout fidelity via OCR, constructs \textbf{paragraph-level coordinates}, and equips LLMs with \textbf{Retrieve} and \textbf{ReadSection} tools. Unlike flat chunk-based agentic search, DeepRead explicitly models document hierarchy and reading order, allowing the agent to first locate relevant regions and then inspect complete local context. Under our environment setting, this gives rise to human-like ``locate-then-read'' reading behavior and improves over \textbf{Search-o1} style baselines by an average of \textbf{10.3\%} across four multi-type document benchmarks. \\
+$\triangleright$~ \textbf{Under Review at} \textit{EMNLP 2026}; the preprint was reported by \textbf{New Wisdom}. \\[-2pt]
+{\scriptsize \textbf{Paper:} \url{https://arxiv.org/abs/2602.05014} \quad \textbf{Code:} \url{https://github.com/Zhanli-Li/DeepRead}}\\[-2pt]
+{\scriptsize \textbf{Media:} \url{https://mp.weixin.qq.com/s/BhvUQgREp4NOvb6axiWXiQ}}\\[-6pt]
 
 {\bf MuDABench: Multi-Document Analytical QA Benchmark and Multi-Agent Framework\textsuperscript{†} \quad \textit{First Author}} \hfill {\em April 2025 -- December 2025} \\
 Constructed \textbf{MuDABench}, a multi-document analytical QA benchmark with \textbf{80k+ pages}, \textbf{332 questions}, and \textbf{4,964 structured intermediate facts}, to evaluate multi-document retrieval, cross-document aggregation, and numerical reasoning over large document collections. The benchmark uses structured intermediate facts to expose where a system fails: document selection, single-document extraction, cross-document aggregation, or final numerical reasoning. Designed a \textbf{Multi-Agent} workflow that substantially improves over standard retrieval baselines. \\
-$\triangleright$~ \textbf{Published in} \textit{ACL 2026 (CCF-A)}.
+$\triangleright$~ \textbf{Published in} \textit{ACL 2026 (CCF-A)}. \\[-2pt]
+{\scriptsize \textbf{Paper:} \url{https://arxiv.org/abs/2604.22239} \quad \textbf{Code:} \url{https://github.com/Zhanli-Li/MuDABench} \quad \textbf{Data:} \url{https://huggingface.co/datasets/Zhanli-Li/MuDABench}}\\[-6pt]
 
 {\bf SHAP-Based Causal Inference Framework for Corporate Finance\textsuperscript{*} \quad \textit{Project Leader}} \hfill {\em September 2024 -- January 2025} \\
 Built an interpretable machine learning framework combining manually coded panel data and \textbf{Optuna} hyperparameter optimization, achieving $R^2=0.76$ on corporate total factor productivity prediction. Further used \textbf{SHAP} to quantify the \textbf{nonlinear marginal contribution} of ESG rating disagreement to outcome variables and reveal potential causal pathways linking heterogeneous ESG signals with productivity outcomes. \\
-$\triangleright$~ \textbf{Published in} \textit{Finance Research Letters} (CAS Q1 Top, JCR Q1, IF: 6.9); received the Outstanding Paper Award at the Tsinghua Causal Inference Seminar.
+$\triangleright$~ \textbf{Published in} \textit{Finance Research Letters} (CAS Q1 Top, JCR Q1, IF: 6.9); received the Outstanding Paper Award at the Tsinghua Causal Inference Seminar. \\[-2pt]
+{\scriptsize \textbf{Paper:} \url{https://doi.org/10.1016/j.frl.2025.107127} \quad \textbf{Media:} \url{https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA}}\\[-6pt]
 
-{\small \textit{\textsuperscript{†}Supervised by \textbf{Institute of Computing Technology, Chinese Academy of Sciences} professors Yixuan Cao and Ping Luo; \textsuperscript{‡}supervised by \textbf{LongCat Interaction} Feng Hong; \textsuperscript{*}supervised by \textbf{Wenlan School of Business} Zichao Yang}}
+{\small \textit{\textsuperscript{†}Supervised by \textbf{Institute of Computing Technology, Chinese Academy of Sciences} professors Yixuan Cao and Ping Luo; \textsuperscript{*}supervised by \textbf{Wenlan School of Business} Zichao Yang}}
 
 \end{rSection}
 
@@ -92,13 +95,17 @@ $\triangleright$~ \textbf{Published in} \textit{Finance Research Letters} (CAS Q
 %	INTERNSHIP EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Internship Experience}
+\begin{rSection}{Industry Experience}
 
 {\bf Meituan LongCat Interaction (Foundation Model Team)} \hfill {\em May 2026 -- Present} \\
-\textbf{Role:} Research Intern \quad \textbf{Mentor:} Feng Hong \quad \textbf{Project:} Improving BA Agent capabilities; participated in post-training and capability enhancement of \textbf{LongCat 2.0 Pro 1.6T} for real-world business data analysis scenarios, with emphasis on data construction, trajectory quality control, and validation within a \textbf{10,000+ card domestic H910-64G accelerator cluster}.
+\textbf{Role:} Research Intern \quad \textbf{Mentor:} Feng Hong \quad \textbf{Model:}\ \raisebox{-0.16em}{\includegraphics[height=1.15em]{../../images/logos/longcat.png}} \href{https://longcat.chat/}{https://longcat.chat/}\\[-1pt]
+\textbf{Project:} Environment Scaling for Data Agent post-training; designed \textbf{Data World} to synthesize unified latent worlds from explicit causal topologies and construct verifiable, difficulty-controlled heterogeneous environments through \textbf{observation-bias injection} and \textbf{independent auditing}. \\
+$\triangleright$~ Contributed to the final merged training data for \textbf{LongCat 2.0 Pro}, supporting complex long-horizon data analysis.
 
 {\bf Beijing Paoding Technology Co., Ltd. (AI Startup) --- Research Dept.} \hfill {\em June 2025 -- February 2026} \\
-\textbf{Role:} AI Research Intern \quad \textbf{Mentors:} Ping Luo, Yixuan Cao \quad \textbf{Project:} Improved context retrieval in production-grade RAG systems by optimizing context-missing issues with \textbf{PDFlux} and \textbf{ChatDOC}; worked on retrieval completeness and document-context preservation for complex financial-document scenarios.
+\textbf{Role:} AI Research Intern \quad \textbf{Mentors:} Ping Luo, Yixuan Cao \\
+\textbf{Product:}\ \raisebox{-0.18em}{\includegraphics[height=1.2em]{../../images/logos/chatdoc.png}} {\scriptsize\href{https://chatdoc.com/}{https://chatdoc.com/}}\\[-1pt]
+\textbf{Project:} Improved context retrieval in production-grade RAG systems by optimizing context-missing issues with \textbf{PDFlux} and \textbf{ChatDOC}; worked on retrieval completeness and document-context preservation for complex financial-document scenarios.
 
 \end{rSection}
 
