@@ -19,10 +19,10 @@
   filecolor=black,
   citecolor=black,
 }
-\titlespacing*{\section}{0cm}{0.65ex}{0.45ex}
+\titlespacing*{\section}{0cm}{0.45ex}{0.3ex}
 \definecolor{lamdaorange}{rgb}{0.910,0.373,0.180}
 \definecolor{lamdapurple}{rgb}{0.290,0.294,0.604}
-\titlespacing*{\subsection}{0cm}{0.5ex}{0.2ex}
+\titlespacing*{\subsection}{0cm}{0.25ex}{0.15ex}
 \usepackage{graphicx}  % 如果未添加，请加上此行
 \begin{document}
 \pagenumbering{gobble}
@@ -67,22 +67,25 @@
 %----------------------------------------------------------------------------------------
 \section{研究经历}
 
-\datedsubsection{\textbf{DeepRead：文档结构感知的 Agentic Search\textsuperscript{†}} \quad \textit{第一作者}}{2025.10 - 2026.2}
-提出 \textbf{DeepRead} 结构感知文档推理 Agent，利用 OCR 保持版面结构保真，构建\textbf{段落级坐标}，并设计 \textbf{Retrieve} 与 \textbf{ReadSection} 工具，在我们的环境设置下涌现了 ``locate-then-read'' 类人阅读行为；在四个多类型文档基准上较 \textbf{Search-o1} 基线平均提升 \textbf{10.3\%}。\\
+\datedsubsection{\textbf{Data World：从零规模化合成数据环境} \quad \textit{第一作者}}{2026.5 - 至今}
+提出 \textbf{Data World} 数据环境合成框架，自显式\textbf{因果骨架}逐层生成世界状态，经\textbf{观测投影}转为异构文件，并由\textbf{独立审计}验证现象可复算；进而构造带\textbf{细粒度评分细则}的分析任务，支撑可验证、难度可控的数据 Agent 训练与评测。\\
+$\triangleright$~ \textbf{ARR Oct 在投}，在 \textbf{LongCat 2.0 Flash} 上单源验证有效\\[-6pt]
+
+\datedsubsection{\textbf{DeepRead：文档结构感知的 Agentic Search} \quad \textit{第一作者}}{2025.10 - 2026.2}
+提出 \textbf{DeepRead} 文档推理 Agent，利用 OCR 保真版面结构，构建\textbf{段落级坐标}，设计 \textbf{Retrieve}/\textbf{ReadSection} 工具，\\
+在我们的环境下涌现出 ``locate-then-read'' 类人阅读行为，在四个多类型文档基准上较 \textbf{Search-o1} 平均提升 \textbf{10.3\%}。\\
 $\triangleright$~ \textbf{arXiv Preprint}，预印本被知名媒体\textbf{新智元}报道\\[-2pt]
 {\scriptsize \textbf{论文:} \url{https://arxiv.org/abs/2602.05014} \quad \textbf{代码:} \url{https://github.com/Zhanli-Li/DeepRead}} \quad {\scriptsize \textbf{报道:} \url{https://mp.weixin.qq.com/s/BhvUQgREp4NOvb6axiWXiQ}}\\[-6pt]
 
-\datedsubsection{\textbf{MuDABench：多文档分析问答基准与多 Agent 框架\textsuperscript{†}} \quad \textit{第一作者}}{2025.4 - 2025.12}
+\datedsubsection{\textbf{MuDABench：多文档分析问答基准与多 Agent 框架} \quad \textit{第一作者}}{2025.4 - 2025.12}
 构建 \textbf{MuDABench} 多文档分析问答基准（\textbf{80k+页}文档、\textbf{332}道问题、\textbf{4,964}条结构化中间事实），用于评测多文档检索、跨文档聚合与数值推理能力；设计 \textbf{Multi-Agent} 工作流，显著提升标准检索基线表现。\\
 $\triangleright$~ \textbf{发表于} \textit{ACL 2026 (CCF-A)}\\[-2pt]
 {\scriptsize \textbf{论文:} \url{https://arxiv.org/abs/2604.22239} \quad \textbf{代码:} \url{https://github.com/Zhanli-Li/MuDABench} \quad \textbf{数据:} \url{https://huggingface.co/datasets/Zhanli-Li/MuDABench}}\\[-6pt]
 
-\datedsubsection{\textbf{基于 SHAP 的公司金融因果推断框架\textsuperscript{*}} \quad \textit{项目负责人}}{2024.9 - 2025.1}
+\datedsubsection{\textbf{基于 SHAP 的公司金融因果推断框架} \quad \textit{第一作者}}{2024.9 - 2025.1}
 构建可解释机器学习框架，结合编码面板数据与 \textbf{Optuna} 自动超参搜索，在 TFP 预测任务上取得 $R^2=0.76$；进一步使用 \textbf{SHAP} 量化 ESG 评级分歧对结果变量的\textbf{非线性边际贡献}，揭示潜在因果路径。\\
 $\triangleright$~ \textbf{发表于} \textit{Finance Research Letters}（中科院 Q1 Top，JCR Q1，IF: 6.9），获清华大学因果推断研讨会优秀论文\\[-2pt]
-{\scriptsize \textbf{论文:} \url{https://doi.org/10.1016/j.frl.2025.107127} \quad \textbf{报道:} \url{https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA}}\\[-6pt]
-
-{\small \textit{\textsuperscript{†}\textbf{中科院计算所}曹逸轩、罗平指导；\textsuperscript{*}\textbf{文澜学院}杨子超指导}}
+{\scriptsize \textbf{论文:} \url{https://doi.org/10.1016/j.frl.2025.107127} \quad \textbf{报道:} \url{https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA}}\\[-10pt]
 
 %----------------------------------------------------------------------------------------
 % 业界经历
@@ -90,24 +93,22 @@ $\triangleright$~ \textbf{发表于} \textit{Finance Research Letters}（中科�
 \section{业界经历}
 \datedsubsection{\textbf{美团 LongCat Interaction（基座大模型）} \quad \textit{研究实习生}}{2026.5 - 至今}
 \textbf{导师:} 洪峰、曾之肇 \quad \textbf{模型:}\ \raisebox{-0.16em}{\includegraphics[height=1.15em]{../../images/logos/longcat.png}} \href{https://longcat.chat/}{https://longcat.chat/}\\[-1pt]
-\textbf{项目:} \textbf{LongCat Work Coding Agent 专项}，Data Agent Environment Scaling；面向 post-training 设计 \textbf{Data World}，从显式因果拓扑生成统一潜在世界，并通过\textbf{观测偏差注入}与\textbf{独立审计}构造可验证、难度可控的异构数据环境。\\
-$\triangleright$~ 研究内容以 \textbf{Data World} 为主，该工作服务于最新 \textbf{LongCat} 模型在 \textbf{DAComp} 和 \textbf{JobBench} 上的能力提升。
+\textbf{项目:} \textbf{LongCat Work Coding Agent 专项}，在 LongCat \textbf{post-training} 中提升模型在各类\textbf{生产力基准}上的表现；负责数据分析类基准 \textbf{DAComp} 的能力提升，重点研究如何\textbf{合成更难的任务}，以\textbf{拒绝采样}获得更优轨迹。
 
-\datedsubsection{\textbf{北京庖丁科技有限公司（AI Startup）研究组} \quad \textit{AI技术研究实习生}}{2025.6 - 2026.2}
+\datedsubsection{\textbf{北京庖丁科技有限公司（AI Startup）研究组} \quad \textit{AI研究实习生}}{2025.6 - 2026.2}
 \textbf{导师:} 罗平、曹逸轩 \quad \textbf{产品:}\ \raisebox{-0.24em}{\includegraphics[height=1.35em]{../../images/logos/chatdoc.png}} \href{https://chatdoc.com/}{https://chatdoc.com/}\\[-1pt]
 \textbf{项目:} 上下文检索在实际生产环境中的改进；基于 \textbf{PDFlux} 优化 \textbf{ChatDOC}，改进 RAG 系统上下文缺失问题。\\
-$\triangleright$~ 参与文档结构感知的上下文检索优化和 \textbf{ContextBench} 构建。
+参与文档结构感知的上下文检索优化和 \textbf{ContextBench} 构建。
 
 %----------------------------------------------------------------------------------------
 % 竞赛经历
 %----------------------------------------------------------------------------------------
 \section{竞赛经历}
 \datedsubsection{\textbf{NVIDIA Nemotron Model Reasoning Challenge} \quad \textit{Kaggle 银牌}}{2026.6}
-基于 \textbf{Nemotron-3-Nano-30B-A3B} 与比赛要求的 \textbf{LoRA} 微调设置，构建 Agentic 推理框架求解抽象谜题，并将归纳规则编排为可复用 solver，最终取得 \textbf{0.86} 得分，位列全球前 \textbf{2.85\%}。
+基于 \textbf{Nemotron-3-Nano-30B} 的 \textbf{LoRA} 微调，构建 \textbf{Agentic} 推理框架与可复用 solver，得分 \textbf{0.86}，全球前 \textbf{2.85\%}。
 
 \section{技能与服务}
-\textbf{编程/工具:} Python, C/C++, \LaTeX, Markdown, Docker, SSH, tmux, Ubuntu \quad \textbf{英语:} CET-4：522 \quad CET-6: 508\\
-\textbf{框架:} ms-swift, vllm, verl, llamaindex, transformers, torch \quad
+\textbf{英语:} CET-4：522 \quad CET-6: 508 \quad \textbf{框架:} slime, sglang, ms-swift, vllm, verl, llamaindex, transformers, torch
 
 
 
