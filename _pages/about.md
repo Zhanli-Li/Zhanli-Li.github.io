@@ -28,7 +28,7 @@ redirect_from:
   [**Data World: Scaling Data Environments from Scratch**](https://zhanli-li.github.io/Data-World/) *Preprint*<br>
   [Hugging Face](https://huggingface.co/collections/Zhanli-Li/dataworld) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Data-World?style=social)](https://github.com/Zhanli-Li/Data-World)
   <div style="text-align:center;">
-    <img src="{{ '/files/DataWorld.png' | relative_url }}" alt="Data World paper" width="50%">
+    <img src="{{ '/files/DataWorld.png' | relative_url }}" alt="Data World paper" width="40%">
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
