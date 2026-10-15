@@ -34,7 +34,7 @@
 \centerline{\sffamily\normalsize
   \faHome\ \href{https://zhanli-li.github.io}{zhanli-li.github.io} \quad
   \faGithub\ \href{https://github.com/Zhanli-Li}{Zhanli-Li (200+ stars)} \quad
-  \faGraduationCap\ \href{https://scholar.google.com/citations?user=LW5bAdAAAAAJ}{Google Scholar: 35 citations（均为第一作者）}}
+  \faGraduationCap\ \href{https://scholar.google.com/citations?user=LW5bAdAAAAAJ}{Google Scholar: 37 citations（均为第一作者）}}
 \vspace{-0.15ex}
 %----------------------------------------------------------------------------------------
 % 教育背景
@@ -56,6 +56,8 @@
 % 学术论文
 %----------------------------------------------------------------------------------------
 \section{学术论文}
+\textbf{Zhanli Li}, \ldots, Feng Hong, Zhizhao Zeng, Xunliang Cai, Hanjia Ye. \textit{Data World: Scaling Data Environments from Scratch}. \textit{Preprint} \quad \textbf{[First Author]}
+
 \textbf{Zhanli Li}, Huiwen Tian, Lvzhou Luo, Yixuan Cao, Ping Luo. \textit{DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search}. \textit{arXiv Preprint} \quad \textbf{[First Author]}
 
 \textbf{Zhanli Li}, Yixuan Cao, Lvzhou Luo, Ping Luo. \textit{Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA}. \textit{Findings of ACL 2026} (CCF-A) \quad \textbf{[First Author]}
@@ -68,14 +70,13 @@
 \section{研究经历}
 
 \datedsubsection{\textbf{Data World：从零规模化合成数据环境} \quad \textit{第一作者}}{2026.5 - 至今}
-提出 \textbf{Data World} 数据环境合成框架，自显式\textbf{因果骨架}逐层生成世界状态，经\textbf{观测投影}转为异构文件，并由\textbf{独立审计}验证现象可复算；进而构造带\textbf{细粒度评分细则}的分析任务，支撑可验证、难度可控的数据 Agent 训练与评测。\\
-$\triangleright$~ \textbf{ARR Oct 在投}，在 \textbf{LongCat 2.0 Flash} 上单源验证有效\\[-6pt]
+提出 \textbf{Data World} 数据环境合成引擎，从显式世界机制出发\textbf{从零合成}数据 Agent 的训练环境与任务，并\textbf{开源} \textbf{DataWorld-Bench} 基准与 \textbf{DataWorld-35B-A3B} 模型；\textbf{RL-zero} 无蒸馏训练在 \textbf{DAComp}、\textbf{JobBench} 等 Bench 上分别提升 \textbf{14.3}/\textbf{12.1} 点，验证了合成数据质量，并在 \textbf{LongCat 2.0/2.5} 系列模型中验证有效。\\[-2pt]
+{\scriptsize \textbf{主页:} \url{https://zhanli-li.github.io/Data-World/} \quad \textbf{代码:} \url{https://github.com/Zhanli-Li/Data-World} \quad \textbf{模型与数据:} \url{https://huggingface.co/collections/Zhanli-Li/dataworld}}\\[-6pt]
 
 \datedsubsection{\textbf{DeepRead：文档结构感知的 Agentic Search} \quad \textit{第一作者}}{2025.10 - 2026.2}
 提出 \textbf{DeepRead} 文档推理 Agent，利用 OCR 保真版面结构，构建\textbf{段落级坐标}，设计 \textbf{Retrieve}/\textbf{ReadSection} 工具，\\
 在我们的环境下涌现出 ``locate-then-read'' 类人阅读行为，在四个多类型文档基准上较 \textbf{Search-o1} 平均提升 \textbf{10.3\%}。\\
-$\triangleright$~ \textbf{arXiv Preprint}，预印本被知名媒体\textbf{新智元}报道\\[-2pt]
-{\scriptsize \textbf{论文:} \url{https://arxiv.org/abs/2602.05014} \quad \textbf{代码:} \url{https://github.com/Zhanli-Li/DeepRead}} \quad {\scriptsize \textbf{报道:} \url{https://mp.weixin.qq.com/s/BhvUQgREp4NOvb6axiWXiQ}}\\[-6pt]
+{\scriptsize \textbf{论文:} \url{https://arxiv.org/abs/2602.05014}（\textbf{arXiv Preprint}，获\textbf{新智元}\href{https://mp.weixin.qq.com/s/BhvUQgREp4NOvb6axiWXiQ}{报道}）\quad \textbf{代码:} \url{https://github.com/Zhanli-Li/DeepRead}}\\[-6pt]
 
 \datedsubsection{\textbf{MuDABench：多文档分析问答基准与多 Agent 框架} \quad \textit{第一作者}}{2025.4 - 2025.12}
 构建 \textbf{MuDABench} 多文档分析问答基准（\textbf{80k+页}文档、\textbf{332}道问题、\textbf{4,964}条结构化中间事实），用于评测多文档检索、跨文档聚合与数值推理能力；设计 \textbf{Multi-Agent} 工作流，显著提升标准检索基线表现。\\
@@ -97,15 +98,14 @@ $\triangleright$~ \textbf{发表于} \textit{Finance Research Letters}（中科�
 
 \datedsubsection{\textbf{北京庖丁科技有限公司（AI Startup）研究组} \quad \textit{AI研究实习生}}{2025.6 - 2026.2}
 \textbf{导师:} 罗平、曹逸轩 \quad \textbf{产品:}\ \raisebox{-0.24em}{\includegraphics[height=1.35em]{../../images/logos/chatdoc.png}} \href{https://chatdoc.com/}{https://chatdoc.com/}\\[-1pt]
-\textbf{项目:} 上下文检索在实际生产环境中的改进；基于 \textbf{PDFlux} 优化 \textbf{ChatDOC}，改进 RAG 系统上下文缺失问题。\\
-参与文档结构感知的上下文检索优化和 \textbf{ContextBench} 构建。
+\textbf{项目:} 基于 \textbf{PDFlux} 优化 \textbf{ChatDOC}，改进生产环境 RAG 系统的上下文缺失问题，并参与 \textbf{ContextBench} 构建。
 
 %----------------------------------------------------------------------------------------
 % 竞赛经历
 %----------------------------------------------------------------------------------------
 \section{竞赛经历}
 \datedsubsection{\textbf{NVIDIA Nemotron Model Reasoning Challenge} \quad \textit{Kaggle 银牌}}{2026.6}
-基于 \textbf{Nemotron-3-Nano-30B} 的 \textbf{LoRA} 微调，构建 \textbf{Agentic} 推理框架与可复用 solver，得分 \textbf{0.86}，全球前 \textbf{2.85\%}。
+基于 \textbf{Nemotron-3-Nano-30B} \textbf{LoRA} 微调构建 \textbf{Agentic} 推理框架与可复用 solver，得分 \textbf{0.86}（全球前 \textbf{2.85\%}）。
 
 \section{技能与服务}
 \textbf{英语:} CET-4：522 \quad CET-6: 508 \quad \textbf{框架:} slime, sglang, ms-swift, vllm, verl, llamaindex, transformers, torch

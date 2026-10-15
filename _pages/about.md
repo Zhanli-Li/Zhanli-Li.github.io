@@ -24,6 +24,13 @@ redirect_from:
 
 > *Before introducing my selected publications, I would like to share a few thoughts on how I think about research. In the future, I hope to lead only one paper each year. For each work, I want to start from a problem that I find both interesting and meaningful, spend time understanding its principles and foundations, and then work on it seriously. If the problem is solved, that would be wonderful—a piece of good work. If not, that is also fine; it may still lead to an incremental paper. What truly matters is my own growth and the fact that I have helped push the boundary of the problem forward.*
 
+- **[Zhanli Li](https://zhanli-li.github.io)**, Zeyuan Xu, Chaoxu Pang, Zeyuan Liu, Anyang Ji, Te Sun, Kongcheng Zhang, Wenbo Xu, Xubin Yue, Shipeng Luo, Junjie Zhao, Yingfan Hua, Jingqing Ruan, Zhongda Su, Feng Hong, Zhizhao Zeng, Ke Zeng, Xunliang Cai, [Hanjia Ye](https://www.lamda.nju.edu.cn/yehj/).  
+  [**Data World: Scaling Data Environments from Scratch**](https://zhanli-li.github.io/Data-World/) *Preprint*<br>
+  [Hugging Face](https://huggingface.co/collections/Zhanli-Li/dataworld) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Data-World?style=social)](https://github.com/Zhanli-Li/Data-World)
+  <div style="text-align:center;">
+    <img src="{{ '/files/DataWorld.png' | relative_url }}" alt="Data World paper" width="75%">
+  </div>
+
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
   [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014)<br>
   [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)
@@ -45,6 +52,7 @@ redirect_from:
   </div>
 
 ## News 📧
+- `2026.10.15` **Data World** preprint is out! We scale data environments from scratch for data-agent post-training: [Project Page](https://zhanli-li.github.io/Data-World/) / [GitHub](https://github.com/Zhanli-Li/Data-World) / [Hugging Face](https://huggingface.co/collections/Zhanli-Li/dataworld).
 - `2026.6.16` We ranked **119/4182** and earned a **Silver Medal** in the [NVIDIA Nemotron Model Reasoning Challenge](https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard) on Kaggle.
 - `2026.5.17` One paper about **Agentic Search** was invited to Resubmit to KDD 2027 (First Cycle).
 - `2026.4.6` **MuDABench** was accepted as Findings of ACL 2026!
