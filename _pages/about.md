@@ -17,7 +17,7 @@ redirect_from:
 
 > *Before introducing my selected publications, I would like to share a few thoughts on how I think about research. In the future, I hope to lead only one or two projects each year. For each work, I want to start from a problem that I find both interesting and meaningful, spend time understanding its principles and foundations, and then work on it seriously. If the problem is solved, that would be wonderful—a piece of good work. If not, that is also fine; it may still lead to an incremental paper. What truly matters is my own growth and the fact that I have helped push the boundary of the problem forward.*
 
-- **[Zhanli Li](https://zhanli-li.github.io)**, Zeyuan Xu, Chaoxu Pang, Zeyuan Liu, Anyang-Ji, Te Sun, Kongcheng Zhang, Wenbo Xu, Xubin Yue, Shipeng Luo, Junjie Zhao, Yingfan Hua, Jingqing Ruan, Zhongda Su, Feng Hong, Zhizhao Zeng, Ke Zeng, Xunliang Cai, [Han-Jia Ye](https://www.lamda.nju.edu.cn/yehj/).  
+- **[Zhanli Li](https://zhanli-li.github.io)**, Zeyuan Xu, Chaoxu Pang, Zeyuan Liu, An-Yang Ji, Te Sun, Kongcheng Zhang, Wenbo Xu, Xubin Yue, Shipeng Luo, Junjie Zhao, Yingfan Hua, Jingqing Ruan, Zhongda Su, Feng Hong, Zhizhao Zeng, Ke Zeng, Xunliang Cai, [Han-Jia Ye](https://www.lamda.nju.edu.cn/yehj/).  
   [**Data World: Scaling Data Environments from Scratch**](https://arxiv.org/abs/2610.21656)<br>
   [Project Page](https://zhanli-li.github.io/Data-World/) [Hugging Face](https://huggingface.co/collections/Zhanli-Li/dataworld) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Data-World?style=social)](https://github.com/Zhanli-Li/Data-World)
   <div style="text-align:center;">
