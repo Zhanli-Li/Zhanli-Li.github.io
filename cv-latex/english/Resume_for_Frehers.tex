@@ -18,6 +18,7 @@
 \usepackage{fontawesome5}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{eso-pic}
 \definecolor{lamdaorange}{rgb}{0.910,0.373,0.180}
 \definecolor{lamdapurple}{rgb}{0.290,0.294,0.604}
 
@@ -39,6 +40,12 @@
 
 \begin{document}
 \pagenumbering{gobble}
+
+\AddToShipoutPictureFG*{%
+  \AtPageUpperLeft{%
+    \put(\LenToUnit{0.55in},\LenToUnit{-0.28in}){{\scriptsize\color{gray}Last updated: 2026.10.23}}%
+  }%
+}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION

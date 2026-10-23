@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{wrapfig}
+\usepackage{eso-pic}
 \hypersetup{
   colorlinks=true,
   linkcolor=black,
@@ -26,6 +27,12 @@
 \usepackage{graphicx}  % 如果未添加，请加上此行
 \begin{document}
 \pagenumbering{gobble}
+
+\AddToShipoutPictureFG*{%
+  \AtPageUpperLeft{%
+    \put(\LenToUnit{0.43in},\LenToUnit{-0.18in}){{\scriptsize\color{gray} 最近更新: 2026.10.23}}%
+  }%
+}
 
 
 \name{李展利}
