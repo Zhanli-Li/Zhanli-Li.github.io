@@ -44,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add _pages/cv.md files/Zhanli-LI_CV.pdf "files/李展利_简历.pdf"
+          git add _pages/cv.md files/lizhanli_cv_en.pdf files/lizhanli_cv_cn.pdf
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0

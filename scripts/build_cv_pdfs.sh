@@ -14,8 +14,8 @@ if [[ "${1:-}" != "--publish-only" ]]; then
 fi
 
 mkdir -p "$repo_root/files"
-cp "$repo_root/cv-latex/english/Resume_for_Frehers.pdf" "$repo_root/files/Zhanli-LI_CV.pdf"
-cp "$repo_root/cv-latex/chinese/resume-zh_CN.pdf" "$repo_root/files/李展利_简历.pdf"
+cp "$repo_root/cv-latex/english/Resume_for_Frehers.pdf" "$repo_root/files/lizhanli_cv_en.pdf"
+cp "$repo_root/cv-latex/chinese/resume-zh_CN.pdf" "$repo_root/files/lizhanli_cv_cn.pdf"
 
 find "$repo_root/cv-latex" -type f \( \
   -name '*.aux' -o \
