@@ -50,6 +50,10 @@ redirect_from:
 - `2026.5.17` One paper about **Agentic Search** was invited to Resubmit to KDD 2027 (First Cycle).
 - `2026.4.6` **MuDABench** was accepted as Findings of ACL 2026!
 - `2026.3.17` **DeepRead** was covered by [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185).
+
+<details markdown="1">
+<summary><i>Show earlier news</i></summary>
+
 - `2026.2.9` One paper about **Agentic Search** was submitted to KDD26.
 - `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
 - `2025.9` I lead an open-source project for automated outreach, it's [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
@@ -57,6 +61,8 @@ redirect_from:
 - `2025.3.13` I was invited as a reviewer of *Finance Research Letters*.
 - `2025.3.8` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online.
 - `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
+
+</details>
 
 ## Vistor 🗺️
 
