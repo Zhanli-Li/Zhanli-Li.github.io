@@ -15,7 +15,12 @@ redirect_from:
 
 ## Selected Publications 📓
 
+<details markdown="1">
+<summary><i>A few thoughts on my research philosophy</i></summary>
+
 > *Before introducing my selected publications, I would like to share a few thoughts on how I think about research. In the future, I hope to lead only one or two projects each year. For each work, I want to start from a problem that I find both interesting and meaningful, spend time understanding its principles and foundations, and then work on it seriously. If the problem is solved, that would be wonderful—a piece of good work. If not, that is also fine; it may still lead to an incremental paper. What truly matters is my own growth and the fact that I have helped push the boundary of the problem forward.*
+
+</details>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Zeyuan Xu, Chaoxu Pang, Zeyuan Liu, An-Yang Ji, Te Sun, Kongcheng Zhang, Wenbo Xu, Xubin Yue, Shipeng Luo, Junjie Zhao, Yingfan Hua, Jingqing Ruan, Zhongda Su, Feng Hong, Zhizhao Zeng, Ke Zeng, Xunliang Cai, [Han-Jia Ye](https://www.lamda.nju.edu.cn/yehj/).  
   [**Data World: Scaling Data Environments from Scratch**](https://arxiv.org/abs/2610.21656)<br>
@@ -38,11 +43,16 @@ redirect_from:
     <img src="{{ '/files/MuDABench.png' | relative_url }}" alt="MuDABench paper" width="50%">
   </div>
 
+<details markdown="1">
+<summary><i>Show all publications</i></summary>
+
 - **[Zhanli Li](https://zhanli-li.github.io)**, & [Zichao Yang](https://yzc.me).  
   [**ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction**](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903) *Finance Research Letters (JCR Q1, IF 6.9)*
   <div style="text-align:center;">
     <img src="{{ '/files/ESG.png' | relative_url }}" alt="ESG_TFP" width="75%">
   </div>
+
+</details>
 
 ## News 📧
 - `2026.10.15` **Data World** preprint is out! We scale data environments from scratch for data-agent post-training: [arXiv](https://arxiv.org/abs/2610.21656) / [Project Page](https://zhanli-li.github.io/Data-World/) / [GitHub](https://github.com/Zhanli-Li/Data-World) / [Hugging Face](https://huggingface.co/collections/Zhanli-Li/dataworld).
