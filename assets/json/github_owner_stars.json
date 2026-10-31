@@ -1,0 +1,48 @@
+{
+  "user": "Zhanli-Li",
+  "stars": 231,
+  "owned_repos": 14,
+  "top_repos": [
+    {
+      "name": "Auto-Tutor",
+      "stars": 101
+    },
+    {
+      "name": "DeepRead",
+      "stars": 64
+    },
+    {
+      "name": "Data-World",
+      "stars": 32
+    },
+    {
+      "name": "MuDABench",
+      "stars": 19
+    },
+    {
+      "name": "ESG-Topic-Model",
+      "stars": 7
+    },
+    {
+      "name": "Digital-Agricultural-Economics",
+      "stars": 2
+    },
+    {
+      "name": "Zhanli-Li.github.io",
+      "stars": 1
+    },
+    {
+      "name": "Zhanli-Li",
+      "stars": 1
+    },
+    {
+      "name": "ROPE-BERT",
+      "stars": 1
+    },
+    {
+      "name": "LLM-crypto",
+      "stars": 1
+    }
+  ],
+  "updated": "2026-10-31T05:10:55Z"
+}

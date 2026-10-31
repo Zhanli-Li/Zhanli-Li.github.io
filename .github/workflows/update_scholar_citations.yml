@@ -1,4 +1,4 @@
-name: Update First-Author Scholar Citations
+name: Update Owner Badge Stats
 
 on:
   schedule:
@@ -27,16 +27,21 @@ jobs:
 
       - name: Scrape first-author citations
         run: python3 scripts/update_first_author_citations.py
+        continue-on-error: true
 
-      - name: Commit updated citation data
+      - name: Fetch owner repo stars
+        run: python3 scripts/update_github_owner_stars.py
+        continue-on-error: true
+
+      - name: Commit updated badge data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/json/scholar_first_author.json
+          git add assets/json/scholar_first_author.json assets/json/github_owner_stars.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Update first-author Scholar citations"
+          git commit -m "Update owner badge stats"
           git pull --rebase origin master
           git push origin master
