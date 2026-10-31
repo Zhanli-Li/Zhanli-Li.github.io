@@ -1,0 +1,29 @@
+{
+  "owner": "Zhanli Li",
+  "scholar_user": "LW5bAdAAAAAJ",
+  "citations": 40,
+  "first_author_papers": 4,
+  "papers": [
+    {
+      "title": "ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction",
+      "first_author": "Z Li",
+      "citations": 26
+    },
+    {
+      "title": "DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search",
+      "first_author": "Z Li",
+      "citations": 11
+    },
+    {
+      "title": "Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA",
+      "first_author": "Z Li",
+      "citations": 3
+    },
+    {
+      "title": "Data World: Scaling Data Environments from Scratch",
+      "first_author": "Z Li",
+      "citations": 0
+    }
+  ],
+  "updated": "2026-10-31T04:43:48Z"
+}
