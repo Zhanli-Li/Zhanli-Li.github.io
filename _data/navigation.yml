@@ -8,9 +8,6 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "Paper Radar"
-    url: /paper-radar/
-
   - title: "Blog Posts"
     url: /year-archive/
 
