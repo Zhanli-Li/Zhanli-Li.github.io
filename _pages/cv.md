@@ -15,7 +15,7 @@ redirect_from:
 
 {% include base_path %}
 
-*Last Update: 2026.10.25*
+*Last Update: 2026.11.1*
 
 <p>
   <a class="btn btn--primary" href="{{ base_path }}/files/lizhanli_cv_en.pdf" download aria-label="Download English CV as PDF">Download English CV</a>
