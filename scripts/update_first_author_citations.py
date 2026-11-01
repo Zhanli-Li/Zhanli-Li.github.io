@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 """Update the first-author citation count from Google Scholar.
 
-Scrapes the public Google Scholar profile, keeps only papers where the
-profile owner is the first author, sums their citations, and writes the
-result to assets/json/scholar_first_author.json. That JSON powers the
-"First Author Citations" shields.io badge on the about page, so papers
-where Zhanli Li is not first author are never counted.
+Data sources, in order of preference:
+1. SerpApi google_scholar_author API (when SERPAPI_API_KEY is set) —
+   reliable from GitHub Actions, where Google blocks direct scraping.
+2. Direct scraping of the public Scholar profile (local fallback).
+
+Only papers where the profile owner is first author are counted; the
+result goes to assets/json/scholar_first_author.json, which powers the
+"First Author Citations" shields.io badge on the about page.
 """
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -67,23 +71,20 @@ def parse_profile(page_html: str):
     return owner, rows
 
 
-def main() -> int:
+def fetch_direct():
+    """Scrape the public Scholar profile. Works from residential IPs;
+    GitHub Actions runners are usually captcha-blocked."""
     owner, papers, seen_titles = "", [], set()
     for page in range(MAX_PAGES):
         url = (
             f"https://scholar.google.com/citations?user={SCHOLAR_USER}"
             f"&hl=en&cstart={page * PAGE_SIZE}&pagesize={PAGE_SIZE}"
         )
-        try:
-            owner_name, rows = parse_profile(fetch(url))
-        except Exception as exc:  # network blocked / captcha: keep old data
-            print(f"error: failed to fetch profile page {page}: {exc}", file=sys.stderr)
-            return 1
+        owner_name, rows = parse_profile(fetch(url))
         if page == 0:
             owner = owner_name
             if not owner:
-                print("error: could not read profile owner name", file=sys.stderr)
-                return 1
+                raise RuntimeError("could not read profile owner name")
         if not rows:
             break
         new = [r for r in rows if r[0] not in seen_titles]
@@ -92,9 +93,60 @@ def main() -> int:
         if len(rows) < PAGE_SIZE or not new:
             break
         time.sleep(2)
-
     if not papers:
-        print("error: no papers parsed; profile page may be captcha-blocked", file=sys.stderr)
+        raise RuntimeError("no papers parsed; profile page may be captcha-blocked")
+    return owner, papers
+
+
+def fetch_serpapi(api_key: str):
+    """Fetch the profile via SerpApi's google_scholar_author engine.
+    Each results page costs one SerpApi credit."""
+    url = (
+        "https://serpapi.com/search.json?engine=google_scholar_author"
+        f"&author_id={SCHOLAR_USER}&hl=en&num={PAGE_SIZE}&api_key={api_key}"
+    )
+    owner, papers = "", []
+    for _ in range(MAX_PAGES):
+        data = json.loads(fetch(url))
+        if "error" in data:
+            raise RuntimeError(f"SerpApi error: {data['error']}")
+        if not owner:
+            owner = (data.get("author") or {}).get("name", "")
+            if not owner:
+                raise RuntimeError("SerpApi response has no author name")
+        articles = data.get("articles") or []
+        for art in articles:
+            first_author = re.split(r",| and ", art.get("authors", ""))[0].strip()
+            cited = (art.get("cited_by") or {}).get("value", 0)
+            papers.append((art.get("title", ""), first_author, int(cited)))
+        next_url = (data.get("serpapi_pagination") or {}).get("next")
+        if not next_url:
+            break
+        url = f"{next_url}&api_key={api_key}"
+        time.sleep(1)
+    if not papers:
+        raise RuntimeError("SerpApi returned no articles")
+    return owner, papers
+
+
+def collect_papers():
+    api_key = os.environ.get("SERPAPI_API_KEY", "").strip()
+    if api_key:
+        try:
+            print("source: SerpApi")
+            return fetch_serpapi(api_key)
+        except Exception as exc:
+            print(f"warning: SerpApi failed ({exc}); falling back to direct scraping",
+                  file=sys.stderr)
+    print("source: direct scraping")
+    return fetch_direct()
+
+
+def main() -> int:
+    try:
+        owner, papers = collect_papers()
+    except Exception as exc:  # keep old data on any failure
+        print(f"error: failed to fetch Scholar data: {exc}", file=sys.stderr)
         return 1
 
     keys = owner_name_keys(owner)

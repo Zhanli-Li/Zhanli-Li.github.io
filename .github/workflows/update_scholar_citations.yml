@@ -27,6 +27,8 @@ jobs:
 
       - name: Scrape first-author citations
         run: python3 scripts/update_first_author_citations.py
+        env:
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         continue-on-error: true
 
       - name: Fetch owner repo stars
