@@ -55,7 +55,7 @@ redirect_from:
 </details>
 
 ## News 📧
-- `2026.11.3` [LongCat 2.5](https://longcat.ai/blog/longcat-2.5) is released — trained entirely on **domestic GPUs**! There is still a gap to the first-tier models, but I feel truly fortunate to have contributed to its **cowork** capability. Keep pushing forward! 🚀
+- `2026.11.3` [LongCat 2.5](https://longcat.ai/blog/longcat-2.5) is released — trained entirely on **domestic GPUs**! Although there is still a gap to the first-tier **open-source** models, I feel truly fortunate to have contributed to its **cowork** capability. Keep pushing forward!
 - `2026.10.15` **Data World** preprint is out! We scale data environments from scratch for data-agent post-training: [arXiv](https://arxiv.org/abs/2610.21656) / [Project Page](https://zhanli-li.github.io/Data-World/) / [GitHub](https://github.com/Zhanli-Li/Data-World) / [Hugging Face](https://huggingface.co/collections/Zhanli-Li/dataworld).
 - `2026.6.16` We ranked **119/4182** and earned a **Silver Medal** in the [NVIDIA Nemotron Model Reasoning Challenge](https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/leaderboard) on Kaggle.
 - `2026.5.17` One paper about **Agentic Search** was invited to Resubmit to KDD 2027 (First Cycle).
