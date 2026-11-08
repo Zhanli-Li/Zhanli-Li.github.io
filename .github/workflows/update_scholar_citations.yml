@@ -29,6 +29,8 @@ jobs:
         run: python3 scripts/update_first_author_citations.py
         env:
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+          ANYSEARCH_API_KEY: ${{ secrets.ANYSEARCH_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         continue-on-error: true
 
       - name: Fetch owner repo stars

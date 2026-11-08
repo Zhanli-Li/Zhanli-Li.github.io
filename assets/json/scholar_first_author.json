@@ -1,13 +1,13 @@
 {
   "owner": "Zhanli Li",
   "scholar_user": "LW5bAdAAAAAJ",
-  "citations": 41,
+  "citations": 43,
   "first_author_papers": 4,
   "papers": [
     {
       "title": "ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction",
       "first_author": "Z Li",
-      "citations": 26
+      "citations": 28
     },
     {
       "title": "DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search",
@@ -25,5 +25,6 @@
       "citations": 0
     }
   ],
-  "updated": "2026-11-03T04:10:04Z"
+  "source": "anysearch",
+  "updated": "2026-11-08T02:56:31Z"
 }

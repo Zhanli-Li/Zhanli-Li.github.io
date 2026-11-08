@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
-"""Update the first-author citation count from Google Scholar.
+"""Update the first-author citation count.
 
 Data sources, in order of preference:
 1. SerpApi google_scholar_author API (when SERPAPI_API_KEY is set) —
    reliable from GitHub Actions, where Google blocks direct scraping.
-2. Direct scraping of the public Scholar profile (local fallback).
+2. Direct scraping of the public Scholar profile (local fallback;
+   skipped in CI, where datacenter IPs are captcha-blocked).
+3. AnySearch (https://anysearch.com): parses Google-Scholar-style
+   "Cited by N" snippets from general search results. Works anonymously
+   (ANYSEARCH_API_KEY raises the daily quota) and matches Scholar counts
+   more closely than citation databases for very recent citations.
+4. OpenAlex REST API: sums cited_by_count over a curated list of
+   first-author paper DOIs. Free and reachable from GitHub Actions,
+   so it is the last-resort source there.
 
-Only papers where the profile owner is first author are counted; the
-result goes to assets/json/scholar_first_author.json, which powers the
-"First Author Citations" shields.io badge on the about page.
+Only papers where the profile owner is first author are counted (the
+AnySearch/OpenAlex list is curated to first-author papers, so no
+filtering is needed for them). The result goes to
+assets/json/scholar_first_author.json, which powers the "First Author
+Citations" shields.io badge on the about page.
 """
 import html
 import json
@@ -29,6 +39,30 @@ USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 )
+
+OWNER_NAME = "Zhanli Li"
+OPENALEX_MAILTO = "lizhanli@stu.zuel.edu.cn"
+# Curated first-author papers as (DOI, title); add new papers here.
+FIRST_AUTHOR_PAPERS = [
+    (
+        "10.1016/j.frl.2025.107127",
+        "ESG rating disagreement and corporate Total Factor Productivity: "
+        "Inference and prediction",
+    ),
+    (
+        "10.48550/arxiv.2602.05014",
+        "DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search",
+    ),
+    (
+        "10.18653/v1/2026.findings-acl.341",
+        "Navigating Large-Scale Document Collections: MuDABench for "
+        "Multi-Document Analytical QA",
+    ),
+    (
+        "10.48550/arxiv.2610.21656",
+        "Data World: Scaling Data Environments from Scratch",
+    ),
+]
 
 
 def fetch(url: str) -> str:
@@ -129,28 +163,114 @@ def fetch_serpapi(api_key: str):
     return owner, papers
 
 
+def fetch_anysearch():
+    """Parse Google-Scholar-style 'Cited by N' snippets via AnySearch
+    (https://api.anysearch.com). Its general search surfaces Scholar result
+    snippets, so counts track Google Scholar closely even for very recent
+    citations. Anonymous quota works without a key; ANYSEARCH_API_KEY
+    raises it. Only results whose title matches the paper are trusted, so
+    unrelated 'Cited by' snippets cannot leak into the count."""
+    api_key = os.environ.get("ANYSEARCH_API_KEY", "").strip()
+    headers = {"Content-Type": "application/json", "User-Agent": USER_AGENT}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    papers = []
+    for _, title in FIRST_AUTHOR_PAPERS:
+        body = json.dumps(
+            {"query": f"{title} citations google scholar", "max_results": 5}
+        ).encode("utf-8")
+        req = urllib.request.Request(
+            "https://api.anysearch.com/v1/search", data=body, headers=headers
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8", "ignore"))
+        if data.get("code") != 0:
+            raise RuntimeError(f"AnySearch error: {data.get('message')}")
+        results = (data.get("data") or {}).get("results") or []
+        key = normalize(title)
+        cited, matched = None, False
+        for r in results:
+            rtitle = normalize(r.get("title") or "")
+            title_hit = key in rtitle or (len(rtitle) >= 15 and rtitle in key)
+            if not title_hit:
+                continue
+            matched = True
+            text = f"{r.get('snippet') or ''} {r.get('content') or ''}"
+            m = re.search(r"Cited by (\d+)", text)
+            if m:
+                n = int(m.group(1))
+                cited = n if cited is None else max(cited, n)
+        if not matched:
+            raise RuntimeError(f"AnySearch returned no result matching: {title}")
+        papers.append((title, "Z Li", cited if cited is not None else 0))
+        time.sleep(1)
+    return OWNER_NAME, papers
+
+
+def fetch_openalex():
+    """Sum per-paper cited_by_count over the curated first-author DOI list.
+    OpenAlex is free and reachable from GitHub Actions runners (unlike
+    Google Scholar). Uses the filter endpoint, whose search index is
+    fresher than the per-work entity endpoint. Without an API key,
+    requests share a small daily budget per IP; setting OPENALEX_API_KEY
+    (free at https://openalex.org/settings/api) gets a dedicated budget."""
+    api_key = os.environ.get("OPENALEX_API_KEY", "").strip()
+    key_param = f"&api_key={api_key}" if api_key else ""
+    papers = []
+    for doi, title in FIRST_AUTHOR_PAPERS:
+        url = (
+            f"https://api.openalex.org/works?filter=doi:{doi}"
+            f"&select=display_name,cited_by_count&mailto={OPENALEX_MAILTO}{key_param}"
+        )
+        data = json.loads(fetch(url))
+        results = data.get("results") or []
+        if not results:
+            raise RuntimeError(f"OpenAlex has no record for DOI {doi}")
+        papers.append((title, "Z Li", int(results[0]["cited_by_count"])))
+        time.sleep(0.5)
+    return OWNER_NAME, papers
+
+
 def collect_papers():
+    """Return (owner, papers, source)."""
     api_key = os.environ.get("SERPAPI_API_KEY", "").strip()
     if api_key:
         try:
             print("source: SerpApi")
-            return fetch_serpapi(api_key)
+            owner, papers = fetch_serpapi(api_key)
+            return owner, papers, "serpapi"
         except Exception as exc:
-            print(f"warning: SerpApi failed ({exc}); falling back to direct scraping",
-                  file=sys.stderr)
-    print("source: direct scraping")
-    return fetch_direct()
+            print(f"warning: SerpApi failed ({exc})", file=sys.stderr)
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        try:
+            print("source: direct scraping")
+            owner, papers = fetch_direct()
+            return owner, papers, "google_scholar"
+        except Exception as exc:
+            print(f"warning: direct scraping failed ({exc})", file=sys.stderr)
+    try:
+        print("source: AnySearch")
+        owner, papers = fetch_anysearch()
+        return owner, papers, "anysearch"
+    except Exception as exc:
+        print(f"warning: AnySearch failed ({exc})", file=sys.stderr)
+    print("source: OpenAlex")
+    owner, papers = fetch_openalex()
+    return owner, papers, "openalex"
 
 
 def main() -> int:
     try:
-        owner, papers = collect_papers()
+        owner, papers, source = collect_papers()
     except Exception as exc:  # keep old data on any failure
-        print(f"error: failed to fetch Scholar data: {exc}", file=sys.stderr)
+        print(f"error: failed to fetch citation data: {exc}", file=sys.stderr)
         return 1
 
-    keys = owner_name_keys(owner)
-    first_author = [p for p in papers if normalize(p[1]) in keys]
+    if source in ("openalex", "anysearch"):
+        first_author = papers  # curated list, already first-author only
+    else:
+        keys = owner_name_keys(owner)
+        first_author = [p for p in papers if normalize(p[1]) in keys]
     total = sum(p[2] for p in first_author)
 
     payload = {
@@ -161,6 +281,7 @@ def main() -> int:
         "papers": [
             {"title": t, "first_author": a, "citations": c} for t, a, c in first_author
         ],
+        "source": source,
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
