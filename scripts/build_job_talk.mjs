@@ -143,27 +143,53 @@ function shanghaiDate(d){
 }
 function stamp(date){
   const day=String(date).replace(/[^0-9-]/g,"");
-  // Sit clear of the deck's fixed page-controls bar (--deck-bottom tall), and
-  // swap to a shorter label on phones so the badge stays one line.
+  const T=window.I18N_TEMP||{full:"Temporary access · {d}",short:"Temp · {d}",dismiss:"Dismiss"};
   const css=document.createElement("style");
   css.textContent=
-    ".jt-temp-badge{position:fixed;left:12px;bottom:calc(var(--deck-bottom,0px) + 10px);"+
-    "z-index:2147483647;pointer-events:none;user-select:none;"+
-    "font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em;"+
-    "color:#3E4542;background:rgba(255,255,255,.9);border:1px solid rgba(31,33,31,.2);"+
-    "border-radius:4px;padding:5px 9px;max-width:calc(100vw - 24px);white-space:nowrap}"+
+    // Second line under the page number: the controls bar grows to hold it and
+    // the slide's bottom padding gives the same height back, so no slide moves.
+    "body.jt-temp-on{--deck-bottom:84px}"+
+    "body.jt-temp-on .deck-page{padding-bottom:12px}"+
+    "body.jt-temp-on .page-status{flex-wrap:wrap;row-gap:1px}"+
+    ".jt-temp-badge{flex:0 0 100%;display:flex;align-items:center;justify-content:center;gap:5px;"+
+    "min-width:0;font:10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.03em;"+
+    "color:#6B726D;white-space:nowrap;user-select:none}"+
     ".jt-temp-badge .jt-s{display:none}"+
-    "@media(max-width:640px){.jt-temp-badge{left:8px;bottom:calc(var(--deck-bottom,0px) + 8px);"+
-    "font-size:10px;padding:4px 7px;max-width:calc(100vw - 16px)}"+
-    ".jt-temp-badge .jt-f{display:none}.jt-temp-badge .jt-s{display:inline}}"+
-    "@media print{.jt-temp-badge{display:none}}";
+    ".jt-temp-close{border:0;background:transparent;color:#98A09B;cursor:pointer;padding:0 3px;"+
+    "font:13px/1 ui-monospace,Menlo,monospace;transition:color .15s}"+
+    ".jt-temp-close:hover{color:#1F211F}"+
+    "@media(max-width:900px){body.jt-temp-on .deck-page{padding-bottom:8px}}"+
+    "@media(max-width:640px){body.jt-temp-on{--deck-bottom:76px}"+
+    ".jt-temp-badge{font-size:9.5px}.jt-temp-badge .jt-f{display:none}.jt-temp-badge .jt-s{display:inline}}";
   document.head.appendChild(css);
+
   const el=document.createElement("div");
   el.className="jt-temp-badge";
   el.setAttribute("data-jt-temp","");
-  el.innerHTML='<span class="jt-f">Temporary access · '+day+' · do not redistribute  /  临时访问 · 请勿转发</span>'+
-    '<span class="jt-s">Temp · '+day+' · 请勿转发</span>';
-  document.body.appendChild(el);
+  el.innerHTML='<span class="jt-f">'+T.full.replace("{d}",day)+'</span>'+
+    '<span class="jt-s">'+T.short.replace("{d}",day)+'</span>';
+  const close=document.createElement("button");
+  close.type="button";
+  close.className="jt-temp-close";
+  close.textContent="×";
+  close.setAttribute("aria-label",T.dismiss);
+  close.title=T.dismiss;
+  el.appendChild(close);
+
+  const shelf=document.querySelector(".page-controls .page-status");
+  if(shelf){
+    shelf.appendChild(el);
+    document.body.classList.add("jt-temp-on");
+    close.addEventListener("click",function(){
+      el.remove();
+      document.body.classList.remove("jt-temp-on");
+    });
+  }else{
+    el.style.cssText="position:fixed;left:12px;bottom:12px;z-index:2147483647;padding:5px 9px;"+
+      "background:rgba(255,255,255,.9);border:1px solid rgba(31,33,31,.2);border-radius:4px";
+    close.addEventListener("click",function(){el.remove();});
+    document.body.appendChild(el);
+  }
 }
 async function decryptWith(raw,meta){
   const key=await crypto.subtle.importKey("raw",raw,"AES-GCM",false,["decrypt"]);
@@ -235,7 +261,7 @@ function gatePage(payload, t) {
 <p class="note">${t.note}</p>
 </main>
 <noscript><p style="text-align:center;font-family:sans-serif;padding:40px">JavaScript is required to decrypt this page.</p></noscript>
-<script>const PAYLOAD=${JSON.stringify(payload)};window.I18N_ERR=${JSON.stringify(t.err)};window.I18N_OFFLINE=${JSON.stringify(t.offline)};${GATE_JS}</script>
+<script>const PAYLOAD=${JSON.stringify(payload)};window.I18N_ERR=${JSON.stringify(t.err)};window.I18N_OFFLINE=${JSON.stringify(t.offline)};window.I18N_TEMP=${JSON.stringify(t.temp || null)};${GATE_JS}</script>
 </body></html>
 `;
 }
@@ -303,6 +329,7 @@ async function main() {
       note: "Decrypted locally in your browser · AES-256-GCM",
       err: "Incorrect or expired password.",
       offline: "Temporary passwords require a network connection.",
+      temp: { full: "Temporary access · {d} · do not redistribute", short: "Temp · {d}", dismiss: "Dismiss temporary-access note" },
     },
     "index-zh.html": {
       lang: "zh", docTitle: "求职报告 — 李展利", eyebrow: "求职报告 · 私密幻灯片",
@@ -312,6 +339,7 @@ async function main() {
       note: "在您的浏览器本地解密 · AES-256-GCM",
       err: "密码错误或已过期。",
       offline: "使用临时密码需要联网校验时间。",
+      temp: { full: "临时访问 · {d} · 请勿转发", short: "临时 · {d}", dismiss: "关闭临时访问标记" },
     },
   };
   for (const deck of decks) {
