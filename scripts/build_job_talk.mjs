@@ -90,26 +90,35 @@ async function encryptPayload(masterRaw, plaintext) {
 
 const GATE_CSS = `
 *{box-sizing:border-box;margin:0}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px}
-.card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.3);
-padding:40px;width:100%;max-width:400px;text-align:center}
-.lock{font-size:44px;margin-bottom:12px}
-h1{font-size:20px;color:#2d3748;margin-bottom:6px}
-.sub{font-size:13px;color:#718096;margin-bottom:24px}
-input[type=password]{width:100%;padding:12px 14px;border:2px solid #e2e8f0;border-radius:10px;
-font-size:16px;outline:none;transition:border-color .2s;text-align:center;letter-spacing:.5px}
-input[type=password]:focus{border-color:#667eea}
-button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:10px;cursor:pointer;
-background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-size:16px;font-weight:600}
-button:disabled{opacity:.6;cursor:wait}
-.err{color:#e53e3e;font-size:13px;margin-top:12px;min-height:18px}
-.remember{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;
-font-size:13px;color:#718096;cursor:pointer}
-.remember input{width:auto}
-.shake{animation:shake .4s}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+body{min-height:100vh;display:flex;justify-content:center;
+font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+background:#fbfbfa;color:#1a1a1a;padding:0 20px}
+.page{width:100%;max-width:380px;padding-top:16vh;text-align:center}
+.eyebrow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#8a8a8a;margin-bottom:18px}
+h1{font-size:30px;font-weight:400}
+.author{font-size:15px;color:#555;margin-top:10px;font-style:italic}
+.rule{width:44px;border:0;border-top:1px solid #c9c9c9;margin:28px auto}
+.field-label{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9a9a9a;margin-bottom:10px}
+input[type=password]{width:100%;padding:10px 4px;border:0;border-bottom:1px solid #c9c9c9;
+background:transparent;font-size:17px;text-align:center;letter-spacing:.35em;outline:none;
+font-family:inherit;transition:border-color .2s}
+input[type=password]:focus{border-color:#1a1a1a}
+button{margin-top:22px;padding:10px 34px;border:1px solid #1a1a1a;background:#1a1a1a;color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
+transition:background .2s,color .2s}
+button:hover{background:#fff;color:#1a1a1a}
+button:disabled{opacity:.5;cursor:wait}
+.remember{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:20px;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+font-size:12px;color:#8a8a8a;cursor:pointer}
+.remember input{accent-color:#1a1a1a}
+.err{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+font-size:12px;color:#a33;min-height:16px;margin-top:14px}
+.note{margin-top:56px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+font-size:11px;color:#b0b0b0;letter-spacing:.04em}
 `;
 
 const GATE_JS = `
@@ -168,34 +177,38 @@ window.addEventListener("DOMContentLoaded",async()=>{
       if(document.getElementById("rem").checked)remember(raw);
       try{await decryptWith(raw);}catch(e){err.textContent="Decrypt failed.";}
     }else{
-      err.textContent="Wrong password (or expired temporary password).";
-      form.classList.remove("shake");void form.offsetWidth;form.classList.add("shake");
+      err.textContent=window.I18N_ERR;
       input.select();
     }
   });
 });
 `;
 
-function gatePage(payload, subtitle) {
+function gatePage(payload, t) {
   return `<!DOCTYPE html>
-<html lang="en"><head>
+<html lang="${t.lang}"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Protected Page</title>
+<title>${t.docTitle}</title>
 <style>${GATE_CSS}</style>
 </head><body>
-<form class="card" id="gate" autocomplete="off">
-<div class="lock">&#128274;</div>
-<h1>Protected Page</h1>
-<p class="sub">${subtitle}</p>
-<input type="password" id="pwd" placeholder="Password" autocomplete="off" autofocus>
-<button type="submit" id="go">Unlock</button>
-<label class="remember"><input type="checkbox" id="rem" checked> Remember me for 30 days</label>
-<div class="err" id="err"></div>
+<main class="page">
+<p class="eyebrow">${t.eyebrow}</p>
+<h1>${t.title}</h1>
+<p class="author">${t.author}</p>
+<hr class="rule">
+<form id="gate" autocomplete="off">
+<label class="field-label" for="pwd">${t.label}</label>
+<input type="password" id="pwd" autocomplete="off" autofocus>
+<div><button type="submit" id="go">${t.button}</button></div>
+<label class="remember"><input type="checkbox" id="rem" checked> ${t.remember}</label>
+<p class="err" id="err"></p>
 </form>
-<noscript><p style="color:#fff;text-align:center">JavaScript is required to decrypt this page.</p></noscript>
-<script>const PAYLOAD=${JSON.stringify(payload)};${GATE_JS}</script>
+<p class="note">${t.note}</p>
+</main>
+<noscript><p style="text-align:center;font-family:sans-serif;padding:40px">JavaScript is required to decrypt this page.</p></noscript>
+<script>const PAYLOAD=${JSON.stringify(payload)};window.I18N_ERR=${JSON.stringify(t.err)};${GATE_JS}</script>
 </body></html>
 `;
 }
@@ -254,15 +267,26 @@ async function main() {
   }
 
   mkdirSync(OUT, { recursive: true });
+  const T = {
+    "index.html": {
+      lang: "en", docTitle: "Job Talk — Zhanli Li", eyebrow: "Private Slides",
+      title: "Job Talk", author: "Zhanli Li", label: "Password", button: "Unlock",
+      remember: "Remember me for 30 days",
+      note: "Decrypted locally in your browser · AES-256-GCM",
+      err: "Incorrect or expired password.",
+    },
+    "index-zh.html": {
+      lang: "zh", docTitle: "求职报告 — 李展利", eyebrow: "私密幻灯片",
+      title: "求职报告", author: "李展利", label: "密码", button: "进 入",
+      remember: "30 天内记住我",
+      note: "在您的浏览器本地解密 · AES-256-GCM",
+      err: "密码错误或已过期。",
+    },
+  };
   for (const deck of decks) {
     const html = readFileSync(join(SRC, deck), "utf8");
     const payload = { v: 1, perm, daily: dailyWraps, ...(await encryptPayload(masterRaw, html)) };
-    const page = gatePage(
-      payload,
-      deck === "index-zh.html"
-        ? "Zhanli Li — Job Talk（中文）· enter password / 输入密码"
-        : "Zhanli Li — Job Talk · enter password"
-    );
+    const page = gatePage(payload, T[deck]);
     writeFileSync(join(OUT, deck), page);
     console.log(`wrote ${join(OUT, deck)} (${(page.length / 1e6).toFixed(1)} MB)`);
   }
@@ -274,7 +298,14 @@ async function main() {
     daily: {},
     ...(await encryptPayload(adminKeyRaw, adminContent(dailyPasswords))),
   };
-  const adminPage = gatePage(adminPayload, "Temp password generator — permanent password only");
+  const adminPage = gatePage(adminPayload, {
+    lang: "en", docTitle: "Temp Passwords — Job Talk", eyebrow: "Restricted",
+    title: "Temp Passwords", author: "Job Talk · Zhanli Li",
+    label: "Permanent password", button: "Unlock",
+    remember: "Remember me for 30 days",
+    note: "Generator page — permanent password only",
+    err: "Incorrect password.",
+  });
   writeFileSync(join(OUT, "admin.html"), adminPage);
   console.log(`wrote ${join(OUT, "admin.html")} (generator, permanent password only)`);
   console.log(`temp passwords cover ${Object.keys(dailyWraps).length} days starting ${shanghaiDate(new Date())}`);
