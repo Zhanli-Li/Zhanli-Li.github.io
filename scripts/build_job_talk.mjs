@@ -142,13 +142,27 @@ function shanghaiDate(d){
   return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Shanghai",year:"numeric",month:"2-digit",day:"2-digit"}).format(d);
 }
 function stamp(date){
+  const day=String(date).replace(/[^0-9-]/g,"");
+  // Sit clear of the deck's fixed page-controls bar (--deck-bottom tall), and
+  // swap to a shorter label on phones so the badge stays one line.
+  const css=document.createElement("style");
+  css.textContent=
+    ".jt-temp-badge{position:fixed;left:12px;bottom:calc(var(--deck-bottom,0px) + 10px);"+
+    "z-index:2147483647;pointer-events:none;user-select:none;"+
+    "font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em;"+
+    "color:#3E4542;background:rgba(255,255,255,.9);border:1px solid rgba(31,33,31,.2);"+
+    "border-radius:4px;padding:5px 9px;max-width:calc(100vw - 24px);white-space:nowrap}"+
+    ".jt-temp-badge .jt-s{display:none}"+
+    "@media(max-width:640px){.jt-temp-badge{left:8px;bottom:calc(var(--deck-bottom,0px) + 8px);"+
+    "font-size:10px;padding:4px 7px;max-width:calc(100vw - 16px)}"+
+    ".jt-temp-badge .jt-f{display:none}.jt-temp-badge .jt-s{display:inline}}"+
+    "@media print{.jt-temp-badge{display:none}}";
+  document.head.appendChild(css);
   const el=document.createElement("div");
+  el.className="jt-temp-badge";
   el.setAttribute("data-jt-temp","");
-  el.textContent="Temporary access · "+date+" · do not redistribute  /  临时访问 · 请勿转发";
-  el.style.cssText="position:fixed;left:12px;bottom:12px;z-index:2147483647;pointer-events:none;"+
-    "user-select:none;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em;"+
-    "color:#3E4542;background:rgba(255,255,255,.88);border:1px solid rgba(31,33,31,.2);"+
-    "border-radius:4px;padding:5px 9px;max-width:calc(100vw - 24px)";
+  el.innerHTML='<span class="jt-f">Temporary access · '+day+' · do not redistribute  /  临时访问 · 请勿转发</span>'+
+    '<span class="jt-s">Temp · '+day+' · 请勿转发</span>';
   document.body.appendChild(el);
 }
 async function decryptWith(raw,meta){
