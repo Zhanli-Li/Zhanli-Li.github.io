@@ -8,6 +8,11 @@
  *   - one random temporary password per day, rotating at 00:00 Asia/Shanghai.
  * An admin page (permanent password only) lists every day's temp password.
  *
+ * Nothing is remembered between visits: no key is ever written to
+ * localStorage, so a temporary password cannot outlive the tab. Unlocking with
+ * a daily password stamps the decrypted page with that date, so a screenshot
+ * or recording shows which day's password was used.
+ *
  * Usage:
  *   node scripts/build_job_talk.mjs --src /path/to/job-talk --password '<perm>'
  *   # or: JOBTALK_PASSWORD='<perm>' node scripts/build_job_talk.mjs --src ...
@@ -112,10 +117,6 @@ font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
 transition:background .2s,color .2s}
 button:hover{background:#1a1a1a;color:#fff}
 button:disabled{opacity:.5;cursor:wait}
-.remember{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:20px;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-font-size:12px;color:#8a8a8a;cursor:pointer}
-.remember input{accent-color:#1a1a1a}
 .err{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 font-size:12px;color:#a33;min-height:16px;margin-top:14px}
 .note{margin-top:56px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -125,7 +126,6 @@ font-size:11px;color:#b0b0b0;letter-spacing:.04em}
 const GATE_JS = `
 const b64d=(s)=>Uint8Array.from(atob(s),(c)=>c.charCodeAt(0));
 const dec=new TextDecoder();
-const LS_KEY="jobtalk_master";
 async function derive(pwd,salt,iter){
   const base=await crypto.subtle.importKey("raw",new TextEncoder().encode(pwd),"PBKDF2",false,["deriveKey"]);
   return crypto.subtle.deriveKey({name:"PBKDF2",salt,iterations:iter,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["decrypt"]);
@@ -141,20 +141,21 @@ async function tryUnwrap(entry,pwd){
 function shanghaiDate(d){
   return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Shanghai",year:"numeric",month:"2-digit",day:"2-digit"}).format(d);
 }
-async function decryptWith(raw){
+function stamp(date){
+  const el=document.createElement("div");
+  el.setAttribute("data-jt-temp","");
+  el.textContent="Temporary access · "+date+" · do not redistribute  /  临时访问 · 请勿转发";
+  el.style.cssText="position:fixed;left:12px;bottom:12px;z-index:2147483647;pointer-events:none;"+
+    "user-select:none;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em;"+
+    "color:#3E4542;background:rgba(255,255,255,.88);border:1px solid rgba(31,33,31,.2);"+
+    "border-radius:4px;padding:5px 9px;max-width:calc(100vw - 24px)";
+  document.body.appendChild(el);
+}
+async function decryptWith(raw,meta){
   const key=await crypto.subtle.importKey("raw",raw,"AES-GCM",false,["decrypt"]);
   const html=dec.decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:b64d(PAYLOAD.iv)},key,b64d(PAYLOAD.ct)));
   document.open();document.write(html);document.close();
-}
-function remember(raw){
-  localStorage.setItem(LS_KEY,JSON.stringify({k:btoa(String.fromCharCode(...raw)),exp:Date.now()+30*864e5}));
-}
-function recalled(){
-  try{
-    const v=JSON.parse(localStorage.getItem(LS_KEY)||"null");
-    if(v&&v.exp>Date.now())return Uint8Array.from(atob(v.k),(c)=>c.charCodeAt(0));
-  }catch(e){}
-  return null;
+  if(meta&&meta.via==="daily")stamp(meta.date);
 }
 async function serverShanghaiDate(){
   try{
@@ -166,29 +167,28 @@ async function serverShanghaiDate(){
 }
 async function unlock(pwd){
   let raw=await tryUnwrap(PAYLOAD.perm,pwd);
-  if(!raw){
-    const today=await serverShanghaiDate();
-    if(!today)return "offline";
-    const e=PAYLOAD.daily[today];
-    if(e)raw=await tryUnwrap(e,pwd);
+  if(raw)return{raw,via:"perm"};
+  const today=await serverShanghaiDate();
+  if(!today)return "offline";
+  const e=PAYLOAD.daily[today];
+  if(e){
+    raw=await tryUnwrap(e,pwd);
+    if(raw)return{raw,via:"daily",date:today};
   }
-  return raw;
+  return null;
 }
-window.addEventListener("DOMContentLoaded",async()=>{
-  const saved=recalled();
-  if(saved){try{await decryptWith(saved);}catch(e){localStorage.removeItem(LS_KEY);}return;}
+window.addEventListener("DOMContentLoaded",()=>{
   const form=document.getElementById("gate"),input=document.getElementById("pwd"),
         btn=document.getElementById("go"),err=document.getElementById("err");
   form.addEventListener("submit",async(ev)=>{
     ev.preventDefault();
     btn.disabled=true;err.textContent="";
-    const raw=await unlock(input.value.trim());
+    const res=await unlock(input.value.trim());
     btn.disabled=false;
-    if(raw==="offline"){
+    if(res==="offline"){
       err.textContent=window.I18N_OFFLINE;
-    }else if(raw){
-      if(document.getElementById("rem").checked)remember(raw);
-      try{await decryptWith(raw);}catch(e){err.textContent="Decrypt failed.";}
+    }else if(res){
+      try{await decryptWith(res.raw,res);}catch(e){err.textContent="Decrypt failed.";}
     }else{
       err.textContent=window.I18N_ERR;
       input.select();
@@ -216,7 +216,6 @@ function gatePage(payload, t) {
 <label class="field-label" for="pwd">${t.label}</label>
 <input type="password" id="pwd" autocomplete="off" autofocus>
 <div><button type="submit" id="go">${t.button}</button></div>
-<label class="remember"><input type="checkbox" id="rem" checked> ${t.remember}</label>
 <p class="err" id="err"></p>
 </form>
 <p class="note">${t.note}</p>
@@ -287,7 +286,6 @@ async function main() {
       title: "Agentic Training, Document Intelligence,<br>Quantitative Finance",
       author: "Zhanli Li", affil: "LAMDA, Nanjing University",
       label: "Password", button: "Unlock",
-      remember: "Remember me for 30 days",
       note: "Decrypted locally in your browser · AES-256-GCM",
       err: "Incorrect or expired password.",
       offline: "Temporary passwords require a network connection.",
@@ -297,7 +295,6 @@ async function main() {
       title: "智能体训练 · 文档智能 · 量化金融",
       author: "李展利", affil: "南京大学 LAMDA 组",
       label: "密码", button: "进 入",
-      remember: "30 天内记住我",
       note: "在您的浏览器本地解密 · AES-256-GCM",
       err: "密码错误或已过期。",
       offline: "使用临时密码需要联网校验时间。",
@@ -322,7 +319,6 @@ async function main() {
     lang: "en", docTitle: "Temp Passwords — Job Talk", eyebrow: "Restricted",
     title: "Temp Passwords", author: "Zhanli Li", affil: "Job Talk · Private Slides",
     label: "Permanent password", button: "Unlock",
-    remember: "Remember me for 30 days",
     note: "Generator page — permanent password only",
     err: "Incorrect password.",
     offline: "Temporary passwords require a network connection.",
