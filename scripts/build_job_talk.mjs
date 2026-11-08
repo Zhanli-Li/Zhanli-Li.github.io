@@ -93,11 +93,12 @@ const GATE_CSS = `
 body{min-height:100vh;display:flex;justify-content:center;
 font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
 background:#fbfbfa;color:#1a1a1a;padding:0 20px}
-.page{width:100%;max-width:380px;padding-top:16vh;text-align:center}
+.page{width:100%;max-width:460px;padding-top:16vh;text-align:center}
 .eyebrow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#8a8a8a;margin-bottom:18px}
-h1{font-size:30px;font-weight:400}
-.author{font-size:15px;color:#555;margin-top:10px;font-style:italic}
+h1{font-size:21px;font-weight:400;line-height:1.5}
+.author{font-size:15px;color:#555;margin-top:14px;font-style:italic}
+.affil{font-size:12.5px;color:#888;margin-top:5px;letter-spacing:.02em}
 .rule{width:44px;border:0;border-top:1px solid #c9c9c9;margin:28px auto}
 .field-label{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9a9a9a;margin-bottom:10px}
@@ -105,11 +106,11 @@ input[type=password]{width:100%;padding:10px 4px;border:0;border-bottom:1px soli
 background:transparent;font-size:17px;text-align:center;letter-spacing:.35em;outline:none;
 font-family:inherit;transition:border-color .2s}
 input[type=password]:focus{border-color:#1a1a1a}
-button{margin-top:22px;padding:10px 34px;border:1px solid #1a1a1a;background:#1a1a1a;color:#fff;
+button{margin-top:22px;padding:10px 34px;border:1px solid #1a1a1a;background:transparent;color:#1a1a1a;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
 transition:background .2s,color .2s}
-button:hover{background:#fff;color:#1a1a1a}
+button:hover{background:#1a1a1a;color:#fff}
 button:disabled{opacity:.5;cursor:wait}
 .remember{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:20px;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -197,6 +198,7 @@ function gatePage(payload, t) {
 <p class="eyebrow">${t.eyebrow}</p>
 <h1>${t.title}</h1>
 <p class="author">${t.author}</p>
+<p class="affil">${t.affil}</p>
 <hr class="rule">
 <form id="gate" autocomplete="off">
 <label class="field-label" for="pwd">${t.label}</label>
@@ -269,15 +271,19 @@ async function main() {
   mkdirSync(OUT, { recursive: true });
   const T = {
     "index.html": {
-      lang: "en", docTitle: "Job Talk — Zhanli Li", eyebrow: "Private Slides",
-      title: "Job Talk", author: "Zhanli Li", label: "Password", button: "Unlock",
+      lang: "en", docTitle: "Job Talk — Zhanli Li", eyebrow: "Job Talk · Private Slides",
+      title: "Agentic Training, Document Intelligence,<br>Quantitative Finance",
+      author: "Zhanli Li", affil: "LAMDA, Nanjing University",
+      label: "Password", button: "Unlock",
       remember: "Remember me for 30 days",
       note: "Decrypted locally in your browser · AES-256-GCM",
       err: "Incorrect or expired password.",
     },
     "index-zh.html": {
-      lang: "zh", docTitle: "求职报告 — 李展利", eyebrow: "私密幻灯片",
-      title: "求职报告", author: "李展利", label: "密码", button: "进 入",
+      lang: "zh", docTitle: "求职报告 — 李展利", eyebrow: "求职报告 · 私密幻灯片",
+      title: "智能体训练 · 文档智能 · 量化金融",
+      author: "李展利", affil: "南京大学 LAMDA 组",
+      label: "密码", button: "进 入",
       remember: "30 天内记住我",
       note: "在您的浏览器本地解密 · AES-256-GCM",
       err: "密码错误或已过期。",
@@ -300,7 +306,7 @@ async function main() {
   };
   const adminPage = gatePage(adminPayload, {
     lang: "en", docTitle: "Temp Passwords — Job Talk", eyebrow: "Restricted",
-    title: "Temp Passwords", author: "Job Talk · Zhanli Li",
+    title: "Temp Passwords", author: "Zhanli Li", affil: "Job Talk · Private Slides",
     label: "Permanent password", button: "Unlock",
     remember: "Remember me for 30 days",
     note: "Generator page — permanent password only",
