@@ -47,7 +47,7 @@ if (!SRC || !PASSWORD) {
   process.exit(1);
 }
 
-const PBKDF2_ITER = 310_000; // OWASP recommendation for SHA-256
+const PBKDF2_ITER = 600_000; // OWASP recommendation for SHA-256
 const ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; // no ambiguous 0/O/1/I/L
 
 function shanghaiDate(date) {
