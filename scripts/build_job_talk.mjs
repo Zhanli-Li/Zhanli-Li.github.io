@@ -156,10 +156,20 @@ function recalled(){
   }catch(e){}
   return null;
 }
+async function serverShanghaiDate(){
+  try{
+    const r=await fetch(location.origin+"/favicon.ico?ts="+Date.now(),{method:"HEAD",cache:"no-store"});
+    const d=r.headers.get("date");
+    if(d)return shanghaiDate(new Date(d));
+  }catch(e){}
+  return null;
+}
 async function unlock(pwd){
   let raw=await tryUnwrap(PAYLOAD.perm,pwd);
   if(!raw){
-    const e=PAYLOAD.daily[shanghaiDate(new Date())];
+    const today=await serverShanghaiDate();
+    if(!today)return "offline";
+    const e=PAYLOAD.daily[today];
     if(e)raw=await tryUnwrap(e,pwd);
   }
   return raw;
@@ -174,7 +184,9 @@ window.addEventListener("DOMContentLoaded",async()=>{
     btn.disabled=true;err.textContent="";
     const raw=await unlock(input.value.trim());
     btn.disabled=false;
-    if(raw){
+    if(raw==="offline"){
+      err.textContent=window.I18N_OFFLINE;
+    }else if(raw){
       if(document.getElementById("rem").checked)remember(raw);
       try{await decryptWith(raw);}catch(e){err.textContent="Decrypt failed.";}
     }else{
@@ -210,7 +222,7 @@ function gatePage(payload, t) {
 <p class="note">${t.note}</p>
 </main>
 <noscript><p style="text-align:center;font-family:sans-serif;padding:40px">JavaScript is required to decrypt this page.</p></noscript>
-<script>const PAYLOAD=${JSON.stringify(payload)};window.I18N_ERR=${JSON.stringify(t.err)};${GATE_JS}</script>
+<script>const PAYLOAD=${JSON.stringify(payload)};window.I18N_ERR=${JSON.stringify(t.err)};window.I18N_OFFLINE=${JSON.stringify(t.offline)};${GATE_JS}</script>
 </body></html>
 `;
 }
@@ -278,6 +290,7 @@ async function main() {
       remember: "Remember me for 30 days",
       note: "Decrypted locally in your browser · AES-256-GCM",
       err: "Incorrect or expired password.",
+      offline: "Temporary passwords require a network connection.",
     },
     "index-zh.html": {
       lang: "zh", docTitle: "求职报告 — 李展利", eyebrow: "求职报告 · 私密幻灯片",
@@ -287,6 +300,7 @@ async function main() {
       remember: "30 天内记住我",
       note: "在您的浏览器本地解密 · AES-256-GCM",
       err: "密码错误或已过期。",
+      offline: "使用临时密码需要联网校验时间。",
     },
   };
   for (const deck of decks) {
@@ -311,6 +325,7 @@ async function main() {
     remember: "Remember me for 30 days",
     note: "Generator page — permanent password only",
     err: "Incorrect password.",
+    offline: "Temporary passwords require a network connection.",
   });
   writeFileSync(join(OUT, "admin.html"), adminPage);
   console.log(`wrote ${join(OUT, "admin.html")} (generator, permanent password only)`);
