@@ -1,6 +1,6 @@
 {
   "user": "Zhanli-Li",
-  "stars": 234,
+  "stars": 236,
   "owned_repos": 14,
   "top_repos": [
     {
@@ -9,11 +9,11 @@
     },
     {
       "name": "DeepRead",
-      "stars": 64
+      "stars": 65
     },
     {
       "name": "Data-World",
-      "stars": 35
+      "stars": 36
     },
     {
       "name": "MuDABench",
@@ -44,5 +44,5 @@
       "stars": 1
     }
   ],
-  "updated": "2026-11-05T14:45:44Z"
+  "updated": "2026-11-20T15:35:47Z"
 }
