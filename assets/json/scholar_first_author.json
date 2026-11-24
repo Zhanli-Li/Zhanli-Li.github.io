@@ -1,7 +1,7 @@
 {
   "owner": "Zhanli Li",
   "scholar_user": "LW5bAdAAAAAJ",
-  "citations": 0,
+  "citations": 3,
   "first_author_papers": 4,
   "papers": [
     {
@@ -17,7 +17,7 @@
     {
       "title": "Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA",
       "first_author": "Z Li",
-      "citations": 0
+      "citations": 3
     },
     {
       "title": "Data World: Scaling Data Environments from Scratch",
@@ -26,5 +26,5 @@
     }
   ],
   "source": "anysearch",
-  "updated": "2026-11-23T18:25:41Z"
+  "updated": "2026-11-24T17:55:04Z"
 }
