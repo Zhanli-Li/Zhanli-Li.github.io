@@ -251,6 +251,8 @@ def collect_papers():
     try:
         print("source: AnySearch")
         owner, papers = fetch_anysearch()
+        if not any(p[2] for p in papers):
+            raise RuntimeError("AnySearch found no 'Cited by' counts for any paper")
         return owner, papers, "anysearch"
     except Exception as exc:
         print(f"warning: AnySearch failed ({exc})", file=sys.stderr)
