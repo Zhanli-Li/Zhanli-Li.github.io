@@ -1,24 +1,27 @@
 #!/usr/bin/env python3
-"""Update the first-author citation count.
+"""Update the Google Scholar citation count for the profile badge.
+
+Every paper on the profile is first-authored by the owner, so the badge
+shows the profile's total citation count.
 
 Data sources, in order of preference:
 1. SerpApi google_scholar_author API (when SERPAPI_API_KEY is set) —
    reliable from GitHub Actions, where Google blocks direct scraping.
 2. Direct scraping of the public Scholar profile (local fallback;
    skipped in CI, where datacenter IPs are captcha-blocked).
+   Both of these read the profile's own "Cited by" total.
 3. AnySearch (https://anysearch.com): parses Google-Scholar-style
    "Cited by N" snippets from general search results. Works anonymously
    (ANYSEARCH_API_KEY raises the daily quota) and matches Scholar counts
    more closely than citation databases for very recent citations.
-4. OpenAlex REST API: sums cited_by_count over a curated list of
-   first-author paper DOIs. Free and reachable from GitHub Actions,
+4. OpenAlex REST API: sums cited_by_count over a curated list of the
+   profile's paper DOIs. Free and reachable from GitHub Actions,
    so it is the last-resort source there.
 
-Only papers where the profile owner is first author are counted (the
-AnySearch/OpenAlex list is curated to first-author papers, so no
-filtering is needed for them). The result goes to
-assets/json/scholar_first_author.json, which powers the "First Author
-Citations" shields.io badge on the about page.
+The two fallback sources sum a curated per-paper list (all papers on the
+profile, so the sum equals the profile total). The result goes to
+assets/json/scholar_citations.json, which powers the "Citations"
+shields.io badge on the about page.
 """
 import html
 import json
@@ -32,7 +35,7 @@ from pathlib import Path
 
 SCHOLAR_USER = "LW5bAdAAAAAJ"
 REPO_ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = REPO_ROOT / "assets" / "json" / "scholar_first_author.json"
+OUTPUT = REPO_ROOT / "assets" / "json" / "scholar_citations.json"
 PAGE_SIZE = 100
 MAX_PAGES = 5
 USER_AGENT = (
@@ -42,8 +45,9 @@ USER_AGENT = (
 
 OWNER_NAME = "Zhanli Li"
 OPENALEX_MAILTO = "lizhanli@stu.zuel.edu.cn"
-# Curated first-author papers as (DOI, title); add new papers here.
-FIRST_AUTHOR_PAPERS = [
+# Curated papers on the profile as (DOI, title); add new papers here.
+# Only used by the AnySearch/OpenAlex fallback sources.
+PROFILE_PAPERS = [
     (
         "10.1016/j.frl.2025.107127",
         "ESG rating disagreement and corporate Total Factor Productivity: "
@@ -75,48 +79,40 @@ def normalize(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", name.lower())
 
 
-def owner_name_keys(full_name: str) -> set:
-    """Acceptable first-author renderings, e.g. 'Zhanli Li' -> {'zhanlili', 'zli'}."""
-    parts = full_name.split()
-    surname, given = parts[-1], parts[:-1]
-    initials = "".join(p[0] for p in re.split(r"[\s-]+", " ".join(given)) if p)
-    return {normalize(full_name), normalize(f"{initials} {surname}")}
-
-
 def strip_tags(text: str) -> str:
     return html.unescape(re.sub(r"<[^>]+>", "", text)).strip()
 
 
 def parse_profile(page_html: str):
-    """Return (owner_name, rows) where rows are (title, first_author, citations)."""
+    """Return (owner_name, total_citations, rows) where rows are
+    (title, citations). total_citations is the profile's 'Cited by' total."""
     m = re.search(r'<div id="gsc_prf_in"[^>]*>(.*?)</div>', page_html, re.S)
     owner = strip_tags(m.group(1)) if m else ""
+    total_m = re.search(r'gsc_rsb_std">(\d+)', page_html)
+    total = int(total_m.group(1)) if total_m else None
     rows = []
     for row in re.findall(r'<tr class="gsc_a_tr">(.*?)</tr>', page_html, re.S):
         title_m = re.search(r'gsc_a_at">(.*?)</a>', row, re.S)
-        gray = re.findall(r'class="gs_gray">(.*?)</div>', row, re.S)
         cite_m = re.search(r'gsc_a_ac[^>]*>(.*?)</a>', row, re.S)
-        if not (title_m and gray):
+        if not title_m:
             continue
-        authors = strip_tags(gray[0])
-        first_author = re.split(r",| and ", authors)[0].strip()
         cites = cite_m.group(1).strip() if cite_m else ""
-        rows.append((strip_tags(title_m.group(1)), first_author, int(cites) if cites.isdigit() else 0))
-    return owner, rows
+        rows.append((strip_tags(title_m.group(1)), int(cites) if cites.isdigit() else 0))
+    return owner, total, rows
 
 
 def fetch_direct():
     """Scrape the public Scholar profile. Works from residential IPs;
     GitHub Actions runners are usually captcha-blocked."""
-    owner, papers, seen_titles = "", [], set()
+    owner, papers, seen_titles, total = "", [], set(), None
     for page in range(MAX_PAGES):
         url = (
             f"https://scholar.google.com/citations?user={SCHOLAR_USER}"
             f"&hl=en&cstart={page * PAGE_SIZE}&pagesize={PAGE_SIZE}"
         )
-        owner_name, rows = parse_profile(fetch(url))
+        owner_name, page_total, rows = parse_profile(fetch(url))
         if page == 0:
-            owner = owner_name
+            owner, total = owner_name, page_total
             if not owner:
                 raise RuntimeError("could not read profile owner name")
         if not rows:
@@ -129,7 +125,9 @@ def fetch_direct():
         time.sleep(2)
     if not papers:
         raise RuntimeError("no papers parsed; profile page may be captcha-blocked")
-    return owner, papers
+    if total is None:
+        total = sum(p[1] for p in papers)
+    return owner, papers, total
 
 
 def fetch_serpapi(api_key: str):
@@ -139,7 +137,7 @@ def fetch_serpapi(api_key: str):
         "https://serpapi.com/search.json?engine=google_scholar_author"
         f"&author_id={SCHOLAR_USER}&hl=en&num={PAGE_SIZE}&api_key={api_key}"
     )
-    owner, papers = "", []
+    owner, papers, total = "", [], None
     for _ in range(MAX_PAGES):
         data = json.loads(fetch(url))
         if "error" in data:
@@ -148,11 +146,13 @@ def fetch_serpapi(api_key: str):
             owner = (data.get("author") or {}).get("name", "")
             if not owner:
                 raise RuntimeError("SerpApi response has no author name")
+            table = (data.get("cited_by") or {}).get("table") or []
+            if table:
+                total = ((table[0].get("citations") or {}).get("all"))
         articles = data.get("articles") or []
         for art in articles:
-            first_author = re.split(r",| and ", art.get("authors", ""))[0].strip()
             cited = (art.get("cited_by") or {}).get("value", 0)
-            papers.append((art.get("title", ""), first_author, int(cited)))
+            papers.append((art.get("title", ""), int(cited)))
         next_url = (data.get("serpapi_pagination") or {}).get("next")
         if not next_url:
             break
@@ -160,7 +160,9 @@ def fetch_serpapi(api_key: str):
         time.sleep(1)
     if not papers:
         raise RuntimeError("SerpApi returned no articles")
-    return owner, papers
+    if total is None:
+        total = sum(p[1] for p in papers)
+    return owner, papers, total
 
 
 def fetch_anysearch():
@@ -175,7 +177,7 @@ def fetch_anysearch():
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
     papers = []
-    for _, title in FIRST_AUTHOR_PAPERS:
+    for _, title in PROFILE_PAPERS:
         body = json.dumps(
             {"query": f"{title} citations google scholar", "max_results": 5}
         ).encode("utf-8")
@@ -202,13 +204,13 @@ def fetch_anysearch():
                 cited = n if cited is None else max(cited, n)
         if not matched:
             raise RuntimeError(f"AnySearch returned no result matching: {title}")
-        papers.append((title, "Z Li", cited if cited is not None else 0))
+        papers.append((title, cited if cited is not None else 0))
         time.sleep(1)
-    return OWNER_NAME, papers
+    return OWNER_NAME, papers, sum(p[1] for p in papers)
 
 
 def fetch_openalex():
-    """Sum per-paper cited_by_count over the curated first-author DOI list.
+    """Sum per-paper cited_by_count over the curated profile DOI list.
     OpenAlex is free and reachable from GitHub Actions runners (unlike
     Google Scholar). Uses the filter endpoint, whose search index is
     fresher than the per-work entity endpoint. Without an API key,
@@ -217,7 +219,7 @@ def fetch_openalex():
     api_key = os.environ.get("OPENALEX_API_KEY", "").strip()
     key_param = f"&api_key={api_key}" if api_key else ""
     papers = []
-    for doi, title in FIRST_AUTHOR_PAPERS:
+    for doi, title in PROFILE_PAPERS:
         url = (
             f"https://api.openalex.org/works?filter=doi:{doi}"
             f"&select=display_name,cited_by_count&mailto={OPENALEX_MAILTO}{key_param}"
@@ -226,62 +228,55 @@ def fetch_openalex():
         results = data.get("results") or []
         if not results:
             raise RuntimeError(f"OpenAlex has no record for DOI {doi}")
-        papers.append((title, "Z Li", int(results[0]["cited_by_count"])))
+        papers.append((title, int(results[0]["cited_by_count"])))
         time.sleep(0.5)
-    return OWNER_NAME, papers
+    return OWNER_NAME, papers, sum(p[1] for p in papers)
 
 
 def collect_papers():
-    """Return (owner, papers, source)."""
+    """Return (owner, papers, total_citations, source)."""
     api_key = os.environ.get("SERPAPI_API_KEY", "").strip()
     if api_key:
         try:
             print("source: SerpApi")
-            owner, papers = fetch_serpapi(api_key)
-            return owner, papers, "serpapi"
+            owner, papers, total = fetch_serpapi(api_key)
+            return owner, papers, total, "serpapi"
         except Exception as exc:
             print(f"warning: SerpApi failed ({exc})", file=sys.stderr)
     if os.environ.get("GITHUB_ACTIONS") != "true":
         try:
             print("source: direct scraping")
-            owner, papers = fetch_direct()
-            return owner, papers, "google_scholar"
+            owner, papers, total = fetch_direct()
+            return owner, papers, total, "google_scholar"
         except Exception as exc:
             print(f"warning: direct scraping failed ({exc})", file=sys.stderr)
     try:
         print("source: AnySearch")
-        owner, papers = fetch_anysearch()
-        if not any(p[2] for p in papers):
+        owner, papers, total = fetch_anysearch()
+        if not total:
             raise RuntimeError("AnySearch found no 'Cited by' counts for any paper")
-        return owner, papers, "anysearch"
+        return owner, papers, total, "anysearch"
     except Exception as exc:
         print(f"warning: AnySearch failed ({exc})", file=sys.stderr)
     print("source: OpenAlex")
-    owner, papers = fetch_openalex()
-    return owner, papers, "openalex"
+    owner, papers, total = fetch_openalex()
+    return owner, papers, total, "openalex"
 
 
 def main() -> int:
     try:
-        owner, papers, source = collect_papers()
+        owner, papers, total, source = collect_papers()
     except Exception as exc:  # keep old data on any failure
         print(f"error: failed to fetch citation data: {exc}", file=sys.stderr)
         return 1
-
-    if source in ("openalex", "anysearch"):
-        first_author = papers  # curated list, already first-author only
-    else:
-        keys = owner_name_keys(owner)
-        first_author = [p for p in papers if normalize(p[1]) in keys]
-    total = sum(p[2] for p in first_author)
 
     payload = {
         "owner": owner,
         "scholar_user": SCHOLAR_USER,
         "citations": total,
-        "first_author_papers": len(first_author),
-        "papers": [
-            {"title": t, "first_author": a, "citations": c} for t, a, c in first_author
+        "papers": len(papers),
+        "per_paper": [
+            {"title": t, "citations": c} for t, c in papers
         ],
         "source": source,
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -289,8 +284,8 @@ def main() -> int:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
     print(f"owner: {owner}")
-    print(f"first-author papers: {len(first_author)}/{len(papers)}, citations: {total}")
-    for t, _, c in first_author:
+    print(f"papers: {len(papers)}, citations: {total}")
+    for t, c in papers:
         print(f"  [{c}] {t}")
     return 0
 

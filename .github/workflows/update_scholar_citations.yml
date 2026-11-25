@@ -25,8 +25,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Scrape first-author citations
-        run: python3 scripts/update_first_author_citations.py
+      - name: Scrape Scholar citations
+        run: python3 scripts/update_scholar_citations.py
         env:
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
           ANYSEARCH_API_KEY: ${{ secrets.ANYSEARCH_API_KEY }}
@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/json/scholar_first_author.json assets/json/github_owner_stars.json
+          git add assets/json/scholar_citations.json assets/json/github_owner_stars.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
