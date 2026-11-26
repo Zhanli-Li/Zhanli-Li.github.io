@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-👋 Hi, I'm Zhanli Li (李展利), an incoming PhD student at the <a href="https://www.lamda.nju.edu.cn/"><b><span style="color: rgb(232, 95, 46);">L</span><span style="color: rgb(74, 75, 154);">A</span><span style="color: rgb(232, 95, 46);">M</span><span style="color: rgb(74, 75, 154);">DA</span></b></a> led by [Prof. Zhi-Hua Zhou (周志华)](https://cs.nju.edu.cn/zhouzh/), Nanjing University, where I will be advised by [Prof. Han-Jia Ye (叶翰嘉)](https://www.lamda.nju.edu.cn/yehj/). I am currently pursuing a bachelor's degree in **Digital Economy** (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL). I am currently interning at <span class="company-badge"><img class="company-badge__logo" src="{{ '/images/logos/longcat-interaction.png' | relative_url }}" alt="LongCat Interaction logo">LongCat Interaction</span>, focusing on the **post-training scaling of working coding agents**. During my time at ZUEL, I've had the privilege of meeting an amazing group of senior students with incredible insights into deep learning. As of now, my open-source projects have earned [![GitHub Repo Owner Stars](https://img.shields.io/badge/dynamic/json?style=social&logo=github&label=Repo%20Owner%20Stars&query=%24.stars&url=https%3A%2F%2Fzhanli-li.github.io%2Fassets%2Fjson%2Fgithub_owner_stars.json)](https://github.com/Zhanli-Li) and my publications have received [![Google Scholar Citations](https://img.shields.io/badge/dynamic/json?style=social&logo=googlescholar&label=Citations&query=%24.citations&url=https%3A%2F%2Fzhanli-li.github.io%2Fassets%2Fjson%2Fscholar_citations.json)](https://scholar.google.com/citations?user=LW5bAdAAAAAJ&hl=en). My first principle in research is to **make AI research that helps change the world for the better**, and I am currently deeply interested in **agentic training**, **document intelligence**, **data intelligence**, and potential **explainability**.
+👋 Hi, I'm Zhanli Li (李展利), an incoming PhD student at the <a href="https://www.lamda.nju.edu.cn/"><b><span style="color: rgb(232, 95, 46);">L</span><span style="color: rgb(74, 75, 154);">A</span><span style="color: rgb(232, 95, 46);">M</span><span style="color: rgb(74, 75, 154);">DA</span></b></a> led by [Prof. Zhi-Hua Zhou (周志华)](https://cs.nju.edu.cn/zhouzh/), Nanjing University, where I will be advised by [Prof. Han-Jia Ye (叶翰嘉)](https://www.lamda.nju.edu.cn/yehj/). I am pursuing a bachelor's degree in **Digital Economy** (2023-2027) at the Wenlan School of Business, Zhongnan University of Economics and Law (ZUEL), and I am currently interning at <span class="company-badge"><img class="company-badge__logo" src="{{ '/images/logos/longcat-interaction.png' | relative_url }}" alt="LongCat Interaction logo">LongCat Interaction</span>, focusing on the **post-training scaling of working coding agents**. During my time at ZUEL, I've had the privilege of meeting an amazing group of senior students with incredible insights into deep learning. As of now, my open-source projects have earned [![GitHub Repo Owner Stars](https://img.shields.io/badge/dynamic/json?style=social&logo=github&label=Repo%20Owner%20Stars&query=%24.stars&url=https%3A%2F%2Fzhanli-li.github.io%2Fassets%2Fjson%2Fgithub_owner_stars.json)](https://github.com/Zhanli-Li) and my publications have received [![Google Scholar Citations](https://img.shields.io/badge/dynamic/json?style=social&logo=googlescholar&label=Citations&query=%24.citations&url=https%3A%2F%2Fzhanli-li.github.io%2Fassets%2Fjson%2Fscholar_citations.json)](https://scholar.google.com/citations?user=LW5bAdAAAAAJ&hl=en). My first principle in research is to **make AI research that helps change the world for the better**, and I am deeply interested in **agentic training**, **document intelligence**, **data intelligence**, and potential **explainability**.
 
 🎓 Previously, from 2024 to February 2025, I was mentored by [Prof. Zichao Yang (杨子超)](https://www.yzc.me) at ZUEL, working on causal inference. From February 2025 to March 2026, I was an intern at [ICT](http://www.ict.cas.cn/) and <a class="company-badge" href="https://www.paodingai.com/"><img class="company-badge__logo" src="{{ '/images/logos/pai-tech.png' | relative_url }}" alt="PAI TECH logo">PAI TECH (庖丁科技)</a>, supervised by [Prof. Yixuan Cao (曹逸轩)](https://yixuancao.github.io/), working on document intelligence with [Prof. Ping Luo (罗平)](https://ping-luo.github.io/)'s team.
 
@@ -26,21 +26,30 @@ redirect_from:
   [**Data World: Scaling Data Environments from Scratch**](https://arxiv.org/abs/2610.21656)<br>
   [Project Page](https://zhanli-li.github.io/Data-World/) [Hugging Face](https://huggingface.co/collections/Zhanli-Li/dataworld) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Data-World?style=social)](https://github.com/Zhanli-Li/Data-World)
   <div style="text-align:center;">
-    <img src="{{ '/files/DataWorld.png' | relative_url }}" alt="Data World paper" width="50%">
+    <picture>
+      <source srcset="{{ '/files/DataWorld.webp' | relative_url }}" type="image/webp">
+      <img src="{{ '/files/DataWorld.png' | relative_url }}" alt="Data World paper" width="50%" loading="lazy" decoding="async">
+    </picture>
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, Huiwen Tian, Lvzhou Luo, [Yixuan Cao](https://yixuancao.github.io/), [Ping Luo](https://ping-luo.github.io/).  
   [**DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search**](https://arxiv.org/abs/2602.05014)<br>
   [New Intelligence (新智元)](https://hub.baai.ac.cn/view/53185) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/DeepRead?style=social)](https://github.com/Zhanli-Li/DeepRead)
   <div style="text-align:center;">
-    <img src="{{ '/files/HDReAct_01.png' | relative_url }}" alt="HDReAct paper" width="50%">
+    <picture>
+      <source srcset="{{ '/files/HDReAct_01.webp' | relative_url }}" type="image/webp">
+      <img src="{{ '/files/HDReAct_01.png' | relative_url }}" alt="DeepRead paper" width="50%" loading="lazy" decoding="async">
+    </picture>
   </div>
 
 - **[Zhanli Li](https://zhanli-li.github.io)**, [Yixuan Cao](https://yixuancao.github.io/), Lvzhou Luo, [Ping Luo](https://ping-luo.github.io/).  
   [**Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA**](https://arxiv.org/abs/2604.22239v1) *Findings of ACL 2026*<br>
   [Hugging Face Dataset](https://huggingface.co/datasets/Zhanli-Li/MuDABench) [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/MuDABench?style=social)](https://github.com/Zhanli-Li/MuDABench)
   <div style="text-align:center;">
-    <img src="{{ '/files/MuDABench.png' | relative_url }}" alt="MuDABench paper" width="50%">
+    <picture>
+      <source srcset="{{ '/files/MuDABench.webp' | relative_url }}" type="image/webp">
+      <img src="{{ '/files/MuDABench.png' | relative_url }}" alt="MuDABench paper" width="50%" loading="lazy" decoding="async">
+    </picture>
   </div>
 
 <details markdown="1">
@@ -49,7 +58,10 @@ redirect_from:
 - **[Zhanli Li](https://zhanli-li.github.io)**, & [Zichao Yang](https://yzc.me).  
   [**ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction**](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903) *Finance Research Letters (JCR Q1, IF 6.9)*
   <div style="text-align:center;">
-    <img src="{{ '/files/ESG.png' | relative_url }}" alt="ESG_TFP" width="75%">
+    <picture>
+      <source srcset="{{ '/files/ESG.webp' | relative_url }}" type="image/webp">
+      <img src="{{ '/files/ESG.png' | relative_url }}" alt="ESG_TFP" width="75%" loading="lazy" decoding="async">
+    </picture>
   </div>
 
 </details>
@@ -66,15 +78,15 @@ redirect_from:
 <summary><i>Show earlier news</i></summary>
 
 - `2026.2.9` One paper about **Agentic Search** was submitted to KDD26.
-- `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in china)!
-- `2025.9` I lead an open-source project for automated outreach, it's [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
+- `2025.10.12` I am honored to have received the China National Scholarship (Top 0.2% in China)!
+- `2025.9` I led an open-source project for automated outreach: [Auto-Tutor](https://github.com/Zhanli-Li/Auto-Tutor)! [![GitHub Repo stars](https://img.shields.io/github/stars/Zhanli-Li/Auto-Tutor?style=social)](https://github.com/Zhanli-Li/Auto-Tutor)
 - `2025.8.1` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* was awarded an **outstanding paper** by [Tsinghua University](https://mp.weixin.qq.com/s/5oEEnyVM_0PdWTg-7X8RJA) (Top 3% in all participants)!
 - `2025.3.13` I was invited as a reviewer of *Finance Research Letters*.
-- `2025.3.8` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* had been published online.
+- `2025.3.8` *[ESG rating disagreement and corporate Total Factor Productivity: Inference and prediction](https://www.sciencedirect.com/science/article/abs/pii/S1544612325003903)* was published online.
 - `2025.2` I joined the Key Laboratory of Intelligent Information Processing, Institute of Computing Technology, Chinese Academy of Sciences and will work with [Prof. Yixuan Cao](https://yixuancao.github.io/).
 
 </details>
 
-## Vistor 🗺️
+## Visitor 🗺️
 
 <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=080808&w=a&t=tt&d=WXSSc628QC23fwsXFrb6F7S0xVGlrpQ6FxN2cjbHc7o&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>

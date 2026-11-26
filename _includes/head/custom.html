@@ -8,9 +8,10 @@
 <link rel="shortcut icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <meta name="theme-color" content="#ffffff"/>
-<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.min.css"/>
 
 
+{% if page.math or page.collection == 'posts' %}
 <!-- Support for MathJax -->
 <script>
   MathJax = {
@@ -25,7 +26,7 @@
     }
   };
 </script>
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
 
 <!-- end custom head snippets -->
