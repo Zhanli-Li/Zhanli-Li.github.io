@@ -1,7 +1,7 @@
 {
   "owner": "Zhanli Li",
   "scholar_user": "LW5bAdAAAAAJ",
-  "citations": 43,
+  "citations": 31,
   "papers": 4,
   "per_paper": [
     {
@@ -10,7 +10,7 @@
     },
     {
       "title": "DeepRead: Document Structure-Aware Reasoning to Enhance Agentic Search",
-      "citations": 12
+      "citations": 0
     },
     {
       "title": "Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA",
@@ -22,5 +22,5 @@
     }
   ],
   "source": "anysearch",
-  "updated": "2026-11-25T17:23:03Z"
+  "updated": "2026-11-26T17:03:17Z"
 }
